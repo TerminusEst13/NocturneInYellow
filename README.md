@@ -1,2 +1,2 @@
 # NocturneInYellow
-First-person GLOOME-based game for the 2015 Indie Game Maker Contest.
+"Memories and possibilities are even more hideous than realities." - H.P. Lovecraft
