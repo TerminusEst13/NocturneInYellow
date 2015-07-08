@@ -1,0 +1,39 @@
+// Life essence
+
+actor LifeEssenceHealth : Health
+{
+    Inventory.Amount 1
+    Inventory.MaxAmount 100
+}
+
+actor LifeEssencePickup : CustomInventory 31044
+{
+//$Category Nocturne-Items
+    Inventory.PickupMessage ""
+    Inventory.PickupSound ""
+    +QUIET // Disables pickup flash and sound. For some reason.
+           // This is used so that I can define my own not-Doom-style pickup
+           // flashes, messages, and sounds. I could go with the default Doom
+           // stuff, but this is more -*~*SpEcIaL*~*-
+    +FLOATBOB
+    States
+    {
+    Spawn:
+        PLHD A -1
+        stop
+    Pickup:
+        TNT1 A 0
+        TNT1 A 0 A_JumpIfHealthLower(100,"PickupHeal")
+        goto PickupFail
+    PickupHeal:
+        TNT1 A 0 A_JumpIfInventory("BowMana",0,"PickupFail")
+        TNT1 A 0 A_SetBlend("99 FF 66",0.1,5)
+        TNT1 A 0 A_PlaySoundEx("get/smallitem","soundslot7",0,0)
+        TNT1 A 0 A_GiveInventory("LifeEssenceHealth",15)
+        TNT1 A 0 ACS_ExecuteAlways(433,0,0)
+        stop
+    PickupFail:
+        PLHD A 1
+        fail
+    }
+}

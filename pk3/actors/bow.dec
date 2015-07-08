@@ -1,0 +1,1056 @@
+actor BowFired : Boolean {}
+
+ACTOR "Vechnost" : Weapon // Means "Forever"
+{
+    Weapon.SelectionOrder 90
+    Weapon.SlotNumber 2
+    Weapon.BobStyle Alpha
+    Weapon.BobRangeX 0.9
+    Weapon.BobRangeY 0.5
+    Weapon.BobSpeed 1.25
+    Weapon.AmmoType "BowMana"
+    Weapon.AmmoUse 1
+    Weapon.AmmoGive 0
+    Weapon.AmmoType2 "GrenadeAmmo"
+    Weapon.AmmoUse2 1
+    Weapon.AmmoGive2 0
+    Decal "BulletChip"
+    Obituary "%k delivered death to %o."
+    +WEAPON.NOAUTOFIRE
+    +WEAPON.NOAUTOAIM
+    +WEAPON.NOALERT
+    +WEAPON.AMMO_OPTIONAL
+    +WEAPON.ALT_AMMO_OPTIONAL
+    States
+    {
+    Ready:
+        TNT1 A 0 A_GiveInventory("WeaponIdle",1)
+        TNT1 A 0 A_JumpIfInventory("SprintDash",1,"D_RUNNIN")
+        RBOW A 1 A_WeaponReady
+        Loop
+    Deselect:
+        TNT1 A 0 A_TakeInventory("BowFired",1)
+        TNT1 AA 0 A_Lower
+        RBOW A 1 A_Lower
+        Loop
+    Select:
+        TNT1 AA 0 A_Raise
+        RBOW A 1 A_Raise
+        Loop
+    Fire:
+        TNT1 A 0 A_TakeInventory("WeaponIdle",1)
+        TNT1 A 0 A_TakeInventory("WeaponIdleCounter",0x7FFFFFFF)
+        TNT1 A 0 A_JumpIfInventory("BowFired",1,"FireReady")
+        RBOW BCD 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+    FireReady:
+        TNT1 A 0 A_PlaySoundEx("bow/nock","soundslot5",0,0)
+        RBOW E 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_GiveInventory("BowFired",1)
+        RBOW EFGH 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW I 5 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+    Hold:
+        TNT1 A 0 A_JumpIfInventory("EquippedAntiqueCoin",1,"FireArcane")
+        RBOW I 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_Refire
+        TNT1 A 0 A_ClearRefire
+        TNT1 A 0 A_JumpIfInventory("EquippedCrucifix",1,"FireHoly")
+        TNT1 A 0 A_JumpIfInventory("EquippedDragonScale",1,"FireWind")
+        TNT1 A 0 A_JumpIfInventory("EquippedWhiteCoal",1,"FireFire") // Heh.
+        TNT1 A 0 A_JumpIfInventory("EquippedPallidMask",1,"FireShadow")
+        TNT1 A 0 A_JumpIfInventory("EquippedBurialBelt",1,"FireDeath")
+        TNT1 A 0 A_PlayWeaponSound("bow/fire")
+        TNT1 A 0 A_FireCustomMissile("BowArrow",frandom(-1.5,1.5),0,0,1,0,frandom(-0.75,0.75))
+        TNT1 A 0 A_Recoil(-0.15)
+        TNT1 A 0 A_SetAngle(angle+frandom(-0.75,0.75))
+        TNT1 A 0 A_SetPitch(pitch-frandom(0.40,1.25))
+        RBOW J 10 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_PlaySoundEx("bow/load","soundslot5",0,0)
+        RBOW KLL 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW M 5 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW NNO 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+    Ready2:
+        TNT1 A 0 A_JumpIfInventory("SprintDash",1,"D_RUNNIN2")
+        TNT1 A 0 A_GiveInventory("WeaponIdle")
+        TNT1 A 0 A_GiveInventory("WeaponIdleCounter",1)
+        TNT1 A 0 A_JumpIfInventory("WeaponIdleCounter",0,"GoingBackToReady")
+        RBOW E 1 A_WeaponReady
+        loop
+    GoingBackToReady:
+        TNT1 A 0 A_TakeInventory("BowFired",1)
+        TNT1 A 0 A_TakeInventory("WeaponIdleCounter",0x7FFFFFFF)
+        RBOW DCBA 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        goto Ready
+    Spawn:
+        SHOT A -1
+        Stop
+
+    FireHoly:
+        TNT1 A 0 A_PlayWeaponSound("bow/holy")
+        TNT1 A 0 A_FireCustomMissile("HolyArrow",frandom(-1.5,1.5),0,0,1,0,frandom(-0.75,0.75))
+        TNT1 A 0 A_Recoil(-0.15)
+        TNT1 A 0 A_SetAngle(angle+frandom(-0.75,0.75))
+        TNT1 A 0 A_SetPitch(pitch-frandom(0.40,1.25))
+        RBOW J 10 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_PlaySoundEx("bow/load","soundslot5",0,0)
+        RBOW KLL 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW M 5 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW NNO 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        goto Ready2
+    FireWind:
+        TNT1 A 0 A_JumpIfNoAmmo("Nope")
+        TNT1 A 0 A_PlayWeaponSound("bow/fire")
+        TNT1 A 0 A_PlaySoundEx("bow/wind","soundslot6",0,0)
+        TNT1 AAA 0 A_FireCustomMissile("WindArrow",frandom(-5,5),0,0,1,0,frandom(-3.5,3.5))
+        TNT1 AAA 0 A_FireCustomMissile("WindArrow",frandom(-3.5,3.5),0,0,1,0,frandom(-2,2))
+        TNT1 AA 0 A_FireCustomMissile("WindArrow",frandom(-2,2),0,0,1,0,frandom(-1,1))
+        TNT1 A 0 A_FireCustomMissile("WindArrow",frandom(-1,1),0,0,1,0,frandom(-0.5,0.5))
+        TNT1 A 0 A_TakeInventory("BowMana",4)
+        TNT1 A 0 A_Recoil(frandom(-0.5,-0.25))
+        TNT1 A 0 A_SetAngle(angle+frandom(-1.25,1.25))
+        TNT1 A 0 A_SetPitch(pitch-frandom(0.75,1.75))
+        RBOW J 10 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_PlaySoundEx("bow/load","soundslot5",0,0)
+        RBOW KLL 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW M 5 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW NNO 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        goto Ready2
+    FireFire: // I am dumb and this easily amuses me.
+        TNT1 A 0 A_JumpIfNoAmmo("Nope")
+        TNT1 A 0 A_PlayWeaponSound("bow/flame")
+        TNT1 A 0 A_FireCustomMissile("FireArrow",frandom(-0.75,0.75),0,0,1,0,frandom(-0.25,0.25))
+        TNT1 A 0 A_TakeInventory("BowMana",4)
+        TNT1 A 0 A_Recoil(-0.25)
+        TNT1 A 0 A_SetAngle(angle+frandom(-0.75,0.75))
+        TNT1 A 0 A_SetPitch(pitch-frandom(0.40,1.25))
+        RBOW J 10 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_PlaySoundEx("bow/load","soundslot5",0,0)
+        RBOW KLL 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW M 5 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW NNO 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        goto Ready2
+    FireArcane:
+        TNT1 A 0 A_JumpIfNoAmmo("Nope")
+        TNT1 A 0 A_PlayWeaponSound("bow/fire")
+        TNT1 A 0 A_PlaySoundEx("bow/arcane","soundslot6",0,0)
+        TNT1 A 0 A_FireCustomMissile("ArcaneArrow",frandom(-2.5,2.5),0,0,1,0,frandom(-1,1))
+        TNT1 A 0 A_TakeInventory("BowMana",1)
+        TNT1 A 0 A_Recoil(-0.05)
+        TNT1 A 0 A_SetAngle(angle+frandom(-0.25,0.25))
+        TNT1 A 0 A_SetPitch(pitch-frandom(0.25,0.5))
+        RBOW J 3 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW E 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW FGHI 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_Refire("FireArcane")
+        TNT1 A 0 A_PlayWeaponSound("bow/fire")
+        TNT1 A 0 A_PlaySoundEx("bow/Arcane","soundslot6",0,0)
+        TNT1 A 0 A_FireCustomMissile("ArcaneArrow",frandom(-2.5,2.5),0,0,1,0,frandom(-1,1))
+        TNT1 A 0 A_Recoil(-0.05)
+        TNT1 A 0 A_SetAngle(angle+frandom(-0.25,0.25))
+        TNT1 A 0 A_SetPitch(pitch-frandom(0.25,0.75))
+        RBOW J 10 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_PlaySoundEx("bow/load","soundslot5",0,0)
+        RBOW KLL 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW M 5 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW NNO 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        goto Ready2
+    FireShadow:
+        TNT1 A 0 A_JumpIfNoAmmo("Nope")
+        TNT1 A 0 A_PlayWeaponSound("bow/fire")
+        TNT1 A 0 A_PlaySoundEx("bow/shadow","soundslot6",0,0)
+        TNT1 A 0 A_FireCustomMissile("ShadowArrow",frandom(-1.5,1.5),0,0,1,0,frandom(-0.75,0.75))
+        TNT1 A 0 A_TakeInventory("BowMana",6)
+        TNT1 A 0 A_Recoil(-0.15)
+        TNT1 A 0 A_SetAngle(angle+frandom(-0.75,0.75))
+        TNT1 A 0 A_SetPitch(pitch-frandom(0.40,1.25))
+        RBOW J 10 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_PlaySoundEx("bow/load","soundslot5",0,0)
+        RBOW KLL 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW M 5 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW NNO 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        goto Ready2
+    FireDeath:
+        TNT1 A 0 A_JumpIfNoAmmo("Nope")
+        TNT1 A 0 A_PlayWeaponSound("bow/fire")
+        TNT1 A 0 A_PlaySoundEx("bow/death","soundslot6",0,0)
+        TNT1 A 0 A_FireCustomMissile("DeathArrow",frandom(-1.5,1.5),0,0,1,0,frandom(-0.75,0.75))
+        TNT1 A 0 A_TakeInventory("BowMana",4)
+        TNT1 A 0 A_Recoil(-0.15)
+        TNT1 A 0 A_SetAngle(angle+frandom(-0.75,0.75))
+        TNT1 A 0 A_SetPitch(pitch-frandom(0.40,1.25))
+        RBOW J 10 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_PlaySoundEx("bow/load","soundslot5",0,0)
+        RBOW KLL 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW M 5 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW NNO 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        goto Ready2
+
+    Nope:
+        RBOW I 5 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_TakeInventory("BowFired",1)
+        TNT1 A 0 A_PlaySoundEx("bow/nock","soundslot5",0,0)
+        RBOW HGFE 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW DCB 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        goto Ready
+        
+    D_RUNNIN:
+        TNT1 A 0 A_TakeInventory("BowFired",1)
+        TNT1 A 0 A_TakeInventory("WeaponIdleCounter",0x7FFFFFFF)
+        RBOW P 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW Q 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW R 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW S 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 1
+    IdleLoop:
+        TNT1 A 1
+        TNT1 A 0 A_JumpIfInventory("SprintDash",1,"IdleLoop")
+        goto BackToNormal
+    BackToNormal:
+        RBOW S 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW R 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW Q 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW P 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW A 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        Goto Ready
+        
+    D_RUNNIN2:
+        TNT1 A 0 A_TakeInventory("BowFired",1)
+        TNT1 A 0 A_TakeInventory("WeaponIdleCounter",0x7FFFFFFF)
+        RBOW T 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW U 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW V 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW W 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 1
+        goto IdleLoop
+
+    AltFire:
+        TNT1 A 0 A_TakeInventory("WeaponIdle",1)
+        TNT1 A 0 A_TakeInventory("WeaponIdleCounter",0x7FFFFFFF)
+        TNT1 A 0 A_JumpIfInventory("BowFired",1,"AltFire2")
+        RBOW P 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW Q 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW R 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW S 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 1
+        goto Throw
+    AltFire2:
+        TNT1 A 0 A_TakeInventory("BowFired",1)
+        RBOW T 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW U 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW V 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW W 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 1
+    Throw:
+        TNT1 A 0 A_JumpIfNoAmmo("ThrowBlank")
+        TNT1 A 6
+        THRW ABC 1
+        TNT1 A 0 A_PlayWeaponSound("grenade/throw")
+        THRW DE 1
+        THRW F 1 A_FireCustomMissile("IronGrenade",0,1,2,-4,0,10)
+        THRW GHI 1
+        TNT1 A 2
+        Goto BackToNormal
+    ThrowBlank:
+        TNT1 A 6
+        THRW A 1
+        TNT1 A 0 A_PlayWeaponSound("grenade/throw")
+        THRW BC 1
+        THRW DE 1
+        THRW F 1
+        THRW GHI 1
+        TNT1 A 2
+        Goto BackToNormal
+    }
+}
+
+actor BowArrow : FastProjectile
+{
+    Radius 4
+    Height 2
+    Damage (40)
+    Speed 200
+    Projectile
+    +DONTREFLECT
+    +FORCEYBILLBOARD
+    +NOEXTREMEDEATH
+    +BLOODSPLATTER
+    DamageType "Bow"
+    Obituary "%o was pincushioned."
+    ProjectileKickBack 25
+    MissileType ArrowTrail
+    MissileHeight 8
+    Decal BulletChip
+    Scale 0.7
+    States
+    {
+    Spawn:
+        ARRO A 1
+        Loop
+    Death: // Hitting a wall
+        TNT1 A 0
+        TNT1 A 0 A_PlaySound("arrow/miss",CHAN_AUTO,1.0,0,ATTN_NORM)
+        TNT1 AAAAA 0 A_SpawnItemEx("ArrowSmoke",0,0,0,frandom(-0.5,0.5),frandom(-0.5,0.5),frandom(0.1,0.5),random(-180,180),32)
+        TNT1 A 0 A_CheckCeiling("DeathCeiling")
+        TNT1 A 0 A_CheckFloor("DeathFloor")
+        ARRO B -1
+        Stop
+    DeathCeiling:
+        ARRO D -1
+        stop
+    DeathFloor:
+        ARRO C -1
+        stop
+    Crash: // Hitting non-bleeding actor
+        TNT1 A 0
+        TNT1 A 0 A_PlaySound("arrow/miss",CHAN_AUTO,1.0,0,ATTN_NORM)
+        TNT1 A 1
+        Stop
+    XDeath: // Hitting a bleeding actor
+        TNT1 A 0
+        TNT1 A 0 A_PlaySound("arrow/hit",CHAN_AUTO,1.0,0,ATTN_NORM)
+        TNT1 A 1
+        Stop
+    }
+}
+
+actor HolyArrow : FastProjectile
+{
+    Radius 4
+    Height 2
+    Damage (50)
+    Speed 200
+    Projectile
+    +DONTREFLECT
+    +FORCEYBILLBOARD
+    +NOEXTREMEDEATH
+    +BLOODSPLATTER
+    DamageType "Bow"
+    Obituary "%o was pincushioned."
+    ProjectileKickBack 25
+    MissileType HolyArrowTrail
+    MissileHeight 8
+    Decal BulletChip
+    RenderStyle Add
+    Alpha 0.99
+    Scale 0.9
+    States
+    {
+    Spawn:
+        MARO A 1 BRIGHT
+        Loop
+    Death: // Hitting a wall
+        TNT1 A 0
+        TNT1 A 0 A_PlaySound("arrow/miss",CHAN_AUTO,1.0,0,ATTN_NORM)
+        TNT1 A 0 A_PlaySound("impact/holy",CHAN_5,1.0,0,ATTN_NORM)
+        TNT1 AAAAA 0 A_SpawnItemEx("ArrowSmoke",0,0,0,frandom(-0.5,0.5),frandom(-0.5,0.5),frandom(0.1,0.5),random(-180,180),32)
+        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("HolySpatter",0,0,0,frandom(-1.5,1.5),frandom(-1.5,1.5),frandom(-1.5,1.5),random(-180,180),32)
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("HolySpatterLarge",0,0,0,frandom(-0.5,0.5),frandom(-0.5,0.5),frandom(-0.5,0.5),random(-180,180),32)
+        TNT1 A 0 A_SetScale(0.1,0.1)
+        SPRK A 10 BRIGHT
+        SPRK A 1 BRIGHT A_FadeOut(0.01)
+        wait
+    Crash: // Hitting non-bleeding actor
+        TNT1 A 0
+        TNT1 A 0 A_PlaySound("arrow/miss",CHAN_AUTO,1.0,0,ATTN_NORM)
+        TNT1 A 0 A_PlaySound("impact/holy",CHAN_5,1.0,0,ATTN_NORM)
+        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("HolySpatter",0,0,0,frandom(-1.5,1.5),frandom(-1.5,1.5),frandom(-1.5,1.5),random(-180,180),32)
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("HolySpatterLarge",0,0,0,frandom(-0.5,0.5),frandom(-0.5,0.5),frandom(-0.5,0.5),random(-180,180),32)
+        TNT1 A 1
+        stop
+    XDeath: // Hitting a bleeding actor
+        TNT1 A 0
+        TNT1 A 0 A_PlaySound("arrow/hit",CHAN_AUTO,1.0,0,ATTN_NORM)
+        TNT1 A 0 A_PlaySound("impact/holy",CHAN_5,1.0,0,ATTN_NORM)
+        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("HolySpatter",0,0,0,frandom(-1.5,1.5),frandom(-1.5,1.5),frandom(-1.5,1.5),random(-180,180),32)
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("HolySpatterLarge",0,0,0,frandom(-0.5,0.5),frandom(-0.5,0.5),frandom(-0.5,0.5),random(-180,180),32)
+        TNT1 A 0 A_SetScale(0.1,0.1)
+        TNT1 A 1
+        stop
+    }
+}
+
+actor WindArrow : FastProjectile
+{
+    Radius 4
+    Height 2
+    Damage (15)
+    Speed 200
+    Projectile
+    +DONTREFLECT
+    +FORCEYBILLBOARD
+    +NOEXTREMEDEATH
+    +BLOODSPLATTER
+    DamageType "Bow"
+    Obituary "%o was pincushioned."
+    ProjectileKickBack 25
+    MissileType WindArrowTrail
+    MissileHeight 8
+    Decal BulletChip
+    RenderStyle Add
+    Alpha 0.99
+    Scale 0.9
+    States
+    {
+    Spawn:
+        MARO B 1 BRIGHT
+        Loop
+    Death: // Hitting a wall
+        TNT1 A 0
+        TNT1 A 0 A_PlaySound("arrow/miss",CHAN_AUTO,1.0,0,ATTN_NORM)
+        TNT1 A 0 A_PlaySound("impact/wind",CHAN_5,1.0,0,ATTN_NORM)
+        TNT1 AAAAA 0 A_SpawnItemEx("ArrowSmoke",0,0,0,frandom(-0.5,0.5),frandom(-0.5,0.5),frandom(0.1,0.5),random(-180,180),32)
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("WindSpatter",0,0,0,frandom(-1.5,1.5),frandom(-1.5,1.5),frandom(-1.5,1.5),random(-180,180),32)
+        TNT1 AAAAA 0 A_SpawnItemEx("WindSpatterLarge",0,0,0,frandom(-0.5,0.5),frandom(-0.5,0.5),frandom(-0.5,0.5),random(-180,180),32)
+        TNT1 A 0 A_SetScale(0.05,0.05)
+        SPRK B 10 BRIGHT
+        SPRK B 1 BRIGHT A_FadeOut(0.015)
+        wait
+    Crash: // Hitting non-bleeding actor
+        TNT1 A 0
+        TNT1 A 0 A_PlaySound("arrow/miss",CHAN_AUTO,1.0,0,ATTN_NORM)
+        TNT1 A 0 A_PlaySound("impact/wind",CHAN_5,1.0,0,ATTN_NORM)
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("WindSpatter",0,0,0,frandom(-1.5,1.5),frandom(-1.5,1.5),frandom(-1.5,1.5),random(-180,180),32)
+        TNT1 AAAAA 0 A_SpawnItemEx("WindSpatterLarge",0,0,0,frandom(-0.5,0.5),frandom(-0.5,0.5),frandom(-0.5,0.5),random(-180,180),32)
+        TNT1 A 1
+        Stop
+    XDeath: // Hitting a bleeding actor
+        TNT1 A 0
+        TNT1 A 0 A_PlaySound("arrow/hit",CHAN_AUTO,1.0,0,ATTN_NORM)
+        TNT1 A 0 A_PlaySound("impact/wind",CHAN_5,1.0,0,ATTN_NORM)
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("WindSpatter",0,0,0,frandom(-1.5,1.5),frandom(-1.5,1.5),frandom(-1.5,1.5),random(-180,180),32)
+        TNT1 AAAAA 0 A_SpawnItemEx("WindSpatterLarge",0,0,0,frandom(-0.5,0.5),frandom(-0.5,0.5),frandom(-0.5,0.5),random(-180,180),32)
+        TNT1 A 1
+        Stop
+    }
+}
+
+actor FireArrow : FastProjectile
+{
+    Radius 4
+    Height 2
+    Damage (55)
+    Speed 200
+    Projectile
+    +RIPPER
+    +DONTREFLECT
+    +FORCEYBILLBOARD
+    +NOEXTREMEDEATH
+    +BLOODSPLATTER
+    DamageType "Bow"
+    Obituary "%o was pincushioned."
+    ProjectileKickBack 25
+    MissileType FireArrowTrail
+    MissileHeight 8
+    Decal BulletChip
+    RenderStyle Add
+    Alpha 0.99
+    Scale 0.9
+    States
+    {
+    Spawn:
+        MARO C 1 BRIGHT
+        Loop
+    Death: // Hitting a wall
+        TNT1 A 0
+        TNT1 A 0 A_PlaySound("arrow/miss",CHAN_AUTO,1.0,0,ATTN_NORM)
+        TNT1 A 0 A_PlaySound("impact/fire",CHAN_5,1.0,0,ATTN_NORM)
+        TNT1 AAAAA 0 A_SpawnItemEx("ArrowSmoke",0,0,0,frandom(-0.5,0.5),frandom(-0.5,0.5),frandom(0.1,0.5),random(-180,180),32)
+        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("FireSpatter",0,0,0,frandom(-1.5,1.5),frandom(-1.5,1.5),frandom(-1.5,1.5),random(-180,180),32)
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("FireSpatterLarge",0,0,0,frandom(-0.5,0.5),frandom(-0.5,0.5),frandom(-0.5,0.5),random(-180,180),32)
+        TNT1 A 0 A_SetScale(0.1,0.1)
+        SPRK C 10 BRIGHT
+        SPRK C 1 BRIGHT A_FadeOut(0.01)
+        wait
+    Crash: // Hitting non-bleeding actor
+        TNT1 A 0
+        TNT1 A 0 A_PlaySound("arrow/miss",CHAN_AUTO,1.0,0,ATTN_NORM)
+        TNT1 A 0 A_PlaySound("impact/fire",CHAN_5,1.0,0,ATTN_NORM)
+        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("FireSpatter",0,0,0,frandom(-1.5,1.5),frandom(-1.5,1.5),frandom(-1.5,1.5),random(-180,180),32)
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("FireSpatterLarge",0,0,0,frandom(-0.5,0.5),frandom(-0.5,0.5),frandom(-0.5,0.5),random(-180,180),32)
+        TNT1 A 1
+        Stop
+    XDeath: // Hitting a bleeding actor
+        TNT1 A 0
+        TNT1 A 0 A_PlaySound("arrow/hit",CHAN_AUTO,1.0,0,ATTN_NORM)
+        TNT1 A 0 A_PlaySound("impact/fire",CHAN_5,1.0,0,ATTN_NORM)
+        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("FireSpatter",0,0,0,frandom(-1.5,1.5),frandom(-1.5,1.5),frandom(-1.5,1.5),random(-180,180),32)
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("FireSpatterLarge",0,0,0,frandom(-0.5,0.5),frandom(-0.5,0.5),frandom(-0.5,0.5),random(-180,180),32)
+        TNT1 A 1
+        Stop
+    }
+}
+
+actor ArcaneArrow : FastProjectile
+{
+    Radius 4
+    Height 2
+    Damage (20)
+    Speed 200
+    Projectile
+    +DONTREFLECT
+    +FORCEYBILLBOARD
+    +NOEXTREMEDEATH
+    +BLOODSPLATTER
+    DamageType "Bow"
+    Obituary "%o was pincushioned."
+    ProjectileKickBack 25
+    MissileType ArcaneArrowTrail
+    MissileHeight 8
+    Decal BulletChip
+    RenderStyle Add
+    Alpha 0.99
+    Scale 0.9
+    States
+    {
+    Spawn:
+        MARO D 1 BRIGHT
+        Loop
+    Death: // Hitting a wall
+        TNT1 A 0
+        TNT1 A 0 A_PlaySound("arrow/miss",CHAN_AUTO,1.0,0,ATTN_NORM)
+        TNT1 A 0 A_PlaySound("impact/arcane",CHAN_5,1.0,0,ATTN_NORM)
+        TNT1 AAAAA 0 A_SpawnItemEx("ArrowSmoke",0,0,0,frandom(-0.5,0.5),frandom(-0.5,0.5),frandom(0.1,0.5),random(-180,180),32)
+        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("ArcaneSpatter",0,0,0,frandom(-1.5,1.5),frandom(-1.5,1.5),frandom(-1.5,1.5),random(-180,180),32)
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("ArcaneSpatterLarge",0,0,0,frandom(-0.5,0.5),frandom(-0.5,0.5),frandom(-0.5,0.5),random(-180,180),32)
+        TNT1 A 0 A_SetScale(0.05,0.05)
+        SPRK D 10 BRIGHT
+        SPRK D 1 BRIGHT A_FadeOut(0.015)
+        wait
+    Crash: // Hitting non-bleeding actor
+        TNT1 A 0
+        TNT1 A 0 A_PlaySound("arrow/miss",CHAN_AUTO,1.0,0,ATTN_NORM)
+        TNT1 A 0 A_PlaySound("impact/arcane",CHAN_5,1.0,0,ATTN_NORM)
+        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("ArcaneSpatter",0,0,0,frandom(-1.5,1.5),frandom(-1.5,1.5),frandom(-1.5,1.5),random(-180,180),32)
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("ArcaneSpatterLarge",0,0,0,frandom(-0.5,0.5),frandom(-0.5,0.5),frandom(-0.5,0.5),random(-180,180),32)
+        TNT1 A 1
+        Stop
+    XDeath: // Hitting a bleeding actor
+        TNT1 A 0
+        TNT1 A 0 A_PlaySound("arrow/hit",CHAN_AUTO,1.0,0,ATTN_NORM)
+        TNT1 A 0 A_PlaySound("impact/arcane",CHAN_5,1.0,0,ATTN_NORM)
+        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("ArcaneSpatter",0,0,0,frandom(-1.5,1.5),frandom(-1.5,1.5),frandom(-1.5,1.5),random(-180,180),32)
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("ArcaneSpatterLarge",0,0,0,frandom(-0.5,0.5),frandom(-0.5,0.5),frandom(-0.5,0.5),random(-180,180),32)
+        TNT1 A 1
+        Stop
+    }
+}
+
+actor ShadowArrow : FastProjectile
+{
+    Radius 4
+    Height 2
+    Damage (50)
+    Speed 80
+    Projectile
+    +DONTREFLECT
+    +FORCEYBILLBOARD
+    +NOEXTREMEDEATH
+    +BLOODSPLATTER
+    +SEEKERMISSILE
+    DamageType "Bow"
+    Obituary "%o was pincushioned."
+    ProjectileKickBack 25
+    MissileType ShadowArrowTrail
+    MissileHeight 8
+    Decal BulletChip
+    RenderStyle Add
+    Alpha 0.99
+    Scale 0.9
+    States
+    {
+    Spawn:
+        MARO E 1 BRIGHT A_SeekerMissile(5,10, SMF_LOOK |SMF_PRECISE)
+        Loop
+    Death: // Hitting a wall
+        TNT1 A 0
+        TNT1 A 0 A_PlaySound("arrow/miss",CHAN_AUTO,1.0,0,ATTN_NORM)
+        TNT1 A 0 A_PlaySound("impact/shadow",CHAN_5,1.0,0,ATTN_NORM)
+        TNT1 AAAAA 0 A_SpawnItemEx("ArrowSmoke",0,0,0,frandom(-0.5,0.5),frandom(-0.5,0.5),frandom(0.1,0.5),random(-180,180),32)
+        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("ShadowSpatter",0,0,0,frandom(-1.5,1.5),frandom(-1.5,1.5),frandom(-1.5,1.5),random(-180,180),32)
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("ShadowSpatterLarge",0,0,0,frandom(-0.5,0.5),frandom(-0.5,0.5),frandom(-0.5,0.5),random(-180,180),32)
+        TNT1 A 0 A_SetScale(0.1,0.1)
+        SPRK E 10 BRIGHT
+        SPRK E 1 BRIGHT A_FadeOut(0.01)
+        wait
+    Crash: // Hitting non-bleeding actor
+        TNT1 A 0
+        TNT1 A 0 A_PlaySound("arrow/miss",CHAN_AUTO,1.0,0,ATTN_NORM)
+        TNT1 A 0 A_PlaySound("impact/shadow",CHAN_5,1.0,0,ATTN_NORM)
+        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("ShadowSpatter",0,0,0,frandom(-1.5,1.5),frandom(-1.5,1.5),frandom(-1.5,1.5),random(-180,180),32)
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("ShadowSpatterLarge",0,0,0,frandom(-0.5,0.5),frandom(-0.5,0.5),frandom(-0.5,0.5),random(-180,180),32)
+        TNT1 A 1
+        Stop
+    XDeath: // Hitting a bleeding actor
+        TNT1 A 0
+        TNT1 A 0 A_PlaySound("arrow/hit",CHAN_AUTO,1.0,0,ATTN_NORM)
+        TNT1 A 0 A_PlaySound("impact/shadow",CHAN_5,1.0,0,ATTN_NORM)
+        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("ShadowSpatter",0,0,0,frandom(-1.5,1.5),frandom(-1.5,1.5),frandom(-1.5,1.5),random(-180,180),32)
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("ShadowSpatterLarge",0,0,0,frandom(-0.5,0.5),frandom(-0.5,0.5),frandom(-0.5,0.5),random(-180,180),32)
+        TNT1 A 1
+        Stop
+    }
+}
+
+actor DeathArrow : FastProjectile
+{
+    Radius 4
+    Height 2
+    Damage (15)
+    Speed 200
+    Projectile
+    +DONTREFLECT
+    +FORCEYBILLBOARD
+    +NOEXTREMEDEATH
+    +BLOODSPLATTER
+    DamageType "Bow"
+    Obituary "%o was pincushioned."
+    ProjectileKickBack 25
+    MissileType DeathArrowTrail
+    MissileHeight 8
+    Decal BulletChip
+    RenderStyle Add
+    Alpha 0.99
+    Scale 0.9
+    States
+    {
+    Spawn:
+        MARO F 1 BRIGHT
+        Loop
+    Death: // Hitting a wall
+        TNT1 A 0
+        TNT1 A 0 A_PlaySound("arrow/miss",CHAN_AUTO,1.0,0,ATTN_NORM)
+        TNT1 A 0 A_PlaySound("impact/death",CHAN_5,1.0,0,ATTN_NORM)
+        TNT1 AAAAA 0 A_SpawnItemEx("ArrowSmoke",0,0,0,frandom(-0.5,0.5),frandom(-0.5,0.5),frandom(0.1,0.5),random(-180,180),32)
+        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("DeathSpatter",0,0,0,frandom(-1.5,1.5),frandom(-1.5,1.5),frandom(-1.5,1.5),random(-180,180),32)
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("DeathSpatterLarge",0,0,0,frandom(-0.5,0.5),frandom(-0.5,0.5),frandom(-0.5,0.5),random(-180,180),32)
+        TNT1 A 0 A_SetScale(0.1,0.1)
+        SPRK F 10 BRIGHT
+        SPRK F 1 BRIGHT A_FadeOut(0.01)
+        wait
+    Crash: // Hitting non-bleeding actor
+        TNT1 A 0
+        TNT1 A 0 A_PlaySound("arrow/miss",CHAN_AUTO,1.0,0,ATTN_NORM)
+        TNT1 A 0 A_PlaySound("impact/death",CHAN_5,1.0,0,ATTN_NORM)
+        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("DeathSpatter",0,0,0,frandom(-1.5,1.5),frandom(-1.5,1.5),frandom(-1.5,1.5),random(-180,180),32)
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("DeathSpatterLarge",0,0,0,frandom(-0.5,0.5),frandom(-0.5,0.5),frandom(-0.5,0.5),random(-180,180),32)
+        TNT1 A 1
+        Stop
+    XDeath: // Hitting a bleeding actor
+        TNT1 A 0
+        TNT1 A 0 A_PlaySound("arrow/hit",CHAN_AUTO,1.0,0,ATTN_NORM)
+        TNT1 A 0 A_PlaySound("impact/death",CHAN_5,1.0,0,ATTN_NORM)
+        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("DeathSpatter",0,0,0,frandom(-1.5,1.5),frandom(-1.5,1.5),frandom(-1.5,1.5),random(-180,180),32)
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("DeathSpatterLarge",0,0,0,frandom(-0.5,0.5),frandom(-0.5,0.5),frandom(-0.5,0.5),random(-180,180),32)
+        TNT1 A 1
+        Stop
+    }
+}
+
+actor ArrowTrail
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Scale 0.0125
+    RenderStyle Add
+    Alpha 0.015
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_Jump(255,"Spawn1","Spawn2","Spawn3","Spawn4","Spawn5")
+        TNT1 A 1
+        loop
+    Spawn1:
+        ARTR A 4
+    Spawn1b:
+        ARTR A 1 A_FadeOut(0.001)
+        loop
+    Spawn2:
+        ARTR B 4
+    Spawn2b:
+        ARTR B 1 A_FadeOut(0.001)
+        loop
+    Spawn3:
+        ARTR C 4
+    Spawn3b:
+        ARTR C 1 A_FadeOut(0.001)
+        loop
+    Spawn4:
+        ARTR D 4
+    Spawn4b:
+        ARTR D 1 A_FadeOut(0.001)
+        loop
+    Spawn5:
+        ARTR E 4
+    Spawn5b:
+        ARTR E 1 A_FadeOut(0.001)
+        loop
+    }
+}
+
+actor HolyArrowTrail
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Scale 0.125
+    RenderStyle Add
+    Alpha 0.025
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        SPRK A 4
+    Spawn1:
+        SPRK A 1 A_FadeOut(0.002)
+        loop
+    }
+}
+
+actor HolySpatter
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Scale 0.025
+    RenderStyle Add
+    Alpha 0.99
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        SPRK A 5
+    Spawn1:
+        SPRK A 1 A_FadeOut(0.02)
+        loop
+    }
+}
+
+actor HolySpatterLarge
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Scale 0.05
+    RenderStyle Add
+    Alpha 0.99
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        SPRK A 15
+    Spawn1:
+        SPRK A 1 A_FadeOut(0.01)
+        loop
+    }
+}
+
+actor WindSpatter
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Scale 0.0125
+    RenderStyle Add
+    Alpha 0.99
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        SPRK B 5
+    Spawn1:
+        SPRK B 1 A_FadeOut(0.02)
+        loop
+    }
+}
+
+actor WindSpatterLarge
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Scale 0.025
+    RenderStyle Add
+    Alpha 0.99
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        SPRK B 15
+    Spawn1:
+        SPRK B 1 A_FadeOut(0.01)
+        loop
+    }
+}
+
+actor WindArrowTrail
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Scale 0.125
+    RenderStyle Add
+    Alpha 0.015
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        SPRK B 4
+    Spawn1:
+        SPRK B 1 A_FadeOut(0.0025)
+        loop
+    }
+}
+
+actor FireArrowTrail
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Scale 0.125
+    RenderStyle Add
+    Alpha 0.03
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_SpawnItemEx("FireTrail",0,0,0,frandom(-0.5,0.5),0,frandom(-0.5,0.5),0,32)
+        SPRK C 4
+    Spawn1:
+        SPRK C 1 A_FadeOut(0.0025)
+        loop
+    }
+}
+
+actor FireTrail
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Scale 0.1
+    RenderStyle Add
+    Alpha 0.5
+    States
+    {
+    Spawn:
+        FIRE ABCDEFGH 1 BRIGHT
+        stop
+    }
+}
+
+actor FireSpatter
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Scale 0.15
+    RenderStyle Add
+    Alpha 0.99
+    States
+    {
+    Spawn:
+        FIRE ABCDEFGH 4 BRIGHT
+        stop
+    }
+}
+
+actor FireSpatterLarge : FireTrail
+{
+    Scale 0.2
+    States
+    {
+    Spawn:
+        FIRE ABCDEFGH 5 BRIGHT
+        stop
+    }
+}
+
+actor ArcaneArrowTrail
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Scale 0.125
+    RenderStyle Add
+    Alpha 0.015
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        SPRK D 4
+    Spawn1:
+        SPRK D 1 A_FadeOut(0.001)
+        loop
+    }
+}
+
+actor ArcaneSpatter
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Scale 0.0125
+    RenderStyle Add
+    Alpha 0.99
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        SPRK D 5
+    Spawn1:
+        SPRK D 1 A_FadeOut(0.025)
+        loop
+    }
+}
+
+actor ArcaneSpatterLarge
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Scale 0.025
+    RenderStyle Add
+    Alpha 0.99
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        SPRK D 15
+    Spawn1:
+        SPRK D 1 A_FadeOut(0.015)
+        loop
+    }
+}
+
+actor ShadowArrowTrail
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Scale 0.125
+    RenderStyle Translucent
+    Alpha 0.0175
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_SpawnItemEx("ShadowArrowTrail2",0,0,0,0,0,0,0,32)
+        SPRK E 4
+    Spawn1:
+        SPRK E 1 A_FadeOut(0.001)
+        loop
+    }
+}
+
+actor ShadowArrowTrail2
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Scale 0.075
+    RenderStyle Fuzzy
+    Alpha 0.4
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        SPRK A 1
+    Spawn1:
+        SPRK A 1 A_FadeOut(0.1)
+        loop
+    }
+}
+
+actor ShadowSpatter
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Scale 0.025
+    RenderStyle Add
+    Alpha 0.99
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        SPRK E 5
+    Spawn1:
+        SPRK E 1 A_FadeOut(0.02)
+        loop
+    }
+}
+
+actor ShadowSpatterLarge
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Scale 0.05
+    RenderStyle Add
+    Alpha 0.99
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        SPRK E 15
+    Spawn1:
+        SPRK E 1 A_FadeOut(0.01)
+        loop
+    }
+}
+
+actor DeathArrowTrail
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Scale 0.125
+    RenderStyle Add
+    Alpha 0.02
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        SPRK F 4
+    Spawn1:
+        SPRK F 1 A_FadeOut(0.001)
+        loop
+    }
+}
+
+actor DeathSpatter
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Scale 0.025
+    RenderStyle Add
+    Alpha 0.99
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        SPRK F 5
+    Spawn1:
+        SPRK F 1 A_FadeOut(0.02)
+        loop
+    }
+}
+
+actor DeathSpatterLarge
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Scale 0.05
+    RenderStyle Add
+    Alpha 0.99
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        SPRK F 15
+    Spawn1:
+        SPRK F 1 A_FadeOut(0.01)
+        loop
+    }
+}
+
+ACTOR ArrowSmoke
+{
+    +FORCEXYBILLBOARD
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    RenderStyle Add
+    Scale 0.075
+    Alpha 0.1
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_Jump(255,1,2,3,4,5,6,7,8,9,10,11,12,13)
+    Spawn1:
+        SMOK ABCDEFGHIJKLMNO 1 A_FadeOut(0.005)
+        loop
+    }
+}

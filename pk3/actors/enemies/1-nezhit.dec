@@ -1,0 +1,54 @@
+ACTOR Nezhit 31090
+{
+//$Category Nocturne-Monsters
+    Health 50
+    Radius 20
+    Height 56
+    Speed 6
+    PainChance 255 // Technically the "always" number is 256, but I get weird results with 256.
+                   // I guess the number goes from 0-255 rather than 1-256?
+    PainChance "Spear", 255
+    Monster
+    +FLOORCLIP
+    +DONTBLAST
+    +NOINFIGHTING
+    +THRUSPECIES
+    Species "Monster"
+    SeeSound "grunt/sight"
+    AttackSound "demon/melee"
+    PainSound "grunt/pain"
+    DeathSound "grunt/death"
+    ActiveSound "grunt/active"
+    Obituary " "
+    States
+    {
+    Spawn:
+        POSS A 10 A_Look
+        Loop
+    See:
+        POSS AABBCCDD 4 A_Chase
+        Loop
+    Melee:
+        POSS EE 8 A_FaceTarget
+        POSS F 8 A_CustomMeleeAttack(random(5,15),"demon/melee","demon/melee")
+        Goto See
+    Pain:
+        POSS G 3
+        POSS G 4 A_Pain
+        Goto See
+    Death:
+        POSS H 5
+        POSS I 5 A_Scream
+        POSS J 5 A_NoBlocking
+        POSS K 5
+        POSS L -1
+        Stop
+    XDeath:
+        POSS M 5
+        POSS N 5 A_XScream
+        POSS O 5 A_NoBlocking
+        POSS PQRST 5
+        POSS U -1
+        Stop
+    }
+}

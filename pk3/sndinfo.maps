@@ -1,0 +1,15 @@
+// MAPS
+// =================
+
+ambient/rain            AMBRAIN // Taken from the General Series 6000
+
+$random ambient/thunder { thunder1 thunder2 thunder3 thunder4 thunder5 thunder6 thunder7 thunder8 thunder9 } // Taken from The General Series 6000
+thunder1                AMBTHUN1
+thunder2                AMBTHUN2
+thunder3                AMBTHUN3
+thunder4                AMBTHUN4
+thunder5                AMBTHUN5
+thunder6                AMBTHUN6
+thunder7                AMBTHUN7
+thunder8                AMBTHUN8
+thunder9                AMBTHUN9

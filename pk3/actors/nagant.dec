@@ -1,0 +1,436 @@
+ACTOR "Cursed Vintovka Mosina" : Weapon
+{
+    Inventory.PickupSound "get/nagant"
+    Weapon.SelectionOrder 90
+    Weapon.SlotNumber 3
+    Weapon.BobStyle Alpha
+    Weapon.BobRangeX 0.9
+    Weapon.BobRangeY 0.5
+    Weapon.BobSpeed 1.25
+    Weapon.UpSound "nagant/raise"
+    Decal "BulletChip"
+    Obituary "%k delivered death to %o."
+    Weapon.AmmoType "CursedNagantAmmo"
+    Weapon.AmmoUse 1
+    Weapon.AmmoGive 4
+    Weapon.AmmoType2 "GrenadeAmmo"
+    Weapon.AmmoUse2 1
+    Weapon.AmmoGive2 0
+    +WEAPON.NOAUTOFIRE
+    +WEAPON.NOAUTOAIM
+    +WEAPON.AMMO_OPTIONAL
+    +WEAPON.NOALERT
+    +WEAPON.ALT_AMMO_OPTIONAL
+    Decal New_BulletChip
+    States
+    {
+    Ready:
+        TNT1 A 0 A_GiveInventory("WeaponIdle",1)
+        TNT1 A 0 A_JumpIfInventory("SprintDash",1,"D_RUNNIN")
+        MOSN A 1 A_WeaponReady
+        Loop
+    Deselect:
+        TNT1 A 0 A_Lower
+        MOSN A 1 A_Lower
+        Loop
+    Select:
+        TNT1 A 0 A_Raise
+        MOSN A 1 A_Raise
+        Loop
+    Fire:
+        TNT1 A 0 A_TakeInventory("WeaponIdle",1)
+        TNT1 A 0 A_JumpIfNoAmmo("Nope")
+        TNT1 AAA 0 A_FireBullets(0,0,1,30,"NagantBlankPuff",FBF_NORANDOM)
+        TNT1 A 0 A_FireBullets(0,0,1,10,"NagantBulletPuff",FBF_NORANDOM | FBF_USEAMMO | FBF_NORANDOMPUFFZ)
+        TNT1 A 0 A_FireCustomMissile("NagantGunsmokeSpawner",0,0,0,0,2)
+        TNT1 A 0 Radius_Quake(1,2,0,16,0)
+        TNT1 A 0 A_Light(3)
+        TNT1 A 0 A_SetBlend("F5 AE 1C",0.15,4)
+        TNT1 A 0 A_Recoil(frandom(1,3))
+        TNT1 A 0 A_SetAngle(angle+frandom(-4,4))
+        TNT1 A 0 A_SetPitch(pitch-frandom(3,7))
+        TNT1 A 0 A_PlayWeaponSound("nagant/fire")
+        TNT1 A 0 A_AlertMonsters
+        TNT1 A 0 A_ZoomFactor(0.9975,ZOOM_INSTANT)
+        MOSN B 1 BRIGHT A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_Light1
+        TNT1 A 0 A_ZoomFactor(0.999,ZOOM_INSTANT)
+        MOSN C 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_Light0
+        TNT1 A 0 A_ZoomFactor(1.0,ZOOM_INSTANT)
+        MOSN A 5 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_PlaySoundEx("nagant/handle","soundslot6",0,0)
+        MOSN EFGG 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        MOSN GHIJ 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_PlaySoundEx("nagant/lever","soundslot5",0,0)
+        MOSN K 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        MOSN L 3 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_PlaySoundEx("nagant/pull","soundslot6",0,0)
+        TNT1 A 0 A_FireCustomMissile("NagantCasingSpawner",0,0,14,-7,2)
+        MOSN MMNNNOOOO 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        MOSN PQ 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_PlaySoundEx("nagant/push","soundslot5",0,0)
+        MOSN ST 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH) // Deleted the R
+        MOSN UUUV 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_PlaySoundEx("nagant/handle","soundslot6",0,0)
+        MOSN WXYZA 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        goto Ready
+    Nope:
+        TNT1 A 0 A_PlayWeaponSound("nagant/dry")
+        MOSN A 5 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        goto Ready
+    Spawn:
+        MOSP A -1
+        Stop
+        
+    D_RUNNIN:
+        MOS2 A 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        MOS2 B 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        MOS2 C 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        MOS2 D 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 1
+    IdleLoop:
+        TNT1 A 1
+        TNT1 A 0 A_JumpIfInventory("SprintDash",1,"IdleLoop")
+        goto BackToNormal
+    BackToNormal:
+        MOS2 D 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        MOS2 C 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        MOS2 B 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        MOS2 A 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        MOSN A 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        Goto Ready
+
+    AltFire:
+        TNT1 A 0 A_TakeInventory("WeaponIdle",1)
+        MOS2 A 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        MOS2 B 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        MOS2 C 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        MOS2 D 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 1
+        goto Throw
+    Throw:
+        TNT1 A 0 A_JumpIfNoAmmo("ThrowBlank")
+        TNT1 A 6
+        THRW ABC 1
+        TNT1 A 0 A_PlayWeaponSound("grenade/throw")
+        THRW DE 1
+        THRW F 1 A_FireCustomMissile("IronGrenade",0,1,2,-4,0,10)
+        THRW GHI 1
+        TNT1 A 2
+        Goto BackToNormal
+    ThrowBlank:
+        TNT1 A 6
+        THRW A 1
+        TNT1 A 0 A_PlayWeaponSound("grenade/throw")
+        THRW BC 1
+        THRW DE 1
+        THRW F 1
+        THRW GHI 1
+        TNT1 A 2
+        Goto BackToNormal
+    }
+}
+
+
+ACTOR NagantGunsmokeSpawner
+{
+    Radius 1
+    Height 1
+    Speed 20
+    Projectile
+    -SOLID
+    +CLIENTSIDEONLY
+    States
+    {
+    Spawn:
+        // Going for a billowing smoke effect here. Smoke travels a decent distance
+        // away from guns in a sideways pillar. Likewise, this missile travels forward
+        // a slight bit, throwing slowly-dissipating smoke out the whole time.
+        TNT1 A 0
+        TNT1 A 1
+        TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("GunSmoke",random(-100,100)/1000.00,random(-100,100)/1000.00,random(-150,-100)/100.00,random(5,50)/10.00,random(-50,50)/100.00,random(-50,50)/100.00,0,32)
+        TNT1 A 1 A_SpawnItemEx("GunSmoke",random(-100,100)/1000.00,random(-100,100)/1000.00,random(-150,-100)/100.00,random(5,50)/10.00,random(-50,50)/100.00,random(-50,50)/100.00,0,32)
+        TNT1 AAA 0 A_SpawnItemEx("GunSmoke",random(-100,100)/1000.00,random(-100,100)/1000.00,random(-150,-100)/100.00,random(5,50)/10.00,random(-50,50)/100.00,random(-50,50)/100.00,0,32)
+        TNT1 A 1 A_SpawnItemEx("GunSmoke",random(-100,100)/1000.00,random(-100,100)/1000.00,random(-150,-100)/100.00,random(5,50)/10.00,random(-50,50)/100.00,random(-50,50)/100.00,0,32)
+        TNT1 AAA 0 A_SpawnItemEx("GunSmoke",random(-100,100)/1000.00,random(-100,100)/1000.00,random(-150,-100)/100.00,random(5,50)/10.00,random(-50,50)/100.00,random(-50,50)/100.00,0,32)
+        TNT1 A 1 A_SpawnItemEx("GunSmoke",random(-100,100)/1000.00,random(-100,100)/1000.00,random(-150,-100)/100.00,random(5,50)/10.00,random(-50,50)/100.00,random(-50,50)/100.00,0,32)
+        TNT1 AAA 0 A_SpawnItemEx("GunSmoke",random(-100,100)/1000.00,random(-100,100)/1000.00,random(-150,-100)/100.00,random(5,50)/10.00,random(-50,50)/100.00,random(-50,50)/100.00,0,32)
+        TNT1 A 1 A_SpawnItemEx("GunSmoke",random(-100,100)/1000.00,random(-100,100)/1000.00,random(-150,-100)/100.00,random(5,50)/10.00,random(-50,50)/100.00,random(-50,50)/100.00,0,32)
+        TNT1 AAA 0 A_SpawnItemEx("GunSmoke",random(-100,100)/1000.00,random(-100,100)/1000.00,random(-150,-100)/100.00,random(5,50)/10.00,random(-50,50)/100.00,random(-50,50)/100.00,0,32)
+        TNT1 A 1 A_SpawnItemEx("GunSmoke",random(-100,100)/1000.00,random(-100,100)/1000.00,random(-150,-100)/100.00,random(5,50)/10.00,random(-50,50)/100.00,random(-50,50)/100.00,0,32)
+        TNT1 AAA 0 A_SpawnItemEx("GunSmoke",random(-100,100)/1000.00,random(-100,100)/1000.00,random(-150,-100)/100.00,random(5,50)/10.00,random(-50,50)/100.00,random(-50,50)/100.00,0,32)
+        TNT1 A 1 A_SpawnItemEx("GunSmoke",random(-100,100)/1000.00,random(-100,100)/1000.00,random(-150,-100)/100.00,random(5,50)/10.00,random(-50,50)/100.00,random(-50,50)/100.00,0,32)
+        TNT1 AAA 0 A_SpawnItemEx("GunSmoke",random(-100,100)/1000.00,random(-100,100)/1000.00,random(-150,-100)/100.00,random(5,50)/10.00,random(-50,50)/100.00,random(-50,50)/100.00,0,32)
+        TNT1 A 1 A_SpawnItemEx("GunSmoke",random(-100,100)/1000.00,random(-100,100)/1000.00,random(-150,-100)/100.00,random(5,50)/10.00,random(-50,50)/100.00,random(-50,50)/100.00,0,32)
+        TNT1 AAA 0 A_SpawnItemEx("GunSmoke",random(-100,100)/1000.00,random(-100,100)/1000.00,random(-150,-100)/100.00,random(5,50)/10.00,random(-50,50)/100.00,random(-50,50)/100.00,0,32)
+        TNT1 A 1 A_SpawnItemEx("GunSmoke",random(-100,100)/1000.00,random(-100,100)/1000.00,random(-150,-100)/100.00,random(5,50)/10.00,random(-50,50)/100.00,random(-50,50)/100.00,0,32)
+        TNT1 AAA 0 A_SpawnItemEx("GunSmoke",random(-100,100)/1000.00,random(-100,100)/1000.00,random(-150,-100)/100.00,random(5,50)/10.00,random(-50,50)/100.00,random(-50,50)/100.00,0,32)
+        TNT1 A 1 A_SpawnItemEx("GunSmoke",random(-100,100)/1000.00,random(-100,100)/1000.00,random(-150,-100)/100.00,random(5,50)/10.00,random(-50,50)/100.00,random(-50,50)/100.00,0,32)
+        TNT1 AAA 0 A_SpawnItemEx("GunSmoke",random(-100,100)/1000.00,random(-100,100)/1000.00,random(-150,-100)/100.00,random(5,50)/10.00,random(-50,50)/100.00,random(-50,50)/100.00,0,32)
+        Stop
+    }
+}
+
+actor GunSmoke
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    RenderStyle Add
+    Alpha 0.075
+    YScale 0.03
+    XScale 0.03
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_Jump(255,"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O")
+    A:
+        SMOK A 4 A_SetScale(ScaleX+0.025,ScaleY+0.025)
+        TNT1 A 0 A_FadeOut(0.001)
+    B:
+        SMOK B 4 A_SetScale(ScaleX+0.025,ScaleY+0.025)
+        TNT1 A 0 A_FadeOut(0.001)
+    C:
+        SMOK C 4 A_SetScale(ScaleX+0.025,ScaleY+0.025)
+        TNT1 A 0 A_FadeOut(0.001)
+    D:
+        SMOK D 4 A_SetScale(ScaleX+0.025,ScaleY+0.025)
+        TNT1 A 0 A_FadeOut(0.001)
+    E:
+        SMOK E 4 A_SetScale(ScaleX+0.025,ScaleY+0.025)
+        TNT1 A 0 A_FadeOut(0.001)
+    F:
+        SMOK F 4 A_SetScale(ScaleX+0.025,ScaleY+0.025)
+        TNT1 A 0 A_FadeOut(0.001)
+    G:
+        SMOK G 4 A_SetScale(ScaleX+0.025,ScaleY+0.025)
+        TNT1 A 0 A_FadeOut(0.001)
+    H:
+        SMOK H 4 A_SetScale(ScaleX+0.025,ScaleY+0.025)
+        TNT1 A 0 A_FadeOut(0.001)
+    I:
+        SMOK I 4 A_SetScale(ScaleX+0.025,ScaleY+0.025)
+        TNT1 A 0 A_FadeOut(0.001)
+    J:
+        SMOK J 4 A_SetScale(ScaleX+0.025,ScaleY+0.025)
+        TNT1 A 0 A_FadeOut(0.001)
+    K:
+        SMOK K 4 A_SetScale(ScaleX+0.025,ScaleY+0.025)
+        TNT1 A 0 A_FadeOut(0.001)
+    L:
+        SMOK L 4 A_SetScale(ScaleX+0.025,ScaleY+0.025)
+        TNT1 A 0 A_FadeOut(0.001)
+    M:
+        SMOK M 4 A_SetScale(ScaleX+0.025,ScaleY+0.025)
+        TNT1 A 0 A_FadeOut(0.001)
+    N:
+        SMOK N 4 A_SetScale(ScaleX+0.025,ScaleY+0.025)
+        TNT1 A 0 A_FadeOut(0.001)
+    O:
+        SMOK O 4 A_SetScale(ScaleX+0.025,ScaleY+0.025)
+        TNT1 A 0 A_FadeOut(0.001)
+        stop
+    }
+}
+
+ACTOR NagantCasingSpawner
+{
+    Radius 1
+    Height 1
+    Speed 15
+    Projectile
+    -SOLID
+    +CLIENTSIDEONLY
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 1
+        TNT1 A 0 A_CustomMissile("NagantCasing",-2,0,random(-14000,-10000)/100.00,2,random(500,1500)/100.00)
+        Stop
+    }
+}
+
+ACTOR NagantCasing
+{ 
+    Radius 2
+    Height 2
+    Speed 5
+    Scale 0.15
+    BounceFactor 0.65
+    WallBounceFactor 0.8
+    BounceCount 8
+    Gravity 0.8
+    Projectile
+    -NOGRAVITY
+    +NOTELEPORT
+    +FLOORCLIP
+    +DOOMBOUNCE
+    +MOVEWITHSECTOR
+    +CLIENTSIDEONLY
+    SeeSound "nagant/casing" // Technically BounceSound would be better, but I want that cling of metal against metal.
+    //WallBounceSound "nagant/casing"
+    DeathSound "nagant/casing"
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_Jump(256,"Spawn1","Spawn2","Spawn3")
+        TNT1 A 1
+        loop
+    Spawn1:
+        BCSN ABCDE 3
+        loop
+    Spawn2:
+        BCSN FGHI 3
+        loop
+    Spawn3:
+        BCSN JKLMNOPQ 3
+        loop
+    Death:
+        TNT1 A 0
+        TNT1 A 0 A_Jump(255,"Death1","Death2","Death3","Death4","Death5","Death6")
+        TNT1 A 1
+        loop
+    Death1:
+        BCSN N -1
+        Stop
+    Death2:
+        BCSN J -1
+        Stop
+    Death3:
+        BCSN H -1
+        Stop
+    Death4:
+        BCSN F -1
+        Stop
+    Death5:
+        BCSN E -1
+        Stop
+    Death6:
+        BCSN C -1
+        Stop
+    }
+}
+
+ACTOR NagantBulletPuff
+{
+    Radius 1
+    Height 1
+    Scale 0.175
+    RenderStyle Add
+    VSpeed 0
+    Alpha 0.99
+    DamageType "Bullet"
+    +NOGRAVITY
+    +NOBLOCKMAP
+    +FLOORCLIP
+    +NOTIMEFREEZE
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 1
+        TNT1 AAAAAA 0 A_SpawnItemEx("BulletSmoke",0,0,0,0,random(-30,30)/100.00,random(10,35)/100.00,random(0,180),160)
+        TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("BulletSpark",0,0,0,random(-100,100)/100.00,random(-300,300)/100.00,random(200,800)/100.00,random(-180,180),160,96)
+    Spawn0:
+        TNT1 A 0 A_Jump(255,"Spawn1","Spawn2","Spawn3","Spawn4")
+        TNT1 A 1
+        loop
+    Spawn1:
+        //BPFF A 1 Bright
+        BPFF A 1 Bright //A_SetTranslucent(.75,1)
+        BPFF B 1 Bright A_SetTranslucent(0.5,1)
+        BPFF C 1 Bright A_SetTranslucent(0.25,1)
+        stop
+    Spawn2:
+        //BPFF D 1 Bright
+        BPFF D 1 Bright //A_SetTranslucent(.75,1)
+        BPFF E 1 Bright A_SetTranslucent(0.5,1)
+        BPFF F 1 Bright A_SetTranslucent(0.25,1)
+        stop
+    Spawn3:
+        //BPFF H 1 Bright
+        BPFF H 1 Bright //A_SetTranslucent(.75,1)
+        BPFF I 1 Bright A_SetTranslucent(0.5,1)
+        BPFF J 1 Bright A_SetTranslucent(0.25,1)
+        stop
+    Spawn4:
+        //BPFF K 1 Bright
+        BPFF K 1 Bright //A_SetTranslucent(.75,1)
+        BPFF L 1 Bright A_SetTranslucent(0.5,1)
+        BPFF M 1 Bright A_SetTranslucent(0.25,1)
+        stop
+    }
+}
+
+actor BulletSmoke
+{
+    Scale 0.06
+    Alpha 0.35
+    RenderStyle Add
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 1
+        TNT1 A 0 A_Jump(255,"Spawn1","Spawn2","Spawn3","Spawn4","Spawn5","Spawn6","Spawn7","Spawn8")
+    Spawn1:
+        SMOK A 2 A_Fadeout(0.01)
+        loop
+    Spawn2:
+        SMOK B 2 A_Fadeout(0.01)
+        loop
+    Spawn3:
+        SMOK C 2 A_Fadeout(0.01)
+        loop
+    Spawn4:
+        SMOK D 2 A_Fadeout(0.01)
+        loop
+    Spawn5:
+        SMOK E 2 A_Fadeout(0.01)
+        loop
+    Spawn6:
+        SMOK F 2 A_Fadeout(0.01)
+        loop
+    Spawn7:
+        SMOK G 2 A_Fadeout(0.01)
+        loop
+    Spawn8:
+        SMOK H 2 A_Fadeout(0.01)
+        loop
+    }
+}
+
+ACTOR BulletSpark
+{
+    Radius 1
+    Height 1
+    Speed 0.1
+    Mass 2
+    BounceCount 7
+    BounceFactor 0.6
+    RenderStyle Add
+    Alpha 0.99
+    Scale 0.0275
+    PROJECTILE
+    +DOOMBOUNCE
+    +FLOORCLIP
+    -NOGRAVITY
+    +DONTSPLASH
+    +NOTELEPORT
+    -SOLID
+    +CLIENTSIDEONLY
+    States
+    {
+    Spawn:
+        BPSP AAAAAAAAAAAAAAAAAAA 1 Bright
+        BPSP AAAAAAAAAA 2 Bright A_FadeOut(0.1)
+        Stop
+    }
+}
+
+ACTOR NagantBlankPuff { DamageType "Bullet" }

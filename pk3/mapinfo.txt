@@ -1,0 +1,108 @@
+gameinfo
+{
+	playerclasses = "Bogatyr", "BogatyrArcade"
+	quitsound = "system/quit"
+    quitmessages = "$QUITMSG1", "$QUITMSG2", "$QUITMSG3", "$QUITMSG4", "$QUITMSG5", "$QUITMSG6", "$QUITMSG7", "$QUITMSG8", "$QUITMSG9", "$QUITMSG10", "$QUITMSG11", "$QUITMSG12", "$QUITMSG13", "$QUITMSG14", "$QUITMSG15"
+	dimcolor = "00 00 00"
+	dimamount = 0.25
+    NoRandomPlayerClass = true
+
+	MapArrow = "maparrows/arrow.txt"
+//	StatusBar = "sbarinfo/p67.txt"
+	CheatKey = "maparrows/key.txt"
+	EasyKey = "maparrows/ravenkey.txt"
+	titlepage = "TITLEPIC"
+	chatsound = "misc/chat"
+	infopage = "TITLEPIC"
+	skyflatname = "F_SKY1"
+	translator = "xlat/doom.txt"
+	defaultbloodcolor = "68 00 00"
+	defaultbloodparticlecolor = "ff 00 00"
+	intermissioncounter = false
+	definventorymaxamount = 25
+	defaultrespawntime = 12
+	defaultdropstyle = 1
+	pickupcolor = "d7 ba 45"
+	menubackbutton = "M_SKULL1"
+	gibfactor = 1
+	textscreenx = 10
+	textscreeny = 10
+	cursorpic = "doomcurs"
+	statscreen_mapnamefont = "BigFont"
+	menufontcolor_title = "White"
+	menufontcolor_label = "White"
+	menufontcolor_value = "GRAY"
+	menufontcolor_action = "GRAY"
+	menufontcolor_header = "White"
+	menufontcolor_highlight = "GOLD"
+	menufontcolor_selection = "GOLD"
+}
+
+map TITLEMAP "Title Map"
+{
+    SKY1 = "SKY_MAP1", 0.05
+    music = "SILENCE" // Changes to Kevin MacLeod - Fantastic A
+    Lightning
+    SmoothLighting
+}
+
+episode MAP01
+{
+	Name = "Placeholder text"
+}
+
+map MAP01 "Test Map"
+{
+	LevelNum = 1
+    SKY1 = "SKY_MAP1", 0.05
+    music = "MUS_MAP1" // BouncyTEM - Morbid
+    Lightning
+    SmoothLighting
+}
+
+skill Nocturne_Easy
+{
+	ACSReturn = 0
+	SpawnFilter = Hard
+	Name = "Piacevole" // Pleasant
+    DamageFactor = 0.9
+    MonsterHealth = 0.75
+	//MustConfirm = "$CONFIRM_BABY"
+    TextColor = white
+}
+
+skill Nocturne_Normal
+{
+	ACSReturn = 1
+	EasyBossBrain
+	SpawnFilter = Hard
+	Name = "Risoluto" // Bold
+	//MustConfirm = "$CONFIRM_EASY"
+    //DefaultSkill
+    TextColor = white
+}
+
+skill Nocturne_Hard
+{
+	ACSReturn = 2
+	SpawnFilter = Hard
+	Name = "Feroce" // Fierce
+    Aggressiveness = 0.5
+    MonsterHealth = 1.25
+	//MustConfirm = "$CONFIRM_NORMAL"
+    TextColor = white
+}
+
+skill Nocturne_VeryHard
+{
+	ACSReturn = 3
+	SpawnFilter = Hard
+	Name = "Marcia Funebre" // Funeral march
+    FastMonsters
+    DamageFactor = 1.1
+    Aggressiveness = 1.0
+    MonsterHealth = 1.5
+    DisableCheats
+	//MustConfirm = "$CONFIRM_HARD"
+    TextColor = white
+}

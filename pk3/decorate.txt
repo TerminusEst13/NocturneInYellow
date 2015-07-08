@@ -1,0 +1,47 @@
+actor Boolean: Inventory
+{
+    Inventory.MaxAmount 1
+    +UNDROPPABLE
+    -INVBAR
+}
+
+actor Counter: Inventory
+{
+    Inventory.MaxAmount 0x7FFFFFFF
+    +UNDROPPABLE
+    -INVBAR
+}
+
+ACTOR BlankPuff { }
+
+#include "actors/tokens.dec"
+#include "actors/player.dec"
+#include "actors/bow.dec"
+#include "actors/grenades.dec"
+#include "actors/rogatina.dec"
+#include "actors/nagant.dec"
+
+#include "actors/world.dec"
+
+#include "actors/items/1-health.dec"
+#include "actors/items/2-ammo.dec"
+#include "actors/items/3-pickups.dec"
+#include "actors/items/4-props.dec"
+#include "actors/items/5-artifacts.dec"
+
+#include "actors/enemies/1-nezhit.dec"
+#include "actors/enemies/2-likho.dec"
+#include "actors/enemies/3-bauk.dec"
+#include "actors/enemies/4-nocnitsa.dec"
+#include "actors/enemies/5-ala.dec"
+#include "actors/enemies/6-vodyanoy.dec"
+#include "actors/enemies/7-drekavac.dec"
+#include "actors/enemies/8-upyr.dec"
+#include "actors/enemies/9-ovinnik.dec"
+#include "actors/enemies/10-hound.dec"
+#include "actors/enemies/11-morena.dec"
+#include "actors/enemies/12-zmeygorynych.dec"
+#include "actors/enemies/13-domovoi.dec"
+#include "actors/enemies/14-koschei.dec"
+#include "actors/enemies/15-kinginyellow.dec"
+#include "actors/enemies/16-yog-sothoth.dec"

@@ -1,0 +1,67 @@
+// WEAPONS
+// ====================
+
+// Bow
+bow/fire               BOWFIRE  // Mixed from The General Series 6000 and Sony Pictures Sound Effects, and porkmuncher/lemudcrab/hanbaal off FreeSound.org
+bow/nock               BOWFLEX  // Taken from loafdv off FreeSound.org
+bow/load               BOWLOAD  // Taken from the Sony Pictures Sound Effects Series
+
+bow/wind               MBOWWIND // The above bow/fire sound with A WHOLE BUNCH OF STRETCHING AND PITCHING
+bow/holy               MBOWHOLY // Mixed from the General Series 6000
+bow/flame              MBOWFIRE // Mixed from the General Series 6000
+bow/arcane             MBOWARCN // Mixed from the General Series 6000
+bow/shadow             MBOWSHAD // Mixed from Twisted Reality
+impact/fire            MPCTFIRE // Mixed from the General Series 6000
+
+arrow/hit              ARROWHIT // Taken from the Sony Pictures Sound Effects Series
+arrow/miss             ARROWMIS // Taken from the General Series 6000
+
+// Rogatina
+rogatina/swing         ROGASWNG // Taken from qubodup on FreeSound.org
+rogatina/hit           ROGAIHIT // Mixed from the Sony Pictures Sound Effects Series
+rogatina/wall          ROGAWALL // Mixed from DJ Chronos/snardin42 off FreeSound.org, and Sony Pictures Sound Effects Series
+
+// Grenades
+grenade/throw          NADETHRW // Taken from qubodup on FreeSound.org
+grenade/boom           NADEBOM1 // Mixed from the General Series 6000 and Sony Pictures Sound Effects Series
+grenade/boomfar        NADEBOM2 // Taken from the Sony Pictures Sound Effects Series
+grenade/bounce         NADEBONC // Mixed from the General Series 6000 and Sony Pictures Sound Effects Series
+
+$rolloff grenade/boom 400 2000
+$limit grenade/boom 0
+$volume grenade/boomfar 0.6
+
+// Mosin Nagant
+nagant/dry             NAGDRY   // Taken from the General Series 6000
+nagant/raise           NAGUP    // Taken from the General Series 6000
+nagant/fire            NAGFIRE  // Mixed from the General Series 6000, Sony Pictures Sound Effects Series, and the Free Firearm Sound Library
+nagant/lever           NAGLUP   // Taken from the Sony Pictures Sound Effects Series
+nagant/pull            NAGLPULL // Taken from the Sony Pictures Sound Effects Series
+nagant/push            NAGLPUSH // Taken from the Sony Pictures Sound Effects Series
+nagant/handle          NAGHANDL // Taken from the General Series 6000
+
+//$rolloff nagant/fire 400 2400
+$volume nagant/handle 0.6
+
+$random nagant/casing { nagcase1 nagcase2 nagcase3 nagcase4 nagcase5 nagcase6 nagcase7 } // Taken from VIPEffects
+nagcase1                  NGCASNG1
+nagcase2                  NGCASNG2
+nagcase3                  NGCASNG3
+nagcase4                  NGCASNG4
+nagcase5                  NGCASNG5
+nagcase6                  NGCASNG6
+nagcase7                  NGCASNG7
+
+$volume nagant/casing 0.25
+
+// ITEMS
+// ====================
+
+artifact/swap             SWAPARTI // Mixed from PROGRESSIVE
+
+get/smallitem             GETSMALL // Mixed from PROGRESSIVE
+get/artifact              GETARTIF // Mixed from Twisted Reality
+get/powerup               GETPOWER // Mixed from PROGRESSIVE
+get/bullet                GETBULET // Taken from the General Series 6000
+get/nagant                GETNAGNT // Mixed from the General Series 6000 and Sony Pictures Sound Effects Series
+get/grenade               GETGRNAD // Mixed from the General Series 6000

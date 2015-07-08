@@ -1,0 +1,49 @@
+statusbar Normal, forcescaled
+{
+InInventory InGame, 1
+{
+  AspectRatio "4:3"
+  {
+  alpha 0.7
+    { DrawImage "HudFade1", 0, 0; }
+    DrawImage "HUDBAR", -24, 0;
+    DrawImage "Crucifix", 13, 11;
+    DrawBar "HLTHBFUL", "HLTHBEMP", Health, horizontal, interpolate (5), 25, 16;
+    DrawBar "STAMBFUL", "STAMBEMP", RunningStamina, horizontal, interpolate (5), 25, 28;
+  }
+  AspectRatio "16:10"
+  {
+  alpha 0.825
+    { DrawImage "HudFade2", 0, 0; }
+    DrawImage "HUDBAR", -39, 0;
+    DrawImage "Crucifix", -8, 11;
+    DrawBar "HLTHBFUL", "HLTHBEMP", Health, horizontal, interpolate (5), 10, 16;
+    DrawBar "STAMBFUL", "STAMBEMP", RunningStamina, horizontal, interpolate (5), 10, 28;
+  }
+  AspectRatio "16:9"
+  {
+  alpha 0.95
+    { DrawImage "HudFade3", 0, 0; }
+    DrawImage "HUDBAR", -54, 0;
+    InInventory EquippedCrucifix, 1 { DrawImage "CRUCIFIX", -23, 11; }
+    InInventory EquippedDragonScale, 1 { DrawImage "DRAGNSCL", -23, 11; }
+    InInventory EquippedWhiteCoal, 1 { DrawImage "CHARCOAL", -23, 11; }
+    InInventory EquippedAntiqueCoin, 1 { DrawImage "ANTICOIN", -23, 11; }
+    InInventory EquippedPallidMask, 1 { DrawImage "PALDMASK", -23, 11; }
+    InInventory EquippedBurialBelt, 1 { DrawImage "BURLBELT", -23, 11; }
+    DrawBar "HLTHBFUL", "HLTHBEMP", Health, horizontal, interpolate (5), -5, 16;
+    DrawBar "STAMBFUL", "STAMBEMP", RunningStamina, horizontal, interpolate (5), -5, 28;
+  }
+  InInventory GotArtifact, 1 { DrawBar "AMMOBFUL", "AMMOBEMP", BowMana, horizontal, reverse, interpolate (5), 200, 14; }
+  DrawNumber 2, SmallFont, White, GrenadeAmmo, fillzeros, 260, 20;
+  DrawNumber 2, SmallFont, White, AmmoCapacity GrenadeAmmo, fillzeros, 280, 20;
+}
+}
+
+statusbar automap, forcescaled
+{ PlayerClass Vikenti {} }
+
+statusbar inventory // Standard bar overlay (ZDoom Addition)
+{
+    drawinventorybar Doom, noartibox, 7, INDEXFONT, 75, 170;
+}

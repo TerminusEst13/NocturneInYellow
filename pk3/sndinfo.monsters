@@ -1,0 +1,54 @@
+// MONSTERS
+// =================
+
+// Bauk
+bauk/see                  BAUKSITE // Mixed from the General Series 6000 and Monsters and Creatures
+bauk/idle                 BAUKIDLE // Mixed from the General Series 6000 and Monsters and Creatures
+bauk/pain                 BAUKPAIN // Mixed from the General Series 6000 and Monsters and Creatures
+bauk/attack               BAUKATTK // Mixed from the General Series 6000, Monsters and Creatures, and Freedoom
+bauk/death                BAUKDETH // Mixed from the General Series 6000 and Monsters and Creatures
+
+// Drekavac
+drekavac/scream           dspdiehi
+drekavac/screamfar        dspldeth
+
+$limit drekavac/scream 0
+$volume drekavac/scream 1.5
+$rolloff drekavac/scream 400 2400
+
+$limit drekavac/screamfar 0
+$volume drekavac/screamfar 1.5
+$rolloff drekavac/screamfar 400 2400
+
+// Upyr
+$Random upyr/see     { upsee1 upsee2 upsee3 upsee4 upsee5 upsee6 upsee7 upsee8 }
+upsee1                    UPYRSEE1
+upsee2                    UPYRSEE2
+upsee3                    UPYRSEE3
+upsee4                    UPYRSEE4
+upsee5                    UPYRSEE5
+upsee6                    UPYRSEE6
+upsee7                    UPYRSEE7
+upsee8                    UPYRSEE8
+$Random upyr/idle    { upidl1 upidl2 upidl3 }
+upidl1                    UPYRIDL1
+upidl2                    UPYRIDL2
+upidl3                    UPYRIDL3
+$Random upyr/pain    { uppain1 uppain2 uppain3 uppain4 }
+uppain1                   UPYRHRT1
+uppain2                   UPYRHRT2
+uppain3                   UPYRHRT3
+uppain4                   UPYRHRT4
+$Random upyr/death   { updeth1 updeth2 updeth3 updeth4 }
+updeth1                   UPYRDTH1
+updeth2                   UPYRDTH2
+updeth3                   UPYRDTH3
+updeth4                   UPYRDTH4
+$Random upyr/attack  { upattack1 upattack2 upattack3 upattack4 }
+upattack1                 UPYRATK1
+upattack2                 UPYRATK2
+upattack3                 UPYRATK3
+upattack4                 UPYRATK4
+
+upyr/fire                 UPYRFIRE // Mixed from the General Series 6000, Sony Pictures Sound Effects Series, and the Free Firearm Sound Library
+upyr/firedistant          UPYRFFIR // Mixed from the Free Firearm Sound Library

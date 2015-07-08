@@ -1,0 +1,62 @@
+ETC:
+===========
+- Jo Costello, for "Chalk Paint" font off dafont.com, released as 100% Free
+- Carlos Mario Peña Solís, for "Mirage Gothic" font off dafont.com, released as 100% Free
+- Microsoft, for the "Moolboran" font that comes standard with all computers
+- fgsfds, for fact-checking and assistance in translating things to Russian.
+
+SPRITES:
+===========
+- MrBeast, for "Smoke15Frames_0.png" off OpenGameArt.org, released under CC0 1.0 Universal (CC0 1.0)
+- Kenney.nl, for "smokeParticleAssets.zip" off OpenGameArt.org, released under CC0 1.0 Universal (CC0 1.0)
+- chabull, for "explosions.zip" off OpenGameArt.org, released under Attribution 3.0 Unported (CC BY 3.0)
+- Ville Seppanen/Osmic, for "gems.zip" off OpenGameArt.org, released under Attribution 3.0 Unported (CC BY 3.0)
+- Freedoom project, for FIRE*0, TBLU*0, and TGRN*0
+
+MUSIC:
+============
+- Kevin MacLeod for "Fantasy A", titlescreen music
+- BouncyTEM for "Morbid", map01's music
+
+SOUNDS:
+===========
+- Sound Ideas, for "The General Series 6000" (Royalty free)
+- Sony Creative Software, for "Sony Pictures Sound Effects Series Volumes 1-10" (Royalty free)
+- Sony Creative Software, for "Universal Groove Elements" (Royalty free)
+- Sony Creative Software, for "OLD SCHOOL" (Royalty free)
+- Sony Creative Software, for "TECHTRAN" (Royalty free)
+- LoafDV, "Quiet Creak" (ID: 238288), off FreeSound.org, released under CC0 1.0 Universal (CC0 1.0)
+- Porkmuncher, "Bow release" (ID: 263675), off FreeSound.org, released under CC0 1.0 Universal (CC0 1.0)
+- LeMudCrab, "Crossbow Shot" (ID: 163453), off FreeSound.org, released under CC0 1.0 Universal (CC0 1.0)
+- Hanbaal, "Bow" (ID: 178872), off FreeSound.org, released under CC0 1.0 Universal (CC0 1.0)
+- aglinder, "Footsteps Water 01" (ID: 265582), off FreeSound.org, released under CC0 1.0 Universal (CC0 1.0)
+- LittleRobotSoundFactory, "Footstep_Water_03.wav" (ID: 270429), off FreeSound.org, released under Attribution 3.0 Unported (CC BY 3.0)
+- Phil25, "Water Splashes" (ID: 207371), off FreeSound.org, released under CC0 1.0 Universal (CC0 1.0)
+- ceberation, "Heavy Breathing.wav" (ID: 235519) off FreeSound.org, released under Attribution 3.0 Unported (CC BY 3.0)
+- qubodup, "Double Whoosh 2" (ID: 60025) off FreeSound.org, released under CC0 1.0 Universal (CC0 1.0)
+- qubodup, "swosh-10.flac" (ID: 59997) off FreeSound.org, released under CC0 1.0 Universal (CC0 1.0)
+- DJ Chronos, "metal 8.wav" (ID: 123586) off FreeSound.org, released under Attribution 3.0 Unported (CC BY 3.0)
+- snardin42, "Shovel Thwack 1.wav" (ID: 73200) off FreeSound.org, released under CC0 1.0 Universal (CC0 1.0)
+- Simon Kostoski (undead003) for the Upyr's soundset
+
+TEXTURES:
+============
+- WATER1 - "WaterPlain0012_2" off CGTextures
+- WOODFLR1 - "WoodPlanksFloors0011" off CGTextures
+- MARBWALL - "MarbleTiles0065" off CGTextures
+- MARBFLOR - "MarbleTiles0090" off CGTextures
+- MARBCEIL - "MarbleGranite0002" off CGTextures
+- MARBROCK - "MarbleWhite0035" off CGTextures
+- MARBROK2 - "MarbleWhite0035" off CGTextures
+- GRAVEL - "Gravel0099" off CGTextures
+- DIRTFLR1 - "SoilRough0058" off CGTextures
+- DIRTFLR2 - "SoilRough0058" off CGTextures
+- METLWAL1 - "MetalBare0071" off CGTextures
+- METLFLR1 - "MetalFloorsBare0011" off CGTextures
+- ROCKFLR1 - "RockSediment0001" off CGTextures
+- ROCKWAL1 - "RockSharp0037" off CGTextures
+- SKY_MAP1 - "Overcast Sky 58" off CGSkies
+- WALL42_6 - Taken from the Freedoom project
+- WALL47_1 - Taken from the Freedoom project
+- WALL47_2 - Taken from the Freedoom project
+- WALL47_5 - Taken from the Freedoom project

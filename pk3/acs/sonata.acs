@@ -1,0 +1,306 @@
+#include "zcommon.acs"
+#library "sonata"
+
+#define MaxStepSounds 42
+
+str StepSound[MaxStepSounds][2] = {
+    // Water
+    { "FWATER1",  "footstep/water" },
+    { "FWATER2",  "footstep/water" },
+    { "FWATER3",  "footstep/water" },
+    { "FWATER4",  "footstep/water" },
+    // NIY Water floor
+    { "WATER1",   "footstep/water" },
+    
+    // Slime
+    { "SLIME01",  "footstep/slime" },
+    { "SLIME02",  "footstep/slime" },
+    { "SLIME03",  "footstep/slime" },
+    { "SLIME04",  "footstep/slime" },
+    { "SLIME05",  "footstep/slime" },
+    { "SLIME06",  "footstep/slime" },
+    { "SLIME07",  "footstep/slime" },
+    // Nukage
+    { "NUKAGE1",  "footstep/slime" },
+    { "NUKAGE2",  "footstep/slime" },
+    { "NUKAGE3",  "footstep/slime" },
+    // Blood
+    { "BLOOD1",   "footstep/slime" },
+    { "BLOOD2",   "footstep/slime" },
+    { "BLOOD3",   "footstep/slime" },
+    // NIY underwater gravel
+    { "GRAVEL",   "footstep/slime" },
+
+    // Wood
+    { "CEIL1_1",  "footstep/wood" },
+    { "CEIL1_3",  "footstep/wood" },
+    { "FLAT5_1",  "footstep/wood" },
+    { "FLAT5_2",  "footstep/wood" },
+    // These textures aren't likely to be used as floors, but just in case.
+    { "WOOD1",    "footstep/wood" },
+    { "WOOD3",    "footstep/wood" },
+    { "WOOD5",    "footstep/wood" },
+    { "WOOD6",    "footstep/wood" },
+    { "WOOD7",    "footstep/wood" },
+    { "WOOD8",    "footstep/wood" },
+    { "WOOD9",    "footstep/wood" },
+    { "WOOD12",   "footstep/wood" },
+    { "WOODVERT", "footstep/wood" },
+    // NIY Wood
+    { "WOODFLR1", "footstep/wood" },
+
+    // Grass
+    { "GRASS1",   "footstep/grass" },
+    { "GRASS2",   "footstep/grass" },
+    // Technically rock textures, but they look like grass to me.
+    { "RROCK20",  "footstep/grass" },
+    { "RROCK19",  "footstep/grass" },
+    // Technically wall textures, but fuck it.
+    { "ZIMMER1",  "footstep/grass" },
+    { "ZIMMER2",  "footstep/grass" },
+    { "ZIMMER7",  "footstep/grass" },
+    // NIY Dirt
+    { "DIRTFLR1", "footstep/grass" },
+    { "DIRTFLR2", "footstep/grass" },/*
+    
+    // Lava
+    { "LAVA1", "player/lavastep" },
+    { "LAVA2", "player/lavastep" },
+    { "LAVA3", "player/lavastep" },
+    { "LAVA4", "player/lavastep" },
+    */
+};
+
+// Functions
+function int GetVelocity(void)
+{
+    int vel;
+    int x = GetActorVelX(0);
+    int y = GetActorVelY(0);
+    int angle = VectorAngle(x, y);
+    
+    if(((angle + 0.125) % 0.5) > 0.25)
+    { vel = FixedDiv(y, Sin(angle)); }
+    else
+    { vel = FixedDiv(x, Cos(angle)); }
+    return vel >> 16;
+}
+
+// Footstep scripts
+script 431 ENTER
+{
+    int DelayTime;
+    int i;
+    int SoundPlayed;
+
+    While(1)
+    {
+        Delay(1);
+        if (CheckInventory("SprintDash") == 0) { DelayTime = 21 - GetVelocity() / 2; }
+        else { DelayTime = 19 - GetVelocity() / 2; }
+        //StepVolume = 7 * GetVelocity();
+        if(GetActorZ(0) - GetActorFloorZ(0) == 0 && GetVelocity() > 0)
+        {
+            for(i = 0; i < MaxStepSounds; i++)
+            {
+                if(CheckActorFloorTexture(0, StepSound[i][0]))
+                {
+                    ActivatorSound(StepSound[i][1], 80); // StepVolume would go here, but I don't plan on having louder steps.
+                    SoundPlayed = 1;
+                }
+            }
+            if(SoundPlayed == 0)
+            {
+                ActivatorSound("footstep/default", 80); // Stepvolume here, too.
+            }
+        }
+        SoundPlayed = 0;
+        Delay(DelayTime);
+    }
+}
+
+// General looping enter script
+script 432 ENTER
+{
+    int buttons;
+    int GrenadeCount;
+
+    GiveInventory("RunningStamina",2000);
+    TakeInventory("SprintDash",1);
+    TakeInventory("WeaponIdle",1);
+    TakeInventory("SprintCooldown",70);
+
+    while (1)
+    {
+
+    buttons = GetPlayerInput(-1, INPUT_BUTTONS);
+
+    // Jumping check for the sprint. This is a little bit more clunky than it should be.
+
+    // Basically the moment after you jump, you're not considered on the ground. So this
+    // script gives the player the Jumped token when they hit the jump button, as well as
+    // a Cooldown to keep them from hammering Jump repeatedly. Then once they're on the
+    // ground again, takes away the Cooldown. The Jumped token is taken away in the very
+    // next tic, right after the Sprint script.
+    // This is done because if you jump while sprinting, then you get a big ol' chunk of
+    // stamina taken away because running jumps take effort. This can be "exploited" by
+    // hitting the jump button while sprinting while already in mid-air via a non-jump,
+    // like falling from a drop or getting launched by an attack, but in a scenario like
+    // that you're likely going to hit the ground soon anyway.
+    // ...besides, is it really an exploit if it hurts you?
+    if (buttons & BT_JUMP && CheckInventory("JumpCooldown") == 0)
+    {
+        GiveInventory("Jumped",1);
+        GiveInventory("JumpCooldown",7);
+    }
+    if (GetActorZ(0) - GetActorFloorZ(0) == 0)
+    { TakeInventory("JumpCooldown",1); } // Seven tic counter before using the jump again.
+
+    // Sprinting stamina system. Hoo boy.
+    if (buttons & BT_SPEED && ((buttons & BT_FORWARD) || (buttons & BT_MOVELEFT) || (buttons & BT_MOVERIGHT) || (buttons & BT_BACK)) && CheckInventory("SprintCooldown") == 0)
+    {
+        // If the player has any stamina...
+        if (CheckInventory("RunningStamina") > 0)
+        {
+            // And their weapon is idle...
+            if (CheckInventory("WeaponIdle") == 1)
+            {
+                // Start runnin'.
+                // Side effects of runnin' may also include the ability to jump
+                // higher and farther. Doing so while runnin' may induce a whole
+                // fuckton more fatigue, though.
+                GiveInventory("SprintDash",1);
+                if (CheckInventory("Jumped") == 0) { TakeInventory("RunningStamina",10); }
+                else { TakeInventory("RunningStamina",200); }
+                SetActorProperty(0,APROP_Gravity,0.775);
+                SetActorProperty(0,APROP_JumpZ,9.5);
+            }
+            else
+            // Otherwise, well, don't.
+            { TakeInventory("SprintDash",1); }
+        }
+        else
+        {
+            TakeInventory("SprintDash",1);
+            GiveInventory("SprintCooldown",115);
+            SetActorProperty(0,APROP_Gravity,1.0);
+            SetActorProperty(0,APROP_JumpZ,9.0);
+            ActivatorSound("player/pant",127);
+        }
+    }
+    else
+    {
+        // Rien, c'est parfait.
+        TakeInventory("SprintDash",1);
+        if (CheckInventory("SprintCooldown") > 0) { GiveInventory("RunningStamina",5); }
+        else { GiveInventory("RunningStamina",12); }
+        SetActorProperty(0,APROP_Gravity,1.0); // Fly cheat doesn't work now. OH WELL.
+        SetActorProperty(0,APROP_JumpZ,9.0);
+    }
+
+    // Incredibly brute-force method for increasing player's maximum grenade capacity.
+    // It measures the GrenadeAmmoCounter they have, and constantly sets the AmmoCapacity
+    // to match it. GrenadeAmmoCounter increases by one every time player picks up the
+    // grenade satchel item, so it sets the capacity to match it.
+    // Brute force as hell, but it's simple and works.
+    GrenadeCount = CheckInventory("GrenadeAmmoCounter");
+    SetAmmoCapacity("GrenadeAmmo",GrenadeCount);
+
+    // Catch-all TakeInventory for everything.
+    TakeInventory("SprintCooldown",1);
+    TakeInventory("Jumped",1);
+    TakeInventory("SwapCooldown",1);
+
+    delay(1);
+    }
+}
+
+script 433 (int bullshit)
+{
+    switch (bullshit)
+    {
+    case 0:
+        SetHudSize(640,480,FALSE);
+        HudMessage(s:"Life Essence"; HUDMSG_LOG,0,CR_WHITE,3200.0,64.0,1.0);
+        SetFont("PKUPLIFE");
+        HudMessage(s:"a"; HUDMSG_FADEINOUT,0,CR_WHITE,320.0,64.0,1.0,0.25,0.25);
+    break;
+
+    case 1:
+        SetHudSize(640,480,FALSE);
+        HudMessage(s:"Strange Mana"; HUDMSG_LOG,0,CR_WHITE,3200.0,64.0,1.0);
+        SetFont("PKUPMANA");
+        HudMessage(s:"a"; HUDMSG_FADEINOUT,0,CR_WHITE,320.0,64.0,1.0,0.25,0.25);
+    break;
+
+    case 2:
+        SetHudSize(640,480,FALSE);
+        HudMessage(s:"Salt Crystal"; HUDMSG_LOG,0,CR_WHITE,3200.0,64.0,1.0);
+        SetFont("PKUPSALT");
+        HudMessage(s:"a"; HUDMSG_FADEINOUT,0,CR_WHITE,320.0,64.0,1.0,0.25,0.25);
+    break;
+
+    case 3:
+        SetHudSize(640,480,FALSE);
+        HudMessage(s:"Rifle Bullet"; HUDMSG_LOG,0,CR_WHITE,3200.0,64.0,1.0);
+        SetFont("PKUPBULT");
+        HudMessage(s:"a"; HUDMSG_FADEINOUT,0,CR_WHITE,320.0,64.0,1.0,0.25,0.25);
+    break;
+
+    case 4:
+        SetHudSize(640,480,FALSE);
+        HudMessage(s:"Carry Satchel: \cjCarry an extra grenade"; HUDMSG_LOG,0,CR_GOLD,3200.0,64.0,1.0);
+        SetFont("PKUPSTCH");
+        HudMessage(s:"a"; HUDMSG_FADEINOUT,0,CR_WHITE,320.0,64.0,2.0,0.25,0.25);
+    break;
+
+    case 5:
+        SetHudSize(640,480,FALSE);
+        HudMessage(s:"Holy Crucifix: \cjYour bow can now be blessed."; HUDMSG_LOG,0,CR_GOLD,3200.0,64.0,1.0);
+        SetFont("PKUPCRUC");
+        HudMessage(s:"a"; HUDMSG_FADEINOUT,0,CR_WHITE,320.0,64.0,2.0,0.25,0.25);
+    break;
+
+    case 6:
+        SetHudSize(640,480,FALSE);
+        HudMessage(s:"Dragon Scale: \cjYour arrows can spread wide on the wind."; HUDMSG_LOG,0,CR_GOLD,3200.0,64.0,1.0);
+        SetFont("PKUPWIND");
+        HudMessage(s:"a"; HUDMSG_FADEINOUT,0,CR_WHITE,320.0,64.0,2.0,0.25,0.25);
+    break;
+
+    case 7:
+        SetHudSize(640,480,FALSE);
+        HudMessage(s:"White Coal: \cjYour arrows can burn through enemies."; HUDMSG_LOG,0,CR_GOLD,3200.0,64.0,1.0);
+        SetFont("PKUPFIRE");
+        HudMessage(s:"a"; HUDMSG_FADEINOUT,0,CR_WHITE,320.0,64.0,2.0,0.25,0.25);
+    break;
+
+    case 8:
+        SetHudSize(640,480,FALSE);
+        HudMessage(s:"Antique Coin: \cjYour bow fires freely by its own will."; HUDMSG_LOG,0,CR_GOLD,3200.0,64.0,1.0);
+        SetFont("PKUPARCN");
+        HudMessage(s:"a"; HUDMSG_FADEINOUT,0,CR_WHITE,320.0,64.0,2.0,0.25,0.25);
+    break;
+
+    case 9:
+        SetHudSize(640,480,FALSE);
+        HudMessage(s:"Pallid Mask: \cjYour bow's effect is not decided yet."; HUDMSG_LOG,0,CR_GOLD,3200.0,64.0,1.0);
+        SetFont("PKUPSHAD");
+        HudMessage(s:"a"; HUDMSG_FADEINOUT,0,CR_WHITE,320.0,64.0,2.0,0.25,0.25);
+    break;
+
+    case 10:
+        SetHudSize(640,480,FALSE);
+        HudMessage(s:"Burial Belt: \cjYour bow's effect is not decided yet."; HUDMSG_LOG,0,CR_GOLD,3200.0,64.0,1.0);
+        SetFont("PKUPDETH");
+        HudMessage(s:"a"; HUDMSG_FADEINOUT,0,CR_WHITE,320.0,64.0,2.0,0.25,0.25);
+    break;
+
+    case 11:
+        SetHudSize(640,480,FALSE);
+        HudMessage(s:"Cursed Rifle: \cjA dark rifle, stained with many victims."; HUDMSG_LOG,0,CR_GOLD,3200.0,64.0,1.0);
+        SetFont("PKUPRIFL");
+        HudMessage(s:"a"; HUDMSG_FADEINOUT,0,CR_WHITE,320.0,64.0,2.0,0.25,0.25);
+    break;
+    }
+}

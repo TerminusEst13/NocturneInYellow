@@ -1,0 +1,50 @@
+[enu default]
+
+// Startup Text
+STARTUP1 = " ";
+STARTUP2 = "Searchers after horror haunt strange, far places.";
+STARTUP3 = "We shall see that at which dogs howl in the dark,"; 
+STARTUP4 = "and that at which cats prick up their ears after midnight.";
+STARTUP5 = " ";
+
+QUITMSG1 = "And let us not grow weary of doing good, for in due season we will reap, if we do not give up."; // Galatians 6:9
+QUITMSG2 = "Blows that wound cleanse away evil; strokes make clean the innermost parts."; // Proverbs 20:30
+QUITMSG3 = "Lift your drooping hands and strengthen your weak knees."; // Hebrews 12:12
+QUITMSG4 = "My enemies trample on me all day long, for many attack me proudly."; // Psalm 56:2
+QUITMSG5 = "And the dust returns to the earth as it was, and the spirit returns to God who gave it."; // Ecclesiastes 12:7
+QUITMSG6 = "Do not fear those who kill the body but cannot kill the soul."; // Matthew 10:28
+QUITMSG7 = "When his breath departs, he returns to the earth; on that very day his plans perish."; // Psalm 146:4
+QUITMSG8 = "Even though I walk through the valley of the shadow of death, I will fear no evil."; // Psalm 23:4
+QUITMSG9 = "The last enemy to be destroyed is death."; // 1 Corinthians 15:26
+QUITMSG10 = "A time to be born, and a time to die; a time to plant, and a time to pluck up what is planted."; // Ecclesiastes 3:2
+QUITMSG11 = "For when a few years have come I shall go the way from which I shall not return."; // Job 16:22
+QUITMSG12 = "Many are the afflictions of the righteous."; // Psalm 34:19
+QUITMSG13 = "Do not be surprised at the fiery trial when it comes upon you to test you, as though something strange were happening to you."; // 1 Peter 4:12
+QUITMSG14 = "Blessed is the man who remains steadfast under trial, for when he has stood the test he will receive the crown of life."; // James 1:12
+QUITMSG15 = "But you, take courage! Do not let your hands be weak, for your work shall be rewarded."; // 2 Chronicles 15:7
+
+// Cheats
+STSTR_DQDON = "Your memory serves you well. God mode on.";
+STSTR_DQDOFF = "God mode off.";
+STSTR_KFAADDED = "Your memory serves you well. All equipment given.";
+STSTR_FAADDED = "Your memory serves you well. All equipment given.";
+STSTR_NCON = "Your memory serves you well. Noclip on.";
+STSTR_NCOFF = "Noclip off.";
+STSTR_BEHOLD = "Your memory serves you well. inVuln, Str, Inviso, Rad, Allmap, or Lite-amp?";
+STSTR_BEHOLDX = "Power-up toggled.";
+STSTR_CHOPPERS = "Your memory serves you well.";
+
+// Obituaries. Removed, since Nocturne has its own death sequence.
+OB_SUICIDE = " ";
+OB_FALLING = " ";
+OB_CRUSH = " ";
+OB_EXIT = " ";
+OB_WATER = " ";
+OB_SLIME = " ";
+OB_LAVA = " ";
+OB_BARREL = " ";
+OB_SPLASH = " ";
+OB_R_SPLASH = " ";
+OB_ROCKET = " ";
+OB_KILLEDSELF = " ";
+OB_VOODOO = " ";

@@ -1,0 +1,90 @@
+ACTOR Vodyanoy 31094
+{
+//$Category Nocturne-Monsters
+    Health 600
+    Radius 48
+    Height 64
+    Speed 5
+    PainChance 96
+    PainChance "Spear", 255
+    Scale 1.25
+    Mass 2000
+    Monster
+    +FLOORCLIP
+    +MISSILEMORE
+    +MISSILEEVENMORE
+    +DONTBLAST
+    +NOINFIGHTING
+    +THRUSPECIES
+    Species "Monster"
+    SeeSound "fatso/sight"
+    PainSound "fatso/pain"
+    DeathSound "fatso/death"
+    ActiveSound "fatso/active"
+    Obituary " "
+    States
+    {
+    Spawn:
+        FATT A 10 A_Look
+        Loop
+    See:
+        FATT AABBCC 5 A_Chase
+        TNT1 A 0 Radius_Quake(1,2,0,12,0)
+        TNT1 A 0 A_PlaySound("cyber/hoof",CHAN_AUTO,1.0,0,ATTN_NORM)
+        FATT DDEEFF 5 A_Chase
+        TNT1 A 0 Radius_Quake(1,2,0,12,0)
+        TNT1 A 0 A_PlaySound("cyber/hoof",CHAN_AUTO,1.0,0,ATTN_NORM)
+        Loop
+    Missile:
+        FATT G 8
+        FATT H 8 Bright A_CustomMissile("VodyanoyShot")
+        FATT G 1 A_CPosRefire
+        Goto Missile
+    Pain:
+        FATT J 3
+        FATT J 3 A_Pain
+        Goto See
+    Death:
+        FATT K 6
+        FATT L 6 A_Scream
+        FATT M 6 A_NoBlocking
+        FATT NOPQRS 6
+        FATT T -1 A_BossDeath
+        Stop
+    }
+}
+
+actor VodyanoyShot
+{
+    Radius 11
+    Height 8
+    Speed 11
+    Damage (random(20,35))
+    Scale 1.1
+    RenderStyle Add
+    Alpha 0.99
+    Projectile
+    +SEEKERMISSILE
+    +RANDOMIZE
+    +THRUSPECIES
+    Species "Monster"
+    SeeSound "skeleton/attack"
+    DeathSound "skeleton/tracex"
+    States
+    {
+    Spawn:
+        TNT1 A 0 A_JumpIfInventory("Counter",20,"Vanish")
+        // Not using A_Countdown/ReactionTime since I want them to vanish, not go to Death.
+        FATB A 3 Bright A_GiveInventory("Counter",1)
+        FATB B 3 Bright A_SeekerMissile(45,100,SMF_PRECISE | SMF_CURSPEED)
+        Loop
+    Death:
+        FBXP A 8 Bright
+        FBXP B 6 Bright
+        FBXP C 4 Bright
+        Stop
+    Vanish:
+        FATB AAAAAAAAAA 3 Bright A_FadeOut(0.1)
+        stop
+    }
+}

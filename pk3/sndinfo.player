@@ -1,0 +1,147 @@
+// PLAYER
+// =================
+
+$playeralias      Vikenti  male    *death          player/death
+$playersounddup   Vikenti  male    *xdeath         *death
+$playersounddup   Vikenti  male    *burndeath      *death
+$playersounddup   Vikenti  male    *crazydeath     *death
+$playeralias      Vikenti  male    *wimpydeath     player/wdeath
+$playersounddup   Vikenti  male    *gibbed         *death
+$playeralias      Vikenti  male    *pain100        player/pain100
+$playeralias      Vikenti  male    *pain75         player/pain75
+$playeralias      Vikenti  male    *pain50         player/pain50
+$playeralias      Vikenti  male    *pain25         player/pain25
+$playeralias      Vikenti  male    *grunt          player/grunt
+$playersound      Vikenti  male    *land           VKLAND
+$playeralias      Vikenti  male    *usefail        player/nouse
+$playeralias      Vikenti  male    *jump           player/jump
+//$playeralias      Vikenti  male    *taunt          haelin/laugh
+
+$random player/pain100 { pain/1001 pain/1002 pain/1003 }
+pain/1001         VKHRT102
+pain/1002         VKHRT103
+pain/1003         VKHRT104
+
+$random player/pain75 { pain/751 pain/752 pain/753 pain/754 }
+pain/751          VKHRT751
+pain/752          VKHRT752
+pain/753          VKHRT753
+pain/754          VKHRT754
+
+$random player/pain50 { pain/501 pain/502 pain/503 pain/504 }
+pain/501          VKHRT501
+pain/502          VKHRT502
+pain/503          VKHRT503
+pain/504          VKHRT504
+
+$random player/pain25 { pain/251 pain/252 pain/253 pain/254 }
+pain/251          VKHRT251
+pain/252          VKHRT252
+pain/253          VKHRT253
+pain/254          VKHRT254
+
+$random player/death { death1 death2 death3 }
+death1            VKDTH1
+death2            VKDTH2
+death3            VKDTH3
+
+$volume player/death 0.5
+
+$random player/wdeath { wdeath1 wdeath2 }
+wdeath1           VKWDTH1
+wdeath2           VKWDTH2
+
+$random player/jump { JUMP1 JUMP2 JUMP3 JUMP4 JUMP5 JUMP6 JUMP7}
+jump1             VKJMP1
+jump2             VKJMP2
+jump3             VKJMP3
+jump4             VKJMP4
+jump5             VKJMP5
+jump6             VKJMP6
+jump7             VKJMP7
+
+$random player/nouse { FAIL1 FAIL2 FAIL3 FAIL4 FAIL5 FAIL6 }
+fail1             VKUSE1
+fail2             VKUSE2
+fail3             VKUSE3
+fail4             VKUSE4
+fail5             VKUSE5
+fail6             VKUSE6
+
+$random player/falling { CNTGTUP1 CNTGTUP2 }
+CNTGTUP1          VKFLLN1
+CNTGTUP2          VKFLLN2
+
+$random player/grunt { WALLHIT1 WALLHIT2 }
+WALLHIT1          VKWALL1
+WALLHIT2          VKWALL2
+
+player/pant       VKPANT // Taken from ceberation off FreeSound
+
+// FOOTSTEPS
+// =====================
+
+// Default - Taken from the General Series 6000
+step/step1             DEFSTEP1
+step/step2             DEFSTEP2
+step/step3             DEFSTEP3
+step/step4             DEFSTEP4
+step/step5             DEFSTEP5
+step/step6             DEFSTEP6
+step/step7             DEFSTEP7
+step/step8             DEFSTEP8
+step/step9             DEFSTEP9
+step/step10            DEFSTEP0
+$random footstep/default { step/step1 step/step2 step/step3 step/step4 step/step5 step/step6 step/step7 step/step8 step/step9 step/step10 }
+
+// Water - A combination of aglinder, Phil25, and LittleRobotSoundFactory's sounds off FreeSound
+step/water1            WTRSTEP1
+step/water2            WTRSTEP2
+step/water3            WTRSTEP3
+step/water4            WTRSTEP4
+step/water5            WTRSTEP5
+step/water6            WTRSTEP6
+$random footstep/water { step/water1 step/water2 step/water3 step/water4 step/water5 step/water6 }
+
+// Slime - Taken from the Sony Pictures Sound Effects Series
+step/slime1            SLMSTEP1
+step/slime2            SLMSTEP2
+step/slime3            SLMSTEP3
+step/slime4            SLMSTEP4
+step/slime5            SLMSTEP5
+step/slime6            SLMSTEP6
+step/slime7            SLMSTEP7
+$random footstep/slime { step/slime1 step/slime2 step/slime3 step/slime4 step/slime5 step/slime6 step/slime7 }
+
+// Wood - Taken from the General Series 6000
+step/wood1             WODSTEP1
+step/wood2             WODSTEP2
+step/wood3             WODSTEP3
+step/wood4             WODSTEP4
+step/wood5             WODSTEP5
+step/wood6             WODSTEP6
+step/wood7             WODSTEP7
+step/wood8             WODSTEP8
+step/wood9             WODSTEP9
+step/wood10            WODSTEP0
+$random footstep/wood { step/wood1 step/wood2 step/wood3 step/wood4 step/wood5 step/wood6 step/wood7 step/wood8 step/wood9 step/wood10 }
+
+// Grass - Taken from the Sony Pictures Sound Effects Series
+step/grass1            GRSSTEP1
+step/grass2            GRSSTEP2
+step/grass3            GRSSTEP3
+step/grass4            GRSSTEP4
+step/grass5            GRSSTEP5
+step/grass6            GRSSTEP6
+step/grass7            GRSSTEP7
+step/grass8            GRSSTEP8
+step/grass9            GRSSTEP9
+step/grass10           GRSSTEP0
+$random footstep/grass { step/grass1 step/grass2 step/grass3 step/grass4 step/grass5 step/grass6 step/grass7 step/grass8 step/grass9 step/grass10 }
+
+// Lava
+//step/lava1           DSLVA1
+//step/lava2           DSLVA2
+//step/lava3           DSLVA3
+//step/lava4           DSLVA4
+//$random step/lavastep { step/lava1  step/lava2  step/lava3  step/lava4 }

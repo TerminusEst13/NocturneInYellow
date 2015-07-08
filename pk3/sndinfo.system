@@ -1,0 +1,20 @@
+// SYSTEM
+// =================
+
+silence                   QUIET
+world/quake               QUIET
+logo/gloome               QUIET
+logo/laughingchamber      LOGOLAFF
+
+menu/activate             MENUUP   // Bring up the main menu. - Mixed from the General Series 6000 and OLD SCHOOL
+menu/clear                MENUDOWN // Close main menu. - Mixed from the General Series 6000 and OLD SCHOOL
+menu/choose               MENUYES  // Choose an item on the menu. - Mixed from the General Series 6000
+menu/backup               MENUNO   // Go back to previous menu. - Mixed from the General Series 6000
+menu/cursor               MENUSCRL // Move cursor up/down. - Taken from Universal Groove Elements
+menu/change               MENUCHNG // Changing options around. - Taken from Universal Groove Elements
+menu/prompt               MENUQUIT // Are you sure you want to quit? - Mixed from the General Series 6000 and TECHTRAN
+menu/dismiss              MENUDSMS // Dismiss a prompt. - Mixed from the General Series 6000 and TECHTRAN
+menu/invalid              MENUFAIL // Menu not available. - Mixed from the General Series 6000 and OLD SCHOOL
+
+menu/quit1                QUIET
+menu/quit2                QUIET

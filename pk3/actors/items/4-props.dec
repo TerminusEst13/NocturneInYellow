@@ -1,0 +1,36 @@
+// Candles
+// Being lazy and just copy-pasting from Doomstuff, since this shouldn't be loaded with Doom anyway.
+
+ACTOR BlueTorch2 31200
+{
+//$Category Nocturne-Map
+  Radius 8
+  Height 68
+  ProjectilePassHeight -16
+  +SOLID
+  +FORCEYBILLBOARD
+  States
+  {
+  Spawn:
+    TBLU ABCD 4 Bright
+    Loop
+  }
+}
+
+ACTOR GreenTorch2 31201
+{
+//$Category Nocturne-Map
+  Radius 8
+  Height 68
+  ProjectilePassHeight -16
+  +SOLID
+  +FORCEYBILLBOARD
+  States
+  {
+  Spawn:
+    TGRN ABCD 4 Bright
+    Loop
+  }
+}
+
+// Lanterns

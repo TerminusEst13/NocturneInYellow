@@ -1,0 +1,179 @@
+actor CrucifixActivate : CustomInventory
+{
+    +INVENTORY.UNDROPPABLE
+    +INVBAR
+    Inventory.Amount 1
+    Inventory.MaxAmount 1
+    Inventory.Icon "CRUCIFIX"
+    Tag "Crucifix"
+    States
+    {
+    Use:
+        TNT1 A 0 A_JumpIfInventory("EquippedCrucifix",1,"UseFail")
+        TNT1 A 0 A_JumpIfInventory("SwapCooldown",1,"UseFail")
+        TNT1 A 0 A_GiveInventory("SwapCooldown",70)
+        TNT1 A 0 A_GiveInventory("EquippedCrucifix",1)
+        TNT1 A 0 A_TakeInventory("EquippedDragonScale",1)
+        TNT1 A 0 A_TakeInventory("EquippedWhiteCoal",1)
+        TNT1 A 0 A_TakeInventory("EquippedAntiqueCoin",1)
+        TNT1 A 0 A_TakeInventory("EquippedPallidMask",1)
+        TNT1 A 0 A_TakeInventory("EquippedBurialBelt",1)
+        TNT1 A 0 A_SetBlend("white",0.25,10)
+        TNT1 A 0 A_PlaySoundEx("artifact/swap","soundslot7",0,0)
+        TNT1 A 1
+        fail
+    UseFail:
+        TNT1 A 0
+        fail
+    }
+}
+
+actor DragonScaleActivate : CustomInventory
+{
+    +INVENTORY.UNDROPPABLE
+    +INVBAR
+    Inventory.Amount 1
+    Inventory.MaxAmount 1
+    Inventory.Icon "DRAGNSCL"
+    Tag "Dragon Scale"
+    States
+    {
+    Use:
+        TNT1 A 0 A_JumpIfInventory("EquippedDragonScale",1,"UseFail")
+        TNT1 A 0 A_JumpIfInventory("SwapCooldown",1,"UseFail")
+        TNT1 A 0 A_GiveInventory("SwapCooldown",70)
+        TNT1 A 0 A_TakeInventory("EquippedCrucifix",1)
+        TNT1 A 0 A_GiveInventory("EquippedDragonScale",1)
+        TNT1 A 0 A_TakeInventory("EquippedWhiteCoal",1)
+        TNT1 A 0 A_TakeInventory("EquippedAntiqueCoin",1)
+        TNT1 A 0 A_TakeInventory("EquippedPallidMask",1)
+        TNT1 A 0 A_TakeInventory("EquippedBurialBelt",1)
+        TNT1 A 0 A_SetBlend("green",0.25,10)
+        TNT1 A 0 A_PlaySoundEx("artifact/swap","soundslot7",0,0)
+        TNT1 A 1
+        fail
+    UseFail:
+        TNT1 A 0
+        fail
+    }
+}
+
+actor WhiteCoalActivate : CustomInventory
+{
+    +INVENTORY.UNDROPPABLE
+    +INVBAR
+    Inventory.Amount 1
+    Inventory.MaxAmount 1
+    Inventory.Icon "CHARCOAL"
+    Tag "White Coal"
+    States
+    {
+    Use:
+        TNT1 A 0 A_JumpIfInventory("EquippedWhiteCoal",1,"UseFail")
+        TNT1 A 0 A_JumpIfInventory("SwapCooldown",1,"UseFail")
+        TNT1 A 0 A_GiveInventory("SwapCooldown",70)
+        TNT1 A 0 A_TakeInventory("EquippedCrucifix",1)
+        TNT1 A 0 A_TakeInventory("EquippedDragonScale",1)
+        TNT1 A 0 A_GiveInventory("EquippedWhiteCoal",1)
+        TNT1 A 0 A_TakeInventory("EquippedAntiqueCoin",1)
+        TNT1 A 0 A_TakeInventory("EquippedPallidMask",1)
+        TNT1 A 0 A_TakeInventory("EquippedBurialBelt",1)
+        TNT1 A 0 A_SetBlend("red",0.25,10)
+        TNT1 A 0 A_PlaySoundEx("artifact/swap","soundslot7",0,0)
+        TNT1 A 1
+        fail
+    UseFail:
+        TNT1 A 0
+        fail
+    }
+}
+
+actor AntiqueCoinActivate : CustomInventory
+{
+    +INVENTORY.UNDROPPABLE
+    +INVBAR
+    Inventory.Amount 1
+    Inventory.MaxAmount 1
+    Inventory.Icon "ANTICOIN"
+    Tag "Antique Coin"
+    States
+    {
+    Use:
+        TNT1 A 0 A_JumpIfInventory("EquippedAntiqueCoin",1,"UseFail")
+        TNT1 A 0 A_JumpIfInventory("SwapCooldown",1,"UseFail")
+        TNT1 A 0 A_GiveInventory("SwapCooldown",70)
+        TNT1 A 0 A_TakeInventory("EquippedCrucifix",1)
+        TNT1 A 0 A_TakeInventory("EquippedDragonScale",1)
+        TNT1 A 0 A_TakeInventory("EquippedWhiteCoal",1)
+        TNT1 A 0 A_GiveInventory("EquippedAntiqueCoin",1)
+        TNT1 A 0 A_TakeInventory("EquippedPallidMask",1)
+        TNT1 A 0 A_TakeInventory("EquippedBurialBelt",1)
+        TNT1 A 0 A_SetBlend("blue",0.25,10)
+        TNT1 A 0 A_PlaySoundEx("artifact/swap","soundslot7",0,0)
+        TNT1 A 1
+        fail
+    UseFail:
+        TNT1 A 0
+        fail
+    }
+}
+
+actor PallidMaskActivate : CustomInventory
+{
+    +INVENTORY.UNDROPPABLE
+    +INVBAR
+    Inventory.Amount 1
+    Inventory.MaxAmount 1
+    Inventory.Icon "PALDMASK"
+    Tag "Pallid Mask"
+    States
+    {
+    Use:
+        TNT1 A 0 A_JumpIfInventory("EquippedPallidMask",1,"UseFail")
+        TNT1 A 0 A_JumpIfInventory("SwapCooldown",1,"UseFail")
+        TNT1 A 0 A_GiveInventory("SwapCooldown",70)
+        TNT1 A 0 A_TakeInventory("EquippedCrucifix",1)
+        TNT1 A 0 A_TakeInventory("EquippedDragonScale",1)
+        TNT1 A 0 A_TakeInventory("EquippedWhiteCoal",1)
+        TNT1 A 0 A_TakeInventory("EquippedAntiqueCoin",1)
+        TNT1 A 0 A_GiveInventory("EquippedPallidMask",1)
+        TNT1 A 0 A_TakeInventory("EquippedBurialBelt",1)
+        TNT1 A 0 A_SetBlend("yellow",0.25,10)
+        TNT1 A 0 A_PlaySoundEx("artifact/swap","soundslot7",0,0)
+        TNT1 A 1
+        fail
+    UseFail:
+        TNT1 A 0
+        fail
+    }
+}
+
+actor BurialBeltActivate : CustomInventory
+{
+    +INVENTORY.UNDROPPABLE
+    +INVBAR
+    Inventory.Amount 1
+    Inventory.MaxAmount 1
+    Inventory.Icon "BURLBELT"
+    Tag "Burial Belt"
+    States
+    {
+    Use:
+        TNT1 A 0 A_JumpIfInventory("EquippedBurialBelt",1,"UseFail")
+        TNT1 A 0 A_JumpIfInventory("SwapCooldown",1,"UseFail")
+        TNT1 A 0 A_GiveInventory("SwapCooldown",70)
+        TNT1 A 0 A_TakeInventory("EquippedCrucifix",1)
+        TNT1 A 0 A_TakeInventory("EquippedDragonScale",1)
+        TNT1 A 0 A_TakeInventory("EquippedWhiteCoal",1)
+        TNT1 A 0 A_TakeInventory("EquippedAntiqueCoin",1)
+        TNT1 A 0 A_TakeInventory("EquippedPallidMask",1)
+        TNT1 A 0 A_GiveInventory("EquippedBurialBelt",1)
+        TNT1 A 0 A_SetBlend("white",0.25,10)
+        TNT1 A 0 A_PlaySoundEx("artifact/swap","soundslot7",0,0)
+        TNT1 A 1
+        fail
+    UseFail:
+        TNT1 A 0
+        fail
+    }
+}

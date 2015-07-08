@@ -1,0 +1,39 @@
+PICKUPS:
+31040 - Grenade satchel pickup
+31041 - Bow mana pickup
+31042 - Grenade ammo pickup
+31043 - Cursed bullets pickup
+31044 - Life essence pickup
+31045 - Crucifix Artifact pickup
+31046 - Dragon Scale Artifact pickup
+31047 - White Coal Artifact pickup
+31048 - Antique Coin Artifact pickup
+31049 - Pallid Mask Artifact pickup
+31050 - Burial Belt Artifact pickup
+
+ENEMIES:
+31090 - Nezhit
+31091 - Likho
+31092 - Bauk
+31093 - Nocnitsa
+31094 - Ala
+31095 - Vodyanoy
+31096 - Drekavac
+31097 - Upyr
+31098 - Ovinnik
+31099 - Hound of Tindalos
+31100 - Morena, first time
+31101 - Morena, second time
+31102 - Zmey Gorynych
+31103 - Domovoi
+31104 - Koschei the Deathless
+31105 - The King in Yellow
+31106 - Yog-Sothoth 1
+31107 - Yog-Sothoth 2
+31108 - Yog-Sothoth 3
+31109 - Yog-Sothoth Prone
+
+WORLD:
+31200 - Blue Skull Torch
+31201 - Green Skull Torch
+31202 - Rain sound

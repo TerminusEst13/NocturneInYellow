@@ -1,0 +1,20 @@
+decal New_BulletChipLower1
+{
+    Pic Scorch1
+    Shade "00 00 00"
+    X-scale 0.06
+    Y-scale 0.06
+    RandomFlipx
+    RandomFlipy
+}
+
+decal New_BulletChip
+{
+    Pic BPSPA0
+    Add 1.0
+    FullBright
+    Animator GoAway2
+    X-scale 0.05
+    Y-scale 0.05
+    LowerDecal New_BulletChipLower1
+}

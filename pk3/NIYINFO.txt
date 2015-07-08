@@ -1,0 +1,12 @@
+This is a dummy file so ZDoom can easily detect this as an IWAD.
+Do not remove it.
+
+Some info on the lumps here:
+Colormap.cmp and Playpal.pal are required, they contain a palette I made myself
+with some tools I don't remember. The palettes are pretty damned cool looking.
+Sndcurve.lmp is a neat little thing that will make sound rolloff... well,
+better. Please don't remove it.
+Smallfnt.bmf and Dbigfont.bmf are font files containing, you guessed it,
+the small and big fonts. They are from, as far as I remember, an open source
+bytemap font collection. Please correct me if this is wrong, I can pretty
+easily make my own fonts for this.
