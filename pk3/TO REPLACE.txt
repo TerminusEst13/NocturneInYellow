@@ -4,8 +4,6 @@ SPRITES:
 - Impact sparks
 - Player sprites
 - Spear
-- Grenade sprites
-- Grenade shrapnel (Actually, aren't they already original?)
 - Mosin Nagant
 - Nagant Ammo
 - Nagant casings
