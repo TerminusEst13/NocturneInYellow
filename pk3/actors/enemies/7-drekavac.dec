@@ -19,53 +19,52 @@ ACTOR Drekavac 31096
     +THRUSPECIES
     Species "Monster"
     DamageFactor "Spear", 2.0
-    SeeSound "skeleton/sight"
-    PainSound "skeleton/pain"
-    DeathSound "skeleton/death"
-    ActiveSound "skeleton/active"
+    SeeSound "drekavac/see"
+    PainSound "drekavac/pain"
+    DeathSound "drekavac/death"
+    ActiveSound "drekavac/screamfar"
     States
     {
     Spawn:
-        SKEL A 10 A_Look
+        INCA A 10 A_Look
         Loop
     See:
         TNT1 A 0 A_Jump(64,"See2")
-        SKEL AABBCCDDEEFF 1 A_Chase
+        INCA AABBCCDDEEFF 1 A_Chase
         Loop
     See2:
-        SKEL AABBCCDDEEFF 1 A_FastChase
+        INCA AABBCCDDEEFF 1 A_FastChase
         goto See
     Melee:
-        SKEL A 4
+        INCA A 4
         TNT1 A 0 Radius_Quake(3,7,0,16,0)
         TNT1 A 0 A_GiveToTarget("DrekavacScreamDamage",1)
         TNT1 A 0 A_Blast(BF_DONTWARN,255,256,30,"BlankPuff","")//A_RadiusThrust(512,256,RTF_NOTMISSILE,128)
-        SKEL L 4 A_PlaySoundEx("drekavac/scream","soundslot5",0,0)
+        INCA L 4 A_PlaySoundEx("drekavac/scream","soundslot6",0,0)
         TNT1 A 0 Radius_Quake(3,7,0,16,0)
-        TNT1 A 0 A_Blast(BF_DONTWARN,255,256,30,"BlankPuff","")//A_RadiusThrust(512,256,RTF_NOTMISSILE,128)
-        SKEL L 4 A_PlaySoundEx("drekavac/scream","soundslot5",0,0)
+        INCA L 4 A_Blast(BF_DONTWARN,255,256,30,"BlankPuff","")//A_RadiusThrust(512,256,RTF_NOTMISSILE,128)
         TNT1 A 0 Radius_Quake(3,7,0,16,0)
-        TNT1 A 0 A_Blast(BF_DONTWARN,255,256,30,"BlankPuff","")//A_RadiusThrust(512,256,RTF_NOTMISSILE,128)
-        SKEL L 4 A_PlaySoundEx("drekavac/scream","soundslot5",0,0)
+        INCA L 4 A_Blast(BF_DONTWARN,255,256,30,"BlankPuff","")//A_RadiusThrust(512,256,RTF_NOTMISSILE,128)
         TNT1 A 0 Radius_Quake(3,7,0,16,0)
-        TNT1 A 0 A_Blast(BF_DONTWARN,255,256,30,"BlankPuff","")//A_RadiusThrust(512,256,RTF_NOTMISSILE,128)
-        SKEL L 4 A_PlaySoundEx("drekavac/scream","soundslot5",0,0)
+        INCA L 4 A_Blast(BF_DONTWARN,255,256,30,"BlankPuff","")//A_RadiusThrust(512,256,RTF_NOTMISSILE,128)
         Goto See
     Missile:
-        TNT1 A 0 A_PlaySoundEx("drekavac/screamfar","soundslot5",0,0)
+               // Played on ACS instead of Decorate because, for some reason, even with
+               // $limit 0 set on the sound, the sounds still cancel each other out.
+        TNT1 A 0 ACS_ExecuteWithResult(433,12)//A_ActiveSound//A_PlaySoundEx("drekavac/screamfar","soundslot5",0,0)
         TNT1 A 0 Radius_Quake(1,5,0,16,0)
-        TNT1 A 0 A_RadiusThrust(1024,1024,RTF_NOTMISSILE,1024)
+        TNT1 A 0 A_RadiusThrust(1024,1024,RTF_NOTMISSILE,896)
         Goto See
     Pain:
-        SKEL L 4
-        SKEL L 4 A_Pain
+        INCA L 4
+        INCA L 4 A_Pain
         Goto See
     Death:
-        SKEL LM 7
-        SKEL N 7 A_Scream
-        SKEL O 7 A_NoBlocking
-        SKEL P 7
-        SKEL Q -1
+        INCA LM 7
+        INCA N 7 A_Scream
+        INCA O 7 A_NoBlocking
+        INCA P 7
+        INCA Q -1
         Stop
     }
 }

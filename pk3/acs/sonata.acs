@@ -302,5 +302,9 @@ script 433 (int bullshit)
         SetFont("PKUPRIFL");
         HudMessage(s:"a"; HUDMSG_FADEINOUT,0,CR_WHITE,320.0,64.0,2.0,0.25,0.25);
     break;
+
+    case 12:
+        ActivatorSound("drekavac/screamfar",127);
+    break;
     }
 }

@@ -9,16 +9,29 @@ bauk/attack               BAUKATTK // Mixed from the General Series 6000, Monste
 bauk/death                BAUKDETH // Mixed from the General Series 6000 and Monsters and Creatures
 
 // Drekavac
-drekavac/scream           dspdiehi
-drekavac/screamfar        dspldeth
+drekavac/scream           DREKATCK // Mixed from the General Series 6000 and adriancalzon's Scream 01
+$random drekavac/screamfar { drekscrm1 drekscrm2 drekscrm3 drekscrm4 drekscrm5 drekscrm6 drekscrm7 drekscrm8 } // Mixed from the General Series 6000
+drekscrm1                 DREKATK1
+drekscrm2                 DREKATK2
+drekscrm3                 DREKATK3
+drekscrm4                 DREKATK4
+drekscrm5                 DREKATK5
+drekscrm6                 DREKATK6
+drekscrm7                 DREKATK7
+drekscrm8                 DREKATK8
+drekavac/death            DREKDETH // Mixed from the General Series 6000, tcrocker68's Girl_Scream_FollowingScreams.wav, and GabrielaUPF's screaming_woman_horrorII.mp3
+drekavac/pain             DREKPAIN // Mixed from the General Series 6000 and insanity54's man scream.ogg
+drekavac/see              DREKSITE // Mixed from the General Series 6000 and mariateresa_garcia's man-screaming.wav
 
 $limit drekavac/scream 0
-$volume drekavac/scream 1.5
-$rolloff drekavac/scream 400 2400
-
+$rolloff drekavac/scream 400 1800
 $limit drekavac/screamfar 0
-$volume drekavac/screamfar 1.5
-$rolloff drekavac/screamfar 400 2400
+$rolloff drekavac/screamfar 400 1800
+$limit drekavac/pain 0
+$rolloff drekavac/pain 400 1800
+$limit drekavac/see 0
+$rolloff drekavac/see 400 1800
+$rolloff drekavac/death 400 1800
 
 // Upyr
 $Random upyr/see     { upsee1 upsee2 upsee3 upsee4 upsee5 upsee6 upsee7 upsee8 }
