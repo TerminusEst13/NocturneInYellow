@@ -15,12 +15,16 @@ actor LifeEssencePickup : CustomInventory 31044
            // This is used so that I can define my own not-Doom-style pickup
            // flashes, messages, and sounds. I could go with the default Doom
            // stuff, but this is more -*~*SpEcIaL*~*-
+    +FLOAT
     +FLOATBOB
+    Renderstyle Add
+    Alpha 0.99
+    Scale 0.1
     States
     {
     Spawn:
-        PLHD A -1
-        stop
+        LIFE A 1 BRIGHT A_SpawnItemEx("LifeEssenceParticles",frandom(-1,1),frandom(-1,1),frandom(22,26),frandom(-0.25,0.25),frandom(-0.25,0.25),frandom(0.5,1.5),0,160,0)
+        loop
     Pickup:
         TNT1 A 0
         TNT1 A 0 A_JumpIfHealthLower(100,"PickupHeal")
@@ -32,7 +36,22 @@ actor LifeEssencePickup : CustomInventory 31044
         TNT1 A 0 ACS_ExecuteAlways(433,0,0)
         stop
     PickupFail:
-        PLHD A 1
+        LIFE A 1
         fail
+    }
+}
+
+ACTOR LifeEssenceParticles
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Renderstyle Add
+    Alpha 0.5
+    Scale 0.1
+    States
+    {
+    Spawn:
+        LIFE B 1 BRIGHT A_FadeOut(0.025)
+        Loop
     }
 }

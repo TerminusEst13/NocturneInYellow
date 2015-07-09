@@ -11,7 +11,6 @@ SPRITES:
 - Bullet puffs
 - Bauk's sprites
 - Upyr's sprites
-- Life essence pickups
 - Ammo pickups
 - Grenade pickups
 - Grenade satchel
