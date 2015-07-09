@@ -50,7 +50,7 @@ TEXTURES:
 ============
 - WATER1 - "WaterPlain0012_2" off CGTextures
 - WOODFLR1 - "WoodPlanksFloors0011" off CGTextures
-- MARBWALL - "MarbleTiles0065" off CGTextures
+- MARBWALL - "MarbleTiles0065" off CGTextures, edited heavily by Bloax
 - MARBFLOR - "MarbleTiles0090" off CGTextures
 - MARBCEIL - "MarbleGranite0002" off CGTextures
 - MARBROCK - "MarbleWhite0035" off CGTextures

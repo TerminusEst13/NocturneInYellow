@@ -26,7 +26,7 @@ drekavac/see              DREKSITE // Mixed from the General Series 6000 and mar
 $limit drekavac/scream 0
 $rolloff drekavac/scream 400 1800
 $limit drekavac/screamfar 0
-$rolloff drekavac/screamfar 400 1800
+//$rolloff drekavac/screamfar 400 1800
 $limit drekavac/pain 0
 $rolloff drekavac/pain 400 1800
 $limit drekavac/see 0
