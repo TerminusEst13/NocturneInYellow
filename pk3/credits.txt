@@ -3,6 +3,7 @@ ETC:
 - Jo Costello, for "Chalk Paint" font off dafont.com, released as 100% Free
 - Carlos Mario Peña Solís, for "Mirage Gothic" font off dafont.com, released as 100% Free
 - Microsoft, for the "Moolboran" font that comes standard with all computers
+- Jared Tarbell, for the "Levitated Runes" font off levitated.net, released as free to use.
 - fgsfds, for fact-checking and assistance in translating things to Russian.
 
 SPRITES:

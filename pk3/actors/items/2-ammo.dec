@@ -16,19 +16,52 @@ actor BowMana : Ammo
     }
 }
 
-actor BowManaPickup : CustomInventory 31041
+actor RandomBowManaPickup : RandomSpawner 31041
 {
 //$Category Nocturne-Items
+    DropItem "BowManaPickupA"
+    DropItem "BowManaPickupB"
+    DropItem "BowManaPickupC"
+    DropItem "BowManaPickupD"
+    DropItem "BowManaPickupE"
+    DropItem "BowManaPickupF"
+    DropItem "BowManaPickupG"
+    DropItem "BowManaPickupH"
+    DropItem "BowManaPickupI"
+    DropItem "BowManaPickupJ"
+    DropItem "BowManaPickupK"
+    DropItem "BowManaPickupL"
+    DropItem "BowManaPickupM"
+    DropItem "BowManaPickupN"
+    DropItem "BowManaPickupO"
+    DropItem "BowManaPickupP"
+    DropItem "BowManaPickupQ"
+    DropItem "BowManaPickupR"
+    DropItem "BowManaPickupS"
+    DropItem "BowManaPickupT"
+    DropItem "BowManaPickupU"
+    DropItem "BowManaPickupV"
+    DropItem "BowManaPickupW"
+    DropItem "BowManaPickupX"
+    DropItem "BowManaPickupY"
+    DropItem "BowManaPickupZ"
+}
+
+actor BowManaPickupA : CustomInventory
+{
     Inventory.PickupMessage ""
     Inventory.PickupSound ""
-    RenderStyle Add
-    Alpha 0.99
     +QUIET
+    +FLOAT
+    +FLOATBOB
+    Renderstyle Add
+    Alpha 0.99
+    Scale 0.25
     States
     {
     Spawn:
-        PLS2 A -1
-        stop
+        MANA A 1 BRIGHT A_SpawnItemEx("ManaParticlesA",frandom(-1,1),frandom(-1,1),frandom(-1,2),frandom(-0.25,0.25),frandom(-0.25,0.25),frandom(0.25,1.0),0,160,0)
+        loop
     Pickup:
         TNT1 A 0
         TNT1 A 0 A_JumpIfInventory("BowMana",0,"PickupFail")
@@ -42,6 +75,77 @@ actor BowManaPickup : CustomInventory 31041
         fail
     }
 }
+
+// This is terrible coding practice, kids. Never do this if you have another alternative.
+
+actor BowManaPickupB : BowManaPickupA { States { Spawn: MANA B 1 BRIGHT A_SpawnItemEx("ManaParticlesB",frandom(-1,1),frandom(-1,1),frandom(-1,2),frandom(-0.25,0.25),frandom(-0.25,0.25),frandom(0.25,1.0),0,160,0) loop }}
+actor BowManaPickupC : BowManaPickupA { States { Spawn: MANA C 1 BRIGHT A_SpawnItemEx("ManaParticlesC",frandom(-1,1),frandom(-1,1),frandom(-1,2),frandom(-0.25,0.25),frandom(-0.25,0.25),frandom(0.25,1.0),0,160,0) loop }}
+actor BowManaPickupD : BowManaPickupA { States { Spawn: MANA D 1 BRIGHT A_SpawnItemEx("ManaParticlesD",frandom(-1,1),frandom(-1,1),frandom(-1,2),frandom(-0.25,0.25),frandom(-0.25,0.25),frandom(0.25,1.0),0,160,0) loop }}
+actor BowManaPickupE : BowManaPickupA { States { Spawn: MANA E 1 BRIGHT A_SpawnItemEx("ManaParticlesE",frandom(-1,1),frandom(-1,1),frandom(-1,2),frandom(-0.25,0.25),frandom(-0.25,0.25),frandom(0.25,1.0),0,160,0) loop }}
+actor BowManaPickupF : BowManaPickupA { States { Spawn: MANA F 1 BRIGHT A_SpawnItemEx("ManaParticlesF",frandom(-1,1),frandom(-1,1),frandom(-1,2),frandom(-0.25,0.25),frandom(-0.25,0.25),frandom(0.25,1.0),0,160,0) loop }}
+actor BowManaPickupG : BowManaPickupA { States { Spawn: MANA G 1 BRIGHT A_SpawnItemEx("ManaParticlesG",frandom(-1,1),frandom(-1,1),frandom(-1,2),frandom(-0.25,0.25),frandom(-0.25,0.25),frandom(0.25,1.0),0,160,0) loop }}
+actor BowManaPickupH : BowManaPickupA { States { Spawn: MANA H 1 BRIGHT A_SpawnItemEx("ManaParticlesH",frandom(-1,1),frandom(-1,1),frandom(-1,2),frandom(-0.25,0.25),frandom(-0.25,0.25),frandom(0.25,1.0),0,160,0) loop }}
+actor BowManaPickupI : BowManaPickupA { States { Spawn: MANA I 1 BRIGHT A_SpawnItemEx("ManaParticlesI",frandom(-1,1),frandom(-1,1),frandom(-1,2),frandom(-0.25,0.25),frandom(-0.25,0.25),frandom(0.25,1.0),0,160,0) loop }}
+actor BowManaPickupJ : BowManaPickupA { States { Spawn: MANA J 1 BRIGHT A_SpawnItemEx("ManaParticlesJ",frandom(-1,1),frandom(-1,1),frandom(-1,2),frandom(-0.25,0.25),frandom(-0.25,0.25),frandom(0.25,1.0),0,160,0) loop }}
+actor BowManaPickupK : BowManaPickupA { States { Spawn: MANA K 1 BRIGHT A_SpawnItemEx("ManaParticlesK",frandom(-1,1),frandom(-1,1),frandom(-1,2),frandom(-0.25,0.25),frandom(-0.25,0.25),frandom(0.25,1.0),0,160,0) loop }}
+actor BowManaPickupL : BowManaPickupA { States { Spawn: MANA L 1 BRIGHT A_SpawnItemEx("ManaParticlesL",frandom(-1,1),frandom(-1,1),frandom(-1,2),frandom(-0.25,0.25),frandom(-0.25,0.25),frandom(0.25,1.0),0,160,0) loop }}
+actor BowManaPickupM : BowManaPickupA { States { Spawn: MANA M 1 BRIGHT A_SpawnItemEx("ManaParticlesM",frandom(-1,1),frandom(-1,1),frandom(-1,2),frandom(-0.25,0.25),frandom(-0.25,0.25),frandom(0.25,1.0),0,160,0) loop }}
+actor BowManaPickupN : BowManaPickupA { States { Spawn: MANA N 1 BRIGHT A_SpawnItemEx("ManaParticlesN",frandom(-1,1),frandom(-1,1),frandom(-1,2),frandom(-0.25,0.25),frandom(-0.25,0.25),frandom(0.25,1.0),0,160,0) loop }}
+actor BowManaPickupO : BowManaPickupA { States { Spawn: MANA O 1 BRIGHT A_SpawnItemEx("ManaParticlesO",frandom(-1,1),frandom(-1,1),frandom(-1,2),frandom(-0.25,0.25),frandom(-0.25,0.25),frandom(0.25,1.0),0,160,0) loop }}
+actor BowManaPickupP : BowManaPickupA { States { Spawn: MANA P 1 BRIGHT A_SpawnItemEx("ManaParticlesP",frandom(-1,1),frandom(-1,1),frandom(-1,2),frandom(-0.25,0.25),frandom(-0.25,0.25),frandom(0.25,1.0),0,160,0) loop }}
+actor BowManaPickupQ : BowManaPickupA { States { Spawn: MANA Q 1 BRIGHT A_SpawnItemEx("ManaParticlesQ",frandom(-1,1),frandom(-1,1),frandom(-1,2),frandom(-0.25,0.25),frandom(-0.25,0.25),frandom(0.25,1.0),0,160,0) loop }}
+actor BowManaPickupR : BowManaPickupA { States { Spawn: MANA R 1 BRIGHT A_SpawnItemEx("ManaParticlesR",frandom(-1,1),frandom(-1,1),frandom(-1,2),frandom(-0.25,0.25),frandom(-0.25,0.25),frandom(0.25,1.0),0,160,0) loop }}
+actor BowManaPickupS : BowManaPickupA { States { Spawn: MANA S 1 BRIGHT A_SpawnItemEx("ManaParticlesS",frandom(-1,1),frandom(-1,1),frandom(-1,2),frandom(-0.25,0.25),frandom(-0.25,0.25),frandom(0.25,1.0),0,160,0) loop }}
+actor BowManaPickupT : BowManaPickupA { States { Spawn: MANA T 1 BRIGHT A_SpawnItemEx("ManaParticlesT",frandom(-1,1),frandom(-1,1),frandom(-1,2),frandom(-0.25,0.25),frandom(-0.25,0.25),frandom(0.25,1.0),0,160,0) loop }}
+actor BowManaPickupU : BowManaPickupA { States { Spawn: MANA U 1 BRIGHT A_SpawnItemEx("ManaParticlesU",frandom(-1,1),frandom(-1,1),frandom(-1,2),frandom(-0.25,0.25),frandom(-0.25,0.25),frandom(0.25,1.0),0,160,0) loop }}
+actor BowManaPickupV : BowManaPickupA { States { Spawn: MANA V 1 BRIGHT A_SpawnItemEx("ManaParticlesV",frandom(-1,1),frandom(-1,1),frandom(-1,2),frandom(-0.25,0.25),frandom(-0.25,0.25),frandom(0.25,1.0),0,160,0) loop }}
+actor BowManaPickupW : BowManaPickupA { States { Spawn: MANA W 1 BRIGHT A_SpawnItemEx("ManaParticlesW",frandom(-1,1),frandom(-1,1),frandom(-1,2),frandom(-0.25,0.25),frandom(-0.25,0.25),frandom(0.25,1.0),0,160,0) loop }}
+actor BowManaPickupX : BowManaPickupA { States { Spawn: MANA X 1 BRIGHT A_SpawnItemEx("ManaParticlesX",frandom(-1,1),frandom(-1,1),frandom(-1,2),frandom(-0.25,0.25),frandom(-0.25,0.25),frandom(0.25,1.0),0,160,0) loop }}
+actor BowManaPickupY : BowManaPickupA { States { Spawn: MANA Y 1 BRIGHT A_SpawnItemEx("ManaParticlesY",frandom(-1,1),frandom(-1,1),frandom(-1,2),frandom(-0.25,0.25),frandom(-0.25,0.25),frandom(0.25,1.0),0,160,0) loop }}
+actor BowManaPickupZ : BowManaPickupA { States { Spawn: MANA Z 1 BRIGHT A_SpawnItemEx("ManaParticlesZ",frandom(-1,1),frandom(-1,1),frandom(-1,2),frandom(-0.25,0.25),frandom(-0.25,0.25),frandom(0.25,1.0),0,160,0) loop }}
+
+ACTOR ManaParticlesA
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Renderstyle Add
+    Alpha 0.5
+    Scale 0.25
+    States
+    {
+    Spawn:
+        MANA A 1 BRIGHT A_FadeOut(0.05)
+        Loop
+    }
+}
+
+// Seriously, don't ever do this.
+
+actor ManaParticlesB : ManaParticlesA { States { Spawn: MANA B 1 BRIGHT A_FadeOut(0.05) loop }}
+actor ManaParticlesC : ManaParticlesA { States { Spawn: MANA C 1 BRIGHT A_FadeOut(0.05) loop }}
+actor ManaParticlesD : ManaParticlesA { States { Spawn: MANA D 1 BRIGHT A_FadeOut(0.05) loop }}
+actor ManaParticlesE : ManaParticlesA { States { Spawn: MANA E 1 BRIGHT A_FadeOut(0.05) loop }}
+actor ManaParticlesF : ManaParticlesA { States { Spawn: MANA F 1 BRIGHT A_FadeOut(0.05) loop }}
+actor ManaParticlesG : ManaParticlesA { States { Spawn: MANA G 1 BRIGHT A_FadeOut(0.05) loop }}
+actor ManaParticlesH : ManaParticlesA { States { Spawn: MANA H 1 BRIGHT A_FadeOut(0.05) loop }}
+actor ManaParticlesI : ManaParticlesA { States { Spawn: MANA I 1 BRIGHT A_FadeOut(0.05) loop }}
+actor ManaParticlesJ : ManaParticlesA { States { Spawn: MANA J 1 BRIGHT A_FadeOut(0.05) loop }}
+actor ManaParticlesK : ManaParticlesA { States { Spawn: MANA K 1 BRIGHT A_FadeOut(0.05) loop }}
+actor ManaParticlesL : ManaParticlesA { States { Spawn: MANA L 1 BRIGHT A_FadeOut(0.05) loop }}
+actor ManaParticlesM : ManaParticlesA { States { Spawn: MANA M 1 BRIGHT A_FadeOut(0.05) loop }}
+actor ManaParticlesN : ManaParticlesA { States { Spawn: MANA N 1 BRIGHT A_FadeOut(0.05) loop }}
+actor ManaParticlesO : ManaParticlesA { States { Spawn: MANA O 1 BRIGHT A_FadeOut(0.05) loop }}
+actor ManaParticlesP : ManaParticlesA { States { Spawn: MANA P 1 BRIGHT A_FadeOut(0.05) loop }}
+actor ManaParticlesQ : ManaParticlesA { States { Spawn: MANA Q 1 BRIGHT A_FadeOut(0.05) loop }}
+actor ManaParticlesR : ManaParticlesA { States { Spawn: MANA R 1 BRIGHT A_FadeOut(0.05) loop }}
+actor ManaParticlesS : ManaParticlesA { States { Spawn: MANA S 1 BRIGHT A_FadeOut(0.05) loop }}
+actor ManaParticlesT : ManaParticlesA { States { Spawn: MANA T 1 BRIGHT A_FadeOut(0.05) loop }}
+actor ManaParticlesU : ManaParticlesA { States { Spawn: MANA U 1 BRIGHT A_FadeOut(0.05) loop }}
+actor ManaParticlesV : ManaParticlesA { States { Spawn: MANA V 1 BRIGHT A_FadeOut(0.05) loop }}
+actor ManaParticlesW : ManaParticlesA { States { Spawn: MANA W 1 BRIGHT A_FadeOut(0.05) loop }}
+actor ManaParticlesX : ManaParticlesA { States { Spawn: MANA X 1 BRIGHT A_FadeOut(0.05) loop }}
+actor ManaParticlesY : ManaParticlesA { States { Spawn: MANA Y 1 BRIGHT A_FadeOut(0.05) loop }}
+actor ManaParticlesZ : ManaParticlesA { States { Spawn: MANA Z 1 BRIGHT A_FadeOut(0.05) loop }}
 
 actor GrenadeAmmo : Ammo
 {

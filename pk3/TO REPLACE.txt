@@ -11,9 +11,10 @@ SPRITES:
 - Bullet puffs
 - Bauk's sprites
 - Upyr's sprites
-- Ammo pickups
+- Drekavac's sprites
 - Grenade pickups
 - Grenade satchel
+- Better artifact sprites
 
 SOUNDS:
 =============
