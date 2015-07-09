@@ -26,7 +26,6 @@ actor LifeEssencePickup : CustomInventory 31044
         TNT1 A 0 A_JumpIfHealthLower(100,"PickupHeal")
         goto PickupFail
     PickupHeal:
-        TNT1 A 0 A_JumpIfInventory("BowMana",0,"PickupFail")
         TNT1 A 0 A_SetBlend("99 FF 66",0.1,5)
         TNT1 A 0 A_PlaySoundEx("get/smallitem","soundslot7",0,0)
         TNT1 A 0 A_GiveInventory("LifeEssenceHealth",15)
