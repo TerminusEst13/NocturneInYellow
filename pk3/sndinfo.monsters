@@ -15,6 +15,7 @@ vodyanoy/pain             VODYPAIN // Mixed from Sony Media 1001 Sound Effects
 vodyanoy/attack           VODYATAK // Mixed from Sony Pictures Sound Effects Series
 vodyanoy/impact           VODYMISS // Mixed from Sony Pictures Sound Effects Series
 vodyanoy/death            VODYDETH // Mixed from Sony Media 1001 Sound Effects
+vodyanoy/walk             VODYWALK // Mixed from the General Series 6000
 
 $limit vodyanoy/attack 0
 

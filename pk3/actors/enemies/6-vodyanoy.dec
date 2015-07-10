@@ -75,16 +75,90 @@ actor VodyanoyShot
     Spawn:
         TNT1 A 0 A_JumpIfInventory("Counter",20,"Vanish")
         // Not using A_Countdown/ReactionTime since I want them to vanish, not go to Death.
-        FATB A 3 Bright A_GiveInventory("Counter",1)
-        FATB B 3 Bright A_SeekerMissile(45,100,SMF_PRECISE | SMF_CURSPEED)
+        TNT1 A 0 A_GiveInventory("Counter",1)
+        VODB AAA 1 Bright A_SpawnItemEx("VodyanoyShotTrail",0,0,0,0,0,0,0,160)
+        TNT1 A 0 A_SeekerMissile(45,100,SMF_PRECISE | SMF_CURSPEED)
+        VODB BBB 1 Bright A_SpawnItemEx("VodyanoyShotTrail",0,0,0,0,0,0,0,160)
         Loop
     Death:
-        FBXP A 8 Bright
-        FBXP B 6 Bright
-        FBXP C 4 Bright
+        TNT1 AAAAAAA 0 A_SpawnItemEx("VodyanoyShotSpatter",0,0,0,frandom(-3,3),frandom(-3,3),frandom(-3,3),0,160)
+        VODB C 6 Bright
+        VODB D 4 Bright
+        VODB EFG 2 Bright
         Stop
     Vanish:
-        FATB AAAAAAAAAA 3 Bright A_FadeOut(0.1)
+        TNT1 A 0 A_SpawnItemEx("VodyanoyShotTrail",0,0,0,0,0,0,0,160)
+        VODB A 1 Bright A_FadeOut(0.1)
+        TNT1 A 0 A_SpawnItemEx("VodyanoyShotTrail",0,0,0,0,0,0,0,160)
+        VODB A 1 Bright A_FadeOut(0.1)
+        TNT1 A 0 A_SpawnItemEx("VodyanoyShotTrail",0,0,0,0,0,0,0,160)
+        VODB A 1 Bright A_FadeOut(0.1)
+        TNT1 A 0 A_SpawnItemEx("VodyanoyShotTrail",0,0,0,0,0,0,0,160)
+        VODB A 1 Bright A_FadeOut(0.1)
+        TNT1 A 0 A_SpawnItemEx("VodyanoyShotTrail",0,0,0,0,0,0,0,160)
+        VODB A 1 Bright A_FadeOut(0.1)
+        TNT1 A 0 A_SpawnItemEx("VodyanoyShotTrail",0,0,0,0,0,0,0,160)
+        VODB A 1 Bright A_FadeOut(0.1)
+        TNT1 A 0 A_SpawnItemEx("VodyanoyShotTrail",0,0,0,0,0,0,0,160)
+        VODB A 1 Bright A_FadeOut(0.1)
+        TNT1 A 0 A_SpawnItemEx("VodyanoyShotTrail",0,0,0,0,0,0,0,160)
+        VODB A 1 Bright A_FadeOut(0.1)
+        TNT1 A 0 A_SpawnItemEx("VodyanoyShotTrail",0,0,0,0,0,0,0,160)
+        VODB A 1 Bright A_FadeOut(0.1)
+        TNT1 A 0 A_SpawnItemEx("VodyanoyShotTrail",0,0,0,0,0,0,0,160)
+        VODB A 1 Bright A_FadeOut(0.1)
+        TNT1 A 0 A_SpawnItemEx("VodyanoyShotTrail",0,0,0,0,0,0,0,160)
+        VODB A 1 Bright A_FadeOut(0.1)
         stop
+    }
+}
+
+actor VodyanoyShotTrail
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Alpha 0.75
+    Scale 0.85
+    RenderStyle Add
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 1
+        TNT1 AA 0 A_SpawnItemEx("VodyanoyShotTrail2",frandom(-0.25,0.25),random(-0.25,0.25),random(-0.25,0.25),random(-1,1),random(-1,1),random(-1,1),0,160)
+        VODB AAAA 1 BRIGHT A_FadeOut(0.05)
+        VODB BBBB 1 BRIGHT A_FadeOut(0.1)
+        stop
+    }
+}
+
+actor VodyanoyShotTrail2 : VodyanoyShotTrail
+{
+    Scale 0.775
+    States
+    {
+    Spawn:
+        TNT1 A 2
+        VODB AAAA 1 BRIGHT A_FadeOut(0.05)
+        VODB BBBB 1 BRIGHT A_FadeOut(0.1)
+        stop
+    }
+}
+
+actor VodyanoyShotSpatter
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Alpha 0.75
+    Scale 0.75
+    RenderStyle Add
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        VODB C 6 Bright
+        VODB D 4 Bright
+        VODB EFG 2 Bright
+        Stop
     }
 }
