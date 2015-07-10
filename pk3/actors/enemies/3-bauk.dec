@@ -60,8 +60,8 @@ ACTOR Bauk 31092
         SARG H 2 A_Pain
         Goto See
     Death:
-        SARG I 8
-        SARG J 8 A_Scream
+        SARG I 8 A_Scream
+        SARG J 8
         SARG K 4
         SARG L 4 A_NoBlocking
         SARG M 4

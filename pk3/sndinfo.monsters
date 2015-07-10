@@ -8,6 +8,16 @@ bauk/pain                 BAUKPAIN // Mixed from the General Series 6000 and Mon
 bauk/attack               BAUKATTK // Mixed from the General Series 6000, Monsters and Creatures, and Freedoom
 bauk/death                BAUKDETH // Mixed from the General Series 6000 and Monsters and Creatures
 
+// Vodyanoy
+vodyanoy/see              VODYSITE // Mixed from Sony Media 1001 Sound Effects
+vodyanoy/idle             VODYIDLE // Mixed from Sony Media 1001 Sound Effects
+vodyanoy/pain             VODYPAIN // Mixed from Sony Media 1001 Sound Effects
+vodyanoy/attack           VODYATAK // Mixed from Sony Pictures Sound Effects Series
+vodyanoy/impact           VODYMISS // Mixed from Sony Pictures Sound Effects Series
+vodyanoy/death            VODYDETH // Mixed from Sony Media 1001 Sound Effects
+
+$limit vodyanoy/attack 0
+
 // Drekavac
 drekavac/scream           DREKATCK // Mixed from the General Series 6000 and adriancalzon's Scream 01
 $random drekavac/screamfar { drekscrm1 drekscrm2 drekscrm3 drekscrm4 drekscrm5 drekscrm6 drekscrm7 drekscrm8 } // Mixed from the General Series 6000

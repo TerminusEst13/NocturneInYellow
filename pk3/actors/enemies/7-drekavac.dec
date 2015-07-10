@@ -60,8 +60,8 @@ ACTOR Drekavac 31096
         INCA L 4 A_Pain
         Goto See
     Death:
-        INCA LM 7
-        INCA N 7 A_Scream
+        INCA L 7 A_Scream
+        INCA MN 7
         INCA O 7 A_NoBlocking
         INCA P 7
         INCA Q -1

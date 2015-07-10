@@ -17,39 +17,40 @@ ACTOR Vodyanoy 31094
     +NOINFIGHTING
     +THRUSPECIES
     Species "Monster"
-    SeeSound "fatso/sight"
-    PainSound "fatso/pain"
-    DeathSound "fatso/death"
-    ActiveSound "fatso/active"
+    SeeSound "vodyanoy/see"
+    PainSound "vodyanoy/pain"
+    DeathSound "vodyanoy/death"
+    ActiveSound "vodyanoy/idle"
     Obituary " "
     States
     {
     Spawn:
-        FATT A 10 A_Look
+        INCB A 10 A_Look
         Loop
     See:
-        FATT AABBCC 5 A_Chase
+        INCB AABB 5 A_Chase
         TNT1 A 0 Radius_Quake(1,2,0,12,0)
-        TNT1 A 0 A_PlaySound("cyber/hoof",CHAN_AUTO,1.0,0,ATTN_NORM)
-        FATT DDEEFF 5 A_Chase
+        TNT1 A 0 A_PlaySound("vodyanoy/walk","soundslot6",1.0,0,ATTN_NORM)
+        INCB CCDD 5 A_Chase
         TNT1 A 0 Radius_Quake(1,2,0,12,0)
-        TNT1 A 0 A_PlaySound("cyber/hoof",CHAN_AUTO,1.0,0,ATTN_NORM)
+        TNT1 A 0 A_PlaySound("vodyanoy/walk","soundslot6",1.0,0,ATTN_NORM)
         Loop
     Missile:
-        FATT G 8
-        FATT H 8 Bright A_CustomMissile("VodyanoyShot")
-        FATT G 1 A_CPosRefire
+        INCB E 8
+        TNT1 A 0 A_PlaySoundEx("vodyanoy/attack","soundslot5",0,0)
+        INCB H 8 Bright A_CustomMissile("VodyanoyShot")
+        INCB E 1 A_CPosRefire
         Goto Missile
     Pain:
-        FATT J 3
-        FATT J 3 A_Pain
+        INCB J 3
+        INCB J 3 A_Pain
         Goto See
     Death:
-        FATT K 6
-        FATT L 6 A_Scream
-        FATT M 6 A_NoBlocking
-        FATT NOPQRS 6
-        FATT T -1 A_BossDeath
+        INCB I 6 A_Scream
+        INCB J 6
+        INCB K 6 A_NoBlocking
+        INCB LMN 6
+        INCB N -1 A_BossDeath
         Stop
     }
 }
@@ -68,8 +69,7 @@ actor VodyanoyShot
     +RANDOMIZE
     +THRUSPECIES
     Species "Monster"
-    SeeSound "skeleton/attack"
-    DeathSound "skeleton/tracex"
+    DeathSound "vodyanoy/impact"
     States
     {
     Spawn:

@@ -12,6 +12,7 @@ SPRITES:
 - Bauk's sprites
 - Upyr's sprites
 - Drekavac's sprites
+- Vodyanoy's sprites
 - Grenade pickups
 - Grenade satchel
 - Better artifact sprites
