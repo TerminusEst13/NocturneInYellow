@@ -3,12 +3,14 @@ actor GrenadeSatchelPickup : CustomInventory 31040
 //$Category Nocturne-Items
     Inventory.PickupMessage ""
     Inventory.PickupSound ""
+    //Scale 1.1
     +QUIET
     States
     {
     Spawn:
-        PLHD A -1
-        stop
+        STCH A 30
+        STCH A 1 BRIGHT
+        loop
     Pickup:
         TNT1 A 0
         TNT1 A 0 A_SetBlend("FF FF 66",0.35,20)
