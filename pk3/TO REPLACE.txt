@@ -5,7 +5,6 @@ SPRITES:
 - Player sprites
 - Spear
 - Mosin Nagant
-- Nagant Ammo
 - Nagant casings
 - Bullet sparks
 - Bullet puffs
@@ -13,8 +12,6 @@ SPRITES:
 - Upyr's sprites
 - Drekavac's sprites
 - Vodyanoy's sprites
-- Grenade pickups
-- Grenade satchel
 - Better artifact sprites
 
 SOUNDS:

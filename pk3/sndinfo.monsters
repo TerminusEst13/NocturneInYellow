@@ -1,6 +1,14 @@
 // MONSTERS
 // =================
 
+// Nezhit
+nezhit/see                NEZHSITE // Mixed from Huminaatio's Zombie breathing
+nezhit/idle               NEZHIDLE // Mixed from ArriGD's Zombie Roar 7 and soykevin's Zombie Attack
+nezhit/pain               NEZHPAIN // Mixed from ArriGD's Zombie Roar 7 and JarAxe's ZOMBIE25.wav
+nezhit/attack             NEZHATAK // Mixed from the General Series 6000 and soykevin's Zombie Attack
+nezhit/hit                NEZHAHIT // Taken from the General Series 6000
+nezhit/death              NEZHDETH // Mixed from Under7dude's Zombie 1 and JarAxe's ZOMBIE25.wav
+
 // Bauk
 bauk/see                  BAUKSITE // Mixed from the General Series 6000 and Monsters and Creatures
 bauk/idle                 BAUKIDLE // Mixed from the General Series 6000 and Monsters and Creatures
