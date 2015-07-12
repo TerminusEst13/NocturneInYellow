@@ -14,10 +14,10 @@ ACTOR Likho 31091
     +NOINFIGHTING
     +THRUSPECIES
     Species "Monster"
-    SeeSound "imp/sight"
-    PainSound "imp/pain"
-    DeathSound "imp/death"
-    ActiveSound "imp/active"
+    SeeSound "likho/see"
+    PainSound "likho/pain"
+    DeathSound "likho/death"
+    ActiveSound "likho/idle"
     Obituary " "
     States
     {
@@ -73,8 +73,8 @@ ACTOR LikhoBall
     RenderStyle Add
     Alpha 0.99
     Scale 0.75
-    SeeSound "imp/attack"
-    DeathSound "imp/shotx"
+    SeeSound "likho/attack"
+    DeathSound "likho/hit"
     States
     {
     Spawn:

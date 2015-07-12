@@ -7,7 +7,8 @@ ACTOR Nocnitsa 31093
     Speed 13
     PainChance 128
     PainChance "Spear", 255
-    Scale 1.75
+    RenderStyle Add
+    Alpha 0.75
     Damage (random(10,20))
     Monster
     +FLOAT
@@ -18,42 +19,41 @@ ACTOR Nocnitsa 31093
     +NOINFIGHTING
     +THRUSPECIES
     Species "Monster"
-    SeeSound "caco/sight"
-    AttackSound "demon/melee"
-    PainSound "caco/pain"
-    DeathSound "skull/death"
-    ActiveSound "caco/active"
+    SeeSound "nocnitsa/see"
+    PainSound "nocnitsa/pain"
+    DeathSound "nocnitsa/death"
+    ActiveSound "nocnitsa/idle"
     Obituary " "
     States
     {
     Spawn:
-        SKUL A 10 Bright A_Look
+        NSHA A 10 Bright A_Look
         Loop
     See:
-        SKUL AB 3 Bright A_Chase
+        NSHA ABCD 3 Bright A_Chase
         Loop
     Missile:
-        SKUL C 6 Bright A_FaceTarget
-        SKUL D 4 Bright A_SkullAttack(35)
-        SKUL CDCDCDCDCDCDCDCDC 4 Bright
+        TNT1 A 0 A_PlaySoundEx("nocnitsa/attack","soundslot5",0,0)
+        NSHA E 3 Bright A_FaceTarget
+        NSHA F 3 Bright A_SkullAttack(35)
+        NSHA FFFFFFFFFFFFFFFFF 3 Bright
         TNT1 A 0 A_Stop
-        SKUL A 1 Bright
+        NSHA E 4 Bright
         Goto See
     Melee:
-        SKUL C 4 Bright
-        SKUL D 4 Bright A_CustomMeleeAttack(random(15,25),"demon/melee","demon/melee")
+        NSHA E 4 Bright
+        NSHA F 4 Bright A_CustomMeleeAttack(random(15,25),"","nezhit/hit")
         goto See
     Pain:
-        SKUL E 3 Bright
-        SKUL E 3 Bright A_Pain
+        NSHA G 3 Bright
+        NSHA G 3 Bright A_Pain
         Goto See
     Death:
-        SKUL F 6 Bright
-        SKUL G 6 Bright A_Scream
-        SKUL H 6 Bright
-        SKUL I 6 Bright A_NoBlocking
-        SKUL J 6
-        SKUL K 6
+        NSHA H 3 Bright A_Scream
+        NSHA IJ 3 Bright
+        NSHA K 3 Bright A_NoBlocking
+        NSHA LMNO 3 Bright
+        NSHA P 3 Bright
         Stop
     }
 }
