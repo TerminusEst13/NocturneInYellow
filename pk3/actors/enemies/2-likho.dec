@@ -22,40 +22,32 @@ ACTOR Likho 31091
     States
     {
     Spawn:
-        TROO AB 10 A_Look
+        LIKH A 10 A_Look
         Loop
     See:
-        TROO AABBCCDD 3 A_Chase
+        LIKH AABBCCDD 3 A_Chase
         Loop
     Missile:
         TNT1 A 0 A_Jump(64,"Missile2")
-        TROO EF 6 A_FaceTarget
-        TROO G 5 A_CustomMissile("LikhoBall")
+        LIKH EF 6 A_FaceTarget
+        LIKH G 5 A_CustomMissile("LikhoBall")
         Goto See
     Missile2:
-        TROO EF 5 A_FaceTarget
-        TROO G 4 A_CustomMissile("LikhoBall")
-        TROO EF 5 A_FaceTarget
-        TROO G 4 A_CustomMissile("LikhoBall")
+        LIKH EF 5 A_FaceTarget
+        LIKH G 4 A_CustomMissile("LikhoBall")
+        LIKH EF 5 A_FaceTarget
+        LIKH G 4 A_CustomMissile("LikhoBall")
         Goto See
     Pain:
-        TROO H 2
-        TROO H 2 A_Pain
+        LIKH H 2
+        LIKH H 2 A_Pain
         Goto See
     Death:
-        TROO I 8
-        TROO J 8 A_Scream
-        TROO K 6
-        TROO L 6 A_NoBlocking
-        TROO M -1
-        Stop
-    XDeath:
-        TROO N 5
-        TROO O 5 A_XScream
-        TROO P 5
-        TROO Q 5 A_NoBlocking
-        TROO RST 5
-        TROO U -1
+        LIKH I 5 A_Scream
+        LIKH JK 5
+        LIKH L 4 A_NoBlocking
+        LIKH MN 3
+        LIKH O -1
         Stop
     }
 }
@@ -78,10 +70,10 @@ ACTOR LikhoBall
     States
     {
     Spawn:
-        BAL1 AAAABBBB 1 Bright A_SpawnItemEx("LikhoBallTrail",0,0,0,0,0,0,0,160)
+        LBAL AAAABBBB 1 Bright A_SpawnItemEx("LikhoBallTrail",0,0,0,0,0,0,0,160)
         Loop
     Death:
-        BAL1 CDE 6 Bright
+        LBAL CDEFG 3 Bright
         Stop
     }
 }
@@ -97,7 +89,7 @@ ACTOR LikhoBallTrail
     {
     Spawn:
         TNT1 A 0
-        BAL1 A 1 Bright A_FadeOut(0.1)
+        LBAL AB 1 Bright A_FadeOut(0.1)
         loop
     }
 }

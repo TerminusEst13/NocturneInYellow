@@ -26,6 +26,7 @@ ACTOR Bauk 31092
         SARG A 10 A_Look
         Loop
     See:
+        TNT1 A 0 A_TakeInventory("Counter",0x7FFFFFFF)
         TNT1 A 0 A_ChangeFlag("FRIGHTENED",0)
         TNT1 A 0 A_JumpIfCloser(224,"See3")
         TNT1 A 0 A_JumpIfCloser(1024,"See2")
@@ -47,12 +48,19 @@ ACTOR Bauk 31092
         TNT1 A 0 ThrustThingZ(0,21,0,1)
         TNT1 A 0 A_Recoil(-35)
         TNT1 A 0 A_PlaySound("bauk/attack",CHAN_AUTO,1.0,0,ATTN_NORM)
-        SARG EF 5 A_FaceTarget
-        SARG G 5 A_CustomMeleeAttack(random(15,20),"bauk/attack","bauk/attack")
+        SARG EF 2 A_FaceTarget
+    MissileFlight:
+        SARG G 1 A_CustomMeleeAttack(random(15,20),"bauk/attack","")
+        TNT1 A 0 A_JumpIfInventory("Counter",70,"MissileFinish")
+        TNT1 A 0 A_GiveInventory("Counter",1)
+        TNT1 A 0 A_CheckFloor("MissileFinish")
+        loop
+    MissileFinish:
+        TNT1 A 0 A_TakeInventory("Counter",0x7FFFFFFF)
         SARG A 5
         Goto See
     Melee:
-        SARG EF 5 A_FaceTarget
+        SARG EF 4 A_FaceTarget
         SARG G 5 A_CustomMeleeAttack(random(15,20),"bauk/attack","bauk/attack")
         Goto See
     Pain:

@@ -9,12 +9,27 @@ nezhit/attack             NEZHATAK // Mixed from the General Series 6000 and soy
 nezhit/hit                NEZHAHIT // Taken from the General Series 6000
 nezhit/death              NEZHDETH // Mixed from Under7dude's Zombie 1 and JarAxe's ZOMBIE25.wav
 
+// Likho
+likho/see                 LIKHSITE // Mixed from the General Series 6000
+likho/idle                LIKHIDLE // Mixed from the General Series 6000
+likho/pain                LIKHPAIN // Mixed from the General Series 6000
+likho/attack              LIKHATAK // Mixed from the General Series 6000
+likho/hit                 LIKHAHIT // Mixed from the General Series 6000
+likho/death               LIKHDETH // Mixed from the General Series 6000
+
 // Bauk
 bauk/see                  BAUKSITE // Mixed from the General Series 6000 and Monsters and Creatures
 bauk/idle                 BAUKIDLE // Mixed from the General Series 6000 and Monsters and Creatures
 bauk/pain                 BAUKPAIN // Mixed from the General Series 6000 and Monsters and Creatures
 bauk/attack               BAUKATTK // Mixed from the General Series 6000, Monsters and Creatures, and Freedoom
 bauk/death                BAUKDETH // Mixed from the General Series 6000 and Monsters and Creatures
+
+// Nocnitsa
+nocnitsa/see              NOCNSITE // Mixed from the General Series 6000
+nocnitsa/idle             NOCNIDLE // Mixed from the General Series 6000
+nocnitsa/pain             NOCNPAIN // Mixed from the General Series 6000
+nocnitsa/attack           NOCNATAK // Mixed from the General Series 6000
+nocnitsa/death            NOCNDETH // Mixed from the General Series 6000
 
 // Vodyanoy
 vodyanoy/see              VODYSITE // Mixed from Sony Media 1001 Sound Effects
@@ -26,6 +41,17 @@ vodyanoy/death            VODYDETH // Mixed from Sony Media 1001 Sound Effects
 vodyanoy/walk             VODYWALK // Mixed from the General Series 6000
 
 $limit vodyanoy/attack 0
+
+// Ala
+ala/see                   ALASITE  // Mixed from the General Series 6000
+ala/idle                  ALAIDLE  // Mixed from the General Series 6000
+ala/pain                  ALAPAIN  // Mixed from the General Series 6000
+ala/death                 ALADETH  // Mixed from the General Series 6000
+ala/attack                ALAATAK  // Mixed from the General Series 6000 and the Sony Pictures Sound Effects Series
+ala/impact                ALAAHIT  // Mixed from the General Series 6000 and the Sony Pictures Sound Effects Series
+
+$volume ala/impact 0.7
+$limit ala/impact 0
 
 // Drekavac
 drekavac/scream           DREKATCK // Mixed from the General Series 6000 and adriancalzon's Scream 01

@@ -8,6 +8,7 @@ SPRITES:
 - Nagant casings
 - Bullet sparks
 - Bullet puffs
+- Nezhit's sprites
 - Bauk's sprites
 - Upyr's sprites
 - Drekavac's sprites
