@@ -4,7 +4,7 @@ gameinfo
 	quitsound = "system/quit"
     quitmessages = "$QUITMSG1", "$QUITMSG2", "$QUITMSG3", "$QUITMSG4", "$QUITMSG5", "$QUITMSG6", "$QUITMSG7", "$QUITMSG8", "$QUITMSG9", "$QUITMSG10", "$QUITMSG11", "$QUITMSG12", "$QUITMSG13", "$QUITMSG14", "$QUITMSG15"
 	dimcolor = "00 00 00"
-	dimamount = 0.25
+	dimamount = 0.5
     NoRandomPlayerClass = true
 
 	MapArrow = "maparrows/arrow.txt"

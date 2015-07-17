@@ -23,7 +23,7 @@ ListMenu "PlayerclassMenu"
 
 ListMenu "SkillMenu"
 {
-		StaticPatch 54, 38, "M_SKILL"
+		StaticPatch 60, 24, "M_SKILL"
 		Position 48, 63
 		centermenu
 }
