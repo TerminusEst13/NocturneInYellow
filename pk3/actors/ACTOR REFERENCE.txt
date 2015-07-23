@@ -37,3 +37,6 @@ WORLD:
 31200 - Blue Skull Torch
 31201 - Green Skull Torch
 31202 - Rain sound
+31203-31206 - Candles
+31207-31210 - Torches
+31211-31213 - Candelabras

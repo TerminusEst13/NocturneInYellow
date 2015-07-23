@@ -60,7 +60,7 @@ actor VodyanoyShot
     Radius 11
     Height 8
     Speed 11
-    Damage (random(20,35))
+    Damage (random(15,25))
     Scale 1.1
     RenderStyle Add
     Alpha 0.99

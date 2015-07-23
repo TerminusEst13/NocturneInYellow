@@ -13,6 +13,8 @@ ACTOR Bauk 31092
     +DONTBLAST
     +NOINFIGHTING
     +THRUSPECIES
+    +MISSILEMORE
+    MeleeRange 96
     Species "Monster"
     SeeSound "bauk/see"
     AttackSound "bauk/attack"
@@ -37,8 +39,7 @@ ACTOR Bauk 31092
         goto See
     See3:
         TNT1 A 0 A_ChangeFlag("FRIGHTENED",1)
-        SARG AA 2 A_FastChase
-        SARG BB 2 A_Chase
+        SARG AABB 2 A_Chase
         SARG CC 2 A_FastChase
         SARG DD 2 A_Chase
         goto See
@@ -50,18 +51,20 @@ ACTOR Bauk 31092
         TNT1 A 0 A_PlaySound("bauk/attack",CHAN_AUTO,1.0,0,ATTN_NORM)
         SARG EF 2 A_FaceTarget
     MissileFlight:
-        SARG G 1 A_CustomMeleeAttack(random(15,20),"bauk/attack","")
+        SARG G 1 A_JumpIfCloser(64,"MissileHit")
         TNT1 A 0 A_JumpIfInventory("Counter",70,"MissileFinish")
         TNT1 A 0 A_GiveInventory("Counter",1)
         TNT1 A 0 A_CheckFloor("MissileFinish")
         loop
+    MissileHit:
+        TNT1 A 0 A_CustomMeleeAttack(random(10,15),"bauk/attack","")
     MissileFinish:
         TNT1 A 0 A_TakeInventory("Counter",0x7FFFFFFF)
         SARG A 5
         Goto See
     Melee:
         SARG EF 4 A_FaceTarget
-        SARG G 5 A_CustomMeleeAttack(random(15,20),"bauk/attack","bauk/attack")
+        SARG G 5 A_CustomMeleeAttack(random(10,15),"bauk/attack","bauk/attack")
         Goto See
     Pain:
         SARG H 2

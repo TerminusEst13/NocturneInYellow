@@ -16,7 +16,6 @@ actor GrenadeSatchelPickup : CustomInventory 31040
         TNT1 A 0 A_SetBlend("FF FF 66",0.35,20)
         TNT1 A 0 A_PlaySoundEx("get/powerup","soundslot7",0,0)
         TNT1 A 0 A_GiveInventory("GrenadeAmmoCounter",1)
-        TNT1 A 0 A_GiveInventory("GrenadeAmmo",1)
         TNT1 A 0 ACS_ExecuteAlways(433,0,4)
         stop
     }

@@ -1,36 +1,216 @@
-// Candles
 // Being lazy and just copy-pasting from Doomstuff, since this shouldn't be loaded with Doom anyway.
+
+// Freedoom stuff for more natural/rocky formations
 
 ACTOR BlueTorch2 31200
 {
 //$Category Nocturne-Map
-  Radius 8
-  Height 68
-  ProjectilePassHeight -16
-  +SOLID
-  +FORCEYBILLBOARD
-  States
-  {
-  Spawn:
-    TBLU ABCD 4 Bright
-    Loop
-  }
+    Radius 8
+    Height 68
+    ProjectilePassHeight -16
+    +SOLID
+    +FORCEYBILLBOARD
+    States
+    {
+    Spawn:
+        TBLU ABCD 4 Bright
+        Loop
+    }
 }
 
 ACTOR GreenTorch2 31201
 {
 //$Category Nocturne-Map
-  Radius 8
-  Height 68
-  ProjectilePassHeight -16
-  +SOLID
-  +FORCEYBILLBOARD
-  States
-  {
-  Spawn:
-    TGRN ABCD 4 Bright
-    Loop
-  }
+    Radius 8
+    Height 68
+    ProjectilePassHeight -16
+    +SOLID
+    +FORCEYBILLBOARD
+    States
+    {
+    Spawn:
+        TGRN ABCD 4 Bright
+        Loop
+    }
 }
 
-// Lanterns
+// Original stuff
+
+ACTOR SmallCandle1 31203
+{
+//$Category Nocturne-Map
+    Radius 8
+    Height 16
+    Scale 0.625
+    -SOLID
+    +FORCEYBILLBOARD
+    States
+    {
+    Spawn:
+        CND1 ABCDE 3 Bright
+        Loop
+    }
+}
+
+ACTOR SmallCandle2 31204
+{
+//$Category Nocturne-Map
+    Radius 8
+    Height 16
+    Scale 0.625
+    -SOLID
+    +FORCEYBILLBOARD
+    States
+    {
+    Spawn:
+        CND2 ABCDE 3 Bright
+        Loop
+    }
+}
+
+ACTOR SmallCandle3 31205
+{
+//$Category Nocturne-Map
+    Radius 8
+    Height 16
+    Scale 0.625
+    -SOLID
+    +FORCEYBILLBOARD
+    States
+    {
+    Spawn:
+        CND3 ABCDE 3 Bright
+        Loop
+    }
+}
+
+ACTOR SmallCandle4 31206
+{
+//$Category Nocturne-Map
+    Radius 8
+    Height 16
+    Scale 0.625
+    -SOLID
+    +FORCEYBILLBOARD
+    States
+    {
+    Spawn:
+        CND4 ABCDE 3 Bright
+        Loop
+    }
+}
+
+ACTOR CastleTorch1 31207
+{
+//$Category Nocturne-Map
+    Radius 8
+    Height 56
+    +SOLID
+    +FORCEYBILLBOARD
+    ProjectilePassHeight -16
+    States
+    {
+    Spawn:
+        TCH1 ABCDE 3 Bright
+        Loop
+    }
+}
+
+ACTOR CastleTorch2 31208
+{
+//$Category Nocturne-Map
+    Radius 8
+    Height 56
+    +SOLID
+    +FORCEYBILLBOARD
+    ProjectilePassHeight -16
+    States
+    {
+    Spawn:
+        TCH2 ABCDE 3 Bright
+        Loop
+    }
+}
+
+ACTOR CastleTorch3 31209
+{
+//$Category Nocturne-Map
+    Radius 8
+    Height 56
+    +SOLID
+    +FORCEYBILLBOARD
+    ProjectilePassHeight -16
+    States
+    {
+    Spawn:
+        TCH3 ABCDE 3 Bright
+        Loop
+    }
+}
+
+ACTOR CastleTorch4 31210
+{
+//$Category Nocturne-Map
+    Radius 8
+    Height 56
+    +SOLID
+    +FORCEYBILLBOARD
+    ProjectilePassHeight -16
+    States
+    {
+    Spawn:
+        TCH4 ABCDE 3 Bright 
+        Loop
+    }
+}
+
+ACTOR CastleCandelabra1 31211
+{
+//$Category Nocturne-Map
+    Radius 32
+    Height 60
+    Scale 0.75
+    +FORCEYBILLBOARD
+    +SPAWNCEILING
+    +NOGRAVITY
+    States
+    {
+    Spawn:
+        CDLB A -1 Bright
+        stop
+    }
+}
+
+ACTOR CastleCandelabra2 31212
+{
+//$Category Nocturne-Map
+    Radius 32
+    Height 60
+    Scale 0.75
+    +FORCEYBILLBOARD
+    +SPAWNCEILING
+    +NOGRAVITY
+    States
+    {
+    Spawn:
+        CDLB B -1 Bright
+        stop
+    }
+}
+
+ACTOR CastleCandelabra3 31213
+{
+//$Category Nocturne-Map
+    Radius 32
+    Height 60
+    Scale 0.75
+    +FORCEYBILLBOARD
+    +SPAWNCEILING
+    +NOGRAVITY
+    States
+    {
+    Spawn:
+        CDLB C -1 Bright
+        stop
+    }
+}

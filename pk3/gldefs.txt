@@ -1,4 +1,57 @@
-// Tall green torch
+flickerlight2 SMALLPURPLETORCH
+{
+    color 1.0 0.0 1.0
+    size 56
+    secondarySize 64
+    interval 0.1
+    offset 0 24 0
+}
+
+flickerlight2 SMALLREDTORCH
+{
+    color 1.0 0.0 0.0
+    size 56
+    secondarySize 64
+    interval 0.1
+    offset 0 24 0
+}
+
+flickerlight2 SMALLGREENTORCH
+{
+    color 0.0 1.0 0.0
+    size 56
+    secondarySize 64
+    interval 0.1
+    offset 0 24 0
+}
+
+flickerlight2 SMALLBLUETORCH
+{
+    color 0.0 0.0 1.0
+    size 56
+    secondarySize 64
+    interval 0.1
+    offset 0 24 0
+}
+flickerlight2 BIGPURPLETORCH
+{
+    color 1.0 0.0 1.0
+    size 64
+    secondarySize 72
+    interval 0.1
+    offset 0 60 0
+}
+
+// Tall blue torch
+flickerlight2 BIGREDTORCH
+{
+    color 1.0 0.0 0.0
+    size 64
+    secondarySize 72
+    interval 0.1
+    offset 0 60 0
+}
+
 flickerlight2 BIGGREENTORCH
 {
     color 0.0 1.0 0.0
@@ -6,11 +59,6 @@ flickerlight2 BIGGREENTORCH
     secondarySize 72
     interval 0.1
     offset 0 60 0
-}
-
-object GreenTorch2
-{
-    frame TGRN { light BIGGREENTORCH }
 }
 
 // Tall blue torch
@@ -23,7 +71,67 @@ flickerlight2 BIGBLUETORCH
     offset 0 60 0
 }
 
+object GreenTorch2
+{
+    frame TGRN { light BIGGREENTORCH }
+}
+
 object BlueTorch2
 {
     frame TBLU { light BIGBLUETORCH }
+}
+
+object SmallCandle1
+{
+    frame CND1 { light SMALLPURPLETORCH }
+}
+
+object SmallCandle2
+{
+    frame CND2 { light SMALLREDTORCH }
+}
+
+object SmallCandle3
+{
+    frame CND3 { light SMALLGREENTORCH }
+}
+
+object SmallCandle4
+{
+    frame CND3 { light SMALLBLUETORCH }
+}
+
+object CastleTorch1
+{
+    frame TCH1 { light BIGPURPLETORCH }
+}
+
+object CastleTorch2
+{
+    frame TCH2 { light BIGREDTORCH }
+}
+
+object CastleTorch3
+{
+    frame TCH3 { light BIGGREENTORCH }
+}
+
+object CastleTorch4
+{
+    frame TCH4 { light BIGBLUETORCH }
+}
+
+object CastleCandelabra1
+{
+    frame CDLB { light BIGREDTORCH }
+}
+
+object CastleCandelabra2
+{
+    frame CDLB { light BIGBLUETORCH }
+}
+
+object CastleCandelabra3
+{
+    frame CDLB { light BIGGREENTORCH }
 }

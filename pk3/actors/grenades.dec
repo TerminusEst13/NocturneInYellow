@@ -4,7 +4,7 @@ ACTOR IronGrenade
     Height 8
     Speed 35
     Damage (40)
-    Scale 0.75
+    Scale 0.5
     Projectile
     BounceType Doom
     -NOGRAVITY
@@ -100,8 +100,8 @@ ACTOR NadeTrail
     +CLIENTSIDEONLY
     +DONTSPLASH
     Renderstyle Add
-    Scale 0.4
-    Alpha 0.025
+    Scale 0.3
+    Alpha 0.035
     States
     {
     Spawn:

@@ -9,8 +9,8 @@ Actor Bogatyr : PlayerPawn
     Player.StartItem "GrenadeAmmo", 5
     Player.StartItem "GrenadeAmmoCounter", 5
     Player.StartItem "RunningStamina", 200
-    Player.ForwardMove 1.4, 0.75
-    Player.SideMove 1.2, 0.6
+    Player.ForwardMove 1.4, 0.8
+    Player.SideMove 1.2, 0.65
     Player.JumpZ 9
     Player.ViewHeight 46
     Player.AttackZOffset 16

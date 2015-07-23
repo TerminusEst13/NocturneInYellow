@@ -15,7 +15,8 @@ SPRITES:
 - Freedoom project, for FIRE*0, TBLU*0, TGRN*0, and LBAL*0
 - Eriance for DIRN*0 and VODB*0 sprites, released for people to use "as they see fit"
 - Bloax for DOOMCURS, HUDBAR, HLTHBEMP, HLTHBFUL, STAMBEMP, STAMBFUL, AMMOBEMP, and AMMOBFUL, made specifically for Nocturne in Yellow
-- Bloax for ABLL*0, used with permission.
+- Bloax for ABLL*0, used with permission
+- Bloax for CND**0 and TCH**0, made specifically for Nocturne in Yellow
 - Avi for GRNDEMPT and GRNDFULL
 
 MUSIC:
@@ -54,6 +55,7 @@ SOUNDS:
 - JarAxe, "ZOMBIE25.wav" (ID: 180415) off FreeSound.org, released under Attribution 3.0 Unported (CC BY 3.0)
 - Under7dude, "Zombie 1" (ID: 163440) off FreeSound.org, released under CC0 1.0 Universal (CC0 1.0)
 - Huminaatio, "Zombie breathing" (ID: 189281) off FreeSound.org, released under CC0 1.0 Universal (CC0 1.0)
+- CGEffex, "Large Splashes" (ID: 98335) off FreeSound.org, released under Attribution 3.0 Unported (CC BY 3.0)
 
 TEXTURES:
 ============
@@ -76,3 +78,11 @@ TEXTURES:
 - WALL47_1 - Taken from the Freedoom project
 - WALL47_2 - Taken from the Freedoom project
 - WALL47_5 - Taken from the Freedoom project
+- BRIX01-2 - Bloax
+- DIRT01-2 - Bloax
+- MARBCEI2-5 - Bloax
+- TILES01-05 - Bloax
+- GRAVEL2 - Bloax
+- STONE - Bloax (for raw stone constructs or something)
+- STONEMRB - Bloax
+- STONEMBP - Bloax

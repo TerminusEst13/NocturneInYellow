@@ -46,16 +46,32 @@ map TITLEMAP "Title Map"
     SmoothLighting
 }
 
+map MAPTEST "Test Map"
+{
+    SKY1 = "SKY_MAP1", 0.05
+    music = "MUS_MAP5" // Paul Pitman - Moonlight Sonata (Adagio Sostenuto)
+    Lightning
+    SmoothLighting
+}
+
 episode MAP01
 {
 	Name = "Placeholder text"
 }
 
-map MAP01 "Test Map"
+map MAP01 "Shores of Carcosa"
 {
 	LevelNum = 1
     SKY1 = "SKY_MAP1", 0.05
     music = "MUS_MAP1" // BouncyTEM - Morbid
+    Lightning
+    SmoothLighting
+}
+
+map MAP04 "The Dead Library"
+{
+	LevelNum = 4
+    music = "MUS_MAP4" // Kevin MacLeod - Metaphysik
     Lightning
     SmoothLighting
 }

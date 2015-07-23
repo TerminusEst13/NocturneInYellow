@@ -25,7 +25,7 @@ ACTOR "Vechnost" : Weapon // Means "Forever"
     {
     Ready:
         TNT1 A 0 A_GiveInventory("WeaponIdle",1)
-        TNT1 A 0 A_JumpIfInventory("SprintDash",1,"D_RUNNIN")
+        //TNT1 A 0 A_JumpIfInventory("SprintDash",1,"D_RUNNIN")
         RBOW A 1 A_WeaponReady
         Loop
     Deselect:
@@ -59,17 +59,26 @@ ACTOR "Vechnost" : Weapon // Means "Forever"
         TNT1 A 0 A_JumpIfInventory("EquippedPallidMask",1,"FireShadow")
         TNT1 A 0 A_JumpIfInventory("EquippedBurialBelt",1,"FireDeath")
         TNT1 A 0 A_PlayWeaponSound("bow/fire")
+        TNT1 A 0 A_JumpIfInventory("SprintDash",1,"FireNormalRun")
+    FireNormalNormal:
         TNT1 A 0 A_FireCustomMissile("BowArrow",frandom(-1.5,1.5),0,0,1,0,frandom(-0.75,0.75))
         TNT1 A 0 A_Recoil(-0.15)
         TNT1 A 0 A_SetAngle(angle+frandom(-0.75,0.75))
         TNT1 A 0 A_SetPitch(pitch-frandom(0.40,1.25))
+        goto FireNormalFinish
+    FireNormalRun:
+        TNT1 A 0 A_FireCustomMissile("BowArrow",frandom(-4.5,4.5),0,0,1,0,frandom(-3.75,3.75))
+        TNT1 A 0 A_Recoil(-0.2)
+        TNT1 A 0 A_SetAngle(angle+frandom(-0.95,0.95))
+        TNT1 A 0 A_SetPitch(pitch-frandom(0.60,1.45))
+    FireNormalFinish:
         RBOW J 10 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         TNT1 A 0 A_PlaySoundEx("bow/load","soundslot5",0,0)
         RBOW KLL 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         RBOW M 5 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         RBOW NNO 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
     Ready2:
-        TNT1 A 0 A_JumpIfInventory("SprintDash",1,"D_RUNNIN2")
+        //TNT1 A 0 A_JumpIfInventory("SprintDash",1,"D_RUNNIN2")
         TNT1 A 0 A_GiveInventory("WeaponIdle")
         TNT1 A 0 A_GiveInventory("WeaponIdleCounter",1)
         TNT1 A 0 A_JumpIfInventory("WeaponIdleCounter",0,"GoingBackToReady")
@@ -86,20 +95,30 @@ ACTOR "Vechnost" : Weapon // Means "Forever"
 
     FireHoly:
         TNT1 A 0 A_PlayWeaponSound("bow/holy")
+        TNT1 A 0 A_JumpIfInventory("SprintDash",1,"FireHolyRun")
         TNT1 A 0 A_FireCustomMissile("HolyArrow",frandom(-1.5,1.5),0,0,1,0,frandom(-0.75,0.75))
         TNT1 A 0 A_Recoil(-0.15)
         TNT1 A 0 A_SetAngle(angle+frandom(-0.75,0.75))
         TNT1 A 0 A_SetPitch(pitch-frandom(0.40,1.25))
+        goto FireHolyFinish
+    FireHolyRun:
+        TNT1 A 0 A_FireCustomMissile("HolyArrow",frandom(-4.5,4.5),0,0,1,0,frandom(-3.75,3.75))
+        TNT1 A 0 A_Recoil(-0.2)
+        TNT1 A 0 A_SetAngle(angle+frandom(-0.95,0.95))
+        TNT1 A 0 A_SetPitch(pitch-frandom(0.6,1.65))
+    FireHolyFinish:
         RBOW J 10 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         TNT1 A 0 A_PlaySoundEx("bow/load","soundslot5",0,0)
         RBOW KLL 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         RBOW M 5 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         RBOW NNO 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         goto Ready2
+
     FireWind:
         TNT1 A 0 A_JumpIfNoAmmo("Nope")
         TNT1 A 0 A_PlayWeaponSound("bow/fire")
         TNT1 A 0 A_PlaySoundEx("bow/wind","soundslot6",0,0)
+        TNT1 A 0 A_JumpIfInventory("SprintDash",1,"FireWindRun")
         TNT1 AAA 0 A_FireCustomMissile("WindArrow",frandom(-5,5),0,0,1,0,frandom(-3.5,3.5))
         TNT1 AAA 0 A_FireCustomMissile("WindArrow",frandom(-3.5,3.5),0,0,1,0,frandom(-2,2))
         TNT1 AA 0 A_FireCustomMissile("WindArrow",frandom(-2,2),0,0,1,0,frandom(-1,1))
@@ -108,30 +127,53 @@ ACTOR "Vechnost" : Weapon // Means "Forever"
         TNT1 A 0 A_Recoil(frandom(-0.5,-0.25))
         TNT1 A 0 A_SetAngle(angle+frandom(-1.25,1.25))
         TNT1 A 0 A_SetPitch(pitch-frandom(0.75,1.75))
+        goto FireWindFinish
+    FireWindRun:
+        TNT1 AAA 0 A_FireCustomMissile("WindArrow",frandom(-8,8),0,0,1,0,frandom(-6.5,6.5))
+        TNT1 AAA 0 A_FireCustomMissile("WindArrow",frandom(-6,6),0,0,1,0,frandom(-4,4))
+        TNT1 AA 0 A_FireCustomMissile("WindArrow",frandom(-4,4),0,0,1,0,frandom(-2,2))
+        TNT1 A 0 A_FireCustomMissile("WindArrow",frandom(-2,2),0,0,1,0,frandom(-1,1))
+        TNT1 A 0 A_TakeInventory("BowMana",4)
+        TNT1 A 0 A_Recoil(frandom(-1,-0.5))
+        TNT1 A 0 A_SetAngle(angle+frandom(-1.65,1.65))
+        TNT1 A 0 A_SetPitch(pitch-frandom(1,2))
+    FireWindFinish:
         RBOW J 10 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         TNT1 A 0 A_PlaySoundEx("bow/load","soundslot5",0,0)
         RBOW KLL 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         RBOW M 5 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         RBOW NNO 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         goto Ready2
+
     FireFire: // I am dumb and this easily amuses me.
         TNT1 A 0 A_JumpIfNoAmmo("Nope")
         TNT1 A 0 A_PlayWeaponSound("bow/flame")
+        TNT1 A 0 A_JumpIfInventory("SprintDash",1,"FireFireRun")
         TNT1 A 0 A_FireCustomMissile("FireArrow",frandom(-0.75,0.75),0,0,1,0,frandom(-0.25,0.25))
         TNT1 A 0 A_TakeInventory("BowMana",4)
         TNT1 A 0 A_Recoil(-0.25)
         TNT1 A 0 A_SetAngle(angle+frandom(-0.75,0.75))
         TNT1 A 0 A_SetPitch(pitch-frandom(0.40,1.25))
+        goto FireFireFinish
+    FireFireRun:
+        TNT1 A 0 A_FireCustomMissile("FireArrow",frandom(-3.75,3.75),0,0,1,0,frandom(-2.25,2.25))
+        TNT1 A 0 A_TakeInventory("BowMana",4)
+        TNT1 A 0 A_Recoil(-0.5)
+        TNT1 A 0 A_SetAngle(angle+frandom(-1,1))
+        TNT1 A 0 A_SetPitch(pitch-frandom(0.60,1.55))
+    FireFireFinish:
         RBOW J 10 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         TNT1 A 0 A_PlaySoundEx("bow/load","soundslot5",0,0)
         RBOW KLL 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         RBOW M 5 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         RBOW NNO 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         goto Ready2
+
     FireArcane:
         TNT1 A 0 A_JumpIfNoAmmo("Nope")
         TNT1 A 0 A_PlayWeaponSound("bow/fire")
         TNT1 A 0 A_PlaySoundEx("bow/arcane","soundslot6",0,0)
+        TNT1 A 0 A_JumpIfInventory("SprintDash",1,"FireArcaneRun")
         TNT1 A 0 A_FireCustomMissile("ArcaneArrow",frandom(-2.5,2.5),0,0,1,0,frandom(-1,1))
         TNT1 A 0 A_TakeInventory("BowMana",1)
         TNT1 A 0 A_Recoil(-0.05)
@@ -141,42 +183,83 @@ ACTOR "Vechnost" : Weapon // Means "Forever"
         RBOW E 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         RBOW FGHI 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         TNT1 A 0 A_Refire("FireArcane")
+        goto FireArcaneFinalShot
+    FireArcaneRun:
+        TNT1 A 0 A_FireCustomMissile("ArcaneArrow",frandom(-4.5,4.5),0,0,1,0,frandom(-3,3))
+        TNT1 A 0 A_TakeInventory("BowMana",1)
+        TNT1 A 0 A_Recoil(-0.25)
+        TNT1 A 0 A_SetAngle(angle+frandom(-0.5,0.5))
+        TNT1 A 0 A_SetPitch(pitch-frandom(0.5,1.0))
+        RBOW J 3 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW E 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW FGHI 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_Refire("FireArcane")
+    FireArcaneFinalShot:
         TNT1 A 0 A_PlayWeaponSound("bow/fire")
         TNT1 A 0 A_PlaySoundEx("bow/Arcane","soundslot6",0,0)
+        TNT1 A 0 A_JumpIfInventory("SprintDash",1,"FireArcaneFinalShotRun")
         TNT1 A 0 A_FireCustomMissile("ArcaneArrow",frandom(-2.5,2.5),0,0,1,0,frandom(-1,1))
         TNT1 A 0 A_Recoil(-0.05)
         TNT1 A 0 A_SetAngle(angle+frandom(-0.25,0.25))
         TNT1 A 0 A_SetPitch(pitch-frandom(0.25,0.75))
+        goto FireArcaneFinish
+    FireArcaneFinalShotRun:
+        TNT1 A 0 A_FireCustomMissile("ArcaneArrow",frandom(-4.5,4.5),0,0,1,0,frandom(-3,3))
+        TNT1 A 0 A_Recoil(-0.05)
+        TNT1 A 0 A_SetAngle(angle+frandom(-0.5,0.5))
+        TNT1 A 0 A_SetPitch(pitch-frandom(0.5,1.0))
+    FireArcaneFinish:
         RBOW J 10 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         TNT1 A 0 A_PlaySoundEx("bow/load","soundslot5",0,0)
         RBOW KLL 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         RBOW M 5 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         RBOW NNO 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         goto Ready2
-    FireShadow:
+
+    FireShadow: // He's a bad Sonic OC. And a bad worker.
         TNT1 A 0 A_JumpIfNoAmmo("Nope")
         TNT1 A 0 A_PlayWeaponSound("bow/fire")
         TNT1 A 0 A_PlaySoundEx("bow/shadow","soundslot6",0,0)
+        TNT1 A 0 A_JumpIfInventory("SprintDash",1,"FireShadowRun")
         TNT1 A 0 A_FireCustomMissile("ShadowArrow",frandom(-1.5,1.5),0,0,1,0,frandom(-0.75,0.75))
         TNT1 A 0 A_TakeInventory("BowMana",6)
         TNT1 A 0 A_Recoil(-0.15)
         TNT1 A 0 A_SetAngle(angle+frandom(-0.75,0.75))
         TNT1 A 0 A_SetPitch(pitch-frandom(0.40,1.25))
+        goto FireShadowFinish
+    FireShadowRun: // Great tabletop system, decent SNES game too.
+        TNT1 A 0 A_FireCustomMissile("ShadowArrowRunning",frandom(-3.5,3.5),0,0,1,0,frandom(-2.75,2.75))
+        TNT1 A 0 A_TakeInventory("BowMana",6)
+        TNT1 A 0 A_Recoil(-0.25)
+        TNT1 A 0 A_SetAngle(angle+frandom(-1,1))
+        TNT1 A 0 A_SetPitch(pitch-frandom(0.60,1.55))
+    FireShadowFinish:
         RBOW J 10 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         TNT1 A 0 A_PlaySoundEx("bow/load","soundslot5",0,0)
         RBOW KLL 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         RBOW M 5 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         RBOW NNO 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         goto Ready2
+
     FireDeath:
         TNT1 A 0 A_JumpIfNoAmmo("Nope")
         TNT1 A 0 A_PlayWeaponSound("bow/fire")
         TNT1 A 0 A_PlaySoundEx("bow/death","soundslot6",0,0)
+        TNT1 A 0 A_JumpIfInventory("SprintDash",1,"FireDeathRun")
         TNT1 A 0 A_FireCustomMissile("DeathArrow",frandom(-1.5,1.5),0,0,1,0,frandom(-0.75,0.75))
         TNT1 A 0 A_TakeInventory("BowMana",4)
         TNT1 A 0 A_Recoil(-0.15)
         TNT1 A 0 A_SetAngle(angle+frandom(-0.75,0.75))
         TNT1 A 0 A_SetPitch(pitch-frandom(0.40,1.25))
+        goto FireDeathFinish
+    FireDeathRun:
+        TNT1 A 0 A_FireCustomMissile("DeathArrow",frandom(-4.5,4.5),0,0,1,0,frandom(-3.75,3.75))
+        TNT1 A 0 A_TakeInventory("BowMana",4)
+        TNT1 A 0 A_Recoil(-0.3)
+        TNT1 A 0 A_SetAngle(angle+frandom(-1,1))
+        TNT1 A 0 A_SetPitch(pitch-frandom(0.60,1.5))
+        goto FireDeathFinish
+    FireDeathFinish:
         RBOW J 10 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         TNT1 A 0 A_PlaySoundEx("bow/load","soundslot5",0,0)
         RBOW KLL 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
@@ -278,7 +361,7 @@ actor BowArrow : FastProjectile
     ProjectileKickBack 25
     MissileType ArrowTrail
     MissileHeight 8
-    Decal BulletChip
+    Decal ArrowCrack
     Scale 0.7
     States
     {
@@ -328,7 +411,7 @@ actor HolyArrow : FastProjectile
     ProjectileKickBack 25
     MissileType HolyArrowTrail
     MissileHeight 8
-    Decal BulletChip
+    Decal ArrowCrack
     RenderStyle Add
     Alpha 0.99
     Scale 0.9
@@ -589,6 +672,16 @@ actor ShadowArrow : FastProjectile
         Stop
     }
 }
+
+actor ShadowArrowRunning : ShadowArrow
+{
+    States
+    {
+    Spawn:
+        MARO E 2 BRIGHT A_SeekerMissile(5,10, SMF_LOOK | SMF_PRECISE)
+        loop
+    }
+} 
 
 actor DeathArrow : FastProjectile
 {

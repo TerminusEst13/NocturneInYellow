@@ -18,3 +18,14 @@ decal New_BulletChip
     Y-scale 0.05
     LowerDecal New_BulletChipLower1
 }
+
+decal ArrowCrack
+{
+    Pic AROWCRAX
+    Shade "00 00 00"
+    X-Scale 0.2
+    Y-Scale 0.2
+    RandomFlipX
+    RandomFlipY
+    LowerDecal New_BulletChipLower1
+}

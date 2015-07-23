@@ -9,7 +9,7 @@ ACTOR Nocnitsa 31093
     PainChance "Spear", 255
     RenderStyle Add
     Alpha 0.75
-    Damage (random(10,20))
+    Damage (random(5,10))
     Monster
     +FLOAT
     +NOGRAVITY
@@ -42,7 +42,7 @@ ACTOR Nocnitsa 31093
         Goto See
     Melee:
         NSHA E 4 Bright
-        NSHA F 4 Bright A_CustomMeleeAttack(random(15,25),"","nezhit/hit")
+        NSHA F 4 Bright A_CustomMeleeAttack(random(10,15),"","nezhit/hit")
         goto See
     Pain:
         NSHA G 3 Bright
