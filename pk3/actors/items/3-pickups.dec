@@ -31,8 +31,9 @@ actor CrucifixPickup : CustomInventory 31045
     States
     {
     Spawn:
-        ARTI A -1 Bright
-        stop
+        TNT1 AAA 0 A_SpawnItemEx("CrucifixParticles",frandom(-14,14),frandom(-14,14),frandom(20,28),frandom(-0.25,0.25),frandom(-0.25,0.25),frandom(0.5,1.5),0,160,0)
+        ARTI A 1 Bright A_SpawnItemEx("CrucifixBackground",frandom(-1,1),frandom(-1,1),frandom(22,26),frandom(-0.05,0.05),frandom(-0.05,0.05),frandom(-0.05,0.05),0,160,0)
+        loop
     Pickup:
         TNT1 A 0
         TNT1 A 0 A_SetBlend("white",0.45,25)
@@ -55,8 +56,9 @@ actor DragonScalePickup : CustomInventory 31046
     States
     {
     Spawn:
-        ARTI B -1 Bright
-        stop
+        TNT1 AAA 0 A_SpawnItemEx("DragonScaleParticles",frandom(-14,14),frandom(-14,14),frandom(20,28),frandom(-0.25,0.25),frandom(-0.25,0.25),frandom(0.5,1.5),0,160,0)
+        ARTI B 1 Bright A_SpawnItemEx("DragonScaleBackground",frandom(-1,1),frandom(-1,1),frandom(22,26),frandom(-0.05,0.05),frandom(-0.05,0.05),frandom(-0.05,0.05),0,160,0)
+        loop
     Pickup:
         TNT1 A 0
         TNT1 A 0 A_SetBlend("white",0.45,25)
@@ -79,8 +81,9 @@ actor WhiteCoalPickup : CustomInventory 31047
     States
     {
     Spawn:
-        ARTI C -1 Bright
-        stop
+        TNT1 AAA 0 A_SpawnItemEx("WhiteCharcoalParticles",frandom(-14,14),frandom(-14,14),frandom(20,28),frandom(-0.25,0.25),frandom(-0.25,0.25),frandom(0.5,1.5),0,160,0)
+        ARTI C 1 Bright A_SpawnItemEx("WhiteCharcoalBackground",frandom(-1,1),frandom(-1,1),frandom(22,26),frandom(-0.05,0.05),frandom(-0.05,0.05),frandom(-0.05,0.05),0,160,0)
+        loop
     Pickup:
         TNT1 A 0
         TNT1 A 0 A_SetBlend("white",0.45,25)
@@ -100,12 +103,12 @@ actor AntiqueCoinPickup : CustomInventory 31048
     Inventory.PickupSound ""
     +QUIET
     +FLOATBOB
-    Scale 0.9
     States
     {
     Spawn:
-        ARTI D -1 Bright
-        stop
+        TNT1 AAA 0 A_SpawnItemEx("AntiqueCoinParticles",frandom(-14,14),frandom(-14,14),frandom(20,28),frandom(-0.25,0.25),frandom(-0.25,0.25),frandom(0.5,1.5),0,160,0)
+        ARTI D 1 Bright A_SpawnItemEx("AntiqueCoinBackground",frandom(-1,1),frandom(-1,1),frandom(22,26),frandom(-0.05,0.05),frandom(-0.05,0.05),frandom(-0.05,0.05),0,160,0)
+        loop
     Pickup:
         TNT1 A 0
         TNT1 A 0 A_SetBlend("white",0.45,25)
@@ -128,8 +131,9 @@ actor PallidMaskPickup : CustomInventory 31049
     States
     {
     Spawn:
-        ARTI E -1 Bright
-        stop
+        TNT1 AAA 0 A_SpawnItemEx("PallidMaskParticles",frandom(-14,14),frandom(-14,14),frandom(20,28),frandom(-0.25,0.25),frandom(-0.25,0.25),frandom(0.5,1.5),0,160,0)
+        ARTI E 1 Bright A_SpawnItemEx("PallidMaskBackground",frandom(-1,1),frandom(-1,1),frandom(22,26),frandom(-0.05,0.05),frandom(-0.05,0.05),frandom(-0.05,0.05),0,160,0)
+        loop
     Pickup:
         TNT1 A 0
         TNT1 A 0 A_SetBlend("white",0.45,25)
@@ -152,8 +156,9 @@ actor BurialBeltPickup : CustomInventory 31050
     States
     {
     Spawn:
-        ARTI F -1 Bright
-        stop
+        TNT1 AAA 0 A_SpawnItemEx("BurialBeltParticles",frandom(-14,14),frandom(-14,14),frandom(20,28),frandom(-0.25,0.25),frandom(-0.25,0.25),frandom(0.5,1.5),0,160,0)
+        ARTI F 1 Bright A_SpawnItemEx("BurialBeltBackground",frandom(-1,1),frandom(-1,1),frandom(22,26),frandom(-0.05,0.05),frandom(-0.05,0.05),frandom(-0.05,0.05),0,160,0)
+        loop
     Pickup:
         TNT1 A 0
         TNT1 A 0 A_SetBlend("white",0.45,25)
@@ -172,6 +177,7 @@ actor RiflePickup : CustomInventory 31051
     Inventory.PickupMessage ""
     Inventory.PickupSound ""
     +QUIET
+    Scale 0.85
     States
     {
     Spawn:
@@ -184,6 +190,186 @@ actor RiflePickup : CustomInventory 31051
         TNT1 A 0 A_GiveInventory("Cursed Vintovka Mosina",1)
         TNT1 A 0 ACS_ExecuteAlways(433,0,11)
         stop
+    }
+}
+
+ACTOR CrucifixBackground
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Renderstyle Add
+    Alpha 0.075
+    Scale 0.6
+    States
+    {
+    Spawn:
+        SPRK A 1 BRIGHT A_FadeOut(0.01)
+        Loop
+    }
+}
+
+ACTOR CrucifixParticles
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Renderstyle Add
+    Alpha 0.15
+    Scale 0.0225
+    States
+    {
+    Spawn:
+        SPRK A 1 BRIGHT A_FadeOut(0.005)
+        Loop
+    }
+}
+
+ACTOR DragonScaleBackground
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Renderstyle Add
+    Alpha 0.075
+    Scale 0.6
+    States
+    {
+    Spawn:
+        SPRK B 1 BRIGHT A_FadeOut(0.01)
+        Loop
+    }
+}
+
+ACTOR DragonScaleParticles
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Renderstyle Add
+    Alpha 0.15
+    Scale 0.0225
+    States
+    {
+    Spawn:
+        SPRK B 1 BRIGHT A_FadeOut(0.005)
+        Loop
+    }
+}
+
+ACTOR WhiteCharcoalBackground
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Renderstyle Add
+    Alpha 0.075
+    Scale 0.6
+    States
+    {
+    Spawn:
+        SPRK C 1 BRIGHT A_FadeOut(0.01)
+        Loop
+    }
+}
+
+ACTOR WhiteCharcoalParticles
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Renderstyle Add
+    Alpha 0.15
+    Scale 0.0225
+    States
+    {
+    Spawn:
+        SPRK C 1 BRIGHT A_FadeOut(0.005)
+        Loop
+    }
+}
+
+ACTOR AntiqueCoinBackground
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Renderstyle Add
+    Alpha 0.075
+    Scale 0.6
+    States
+    {
+    Spawn:
+        SPRK D 1 BRIGHT A_FadeOut(0.01)
+        Loop
+    }
+}
+
+ACTOR AntiqueCoinParticles
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Renderstyle Add
+    Alpha 0.15
+    Scale 0.0225
+    States
+    {
+    Spawn:
+        SPRK D 1 BRIGHT A_FadeOut(0.005)
+        Loop
+    }
+}
+
+ACTOR PallidMaskBackground
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Renderstyle Add
+    Alpha 0.075
+    Scale 0.6
+    States
+    {
+    Spawn:
+        SPRK E 1 BRIGHT A_FadeOut(0.01)
+        Loop
+    }
+}
+
+ACTOR PallidMaskParticles
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Renderstyle Add
+    Alpha 0.15
+    Scale 0.0225
+    States
+    {
+    Spawn:
+        SPRK E 1 BRIGHT A_FadeOut(0.005)
+        Loop
+    }
+}
+
+ACTOR BurialBeltBackground
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Renderstyle Add
+    Alpha 0.075
+    Scale 0.6
+    States
+    {
+    Spawn:
+        SPRK F 1 BRIGHT A_FadeOut(0.01)
+        Loop
+    }
+}
+
+ACTOR BurialBeltParticles
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Renderstyle Add
+    Alpha 0.15
+    Scale 0.0225
+    States
+    {
+    Spawn:
+        SPRK F 1 BRIGHT A_FadeOut(0.005)
+        Loop
     }
 }
 

@@ -27,15 +27,15 @@ ACTOR "Cursed Vintovka Mosina" : Weapon
     Ready:
         TNT1 A 0 A_GiveInventory("WeaponIdle",1)
         //TNT1 A 0 A_JumpIfInventory("SprintDash",1,"D_RUNNIN")
-        MOSN A 1 A_WeaponReady
+        NGNT A 1 A_WeaponReady
         Loop
     Deselect:
         TNT1 A 0 A_Lower
-        MOSN A 1 A_Lower
+        NGNT A 1 A_Lower
         Loop
     Select:
         TNT1 A 0 A_Raise
-        MOSN A 1 A_Raise
+        NGNT A 1 A_Raise
         Loop
     Fire:
         TNT1 A 0 A_TakeInventory("WeaponIdle",1)
@@ -57,62 +57,42 @@ ACTOR "Cursed Vintovka Mosina" : Weapon
         TNT1 A 0 A_PlayWeaponSound("nagant/fire")
         TNT1 A 0 A_AlertMonsters
         TNT1 A 0 A_ZoomFactor(0.9975,ZOOM_INSTANT)
-        MOSN B 1 BRIGHT A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        NGNT B 1 BRIGHT A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         TNT1 A 0 A_Light1
         TNT1 A 0 A_ZoomFactor(0.999,ZOOM_INSTANT)
-        MOSN C 1 BRIGHT A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        MOSN A 1
+        NGNT C 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        NGNT A 1
         TNT1 A 0 A_Light0
         TNT1 A 0 A_ZoomFactor(1.0,ZOOM_INSTANT)
-        MOSN A 5 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        TNT1 A 0 A_PlaySoundEx("nagant/handle","soundslot6",0,0)
-        MOSN EFGG 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        MOSN GHIJ 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        TNT1 A 0 A_PlaySoundEx("nagant/lever","soundslot5",0,0)
-        MOSN K 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        MOSN L 3 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        TNT1 A 0 A_PlaySoundEx("nagant/pull","soundslot6",0,0)
-        TNT1 A 0 A_FireCustomMissile("NagantCasingSpawner",0,0,14,-7,2)
-        MOSN MMNNNOOOO 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        MOSN PQ 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        TNT1 A 0 A_PlaySoundEx("nagant/push","soundslot5",0,0)
-        MOSN ST 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH) // Deleted the R
-        MOSN UUUV 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        TNT1 A 0 A_PlaySoundEx("nagant/handle","soundslot6",0,0)
-        MOSN WXYZA 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        NGNT A 5 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        NGNT D 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_PlaySoundEx("nagant/lever","soundslot6",0,0)
+        NGNT EFGG 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_PlaySoundEx("nagant/pull","soundslot5",0,0)
+        TNT1 A 0 A_FireCustomMissile("NagantCasingSpawner",0,0,-2,-7,2)
+        NGNT HIJ 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        NGNT J 6 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_PlaySoundEx("nagant/push","soundslot7",0,0)
+        NGNT JIH 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        NGNT G 4 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_PlaySoundEx("nagant/lever","soundslot6",0,0)
+        NGNT FFFEEDD 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        NGNT A 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         goto Ready
     Nope:
         TNT1 A 0 A_PlayWeaponSound("nagant/dry")
-        MOSN A 5 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        NGNT A 5 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         goto Ready
     Spawn:
         MOSP A -1
         Stop
-        
-    D_RUNNIN:
-        MOS2 A 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        MOS2 B 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        MOS2 C 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        MOS2 D 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        TNT1 A 1
-    IdleLoop:
-        TNT1 A 1
-        TNT1 A 0 A_JumpIfInventory("SprintDash",1,"IdleLoop")
-        goto BackToNormal
-    BackToNormal:
-        MOS2 D 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        MOS2 C 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        MOS2 B 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        MOS2 A 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        MOSN A 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        Goto Ready
 
     AltFire:
         TNT1 A 0 A_TakeInventory("WeaponIdle",1)
         MOS2 A 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        MOS2 B 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        MOS2 C 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        MOS2 D 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        MOS2 K 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        MOS2 L 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        MOS2 M 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         TNT1 A 1
         goto Throw
     Throw:
@@ -135,6 +115,13 @@ ACTOR "Cursed Vintovka Mosina" : Weapon
         THRW GHI 1
         TNT1 A 2
         Goto BackToNormal
+    BackToNormal:
+        TNT1 A 1
+        NGNT M 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        NGNT L 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        NGNT K 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        NGNT A 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        Goto Ready
     }
 }
 
