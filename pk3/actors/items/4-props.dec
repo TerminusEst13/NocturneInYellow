@@ -1,6 +1,7 @@
 // Being lazy and just copy-pasting from Doomstuff, since this shouldn't be loaded with Doom anyway.
 
 // Freedoom stuff for more natural/rocky formations
+// EXCEPT NOT REALLY BECAUSE I MADE SOME REPLACEMENTS :^D
 
 ACTOR BlueTorch2 31200
 {
@@ -44,10 +45,23 @@ ACTOR SmallCandle1 31203
     Scale 0.625
     -SOLID
     +FORCEYBILLBOARD
+	+RANDOMIZE
     States
     {
     Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_Jump(256,"Spawn1","Spawn2","Spawn3","Spawn4")
+	Spawn1:
         CND1 ABCDE 3 Bright
+        Loop
+	Spawn2:
+        CND1 BCDEA 3 Bright
+        Loop
+	Spawn3:
+        CND1 CDEAB 3 Bright
+        Loop
+	Spawn4:
+        CND1 DEABC 3 Bright
         Loop
     }
 }
@@ -60,10 +74,23 @@ ACTOR SmallCandle2 31204
     Scale 0.625
     -SOLID
     +FORCEYBILLBOARD
+	+RANDOMIZE
     States
     {
     Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_Jump(256,"Spawn1","Spawn2","Spawn3","Spawn4")
+	Spawn1:
         CND2 ABCDE 3 Bright
+        Loop
+	Spawn2:
+        CND2 BCDEA 3 Bright
+        Loop
+	Spawn3:
+        CND2 CDEAB 3 Bright
+        Loop
+	Spawn4:
+        CND2 DEABC 3 Bright
         Loop
     }
 }
@@ -76,10 +103,23 @@ ACTOR SmallCandle3 31205
     Scale 0.625
     -SOLID
     +FORCEYBILLBOARD
+	+RANDOMIZE
     States
     {
     Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_Jump(256,"Spawn1","Spawn2","Spawn3","Spawn4")
+	Spawn1:
         CND3 ABCDE 3 Bright
+        Loop
+	Spawn2:
+        CND3 BCDEA 3 Bright
+        Loop
+	Spawn3:
+        CND3 CDEAB 3 Bright
+        Loop
+	Spawn4:
+        CND3 DEABC 3 Bright
         Loop
     }
 }
@@ -92,10 +132,23 @@ ACTOR SmallCandle4 31206
     Scale 0.625
     -SOLID
     +FORCEYBILLBOARD
+	+RANDOMIZE
     States
     {
     Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_Jump(256,"Spawn1","Spawn2","Spawn3","Spawn4")
+	Spawn1:
         CND4 ABCDE 3 Bright
+        Loop
+	Spawn2:
+        CND4 BCDEA 3 Bright
+        Loop
+	Spawn3:
+        CND4 CDEAB 3 Bright
+        Loop
+	Spawn4:
+        CND4 DEABC 3 Bright
         Loop
     }
 }
@@ -107,11 +160,24 @@ ACTOR CastleTorch1 31207
     Height 56
     +SOLID
     +FORCEYBILLBOARD
+	+RANDOMIZE
     ProjectilePassHeight -16
     States
     {
     Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_Jump(256,"Spawn1","Spawn2","Spawn3","Spawn4")
+	Spawn1:
         TCH1 ABCDE 3 Bright
+        Loop
+	Spawn2:
+        TCH1 BCDEA 3 Bright
+        Loop
+	Spawn3:
+        TCH1 CDEAB 3 Bright
+        Loop
+	Spawn4:
+        TCH1 DEABC 3 Bright
         Loop
     }
 }
@@ -123,11 +189,24 @@ ACTOR CastleTorch2 31208
     Height 56
     +SOLID
     +FORCEYBILLBOARD
+	+RANDOMIZE
     ProjectilePassHeight -16
     States
     {
     Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_Jump(256,"Spawn1","Spawn2","Spawn3","Spawn4")
+	Spawn1:
         TCH2 ABCDE 3 Bright
+        Loop
+	Spawn2:
+        TCH2 BCDEA 3 Bright
+        Loop
+	Spawn3:
+        TCH2 CDEAB 3 Bright
+        Loop
+	Spawn4:
+        TCH2 DEABC 3 Bright
         Loop
     }
 }
@@ -139,11 +218,24 @@ ACTOR CastleTorch3 31209
     Height 56
     +SOLID
     +FORCEYBILLBOARD
+	+RANDOMIZE
     ProjectilePassHeight -16
     States
     {
     Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_Jump(256,"Spawn1","Spawn2","Spawn3","Spawn4")
+	Spawn1:
         TCH3 ABCDE 3 Bright
+        Loop
+	Spawn2:
+        TCH3 BCDEA 3 Bright
+        Loop
+	Spawn3:
+        TCH3 CDEAB 3 Bright
+        Loop
+	Spawn4:
+        TCH3 DEABC 3 Bright
         Loop
     }
 }
@@ -155,11 +247,24 @@ ACTOR CastleTorch4 31210
     Height 56
     +SOLID
     +FORCEYBILLBOARD
+	+RANDOMIZE
     ProjectilePassHeight -16
     States
     {
     Spawn:
-        TCH4 ABCDE 3 Bright 
+		TNT1 A 0
+		TNT1 A 0 A_Jump(256,"Spawn1","Spawn2","Spawn3","Spawn4")
+	Spawn1:
+        TCH4 ABCDE 3 Bright
+        Loop
+	Spawn2:
+        TCH4 BCDEA 3 Bright
+        Loop
+	Spawn3:
+        TCH4 CDEAB 3 Bright
+        Loop
+	Spawn4:
+        TCH4 DEABC 3 Bright
         Loop
     }
 }
@@ -212,5 +317,140 @@ ACTOR CastleCandelabra3 31213
     Spawn:
         CDLB C -1 Bright
         stop
+    }
+}
+
+ACTOR OutdoorTorch1 31214
+{
+//$Category Nocturne-Map
+    Radius 8
+    Height 44
+    +SOLID
+    +FORCEYBILLBOARD
+	+RANDOMIZE
+    ProjectilePassHeight -16
+    States
+    {
+    Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_Jump(256,"Spawn1","Spawn2","Spawn3","Spawn4","Spawn5","Spawn6","Spawn7")
+	Spawn1:
+        TCH5 ABCDEFG 4 Bright
+        Loop
+	Spawn2:
+        TCH5 BCDEFGA 4 Bright
+        Loop
+	Spawn3:
+        TCH5 CDEFGAB 4 Bright
+        Loop
+	Spawn4:
+        TCH5 DEFGABC 4 Bright
+        Loop
+	Spawn5:
+		TCH5 EFGABCD 4 Bright
+		Loop
+	Spawn6:
+		TCH5 FGABCDE 4 Bright
+		Loop
+	Spawn7:
+		TCH5 GABCDEF 4 Bright
+		Loop
+    }
+}
+
+ACTOR OutDoorTorch2 : OutDoorTorch1 31215
+{
+// hi term did you know inheritance is nice
+//$Category Nocturne-Map
+    States
+    {
+    Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_Jump(256,"Spawn1","Spawn2","Spawn3","Spawn4","Spawn5","Spawn6","Spawn7")
+	Spawn1:
+        TCH6 ABCDEFG 4 Bright
+        Loop
+	Spawn2:
+        TCH6 BCDEFGA 4 Bright
+        Loop
+	Spawn3:
+        TCH6 CDEFGAB 4 Bright
+        Loop
+	Spawn4:
+        TCH6 DEFGABC 4 Bright
+        Loop
+	Spawn5:
+		TCH6 EFGABCD 4 Bright
+		Loop
+	Spawn6:
+		TCH6 FGABCDE 4 Bright
+		Loop
+	Spawn7:
+		TCH6 GABCDEF 4 Bright
+		Loop
+    }
+}
+
+ACTOR OutDoorTorch3 : OutDoorTorch1 31216
+{
+//$Category Nocturne-Map
+    States
+    {
+    Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_Jump(256,"Spawn1","Spawn2","Spawn3","Spawn4","Spawn5","Spawn6","Spawn7")
+	Spawn1:
+        TCH7 ABCDEFG 4 Bright
+        Loop
+	Spawn2:
+        TCH7 BCDEFGA 4 Bright
+        Loop
+	Spawn3:
+        TCH7 CDEFGAB 4 Bright
+        Loop
+	Spawn4:
+        TCH7 DEFGABC 4 Bright
+        Loop
+	Spawn5:
+		TCH7 EFGABCD 4 Bright
+		Loop
+	Spawn6:
+		TCH7 FGABCDE 4 Bright
+		Loop
+	Spawn7:
+		TCH7 GABCDEF 4 Bright
+		Loop
+    }
+}
+
+ACTOR OutDoorTorch4 : OutDoorTorch1 31217
+{
+//$Category Nocturne-Map
+    States
+    {
+    Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_Jump(256,"Spawn1","Spawn2","Spawn3","Spawn4","Spawn5","Spawn6","Spawn7")
+	Spawn1:
+        TCH8 ABCDEFG 4 Bright
+        Loop
+	Spawn2:
+        TCH8 BCDEFGA 4 Bright
+        Loop
+	Spawn3:
+        TCH8 CDEFGAB 4 Bright
+        Loop
+	Spawn4:
+        TCH8 DEFGABC 4 Bright
+        Loop
+	Spawn5:
+		TCH8 EFGABCD 4 Bright
+		Loop
+	Spawn6:
+		TCH8 FGABCDE 4 Bright
+		Loop
+	Spawn7:
+		TCH8 GABCDEF 4 Bright
+		Loop
     }
 }
