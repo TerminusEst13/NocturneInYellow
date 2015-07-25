@@ -2,10 +2,11 @@ SPRITES:
 =============
 - Bow
 - Impact sparks
-- Player sprites
+- Player sprites (Probably not needed, will need just one for the opening title)
+- Non-placeholder images for Titlemap
 - Nagant casings
 - Bullet sparks
-- Bullet puffs
+- Bullet puffs (Could probably use any of the existing smoke sprites)
 - Nezhit's sprites
 - Likho's sprites
 - Bauk's sprites
@@ -23,3 +24,5 @@ SOUNDS:
 - Platform rise/lower sounds
 - Switch hit sounds
 - Door rise/lower sounds
+- Can't use door sounds
+- Sand walk sounds
