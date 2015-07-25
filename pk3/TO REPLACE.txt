@@ -3,17 +3,18 @@ SPRITES:
 - Bow
 - Impact sparks
 - Player sprites
-- Spear
-- Mosin Nagant
 - Nagant casings
 - Bullet sparks
 - Bullet puffs
 - Nezhit's sprites
+- Likho's sprites
 - Bauk's sprites
-- Upyr's sprites
-- Drekavac's sprites
+- Nocnitsa's sprites
+- Ala's sprites
 - Vodyanoy's sprites
-- Better artifact sprites
+- Drekavac's sprites
+- Upyr's sprites
+- Key pickup sprites
 
 SOUNDS:
 =============
