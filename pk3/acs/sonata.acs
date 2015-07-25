@@ -1,7 +1,7 @@
 #include "zcommon.acs"
 #library "sonata"
 
-#define MaxStepSounds 42
+#define MaxStepSounds 49
 
 str StepSound[MaxStepSounds][2] = {
     // Water
@@ -11,6 +11,7 @@ str StepSound[MaxStepSounds][2] = {
     { "FWATER4",  "footstep/water" },
     // NIY Water floor
     { "WATER1",   "footstep/water" },
+    { "NOTBLOOD", "footstep/water" },
     
     // Slime
     { "SLIME01",  "footstep/slime" },
@@ -48,6 +49,10 @@ str StepSound[MaxStepSounds][2] = {
     { "WOODVERT", "footstep/wood" },
     // NIY Wood
     { "WOODFLR1", "footstep/wood" },
+    { "WOODFLR2", "footstep/wood" },
+    { "WOODFLR3", "footstep/wood" },
+    { "WOODFLR4", "footstep/wood" },
+    { "WOODFLR5", "footstep/wood" },
 
     // Grass
     { "GRASS1",   "footstep/grass" },
@@ -61,7 +66,9 @@ str StepSound[MaxStepSounds][2] = {
     { "ZIMMER7",  "footstep/grass" },
     // NIY Dirt
     { "DIRTFLR1", "footstep/grass" },
-    { "DIRTFLR2", "footstep/grass" },/*
+    { "DIRTFLR2", "footstep/grass" },
+    { "DIRT01", "footstep/grass" },
+    { "DIRT02", "footstep/grass" }/*
     
     // Lava
     { "LAVA1", "player/lavastep" },
@@ -172,6 +179,7 @@ script 432 ENTER
                 GiveInventory("SprintDash",1);
                 if (CheckInventory("Jumped") == 0) { TakeInventory("RunningStamina",10); }
                 else { TakeInventory("RunningStamina",200); }
+                GiveInventory("SprintStopping",10);
                 SetActorProperty(0,APROP_Gravity,0.775);
                 SetActorProperty(0,APROP_JumpZ,9.5);
             }
@@ -193,7 +201,12 @@ script 432 ENTER
         // Rien, c'est parfait.
         TakeInventory("SprintDash",1);
         if (CheckInventory("SprintCooldown") > 0) { GiveInventory("RunningStamina",5); }
-        else { GiveInventory("RunningStamina",12); }
+        else
+        {
+            if (CheckInventory("SprintStopping") >= 10) { GiveInventory("RunningStamina",14); }
+            if (CheckInventory("SprintStopping") >= 5) { GiveInventory("RunningStamina",13); }
+            if (CheckInventory("SprintStopping") >= 0) { GiveInventory("RunningStamina",12); }
+        }
         SetActorProperty(0,APROP_Gravity,1.0); // Fly cheat doesn't work now. OH WELL.
         SetActorProperty(0,APROP_JumpZ,9.0);
     }
@@ -210,6 +223,7 @@ script 432 ENTER
     TakeInventory("SprintCooldown",1);
     TakeInventory("Jumped",1);
     TakeInventory("SwapCooldown",1);
+    TakeInventory("SprintStopping",1);
 
     delay(1);
     }
