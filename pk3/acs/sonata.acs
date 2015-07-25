@@ -1,7 +1,7 @@
 #include "zcommon.acs"
 #library "sonata"
 
-#define MaxStepSounds 49
+#define MaxStepSounds 52
 
 str StepSound[MaxStepSounds][2] = {
     // Water
@@ -67,8 +67,13 @@ str StepSound[MaxStepSounds][2] = {
     // NIY Dirt
     { "DIRTFLR1", "footstep/grass" },
     { "DIRTFLR2", "footstep/grass" },
-    { "DIRT01", "footstep/grass" },
-    { "DIRT02", "footstep/grass" }/*
+    { "DIRT01",   "footstep/grass" },
+    { "DIRT02",   "footstep/grass" },
+
+    // Sand
+    { "SAND01A",  "footstep/sand" },
+    { "SAND01B",  "footstep/sand" },
+    { "SAND01C",  "footstep/sand" }/*
     
     // Lava
     { "LAVA1", "player/lavastep" },

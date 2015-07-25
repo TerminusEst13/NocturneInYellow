@@ -141,6 +141,16 @@ step/grass9            GRSSTEP9
 step/grass10           GRSSTEP0
 $random footstep/grass { step/grass1 step/grass2 step/grass3 step/grass4 step/grass5 step/grass6 step/grass7 step/grass8 step/grass9 step/grass10 }
 
+step/sand1             SNDSTEP1
+step/sand2             SNDSTEP2
+step/sand3             SNDSTEP3
+step/sand4             SNDSTEP4
+step/sand5             SNDSTEP5
+step/sand6             SNDSTEP6
+step/sand7             SNDSTEP7
+step/sand8             SNDSTEP8
+$random footstep/sand { step/sand1 step/sand2 step/sand3 step/sand4 step/sand5 step/sand6 step/sand7 step/sand8 }
+
 // Lava
 //step/lava1           DSLVA1
 //step/lava2           DSLVA2
