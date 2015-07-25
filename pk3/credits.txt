@@ -74,6 +74,7 @@ TEXTURES:
 - ROCKFLR1 - "RockSediment0001" off CGTextures
 - ROCKWAL1 - "RockSharp0037" off CGTextures
 - SKY_MAP1 - "Overcast Sky 58" off CGSkies
+- SKY_MAP6 - "Sky 281" off CGSkies
 - WALL42_6 - Taken from the Freedoom project
 - WALL47_1 - Taken from the Freedoom project
 - WALL47_2 - Taken from the Freedoom project
