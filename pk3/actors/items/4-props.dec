@@ -320,7 +320,7 @@ ACTOR CastleCandelabra3 31213
     }
 }
 
-ACTOR OutdoorTorch1 31214
+ACTOR OutdoorTorch1 31215
 {
 //$Category Nocturne-Map
     Radius 8
@@ -358,7 +358,7 @@ ACTOR OutdoorTorch1 31214
     }
 }
 
-ACTOR OutDoorTorch2 : OutDoorTorch1 31215
+ACTOR OutDoorTorch2 : OutDoorTorch1 31216
 {
 // hi term did you know inheritance is nice
 //$Category Nocturne-Map
@@ -391,7 +391,7 @@ ACTOR OutDoorTorch2 : OutDoorTorch1 31215
     }
 }
 
-ACTOR OutDoorTorch3 : OutDoorTorch1 31216
+ACTOR OutDoorTorch3 : OutDoorTorch1 31217
 {
 //$Category Nocturne-Map
     States
@@ -423,7 +423,7 @@ ACTOR OutDoorTorch3 : OutDoorTorch1 31216
     }
 }
 
-ACTOR OutDoorTorch4 : OutDoorTorch1 31217
+ACTOR OutDoorTorch4 : OutDoorTorch1 31218
 {
 //$Category Nocturne-Map
     States
