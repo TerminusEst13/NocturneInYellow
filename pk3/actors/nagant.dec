@@ -420,10 +420,24 @@ ACTOR BulletSpark
     States
     {
     Spawn:
-        BPSP AAAAAAAAAAAAAAAAAAA 1 Bright
+        BPSP AAAAAAAAAAAAAAAAAAA 1 Bright A_SpawnItemEx("BulletSparkTrail",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,42)
         BPSP AAAAAAAAAA 2 Bright A_FadeOut(0.1)
         Stop
     }
+}
+
+ACTOR BulletSparkTrail : BulletSpark
+{
+	-DOOMBOUNCE
+	+NOGRAVITY
+	Scale 0.025
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		BPSP A 1 Bright A_FadeOut(0.125)
+		Loop
+	}
 }
 
 ACTOR NagantBlankPuff { DamageType "Bullet" }
