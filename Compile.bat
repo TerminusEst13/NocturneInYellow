@@ -11,7 +11,7 @@ REM Which is to say, basically have the entire .pk3 floating around in the folde
  robocopy pk3\ pk32\ /E /NP
  pushd pk32
  rd /s /q zanactors\
- ..\7z a -r -ssw -mx -tzip ..\%ProjName%n.pk3 *.txt *.o *.png *.wad *.md2 *.md3 *.tga *.acs *.mp3 *.ogg *.pal *.bmp *.map *.t* *.flac *.mus
+ ..\..\..\7z.exe a -r -ssw -mx -tzip ..\..\%ProjName%n.pk3 *.*
  echo Done packing.
  popd
  rd /s /q pk32\
