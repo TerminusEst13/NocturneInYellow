@@ -42,3 +42,4 @@ WORLD:
 31211-31213 - Candelabras
 31214 - Rain follower
 31215-31218 - Outdoor torches
+31219-21222 - Map01 crosses

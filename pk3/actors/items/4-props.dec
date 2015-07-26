@@ -454,3 +454,67 @@ ACTOR OutDoorTorch4 : OutDoorTorch1 31218
 		Loop
     }
 }
+
+ACTOR ShittyCross1 31219
+{
+//$Category Nocturne-Map
+    Radius 6
+    Height 32
+    +SOLID
+    +FORCEYBILLBOARD
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		CROS A -1
+		Stop
+	}
+}
+
+ACTOR ShittyCross2 31220
+{
+//$Category Nocturne-Map
+    Radius 6
+    Height 32
+    +SOLID
+    +FORCEYBILLBOARD
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		CROS B -1
+		Stop
+	}
+}
+
+ACTOR ShittyCross3 31221
+{
+//$Category Nocturne-Map
+    Radius 6
+    Height 32
+    +SOLID
+    +FORCEYBILLBOARD
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		CROS C -1
+		Stop
+	}
+}
+
+ACTOR ShittyCross4 31222
+{
+//$Category Nocturne-Map
+    Radius 6
+    Height 32
+    +SOLID
+    +FORCEYBILLBOARD
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		CROS D -1
+		Stop
+	}
+}
