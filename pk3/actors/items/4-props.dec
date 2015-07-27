@@ -518,3 +518,58 @@ ACTOR ShittyCross4 31222
 		Stop
 	}
 }
+
+ACTOR SnakeStatue1 31223
+{
+//$Category Nocturne-Map
+    Radius 26
+    Height 84
+	Scale 0.75
+    +SOLID
+    +FORCEYBILLBOARD
+	+RANDOMIZE
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		SNEK G -1
+		Stop
+	}
+}
+
+ACTOR SnakeStatue2 : SnakeStatue1 31224
+{
+//$Category Nocturne-Map
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		SNEK H -1
+		Stop
+	}
+}
+
+
+ACTOR SnakeStatue3 : SnakeStatue1 31225
+{
+//$Category Nocturne-Map
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		SNEK ABC 4
+		Loop
+	}
+}
+
+ACTOR SnakeStatue4 : SnakeStatue1 31226
+{
+//$Category Nocturne-Map
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		SNEK DEF 4
+		Loop
+	}
+}
