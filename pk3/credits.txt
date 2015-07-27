@@ -87,3 +87,8 @@ TEXTURES:
 - STONE - Bloax (for raw stone constructs or something)
 - STONEMRB - Bloax
 - STONEMBP - Bloax
+
+STORY TEXT:
+============
+- STORYTX1 - Shutterstock
+- STORYTX2 - National Media Museum

@@ -6,6 +6,9 @@ world/quake               QUIET
 logo/gloome               QUIET
 logo/laughingchamber      LOGOLAFF
 
+tele/port                 TELEPROT // Taken from Drones & Abstract from the Sony Loops & Samples Library (royalty-free)
+floor/switch              FLRSWTCH // Mixed from the Sony Pictures Sound Effect Series Vol. 9 (royalty-free)
+
 menu/activate             MENUUP   // Bring up the main menu. - Mixed from the General Series 6000 and OLD SCHOOL
 menu/clear                MENUDOWN // Close main menu. - Mixed from the General Series 6000 and OLD SCHOOL
 menu/choose               MENUYES  // Choose an item on the menu. - Mixed from the General Series 6000
