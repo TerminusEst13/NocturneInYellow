@@ -135,3 +135,43 @@ object CastleCandelabra3
 {
     frame CDLB { light BIGGREENTORCH }
 }
+
+brightmap Sprite SNEKA0
+{
+   map SNEKBM1
+}
+
+brightmap Sprite SNEKB0
+{
+   map SNEKBM1
+}
+
+brightmap Sprite SNEKC0
+{
+   map SNEKBM1
+}
+
+brightmap Sprite SNEKD0
+{
+   map SNEKBM2
+}
+
+brightmap Sprite SNEKE0
+{
+   map SNEKBM2
+}
+
+brightmap Sprite SNEKF0
+{
+   map SNEKBM2
+}
+
+brightmap Sprite SNEKG0
+{
+   map SNEKBM1
+}
+
+brightmap Sprite SNEKH0
+{
+   map SNEKBM2
+}
