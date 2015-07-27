@@ -68,6 +68,15 @@ map MAP01 "Shores of Carcosa"
     SmoothLighting
 }
 
+map MAP02 "Dark Approach"
+{
+    LevelNum = 2
+    SKY1 = "SKY_MAP1", 0.05
+    music = "MUS_MAP2" // TerminusEst13 - Sympathy, Mark 2
+    Lightning
+    SmoothLighting
+}
+
 map MAP03 "Inside Castle"
 {
     LevelNum = 3
