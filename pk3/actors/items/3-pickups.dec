@@ -1,3 +1,9 @@
+actor ArtifactHealth : Health
+{
+    Inventory.Amount 1
+    Inventory.MaxAmount 100
+}
+
 actor GrenadeSatchelPickup : CustomInventory 31040
 {
 //$Category Nocturne-Items
@@ -38,6 +44,7 @@ actor CrucifixPickup : CustomInventory 31045
         TNT1 A 0
         TNT1 A 0 A_SetBlend("white",0.45,25)
         TNT1 A 0 A_GiveInventory("GotArtifact",1)
+        TNT1 A 0 A_GiveInventory("ArtifactHealth",100)
         TNT1 A 0 A_GiveInventory("BowMana",150)
         TNT1 A 0 A_PlaySoundEx("get/artifact","soundslot7",0,0)
         TNT1 A 0 A_GiveInventory("CrucifixActivate",1)
@@ -63,6 +70,7 @@ actor DragonScalePickup : CustomInventory 31046
         TNT1 A 0
         TNT1 A 0 A_SetBlend("white",0.45,25)
         TNT1 A 0 A_GiveInventory("GotArtifact",1)
+        TNT1 A 0 A_GiveInventory("ArtifactHealth",100)
         TNT1 A 0 A_GiveInventory("BowMana",150)
         TNT1 A 0 A_PlaySoundEx("get/artifact","soundslot7",0,0)
         TNT1 A 0 A_GiveInventory("DragonScaleActivate",1)
@@ -88,6 +96,7 @@ actor WhiteCoalPickup : CustomInventory 31047
         TNT1 A 0
         TNT1 A 0 A_SetBlend("white",0.45,25)
         TNT1 A 0 A_GiveInventory("GotArtifact",1)
+        TNT1 A 0 A_GiveInventory("ArtifactHealth",100)
         TNT1 A 0 A_GiveInventory("BowMana",150)
         TNT1 A 0 A_PlaySoundEx("get/artifact","soundslot7",0,0)
         TNT1 A 0 A_GiveInventory("WhiteCoalActivate",1)
@@ -113,6 +122,7 @@ actor AntiqueCoinPickup : CustomInventory 31048
         TNT1 A 0
         TNT1 A 0 A_SetBlend("white",0.45,25)
         TNT1 A 0 A_GiveInventory("GotArtifact",1)
+        TNT1 A 0 A_GiveInventory("ArtifactHealth",100)
         TNT1 A 0 A_GiveInventory("BowMana",150)
         TNT1 A 0 A_PlaySoundEx("get/artifact","soundslot7",0,0)
         TNT1 A 0 A_GiveInventory("AntiqueCoinActivate",1)
@@ -138,6 +148,7 @@ actor PallidMaskPickup : CustomInventory 31049
         TNT1 A 0
         TNT1 A 0 A_SetBlend("white",0.45,25)
         TNT1 A 0 A_GiveInventory("GotArtifact",1)
+        TNT1 A 0 A_GiveInventory("ArtifactHealth",100)
         TNT1 A 0 A_GiveInventory("BowMana",150)
         TNT1 A 0 A_PlaySoundEx("get/artifact","soundslot7",0,0)
         TNT1 A 0 A_GiveInventory("PallidMaskActivate",1)
@@ -163,6 +174,7 @@ actor BurialBeltPickup : CustomInventory 31050
         TNT1 A 0
         TNT1 A 0 A_SetBlend("white",0.45,25)
         TNT1 A 0 A_GiveInventory("GotArtifact",1)
+        TNT1 A 0 A_GiveInventory("ArtifactHealth",100)
         TNT1 A 0 A_GiveInventory("BowMana",150)
         TNT1 A 0 A_PlaySoundEx("get/artifact","soundslot7",0,0)
         TNT1 A 0 A_GiveInventory("BurialBeltActivate",1)

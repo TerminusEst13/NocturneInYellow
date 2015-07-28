@@ -21,3 +21,6 @@ menu/invalid              MENUFAIL // Menu not available. - Mixed from the Gener
 
 menu/quit1                QUIET
 menu/quit2                QUIET
+
+vn/cancel                 VNCANCEL // Mixed from TECHTRAN
+vn/forward                VNFORWRD // Mixed from TECHTRAN
