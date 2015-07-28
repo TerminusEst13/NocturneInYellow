@@ -849,3 +849,55 @@ ACTOR WoodTrash 31244
 		Stop
 	}
 }
+
+ACTOR MarbleColumn1 31245
+{
+//$Category Nocturne-Map
+    Radius 17
+    Height 32
+	Scale 0.45
+    +SOLID
+    +FORCEYBILLBOARD
+	States
+	{
+	Spawn:
+		CLMN A -1
+		Stop
+	}
+}
+
+ACTOR MarbleColumn2 : MarbleColumn1 31246
+{
+//$Category Nocturne-Map
+	Height 38
+    States
+	{
+	Spawn:
+		CLMN B -1
+		Stop
+	}
+}
+
+ACTOR MarbleColumnTall1 : MarbleColumn1 31246
+{
+//$Category Nocturne-Map
+	Height 96
+    States
+	{
+	Spawn:
+		CLMN C -1
+		Stop
+	}
+}
+
+ACTOR MarbleColumnTall2 : MarbleColumn1 31246
+{
+//$Category Nocturne-Map
+	Height 102
+    States
+	{
+	Spawn:
+		CLMN D -1
+		Stop
+	}
+}

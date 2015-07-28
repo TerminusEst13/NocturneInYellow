@@ -50,3 +50,4 @@ WORLD:
 31227 - Random big tree
 31228-31243 - Specific big trees
 31244 - Wood trash
+31245-31248 - Marble pillars
