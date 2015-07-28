@@ -42,8 +42,10 @@ WORLD:
 31211-31213 - Candelabras
 31214 - Rain follower
 31215-31218 - Outdoor torches
-31219-21222 - Map01 crosses
+31219-31222 - Map01 crosses
 31223 - Snake statue w/out candle facing right
 31224 - Snake statue w/out candle facing left
 31225 - Snake statue w/candle facing right
 31226 - Snake statue w/candle facing left
+31227 - Random big tree
+31228-31243 - Specific big trees
