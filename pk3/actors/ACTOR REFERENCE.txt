@@ -49,3 +49,4 @@ WORLD:
 31226 - Snake statue w/candle facing left
 31227 - Random big tree
 31228-31243 - Specific big trees
+31244 - Wood trash

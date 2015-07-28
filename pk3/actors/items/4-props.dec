@@ -815,3 +815,37 @@ ACTOR BigTree16 : BigTreeRandom 31243
 		Stop
     }
 }
+
+ACTOR WoodTrash 31244
+{
+//$Category Nocturne-Map
+    Radius 4
+    Height 2
+	+NOINTERACTION
+    +FORCEYBILLBOARD
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_SetScale(random(723,1053)*0.001,random(701,876)*0.001)
+		TNT1 A 0 A_Jump(256,"Spawn1","Spawn2","Spawn3","Spawn4","Spawn5","Spawn6")
+	Spawn1:
+	    TRSH A -1
+		Stop
+	Spawn2:
+	    TRSH B -1
+		Stop
+	Spawn3:
+	    TRSH C -1
+		Stop
+	Spawn4:
+	    TRSH D -1
+		Stop
+	Spawn5:
+	    TRSH E -1
+		Stop
+	Spawn6:
+	    TRSH F -1
+		Stop
+	}
+}
