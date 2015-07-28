@@ -124,7 +124,7 @@ actor RogatinaStab : FastProjectile
     RenderStyle Add
     Alpha 0.6
     Scale 0.65
-    Decal BulletChip
+    Decal ArrowCrack
     DamageType "Spear"
     ProjectileKickBack 150
     Projectile
