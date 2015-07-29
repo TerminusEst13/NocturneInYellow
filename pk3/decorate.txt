@@ -28,6 +28,7 @@ ACTOR BlankPuff { }
 #include "actors/items/3-pickups.dec"
 #include "actors/items/4-props.dec"
 #include "actors/items/5-artifacts.dec"
+#include "actors/items/6-keys.dec"
 
 #include "actors/enemies/1-nezhit.dec"
 #include "actors/enemies/2-likho.dec"

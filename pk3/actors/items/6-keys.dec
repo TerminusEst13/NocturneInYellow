@@ -1,0 +1,59 @@
+actor RedSkull2 : CustomInventory replaces RedSkull
+{
+    Inventory.PickupMessage ""
+    Inventory.PickupSound ""
+    +QUIET
+    States
+    {
+    Spawn:
+        RSKU A 30
+        RSKU A 1 BRIGHT
+        loop
+    Pickup:
+        TNT1 A 0 A_SetBlend("99 FF 66",0.1,5)
+        TNT1 A 0 A_PlaySoundEx("misc/k_pkup","soundslot7",0,0)
+        TNT1 A 0 A_GiveInventory("RedSkull",1)
+        TNT1 A 0 ACS_ExecuteAlways(433,0,13)
+        stop
+    }
+}
+
+actor BlueSkull2 : CustomInventory replaces BlueSkull
+{
+    Inventory.PickupMessage ""
+    Inventory.PickupSound ""
+    +QUIET
+    States
+    {
+    Spawn:
+        BSKU A 30
+        BSKU A 1 BRIGHT
+        loop
+    Pickup:
+        TNT1 A 0 A_SetBlend("99 FF 66",0.1,5)
+        TNT1 A 0 A_PlaySoundEx("misc/k_pkup","soundslot7",0,0)
+        TNT1 A 0 A_GiveInventory("BlueSkull",1)
+        TNT1 A 0 ACS_ExecuteAlways(433,0,13)
+        stop
+    }
+}
+
+actor YellowSkull2 : CustomInventory replaces YellowSkull
+{
+    Inventory.PickupMessage ""
+    Inventory.PickupSound ""
+    +QUIET
+    States
+    {
+    Spawn:
+        RSKU A 30
+        RSKU A 1 BRIGHT
+        loop
+    Pickup:
+        TNT1 A 0 A_SetBlend("99 FF 66",0.1,5)
+        TNT1 A 0 A_PlaySoundEx("misc/k_pkup","soundslot7",0,0)
+        TNT1 A 0 A_GiveInventory("YellowSkull",1)
+        TNT1 A 0 ACS_ExecuteAlways(433,0,13)
+        stop
+    }
+}
