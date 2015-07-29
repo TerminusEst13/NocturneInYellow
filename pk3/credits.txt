@@ -90,5 +90,10 @@ TEXTURES:
 
 STORY TEXT:
 ============
-- STORYTX1 - Shutterstock
-- STORYTX2 - National Media Museum
+- Shutterstock, for "flying smoky meteor on background of sky" and "Closeup portrait of a young Caucasian man holding his head in despair, isolated over white", royalty-free stock imagery (STORYTX1 / STORYTX7)
+- National Media Museum, for the images of soldiers marching and ruined cities, released into public domain (STORYTX2 / STORYTX6)
+- 123RF, for "Man-reading-a-book-in-silhouette-and-isolated-on-White-background", royalty-free stock photography (STORYTX3)
+- Depositphotos, for "Young guy studying", royalty-free stock photography (STORYTX5)
+- Dreamstime, for "Tattered book", "Turning pages of old book", and "Man With Bow", royalty-free stock imagery (STORYTX4 / STORYTX6 / STORYTX8)
+- Thomas Nemcsek, for "Attic CZ" off zeitfaenger.at, released under Attribution 2.0 Generic (CC BY 2.0) (STORYTX8)
+- HTPstock, for "crazy static texture" off deviantart.com, released under the "message me with the final product" license. Is that even a license? I dunno. Probably not. (STORYTX7)
