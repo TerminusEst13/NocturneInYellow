@@ -182,9 +182,6 @@ script 432 ENTER
         // If the player has any stamina...
         if (CheckInventory("RunningStamina") > 0)
         {
-            // And their weapon is idle...
-            if (CheckInventory("WeaponIdle") == 1)
-            {
                 // Start runnin'.
                 // Side effects of runnin' may also include the ability to jump
                 // higher and farther. Doing so while runnin' may induce a whole
@@ -195,12 +192,8 @@ script 432 ENTER
                 GiveInventory("SprintStopping",10);
                 SetActorProperty(0,APROP_Gravity,0.775);
                 SetActorProperty(0,APROP_JumpZ,9.5);
-            }
-            else
-            // Otherwise, well, don't.
-            { TakeInventory("SprintDash",1); }
         }
-        else
+        else // Otherwise, well, don't.
         {
             TakeInventory("SprintDash",1);
             GiveInventory("SprintCooldown",115);
@@ -332,6 +325,13 @@ script 433 (int bullshit)
 
     case 12:
         ActivatorSound("drekavac/screamfar",127);
+    break;
+
+    case 13:
+        SetHudSize(640,480,FALSE);
+        HudMessage(s:"Key"; HUDMSG_LOG,0,CR_WHITE,3200.0,64.0,1.0);
+        SetFont("PKUPKEY");
+        HudMessage(s:"a"; HUDMSG_FADEINOUT,0,CR_WHITE,320.0,64.0,2.0,0.25,0.25);
     break;
     }
 }
