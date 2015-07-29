@@ -10,14 +10,7 @@ REM Which is to say, basically have the entire .pk3 floating around in the folde
  mkdir pk32
  robocopy pk3\ pk32\ /E /NP
  pushd pk32
- rd /s /q zanactors\
- ..\..\..\7z.exe a -r -ssw -mx -tzip ..\..\%ProjName%n.pk3 *.*
+ ..\7z.exe a -r -ssw -mx -tzip ..\%ProjName%.pk3 *.*
  echo Done packing.
  popd
  rd /s /q pk32\
- echo Step 2: Replace old version
- echo Replacing old version.
- del %ProjName%.pk3
- ren %ProjName%n.pk3 %ProjName%.pk3
- echo Done replacing.
- echo Done.
