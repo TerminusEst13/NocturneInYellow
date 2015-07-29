@@ -31,3 +31,22 @@ pic water27 tics 3
 pic water28 tics 3
 pic water29 tics 3
 pic water30 tics 3
+
+texture STATIC01
+pic STATIC01 tics 1
+pic STATIC02 tics 1
+pic STATIC03 tics 1
+pic STATIC04 tics 1
+pic STATIC05 tics 1
+pic STATIC06 tics 1
+pic STATIC07 tics 1
+pic STATIC08 tics 1
+pic STATIC09 tics 1
+pic STATIC10 tics 1
+pic STATIC11 tics 1
+pic STATIC12 tics 1
+pic STATIC13 tics 1
+pic STATIC14 tics 1
+pic STATIC15 tics 1
+pic STATIC16 tics 1
+pic STATIC17 tics 1

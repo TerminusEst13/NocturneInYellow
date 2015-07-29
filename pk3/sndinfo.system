@@ -24,3 +24,4 @@ menu/quit2                QUIET
 
 vn/cancel                 VNCANCEL // Mixed from TECHTRAN
 vn/forward                VNFORWRD // Mixed from TECHTRAN
+static/static             STATIC   // Mixed from STATIC

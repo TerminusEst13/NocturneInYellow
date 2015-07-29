@@ -1,6 +1,14 @@
 #include "zcommon.acs"
 #library "sonata"
 
+#include "sonata_tldr1.acs"
+#include "sonata_tldr2.acs"
+#include "sonata_tldr3.acs"
+#include "sonata_tldr4.acs"
+#include "sonata_tldr5.acs"
+#include "sonata_tldr6.acs"
+#include "sonata_tldr7.acs"
+
 #define MaxStepSounds 52
 
 str StepSound[MaxStepSounds][2] = {
