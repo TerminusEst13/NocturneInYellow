@@ -521,24 +521,37 @@ actor FireArrow : FastProjectile
     DamageType "Bow"
     Obituary "%o was pincushioned."
     ProjectileKickBack 25
-    MissileType FireArrowTrail
-    MissileHeight 8
+// Haha, you wish    MissileType FireArrowTrail
+//    MissileHeight 8
     Decal BulletChip
     RenderStyle Add
     Alpha 0.99
     Scale 0.9
     States
     {
-    Spawn:
-        MARO C 1 BRIGHT
-        Loop
+	Spawn:
+		TNT1 A 0
+		//Commencing massive hacks
+		TNT1 AA 0 A_SpawnItemEx("FireShit",0,0,0,random(-43,43)*0.04,random(-43,43)*0.04,random(14,32)*0.06,random(0,359),SXF_NOCHECKPOSITION,80)
+		MARO C 1 Bright A_SpawnItemEx("FireShit",0,0,0,random(-43,43)*0.04,random(-43,43)*0.04,random(14,42)*0.06,random(0,359),SXF_NOCHECKPOSITION,42)
+		TNT1 AA 0 A_SpawnItemEx("FireShit",0,0,0,random(-43,43)*0.04,random(-43,43)*0.04,random(14,32)*0.06,random(0,359),SXF_NOCHECKPOSITION,80)
+		MARO C 1 Bright A_SpawnItemEx("FireShit",0,0,0,random(-43,43)*0.04,random(-43,43)*0.04,random(14,42)*0.06,random(0,359),SXF_NOCHECKPOSITION,42)
+		TNT1 AA 0 A_SpawnItemEx("FireShit",0,0,0,random(-43,43)*0.04,random(-43,43)*0.04,random(14,32)*0.06,random(0,359),SXF_NOCHECKPOSITION,80)
+		MARO C 1 Bright A_SpawnItemEx("FireShit",0,0,0,random(-43,43)*0.04,random(-43,43)*0.04,random(14,42)*0.06,random(0,359),SXF_NOCHECKPOSITION,42)
+		TNT1 AA 0 A_SpawnItemEx("FireShit",0,0,0,random(-43,43)*0.04,random(-43,43)*0.04,random(14,32)*0.06,random(0,359),SXF_NOCHECKPOSITION,80)
+		MARO C 1 Bright A_SpawnItemEx("FireShit",0,0,0,random(-43,43)*0.04,random(-43,43)*0.04,random(14,42)*0.06,random(0,359),SXF_NOCHECKPOSITION,42)
+	Spawn2:
+		TNT1 A 0 A_SpawnItemEx("FireSpatter",0,0,0,random(-43,43)*0.04,random(-43,43)*0.04,random(14,42)*0.06,random(0,359),SXF_NOCHECKPOSITION,42)
+		TNT1 AA 0 A_SpawnItemEx("FireShit",0,0,0,random(-43,43)*0.04,random(-43,43)*0.04,random(14,32)*0.06,random(0,359),SXF_NOCHECKPOSITION,80)
+		MARO C 1 Bright A_SpawnItemEx("FireShit",0,0,0,random(-43,43)*0.04,random(-43,43)*0.04,random(14,42)*0.06,random(0,359),SXF_NOCHECKPOSITION,42)
+		Loop
     Death: // Hitting a wall
         TNT1 A 0
         TNT1 A 0 A_PlaySound("arrow/miss",CHAN_AUTO,1.0,0,ATTN_NORM)
         TNT1 A 0 A_PlaySound("impact/fire",CHAN_5,1.0,0,ATTN_NORM)
         TNT1 AAAAA 0 A_SpawnItemEx("ArrowSmoke",0,0,0,frandom(-0.5,0.5),frandom(-0.5,0.5),frandom(0.1,0.5),random(-180,180),32)
-        TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("FireSpatter",0,0,0,frandom(-1.5,1.5),frandom(-1.5,1.5),frandom(-1.5,1.5),random(-180,180),32)
-        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("FireSpatterLarge",0,0,0,frandom(-0.5,0.5),frandom(-0.5,0.5),frandom(-0.5,0.5),random(-180,180),32)
+        TNT1 AAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("FireShit",0,0,0,random(-43,43)*0.05,random(-43,43)*0.05,random(-40,40)*0.06,random(0,359),SXF_NOCHECKPOSITION,32)
+        TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("FireShitBig",random(-3,3),random(-3,3),0,random(-43,43)*0.125,random(-43,43)*0.125,random(-40,40)*0.125,random(0,359),SXF_NOCHECKPOSITION,80)
         TNT1 A 0 A_SetScale(0.1,0.1)
         SPRK C 10 BRIGHT
         SPRK C 1 BRIGHT A_FadeOut(0.01)
@@ -899,7 +912,6 @@ actor FireArrowTrail
     {
     Spawn:
         TNT1 A 0
-        TNT1 A 0 A_SpawnItemEx("FireTrail",0,0,0,frandom(-0.5,0.5),0,frandom(-0.5,0.5),0,32)
         SPRK C 4
     Spawn1:
         SPRK C 1 A_FadeOut(0.0025)
@@ -928,11 +940,12 @@ actor FireSpatter
     +CLIENTSIDEONLY
     Scale 0.15
     RenderStyle Add
-    Alpha 0.99
+    Alpha 0.75
     States
     {
     Spawn:
-        FIRE ABCDEFGH 4 BRIGHT
+		FIRE A 0 A_SetScale(frandom(0.12,0.18),frandom(0.09,0.18))
+        FIRE ABCDEFGH 2 BRIGHT A_FadeOut(0.06)
         stop
     }
 }
@@ -1146,4 +1159,86 @@ ACTOR ArrowSmoke
         SMOK ABCDEFGHIJKLMNO 1 A_FadeOut(0.005)
         loop
     }
+}
+
+Actor FireShitter
+{
+	Radius 1
+	Height 1
+	RenderStyle Add
+	+CLIENTSIDEONLY
+	+NOGRAVITY
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		//Commencing massive hacks
+		TNT1 AA 0 A_SpawnItemEx("FireShit",0,0,0,random(-43,43)*0.04,random(-43,43)*0.04,random(14,32)*0.06,random(0,359),SXF_NOCHECKPOSITION,80)
+		TNT1 A 1 A_SpawnItemEx("FireShit",0,0,0,random(-43,43)*0.04,random(-43,43)*0.04,random(14,42)*0.06,random(0,359),SXF_NOCHECKPOSITION,42)
+		TNT1 AA 0 A_SpawnItemEx("FireShit",0,0,0,random(-43,43)*0.04,random(-43,43)*0.04,random(14,32)*0.06,random(0,359),SXF_NOCHECKPOSITION,80)
+		TNT1 A 1 A_SpawnItemEx("FireShit",0,0,0,random(-43,43)*0.04,random(-43,43)*0.04,random(14,42)*0.06,random(0,359),SXF_NOCHECKPOSITION,42)
+		TNT1 AA 0 A_SpawnItemEx("FireShit",0,0,0,random(-43,43)*0.04,random(-43,43)*0.04,random(14,32)*0.06,random(0,359),SXF_NOCHECKPOSITION,80)
+		TNT1 A 1 A_SpawnItemEx("FireShit",0,0,0,random(-43,43)*0.04,random(-43,43)*0.04,random(14,42)*0.06,random(0,359),SXF_NOCHECKPOSITION,42)
+		TNT1 AA 0 A_SpawnItemEx("FireShit",0,0,0,random(-43,43)*0.04,random(-43,43)*0.04,random(14,32)*0.06,random(0,359),SXF_NOCHECKPOSITION,80)
+		TNT1 A 1 A_SpawnItemEx("FireShit",0,0,0,random(-43,43)*0.04,random(-43,43)*0.04,random(14,42)*0.06,random(0,359),SXF_NOCHECKPOSITION,42)
+		TNT1 AA 0 A_SpawnItemEx("FireShit",0,0,0,random(-43,43)*0.04,random(-43,43)*0.04,random(14,32)*0.06,random(0,359),SXF_NOCHECKPOSITION,80)
+		TNT1 A 1 A_SpawnItemEx("FireShit",0,0,0,random(-43,43)*0.04,random(-43,43)*0.04,random(14,42)*0.06,random(0,359),SXF_NOCHECKPOSITION,42)
+		TNT1 AA 0 A_SpawnItemEx("FireShit",0,0,0,random(-43,43)*0.04,random(-43,43)*0.04,random(14,32)*0.06,random(0,359),SXF_NOCHECKPOSITION,80)
+		TNT1 A 1 A_SpawnItemEx("FireShit",0,0,0,random(-43,43)*0.04,random(-43,43)*0.04,random(14,42)*0.06,random(0,359),SXF_NOCHECKPOSITION,42)
+		TNT1 AA 0 A_SpawnItemEx("FireShit",0,0,0,random(-43,43)*0.04,random(-43,43)*0.04,random(14,32)*0.06,random(0,359),SXF_NOCHECKPOSITION,80)
+		TNT1 A 1 A_SpawnItemEx("FireShit",0,0,0,random(-43,43)*0.04,random(-43,43)*0.04,random(14,42)*0.06,random(0,359),SXF_NOCHECKPOSITION,42)
+	Spawn2:
+		TNT1 A 0 A_SpawnItemEx("FireSpatter",0,0,0,random(-43,43)*0.04,random(-43,43)*0.04,random(14,42)*0.06,random(0,359),SXF_NOCHECKPOSITION,42)
+		TNT1 AA 0 A_SpawnItemEx("FireShit",0,0,0,random(-43,43)*0.04,random(-43,43)*0.04,random(14,32)*0.06,random(0,359),SXF_NOCHECKPOSITION,80)
+		TNT1 A 1 A_SpawnItemEx("FireShit",0,0,0,random(-43,43)*0.04,random(-43,43)*0.04,random(14,42)*0.06,random(0,359),SXF_NOCHECKPOSITION,42)
+		Loop
+	}
+}
+
+Actor FireShit : FireShitter
+{
+	VSpeed 2.5
+	Scale 0.6
+	YScale 0.45
+	Alpha 0.9
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_Jump(256,"Spawn1","Spawn2","Spawn3")
+	Spawn1:
+		EXP1 QRSTUVXXXXX 1 A_FadeOut(0.05)
+		Stop
+	Spawn2:
+		EXP4 A 0 A_SetScale(frandom(0.26,0.40),frandom(0.18,0.39))
+		EXP4 BCEFHIKLNOQRTUWXZ 1
+		Stop
+	Spawn3:
+		EXP5 A 0 A_SetScale(frandom(0.26,0.40),frandom(0.17,0.38))
+		EXP5 GIJKLNOPRSUVWZ 1
+		Stop
+	}
+}
+
+Actor FireShitBig : FireShit
+{
+	Scale 1.2
+	YScale 0.8
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_Jump(256,"Spawn1","Spawn2","Spawn3")
+	Spawn1:
+		EXP1 QRSTUVXXXXX 1 A_FadeOut(0.05)
+		Stop
+	Spawn2:
+		EXP4 A 0 A_SetScale(frandom(0.66,1.0),frandom(0.58,0.79))
+		EXP4 BCEFHIKLNOQRTUWXZ 1
+		Stop
+	Spawn3:
+		EXP5 A 0 A_SetScale(frandom(0.66,1.0),frandom(0.57,0.78))
+		EXP5 GIJKLNOPRSUVWZ 1
+		Stop
+	}
 }
