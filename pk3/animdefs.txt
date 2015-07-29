@@ -62,3 +62,7 @@ off sound "key/switchoff" pic KWALYEL2 tics 45
 switch KWALBLU2
 on sound "key/switch" pic KWALBLU3 tics 45
 off sound "key/switchoff" pic KWALBLU2 tics 45
+
+switch WALL42_6
+on sound "key/switch" pic WALL47_5 tics 45
+off sound "key/switchoff" pic WALL42_6 tics 45

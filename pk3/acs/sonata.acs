@@ -335,3 +335,20 @@ script 433 (int bullshit)
     break;
     }
 }
+
+script 434 (void) // I should not be devoting an entire script just to simply saving.
+                  // Ideally, I would compress it into the above script.
+                  // But I'm autistic about categorizing, so.
+{
+    SetPlayerProperty(0,1,PROP_TOTALLYFROZEN);
+    SetPlayerProperty(0,1,PROP_INVULNERABILITY);
+    FadeRange(0,0,0,0,0,0,0,1.0,0.65);
+    Delay(5);
+    AmbientSound("save/game",127);
+    Delay(30);
+    Autosave();
+    FadeRange(0,0,0,1.0,0,0,0,0,0.65);
+    SetPlayerProperty(0,0,PROP_TOTALLYFROZEN);
+    SetPlayerProperty(0,0,PROP_INVULNERABILITY);
+    Delay(5);
+}

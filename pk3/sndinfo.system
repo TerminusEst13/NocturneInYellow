@@ -8,6 +8,8 @@ logo/laughingchamber      LOGOLAFF
 
 tele/port                 TELEPROT // Taken from Drones & Abstract from the Sony Loops & Samples Library (royalty-free)
 floor/switch              FLRSWTCH // Mixed from the Sony Pictures Sound Effect Series Vol. 9 (royalty-free)
+key/switch                KEYSWTCH // Mixed from the General Series 6000
+key/switchoff             KEYSWTC2 // Mixed from the General Series 6000
 
 menu/activate             MENUUP   // Bring up the main menu. - Mixed from the General Series 6000 and OLD SCHOOL
 menu/clear                MENUDOWN // Close main menu. - Mixed from the General Series 6000 and OLD SCHOOL
@@ -25,3 +27,5 @@ menu/quit2                QUIET
 vn/cancel                 VNCANCEL // Mixed from TECHTRAN
 vn/forward                VNFORWRD // Mixed from TECHTRAN
 static/static             STATIC   // Mixed from STATIC
+
+save/game                 SAVEGAME // Mixed from TECHTRAN and Twisted Reality

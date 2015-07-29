@@ -5,6 +5,7 @@ ETC:
 - Microsoft, for the "Moolboran" font that comes standard with all computers
 - Jared Tarbell, for the "Levitated Runes" font off levitated.net, released as free to use.
 - fgsfds, for fact-checking and assistance in translating things to Russian.
+- Freedoom, for the palette.
 
 SPRITES:
 ===========

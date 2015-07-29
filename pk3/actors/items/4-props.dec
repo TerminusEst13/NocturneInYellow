@@ -937,12 +937,322 @@ ACTOR VikentiProp 31250
     Height 56
     Scale 0.75
     +SOLID
-    +RANDOMIZE
     States
     {
     Spawn:
         TNT1 A 0
         VPRP A -1
         Stop
+    }
+}
+
+ACTOR SaveStatue 31251 // Originally planned to have the statue face the player with energy coming from its hands.
+{                      // That didn't plan out. WHOOPS.
+//$Category Nocturne-CoolStuff
+    Radius 32
+    Height 128
+    Scale 1.1
+    Speed 0
+    +SOLID
+    +FLOAT
+    +FORCEYBILLBOARD
+    /*MONSTER
+    -ISMONSTER
+    -COUNTKILL
+    +LOOKALLAROUND
+    +NOINFIGHTING
+    +NOTARGET
+    +NODAMAGE
+    +NOBLOOD*/
+    States
+    {
+    Spawn:/*
+        KWST A 5 A_Look
+        loop
+    See:*/
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_FaceTarget
+        TNT1 A 0 A_Jump(8,"Nudge")
+        loop
+    Nudge:
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_ChangeVelocity(0,0,0.01, CVF_REPLACE)
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_ChangeVelocity(0,0,0.02, CVF_REPLACE)
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_ChangeVelocity(0,0,0.03, CVF_REPLACE)
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_ChangeVelocity(0,0,0.04, CVF_REPLACE)
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_ChangeVelocity(0,0,0.05, CVF_REPLACE)
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_ChangeVelocity(0,0,0.05, CVF_REPLACE)
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_ChangeVelocity(0,0,0.04, CVF_REPLACE)
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_ChangeVelocity(0,0,0.03, CVF_REPLACE)
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_ChangeVelocity(0,0,0.02, CVF_REPLACE)
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_ChangeVelocity(0,0,0.01, CVF_REPLACE)
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_ChangeVelocity(0,0,-0.01, CVF_REPLACE)
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_ChangeVelocity(0,0,-0.02, CVF_REPLACE)
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_ChangeVelocity(0,0,-0.03, CVF_REPLACE)
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_ChangeVelocity(0,0,-0.04, CVF_REPLACE)
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_ChangeVelocity(0,0,-0.05, CVF_REPLACE)
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_ChangeVelocity(0,0,-0.05, CVF_REPLACE)
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_ChangeVelocity(0,0,-0.04, CVF_REPLACE)
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_ChangeVelocity(0,0,-0.03, CVF_REPLACE)
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_ChangeVelocity(0,0,-0.02, CVF_REPLACE)
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_ChangeVelocity(0,0,-0.01, CVF_REPLACE)
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 1 A_SpawnItemEx("BlueHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        //TNT1 A 0 A_FaceTarget
+        goto Spawn
+    }
+}
+
+actor BlueHandjob
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    ReactionTime 70
+    RenderStyle Add
+    Alpha 0.1
+    Scale 0.05
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_SetScale(scalex-0.0025,scaley-0.0025)
+        TNT1 A 0 A_CountDown
+        SPRK F 1 BRIGHT A_FadeOut(0.001)
+        loop
     }
 }

@@ -3,7 +3,6 @@ SPRITES:
 - Bow
 - Impact sparks
 - Player sprites (Probably not needed, will need just one for the opening title)
-- Non-placeholder images for Titlemap
 - Nagant casings
 - Bullet sparks
 - Bullet puffs (Could probably use any of the existing smoke sprites)
@@ -15,14 +14,8 @@ SPRITES:
 - Vodyanoy's sprites
 - Drekavac's sprites
 - Upyr's sprites
-- Key pickup sprites
 
 SOUNDS:
 =============
 - Chat sound (Not needed)
 - Quit sounds (Not needed)
-- Platform rise/lower sounds
-- Switch hit sounds
-- Door rise/lower sounds
-- Can't use door sounds
-- Sand walk sounds
