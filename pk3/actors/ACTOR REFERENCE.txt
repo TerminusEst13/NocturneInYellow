@@ -51,3 +51,4 @@ WORLD:
 31228-31243 - Specific big trees
 31244 - Wood trash
 31245-31248 - Marble pillars
+31249 - Dark portal
