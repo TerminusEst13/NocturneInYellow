@@ -50,3 +50,15 @@ pic STATIC14 tics 1
 pic STATIC15 tics 1
 pic STATIC16 tics 1
 pic STATIC17 tics 1
+
+switch KWALRED2
+on sound "key/switch" pic KWALRED3 tics 35
+off sound "key/switchoff" pic KWALRED2 tics 35
+
+switch KWALYEL2
+on sound "key/switch" pic KWALYEL3 tics 45
+off sound "key/switchoff" pic KWALYEL2 tics 45
+
+switch KWALBLU2
+on sound "key/switch" pic KWALBLU3 tics 45
+off sound "key/switchoff" pic KWALBLU2 tics 45
