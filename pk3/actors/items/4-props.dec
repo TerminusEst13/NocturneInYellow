@@ -929,3 +929,20 @@ actor DarkPortalSmoke
         stop
     }
 }
+
+ACTOR VikentiProp 31250
+{
+//$Category Nocturne-Map
+    Radius 16
+    Height 56
+    Scale 0.75
+    +SOLID
+    +RANDOMIZE
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        VPRP A -1
+        Stop
+    }
+}
