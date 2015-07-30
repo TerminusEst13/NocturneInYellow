@@ -110,3 +110,4 @@ upattack4                 UPYRATK4
 
 upyr/fire                 UPYRFIRE // Mixed from the General Series 6000, Sony Pictures Sound Effects Series, and the Free Firearm Sound Library
 upyr/firedistant          UPYRFFIR // Mixed from the Free Firearm Sound Library
+$rolloff drekavac/death 1200 3200

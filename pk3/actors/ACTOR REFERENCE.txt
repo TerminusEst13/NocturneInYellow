@@ -55,3 +55,4 @@ WORLD:
 31250 - VikentiProp
 31251 - Kawaii Statue
 31252 - Random bones
+31253 - Teleport for anti-cathedral

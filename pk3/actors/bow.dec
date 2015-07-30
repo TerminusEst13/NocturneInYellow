@@ -586,7 +586,7 @@ actor ArcaneArrow : FastProjectile
     +FORCEYBILLBOARD
     +NOEXTREMEDEATH
     +BLOODSPLATTER
-    DamageType "Bow"
+    DamageType "ArcaneBow"
     Obituary "%o was pincushioned."
     ProjectileKickBack 25
     MissileType ArcaneArrowTrail

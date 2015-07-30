@@ -8,6 +8,7 @@ ACTOR Nezhit 31090
     PainChance 255 // Technically the "always" number is 256, but I get weird results with 256.
                    // I guess the number goes from 0-255 rather than 1-256?
     PainChance "Spear", 255
+    DamageFactor "Bullet", 2.0
     Monster
     +FLOORCLIP
     +DONTBLAST

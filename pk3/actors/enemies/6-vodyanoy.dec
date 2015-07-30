@@ -7,6 +7,7 @@ ACTOR Vodyanoy 31094
     Speed 5
     PainChance 96
     PainChance "Spear", 255
+    DamageFactor "Bullet", 3.0
     Scale 1.25
     Mass 2000
     Monster

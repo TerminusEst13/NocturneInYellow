@@ -103,6 +103,7 @@ map MAP04 "The Dead Library"
 map MAP05 "Anti-Cathedral"
 {
     LevelNum = 5
+    SKY1 = "SKY_MAP6", 0.15
     music = "MUS_MAP5" // Paul Pitman/TerminusEst13 - Moonlight Sonata (Adagio Sostenuto)
     Next = "MAP06"
     SmoothLighting

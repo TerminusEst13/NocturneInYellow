@@ -8,6 +8,7 @@ ACTOR Bauk 31092
     PainChance 160
     PainChance "Spear", 255
     MaxTargetRange 1024
+    DamageFactor "Bullet", 2.0
     Monster
     +FLOORCLIP
     +DONTBLAST

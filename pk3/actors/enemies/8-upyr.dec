@@ -6,6 +6,7 @@ Actor Upyr 31097
     Radius 20
     Speed 20
     PainChance 196
+    PainChance "ArcaneBow", 64
     PainChance "Spear", 255
     Monster
     +FLOORCLIP
