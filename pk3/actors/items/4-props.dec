@@ -954,8 +954,9 @@ ACTOR SaveStatue 31251 // Originally planned to have the statue face the player 
     Scale 1.1
     Speed 0
     +SOLID
-    +FLOAT
+    +NOGRAVITY
     +FORCEYBILLBOARD
+    var int user_floatyfloaty;
     /*MONSTER
     -ISMONSTER
     -COUNTKILL
@@ -970,271 +971,33 @@ ACTOR SaveStatue 31251 // Originally planned to have the statue face the player 
         KWST A 5 A_Look
         loop
     See:*/
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_FaceTarget
-        TNT1 A 0 A_Jump(8,"Nudge")
+		KWST A 0
+		KWST A 2 ThrustThingZ(0,18,0,0)
+		KWST A 0 A_Stop
+	Start:
+        KWST A 0 A_FaceTarget // ~ ara ara senpai notice me :-(
+        TNT1 AAA 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+		KWST A 0 A_SetUserVar("user_floatyfloaty",0)
+		KWST A 1 ThrustThingZ(0,1,0,0)
+	FloatyFloaty:
+        KWST A 0 A_JumpIf(user_floatyfloaty >= 80,"ThrustDown")
+        KWST A 0 A_FaceTarget
+		KWST A 0 A_SetUserVar("user_floatyfloaty",user_floatyfloaty+1)
+        TNT1 AAA 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+		KWST A 1 A_ScaleVelocity(1.00834)
         loop
-    Nudge:
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_ChangeVelocity(0,0,0.01, CVF_REPLACE)
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_ChangeVelocity(0,0,0.02, CVF_REPLACE)
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_ChangeVelocity(0,0,0.03, CVF_REPLACE)
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_ChangeVelocity(0,0,0.04, CVF_REPLACE)
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_ChangeVelocity(0,0,0.05, CVF_REPLACE)
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_ChangeVelocity(0,0,0.05, CVF_REPLACE)
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_ChangeVelocity(0,0,0.04, CVF_REPLACE)
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_ChangeVelocity(0,0,0.03, CVF_REPLACE)
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_ChangeVelocity(0,0,0.02, CVF_REPLACE)
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_ChangeVelocity(0,0,0.01, CVF_REPLACE)
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_ChangeVelocity(0,0,-0.01, CVF_REPLACE)
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_ChangeVelocity(0,0,-0.02, CVF_REPLACE)
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_ChangeVelocity(0,0,-0.03, CVF_REPLACE)
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_ChangeVelocity(0,0,-0.04, CVF_REPLACE)
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_ChangeVelocity(0,0,-0.05, CVF_REPLACE)
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_ChangeVelocity(0,0,-0.05, CVF_REPLACE)
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_ChangeVelocity(0,0,-0.04, CVF_REPLACE)
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_ChangeVelocity(0,0,-0.03, CVF_REPLACE)
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_ChangeVelocity(0,0,-0.02, CVF_REPLACE)
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_ChangeVelocity(0,0,-0.01, CVF_REPLACE)
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        KWST A 1 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
-        //TNT1 A 0 A_FaceTarget
-        goto Spawn
+	ThrustDown:
+		TNT1 AAA 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+        KWST A 0 A_FaceTarget
+		KWST A 0 A_SetUserVar("user_floatyfloaty",0)
+		KWST A 1 ThrustThingZ(0,1,1,0)
+	FloatyFloaty2:
+        KWST A 0 A_JumpIf(user_floatyfloaty >= 80,"Start")
+        KWST A 0 A_FaceTarget
+		KWST A 0 A_SetUserVar("user_floatyfloaty",user_floatyfloaty+1)
+        TNT1 AAA 0 A_SpawnItemEx("PurpleHandjob",frandom(-72,72),frandom(-72,72),frandom(1,16),0,0,frandom(1,15),0,160)
+		KWST A 1 A_ScaleVelocity(1.00834)
+        loop
     }
 }
 
@@ -1244,7 +1007,7 @@ actor PurpleHandjob
     +CLIENTSIDEONLY
     ReactionTime 70
     RenderStyle Add
-    Alpha 0.1
+    Alpha 0.15
     Scale 0.05
     States
     {
