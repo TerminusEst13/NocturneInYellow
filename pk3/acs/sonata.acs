@@ -272,6 +272,8 @@ script 433 (int bullshit)
         HudMessage(s:"Carry Satchel: \cjCarry an extra grenade"; HUDMSG_LOG,0,CR_GOLD,3200.0,64.0,1.0);
         SetFont("PKUPSTCH");
         HudMessage(s:"a"; HUDMSG_FADEINOUT,0,CR_WHITE,320.0,64.0,2.0,0.25,0.25);
+        delay(1);
+        GiveInventory("GrenadeAmmo",1);
     break;
 
     case 5:
