@@ -26,23 +26,23 @@ ACTOR "Vechnost" : Weapon // Means "Forever"
     Ready:
         TNT1 A 0 A_GiveInventory("WeaponIdle",1)
         //TNT1 A 0 A_JumpIfInventory("SprintDash",1,"D_RUNNIN")
-        RBOW A 1 A_WeaponReady
+        RBOW E 1 A_WeaponReady
         Loop
     Deselect:
         TNT1 A 0 A_TakeInventory("BowFired",1)
         TNT1 AA 0 A_Lower
-        RBOW A 1 A_Lower
+        RBOW E 1 A_Lower
         Loop
     Select:
         TNT1 AA 0 A_Raise
-        RBOW A 1 A_Raise
+        RBOW E 1 A_Raise
         Loop
     Fire:
-        TNT1 A 0 A_TakeInventory("WeaponIdle",1)
+        /*TNT1 A 0 A_TakeInventory("WeaponIdle",1)
         TNT1 A 0 A_TakeInventory("WeaponIdleCounter",0x7FFFFFFF)
         TNT1 A 0 A_JumpIfInventory("BowFired",1,"FireReady")
         RBOW BCD 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-    FireReady:
+    FireReady:*/
         TNT1 A 0 A_PlaySoundEx("bow/nock","soundslot5",0,0)
         RBOW E 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         TNT1 A 0 A_GiveInventory("BowFired",1)
@@ -79,7 +79,7 @@ ACTOR "Vechnost" : Weapon // Means "Forever"
         RBOW NNO 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
     Ready2:
         //TNT1 A 0 A_JumpIfInventory("SprintDash",1,"D_RUNNIN2")
-        TNT1 A 0 A_GiveInventory("WeaponIdle")
+        /*TNT1 A 0 A_GiveInventory("WeaponIdle")
         TNT1 A 0 A_GiveInventory("WeaponIdleCounter",1)
         TNT1 A 0 A_JumpIfInventory("WeaponIdleCounter",0,"GoingBackToReady")
         RBOW E 1 A_WeaponReady
@@ -87,7 +87,7 @@ ACTOR "Vechnost" : Weapon // Means "Forever"
     GoingBackToReady:
         TNT1 A 0 A_TakeInventory("BowFired",1)
         TNT1 A 0 A_TakeInventory("WeaponIdleCounter",0x7FFFFFFF)
-        RBOW DCBA 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW DCBA 2 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)*/
         goto Ready
     Spawn:
         SHOT A -1
@@ -278,21 +278,30 @@ ACTOR "Vechnost" : Weapon // Means "Forever"
     D_RUNNIN:
         TNT1 A 0 A_TakeInventory("BowFired",1)
         TNT1 A 0 A_TakeInventory("WeaponIdleCounter",0x7FFFFFFF)
-        RBOW P 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        /*RBOW P 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         RBOW Q 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         RBOW R 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        RBOW S 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW S 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)*/
+        RBOW T 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW U 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW V 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW W 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         TNT1 A 1
     IdleLoop:
         TNT1 A 1
         TNT1 A 0 A_JumpIfInventory("SprintDash",1,"IdleLoop")
         goto BackToNormal
     BackToNormal:
-        RBOW S 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        /*RBOW S 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         RBOW R 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         RBOW Q 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         RBOW P 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        RBOW A 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW A 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)*/
+        RBOW W 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW V 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW U 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW T 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW E 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         Goto Ready
         
     D_RUNNIN2:
@@ -309,10 +318,14 @@ ACTOR "Vechnost" : Weapon // Means "Forever"
         TNT1 A 0 A_TakeInventory("WeaponIdle",1)
         TNT1 A 0 A_TakeInventory("WeaponIdleCounter",0x7FFFFFFF)
         TNT1 A 0 A_JumpIfInventory("BowFired",1,"AltFire2")
-        RBOW P 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        /*RBOW P 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         RBOW Q 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         RBOW R 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
-        RBOW S 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW S 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)*/
+        RBOW T 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW U 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW V 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW W 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         TNT1 A 1
         goto Throw
     AltFire2:
