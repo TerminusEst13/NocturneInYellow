@@ -412,7 +412,7 @@ actor HolyArrow : FastProjectile
 {
     Radius 4
     Height 2
-    Damage (50)
+    Damage (60)
     Speed 200
     Projectile
     +DONTREFLECT
@@ -592,7 +592,7 @@ actor ArcaneArrow : FastProjectile
 {
     Radius 4
     Height 2
-    Damage (20)
+    Damage (25)
     Speed 200
     Projectile
     +DONTREFLECT
@@ -647,7 +647,7 @@ actor ShadowArrow : FastProjectile
 {
     Radius 4
     Height 2
-    Damage (50)
+    Damage (65)
     Speed 80
     Projectile
     +DONTREFLECT
