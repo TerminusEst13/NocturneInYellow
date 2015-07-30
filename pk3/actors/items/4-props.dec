@@ -1256,3 +1256,47 @@ actor BlueHandjob
         loop
     }
 }
+
+ACTOR BoneTrash 31252
+{
+//$Category Nocturne-Map
+    Radius 3
+    Height 1
+    +NOINTERACTION
+    +FORCEYBILLBOARD
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        TNT1 A 0 A_SetScale(random(793,1053)*0.001)
+		TNT1 A 0 A_Jump(3,"BENIS") // :D:D
+        TNT1 A 0 A_Jump(256,"Spawn1","Spawn2","Spawn3","Spawn4","Spawn5","Spawn6")
+    Spawn1:
+        BNES A -1
+        Stop
+    Spawn2:
+        BNES B -1
+        Stop
+    Spawn3:
+        BNES C -1
+        Stop
+    Spawn4:
+        BNES D -1
+        Stop
+    Spawn5:
+        BNES E -1
+        Stop
+    Spawn6:
+        BNES F -1
+        Stop
+    Spawn7:
+        BNES G -1
+        Stop
+    Spawn8:
+        BNES H -1
+        Stop
+	BENIS:
+		BEN1 S -1 // watched a skeleton jerk off & lose his hand, den ade a burgor :D:D
+		Stop
+    }
+}

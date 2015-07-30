@@ -52,3 +52,6 @@ WORLD:
 31244 - Wood trash
 31245-31248 - Marble pillars
 31249 - Dark portal
+31250 - VikentiProp
+31251 - Kawaii Statue
+31252 - Random bones
