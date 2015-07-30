@@ -175,3 +175,17 @@ brightmap Sprite SNEKH0
 {
    map SNEKBM2
 }
+
+flickerlight2 TELEPORTLIGHT
+{
+    color 1.0 1.0 1.0
+    size 256
+    secondarySize 272
+    interval 0.1
+    offset 0 60 0
+}
+
+object TeleportIndicator
+{
+    frame TNT1 { light TELEPORTLIGHT }
+}

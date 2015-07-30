@@ -137,7 +137,7 @@ skill Nocturne_Easy
     Name = "Piacevole" // Pleasant
     DamageFactor = 0.9
     MonsterHealth = 0.75
-    //MustConfirm = "$CONFIRM_BABY"
+    MustConfirm = "$CONFIRM_EASY"
     TextColor = white
 }
 
@@ -147,7 +147,7 @@ skill Nocturne_Normal
     EasyBossBrain
     SpawnFilter = Hard
     Name = "Risoluto" // Bold
-    //MustConfirm = "$CONFIRM_EASY"
+    MustConfirm = "$CONFIRM_NORMAL"
     //DefaultSkill
     TextColor = white
 }
@@ -158,8 +158,9 @@ skill Nocturne_Hard
     SpawnFilter = Hard
     Name = "Feroce" // Fierce
     Aggressiveness = 0.5
+    DamageFactor = 1.1
     MonsterHealth = 1.25
-    //MustConfirm = "$CONFIRM_NORMAL"
+    MustConfirm = "$CONFIRM_HARD"
     TextColor = white
 }
 
@@ -169,10 +170,10 @@ skill Nocturne_VeryHard
     SpawnFilter = Hard
     Name = "Marcia Funebre" // Funeral march
     FastMonsters
-    DamageFactor = 1.1
+    DamageFactor = 1.25
     Aggressiveness = 1.0
     MonsterHealth = 1.5
     DisableCheats
-    //MustConfirm = "$CONFIRM_HARD"
+    MustConfirm = "$CONFIRM_VERYHARD"
     TextColor = white
 }
