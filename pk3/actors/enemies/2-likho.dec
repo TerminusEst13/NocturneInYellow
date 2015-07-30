@@ -1,7 +1,7 @@
 ACTOR Likho 31091
 {
 //$Category Nocturne-Monsters
-    Health 80
+    Health 60
     Radius 20
     Height 56
     Speed 10
