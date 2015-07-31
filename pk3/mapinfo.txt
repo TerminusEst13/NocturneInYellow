@@ -130,6 +130,15 @@ map MAP07 "Heart of Darkness"
     NoIntermission
 }
 
+map MAP08 "The End"
+{
+    LevelNum = 8
+    SKY1 = "SKY_END"
+    Next = "MAP08"
+    SmoothLighting
+    NoIntermission
+}
+
 skill Nocturne_Easy
 {
     ACSReturn = 0

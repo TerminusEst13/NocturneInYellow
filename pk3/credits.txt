@@ -22,8 +22,15 @@ SPRITES:
 
 MUSIC:
 ============
-- Kevin MacLeod for "Fantasy A", titlescreen music
-- BouncyTEM for "Morbid", map01's music
+- Kevin MacLeod (incompetech.com) for "Fantasy A", titlescreen music, released under Attribution 3.0 Unported (CC BY 3.0)
+- BouncyTEM for "Morbid", map01's music, made specifically for Nocturne in Yellow
+- TARS (whatfunk.com) for "Lost in the Shadows", map03's music, released under CC0 1.0 Universal (CC0 1.0)
+- Kevin MacLeod (incompetech.com) for "Metaphysik", map04's music, released under Attribution 3.0 Unported (CC BY 3.0)
+- Paul Pitman/Ludwig Van Beethoven (musopen.org) for "Moonlight Sonata: Adagio Sostenuto", map05's music, released under CC0 1.0 Universal (CC0 1.0)
+- ThreeChainLinks/Johann Sebastian Bach (threechainlinks.com) for "Fantasia and Fugue in G Minor, 542", map06's music, made specifically for Nocturne in Yellow
+- Phase Shift (freepd.com) for "Forest Night", credits music, released under CC0 1.0 Universal (CC0 1.0)
+- Martin Britz (soundcloud.com/martin-britz) for "Collider", final boss music, released under Attribution NoDerivs CC BY-ND (CC BY-ND 3.0)
+- Unknown artist off AudioBlocks for "The Harder They Fall", boss music, royalty-free music
 
 SOUNDS:
 ===========
@@ -88,6 +95,7 @@ TEXTURES:
 - STONE - Bloax (for raw stone constructs or something)
 - STONEMRB - Bloax
 - STONEMBP - Bloax
+- SKY_END - "Sunset royalty free stock photo" off Public-Domain-Images.com
 
 STORY TEXT:
 ============
