@@ -49,7 +49,7 @@ OB_ROCKET = " ";
 OB_KILLEDSELF = " ";
 OB_VOODOO = " ";
 
-CONFIRM_EASY = "You take less damage and monsters have less health.\nWe choose to believe you are new to shooters.\n\nPress Y to continue."
+CONFIRM_EASY = "You take less damage and monsters have less health.\nWe choose to believe you are new to shooters.\n\nPress Y to continue.";
 CONFIRM_NORMAL = "The default difficulty. No special changes or behavior.\nYou are familiar with shooters and want an adventure.\n\nPress Y to continue.";
 CONFIRM_HARD = "You take more damage and monsters have more health.\nYou are skilled at shooters and want a challenge.\n\nPress Y to continue.";
 CONFIRM_VERYHARD = "You are but a mere human, and monsters have plagued your history for aeons.\nYou are a madman and wish for a quick death.\n\nPress Y to continue.";
