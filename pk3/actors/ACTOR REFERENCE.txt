@@ -56,3 +56,4 @@ WORLD:
 31251 - Kawaii Statue
 31252 - Random bones
 31253 - Teleport for anti-cathedral
+31254-7 - Blue/Purple/Green/Pulsating alien torch

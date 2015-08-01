@@ -1108,3 +1108,150 @@ actor TeleportPortalSmoke
         loop
     }
 }
+
+ACTOR AlienTorch1 31254
+{
+//$Category Nocturne-CoolStuff
+    Radius 11
+    Height 68
+    +SOLID
+    +NOGRAVITY
+    +FORCEYBILLBOARD
+    var int user_floatyfloaty2;
+    States
+    {
+    Spawn:
+		WTFB A 0 Bright
+	Start: // code duplication is a-ok!!!1!!
+		WTFB A 0 Bright A_SetUserVar("user_floatyfloaty2",0)
+		WTFB A 1 Bright ThrustThingZ(0,1.25,0,0)
+	FloatyFloaty:
+        WTFB A 0 Bright A_JumpIf(user_floatyfloaty2 >= 55,"ThrustDown")
+		WTFB ABCDEFGHGFEDCB 2 Bright A_ScaleVelocity(1.00834)
+		WTFB B 0 Bright A_SetUserVar("user_floatyfloaty2",user_floatyfloaty2+28)
+        loop
+	ThrustDown:
+		WTFB A 0 Bright A_SetUserVar("user_floatyfloaty2",0)
+		WTFB A 1 Bright ThrustThingZ(0,1.25,1,0)
+	FloatyFloaty2:
+        WTFB A 0 Bright A_JumpIf(user_floatyfloaty2 >= 55,"Start")
+		WTFB ABCDEFGHGFEDCB 2 Bright A_ScaleVelocity(1.00834)
+		WTFB B 0 Bright A_SetUserVar("user_floatyfloaty2",user_floatyfloaty2+28)
+        loop
+    }
+}
+
+ACTOR AlienTorch2 : AlienTorch1 31255
+{
+//$Category Nocturne-CoolStuff
+    var int user_floatyfloaty3;
+    States
+    {
+    Spawn:
+		WTFP A 0 Bright
+	Start: // code duplication is a-ok!!!1!!
+		WTFP A 0 Bright A_SetUserVar("user_floatyfloaty3",0)
+		WTFP A 1 Bright ThrustThingZ(0,1.25,0,0)
+	FloatyFloaty:
+        WTFP A 0 Bright A_JumpIf(user_floatyfloaty3 >= 55,"ThrustDown")
+		WTFP ABCDEFGHGFEDCB 2 Bright A_ScaleVelocity(1.00834)
+		WTFP B 0 Bright A_SetUserVar("user_floatyfloaty3",user_floatyfloaty3+28)
+        loop
+	ThrustDown:
+		WTFP A 0 Bright A_SetUserVar("user_floatyfloaty3",0)
+		WTFP A 1 Bright ThrustThingZ(0,1.25,1,0)
+	FloatyFloaty2:
+        WTFP A 0 Bright A_JumpIf(user_floatyfloaty3 >= 55,"Start")
+		WTFP ABCDEFGHGFEDCB 2 Bright A_ScaleVelocity(1.00834)
+		WTFP B 0 Bright A_SetUserVar("user_floatyfloaty3",user_floatyfloaty3+28)
+        loop
+    }
+}
+
+ACTOR AlienTorch3 : AlienTorch1 31256
+{
+//$Category Nocturne-CoolStuff
+    var int user_floatyfloaty4;
+    States
+    {
+    Spawn:
+		WTFG A 0 Bright
+	Start: // code duplication is a-ok!!!1!!
+		WTFG A 0 Bright A_SetUserVar("user_floatyfloaty4",0)
+		WTFG A 1 Bright ThrustThingZ(0,1.25,0,0)
+	FloatyFloaty:
+        WTFG A 0 Bright A_JumpIf(user_floatyfloaty4 >= 55,"ThrustDown")
+		WTFG ABCDEFGHGFEDCB 2 Bright A_ScaleVelocity(1.00834)
+		WTFG B 0 Bright A_SetUserVar("user_floatyfloaty4",user_floatyfloaty4+28)
+        loop
+	ThrustDown:
+		WTFG A 0 Bright A_SetUserVar("user_floatyfloaty4",0)
+		WTFG A 1 Bright ThrustThingZ(0,1.25,1,0)
+	FloatyFloaty2:
+        WTFG A 0 Bright A_JumpIf(user_floatyfloaty4 >= 55,"Start")
+		WTFG ABCDEFGHGFEDCB 2 Bright A_ScaleVelocity(1.00834)
+		WTFG B 0 Bright A_SetUserVar("user_floatyfloaty4",user_floatyfloaty4+28)
+        loop
+    }
+}
+
+ACTOR AlienTorch4 : AlienTorch1 31257
+{
+//$Category Nocturne-CoolStuff
+    var int user_floatyfloaty5;
+    States
+    {
+    Spawn:
+		WTFB A 0 Bright
+	Start1: // EVEN MORE COPYPASTA FOR THE GLORY OF SATAN
+		WTFB A 0 Bright A_SetUserVar("user_floatyfloaty5",0)
+		WTFB A 1 Bright ThrustThingZ(0,1.25,0,0)
+	FloatyFloaty1:
+        WTFB A 0 Bright A_JumpIf(user_floatyfloaty5 >= 55,"ThrustDown1")
+		WTFB ABCDEFGH 2 Bright A_ScaleVelocity(1.00834)
+		WTFB B 0 A_SetUserVar("user_floatyfloaty5",user_floatyfloaty5+16)
+        Goto FloatyFloaty3
+	ThrustDown1:
+		WTFB A 0 Bright A_SetUserVar("user_floatyfloaty5",0)
+		WTFB A 1 Bright ThrustThingZ(0,1.25,1,0)
+	FloatyFloaty2:
+        WTFB A 0 Bright A_JumpIf(user_floatyfloaty5 >= 55,"Start2")
+		WTFB ABCDEFGH 2 Bright A_ScaleVelocity(1.00834)
+		WTFB B 0 Bright A_SetUserVar("user_floatyfloaty5",user_floatyfloaty5+16)
+        Goto FloatyFloaty4
+	Start2: // FOR THE GLORY OF SATAN
+		WTFP A 0 Bright A_SetUserVar("user_floatyfloaty5",0)
+		WTFP A 1 Bright ThrustThingZ(0,1.25,0,0)
+	FloatyFloaty3:
+        WTFP A 0 Bright A_JumpIf(user_floatyfloaty5 >= 55,"ThrustDown2")
+		WTFP ABCDEFGH 2 Bright A_ScaleVelocity(1.00834)
+		WTFP B 0 Bright A_SetUserVar("user_floatyfloaty5",user_floatyfloaty5+16)
+        Goto FloatyFloaty5
+	ThrustDown2:
+		WTFP A 0 Bright A_SetUserVar("user_floatyfloaty5",0)
+		WTFP A 1 Bright ThrustThingZ(0,1.25,1,0)
+	FloatyFloaty4:
+        WTFP A 0 Bright A_JumpIf(user_floatyfloaty5 >= 55,"Start3")
+		WTFP ABCDEFGH 2 Bright A_ScaleVelocity(1.00834)
+		WTFP B 0 Bright A_SetUserVar("user_floatyfloaty5",user_floatyfloaty5+16)
+        Goto FloatyFloaty6
+	Start3: // Have you accepted our lord and saviour Satan in your life yet?
+		WTFG A 0 Bright A_SetUserVar("user_floatyfloaty5",0)
+		WTFG A 1 Bright ThrustThingZ(0,1.25,0,0)
+	FloatyFloaty5:
+        WTFG A 0 Bright A_JumpIf(user_floatyfloaty5 >= 55,"ThrustDown3")
+		WTFG ABCDEFGH 2 Bright A_ScaleVelocity(1.00834)
+		WTFG B 0 Bright A_SetUserVar("user_floatyfloaty5",user_floatyfloaty5+16)
+        goto FloatyFloaty1
+	ThrustDown3:
+		WTFG A 0 Bright A_SetUserVar("user_floatyfloaty5",0)
+		WTFG A 1 Bright ThrustThingZ(0,1.25,1,0)
+	FloatyFloaty6:
+        WTFG A 0 Bright A_JumpIf(user_floatyfloaty5 >= 55,"Start1")
+		WTFG ABCDEFGH 2 Bright A_ScaleVelocity(1.00834)
+		WTFG B 0 Bright A_SetUserVar("user_floatyfloaty5",user_floatyfloaty5+16)
+        Goto FloatyFloaty2
+		
+	// By some miracle I managed to make it work with rather minimal effort. Holy hell.	
+    }
+}
