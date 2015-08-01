@@ -43,7 +43,13 @@ ACTOR "Koroleva" : Weapon // Means "Queen"
         TNT1 A 0 A_FireCustomMissile("rogatinaStab",0,0,0,0)
         TNT1 A 0 A_Recoil(-0.4)
         ROGA G 1 A_JumpIfInventory("rogatinaWallHit",1,"WallHit")
-        ROGA HHHHHHHH 1 A_JumpIfInventory("rogatinaWallHit",1,"WallHit")
+        ROGA H 1 Offset(0,24) A_JumpIfInventory("rogatinaWallHit",1,"WallHit")
+		ROGA H 1 Offset(-1,20) A_JumpIfInventory("rogatinaWallHit",1,"WallHit")
+		ROGA H 1 Offset(-2,19) A_JumpIfInventory("rogatinaWallHit",1,"WallHit")
+		ROGA H 1 Offset(-3,20) A_JumpIfInventory("rogatinaWallHit",1,"WallHit")
+		ROGA H 1 Offset(-2,23) A_JumpIfInventory("rogatinaWallHit",1,"WallHit")
+		ROGA H 1 Offset(0,29) A_JumpIfInventory("rogatinaWallHit",1,"WallHit")
+		ROGA H 1 Offset(0,33) A_JumpIfInventory("rogatinaWallHit",1,"WallHit")
         ROGA IJKLM 1 A_JumpIfInventory("rogatinaWallHit",1,"WallHit")
         TNT1 A 0 A_TakeInventory("rogatinaWallHit",1) // Just in case
         goto Ready
