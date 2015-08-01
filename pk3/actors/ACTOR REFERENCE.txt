@@ -56,4 +56,5 @@ WORLD:
 31251 - Kawaii Statue
 31252 - Random bones
 31253 - Teleport for anti-cathedral
-31254-7 - Blue/Purple/Green/Pulsating alien torch
+31254-7 - Blue/Purple/Green/Pulsating alien torch // I mess up on the statue once and now Bloax won't let me hear the end of it. :(
+31258 - Ethereal kawaii Statue

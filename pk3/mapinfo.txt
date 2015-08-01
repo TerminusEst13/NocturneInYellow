@@ -123,7 +123,8 @@ map MAP06 "Clock Tower"
 map MAP07 "Heart of Darkness"
 {
     LevelNum = 7
-    SKY1 = "STATIC01", 0.1
+    SKY1 = "WTF_SKY", 0.25
+    SKY2 = "STATIC01", 0.25
     music = "MUS_MAP7" // TerminusEst13 - Sounds, Possibly Musical
     Next = "MAP08"
     SmoothLighting

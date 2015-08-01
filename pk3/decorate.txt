@@ -12,6 +12,12 @@ actor Counter: Inventory
     -INVBAR
 }
 
+actor DrowningProtection : PowerProtection
+{
+    DamageFactor "Drowning", 0.0
+    Powerup.Duration 0x7FFFFFFF
+}
+
 ACTOR BlankPuff { }
 
 #include "actors/tokens.dec"
