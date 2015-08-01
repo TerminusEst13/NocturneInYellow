@@ -189,3 +189,13 @@ object TeleportIndicator
 {
     frame TNT1 { light TELEPORTLIGHT }
 }
+
+Skybox WTF_SKY
+{
+  WTF_F
+  WTF_R
+  WTF_BK
+  WTF_L
+  WTF_T
+  WTF_B
+}
