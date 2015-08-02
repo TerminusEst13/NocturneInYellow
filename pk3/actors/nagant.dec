@@ -344,41 +344,53 @@ ACTOR NagantBulletPuff
     +NOBLOCKMAP
     +FLOORCLIP
     +NOTIMEFREEZE
+	var int user_puffscalex;
+	var int user_puffscaley;
     States
     {
     Spawn:
         TNT1 A 0
+        TNT1 A 0 A_SetUserVar("user_puffscalex",random(19,30))
+        TNT1 A 0 A_SetUserVar("user_puffscaley",user_puffscalex-random(-2,2))
         TNT1 A 1
         TNT1 AAAAAA 0 A_SpawnItemEx("BulletSmoke",0,0,0,0,random(-30,30)/100.00,random(10,35)/100.00,random(0,180),160)
         TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("BulletSpark",0,0,0,random(-100,100)/100.00,random(-300,300)/100.00,random(200,800)/100.00,random(-180,180),160,96)
     Spawn0:
-        TNT1 A 0 A_Jump(255,"Spawn1","Spawn2","Spawn3","Spawn4")
-        TNT1 A 1
+        BFLH A 0 A_SetScale(user_puffscalex*0.01,user_puffscaley*0.01)
+		BFLH A 1 A_FadeOut(0.01)
+        TNT1 A 0 A_SetUserVar("user_puffscalex",user_puffscalex-1)
+        TNT1 A 0 A_SetUserVar("user_puffscaley",user_puffscaley-1)
+        BFLH A 0 A_SetScale(user_puffscalex*0.01,user_puffscaley*0.01)
+		BFLH A 1 A_FadeOut(0.01)
+        TNT1 A 0 A_SetUserVar("user_puffscalex",user_puffscalex-1)
+        TNT1 A 0 A_SetUserVar("user_puffscaley",user_puffscaley-1)
+        BFLH A 0 A_SetScale(user_puffscalex*0.01,user_puffscaley*0.01)
+		BFLH B 1 A_FadeOut(0.2)
+        TNT1 A 0 A_SetUserVar("user_puffscalex",user_puffscalex-2)
+        TNT1 A 0 A_SetUserVar("user_puffscaley",user_puffscaley-2)
+        BFLH A 0 A_SetScale(user_puffscalex*0.01,user_puffscaley*0.01)
+		BFLH B 1 A_FadeOut(0.25)
+        TNT1 A 0 A_SetUserVar("user_puffscalex",user_puffscalex-2)
+        TNT1 A 0 A_SetUserVar("user_puffscaley",user_puffscaley-2)
+        BFLH A 0 A_SetScale(user_puffscalex*0.01,user_puffscaley*0.01)
+		BFLH C 1 A_FadeOut(0.05)
+        TNT1 A 0 A_SetUserVar("user_puffscalex",user_puffscalex-2)
+        TNT1 A 0 A_SetUserVar("user_puffscaley",user_puffscaley-2)
+        BFLH A 0 A_SetScale(user_puffscalex*0.01,user_puffscaley*0.01)
+		BFLH C 1 A_FadeOut(0.05)
+        TNT1 A 0 A_SetUserVar("user_puffscalex",user_puffscalex-2)
+        TNT1 A 0 A_SetUserVar("user_puffscaley",user_puffscaley-2)
+        BFLH A 0 A_SetScale(user_puffscalex*0.01,user_puffscaley*0.01)
+		BFLH D 1 A_FadeOut(0.05)
+        TNT1 A 0 A_SetUserVar("user_puffscalex",user_puffscalex-2)
+        TNT1 A 0 A_SetUserVar("user_puffscaley",user_puffscaley-2)
+        BFLH A 0 A_SetScale(user_puffscalex*0.01,user_puffscaley*0.01)
+		BFLH D 1 A_FadeOut(0.05)
+        TNT1 A 0 A_SetUserVar("user_puffscalex",user_puffscalex-2)
+        TNT1 A 0 A_SetUserVar("user_puffscaley",user_puffscaley-2)
+        BFLH A 0 A_SetScale(user_puffscalex*0.01,user_puffscaley*0.01)
+		BFLH D 1 A_FadeOut(0.2)
         loop
-    Spawn1:
-        //BPFF A 1 Bright
-        BPFF A 1 Bright //A_SetTranslucent(.75,1)
-        BPFF B 1 Bright A_SetTranslucent(0.5,1)
-        BPFF C 1 Bright A_SetTranslucent(0.25,1)
-        stop
-    Spawn2:
-        //BPFF D 1 Bright
-        BPFF D 1 Bright //A_SetTranslucent(.75,1)
-        BPFF E 1 Bright A_SetTranslucent(0.5,1)
-        BPFF F 1 Bright A_SetTranslucent(0.25,1)
-        stop
-    Spawn3:
-        //BPFF H 1 Bright
-        BPFF H 1 Bright //A_SetTranslucent(.75,1)
-        BPFF I 1 Bright A_SetTranslucent(0.5,1)
-        BPFF J 1 Bright A_SetTranslucent(0.25,1)
-        stop
-    Spawn4:
-        //BPFF K 1 Bright
-        BPFF K 1 Bright //A_SetTranslucent(.75,1)
-        BPFF L 1 Bright A_SetTranslucent(0.5,1)
-        BPFF M 1 Bright A_SetTranslucent(0.25,1)
-        stop
     }
 }
 
