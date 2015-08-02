@@ -51,6 +51,25 @@ pic STATIC15 tics 1
 pic STATIC16 tics 1
 pic STATIC17 tics 1
 
+texture CLOCK1
+pic CLOCK1 tics 1
+pic CLOCK2 tics 1
+pic CLOCK3 tics 1
+pic CLOCK4 tics 1
+pic CLOCK5 tics 1
+pic CLOCK6 tics 1
+pic CLOCK7 tics 1
+pic CLOCK8 tics 1
+pic CLOCK9 tics 1
+pic CLOCK10 tics 1
+pic CLOCK11 tics 1
+pic CLOCK12 tics 1
+pic CLOCK13 tics 1
+pic CLOCK14 tics 1
+pic CLOCK15 tics 1
+pic CLOCK16 tics 1
+pic CLOCK17 tics 1
+
 switch KWALRED2
 on sound "key/switch" pic KWALRED3 tics 35
 off sound "key/switchoff" pic KWALRED2 tics 35
