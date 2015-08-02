@@ -50,6 +50,7 @@ ACTOR "Vechnost" : Weapon // Means "Forever"
         RBOW I 5 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
     Hold:
         TNT1 A 0 A_JumpIfInventory("EquippedAntiqueCoin",1,"FireArcane")
+        TNT1 A 0 A_JumpIfInventory("EquippedBurialBelt",1,"FireDeath")
         RBOW I 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         TNT1 A 0 A_Refire
         TNT1 A 0 A_ClearRefire
@@ -57,7 +58,6 @@ ACTOR "Vechnost" : Weapon // Means "Forever"
         TNT1 A 0 A_JumpIfInventory("EquippedDragonScale",1,"FireWind")
         TNT1 A 0 A_JumpIfInventory("EquippedWhiteCoal",1,"FireFire") // Heh.
         TNT1 A 0 A_JumpIfInventory("EquippedPallidMask",1,"FireShadow")
-        TNT1 A 0 A_JumpIfInventory("EquippedBurialBelt",1,"FireDeath")
         TNT1 A 0 A_PlayWeaponSound("bow/fire")
         TNT1 A 0 A_JumpIfInventory("SprintDash",1,"FireNormalRun")
     FireNormalNormal:
@@ -242,19 +242,33 @@ ACTOR "Vechnost" : Weapon // Means "Forever"
         goto Ready2
 
     FireDeath:
-        TNT1 A 0 A_JumpIfNoAmmo("Nope")
+        TNT1 A 0 A_PlaySoundEx("death/shield","soundslot7",1,0)
+    FireDeath2:
+        TNT1 A 0 A_JumpIfInventory("Counter",9,"FireDeathAmmoTake")
+        TNT1 A 0 A_GiveInventory("Counter",1)
+        TNT1 AA 0 A_SpawnItemEx("DeathShieldEffect",0,96,frandom(28,34),frandom(-2.25,2.25),frandom(-2.25,2.25),frandom(-2,2),frandom(-275,-265),32)
+        TNT1 A 0 A_SpawnItemEx("DeathShieldEffect2",0,96,frandom(28,34),frandom(-2.25,2.25),frandom(-2.25,2.25),frandom(-2,2),frandom(-275,-265),32)
+        TNT1 A 0 A_SpawnItemEx("DeathShield",0,96,32,0,0,0,270,32)
+        RBOW I 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_JumpIfNoAmmo("NopeDeath")
+        TNT1 A 0 A_Refire("FireDeath2")
+        TNT1 A 0 A_ClearRefire
+        TNT1 A 0 A_TakeInventory("Counter",100)
+        TNT1 A 0 A_JumpIfNoAmmo("NopeDeath")
         TNT1 A 0 A_PlayWeaponSound("bow/fire")
         TNT1 A 0 A_PlaySoundEx("bow/death","soundslot6",0,0)
+        TNT1 A 0 A_StopSoundEx("soundslot7")
+        TNT1 A 0 A_PlaySoundEx("death/shieldoff","soundslot7",0,0)
         TNT1 A 0 A_JumpIfInventory("SprintDash",1,"FireDeathRun")
         TNT1 A 0 A_FireCustomMissile("DeathArrow",frandom(-1.5,1.5),0,0,1,0,frandom(-0.75,0.75))
-        TNT1 A 0 A_TakeInventory("BowMana",4)
+        TNT1 A 0 A_TakeInventory("BowMana",3)
         TNT1 A 0 A_Recoil(-0.15)
         TNT1 A 0 A_SetAngle(angle+frandom(-0.75,0.75))
         TNT1 A 0 A_SetPitch(pitch-frandom(0.40,1.25))
         goto FireDeathFinish
     FireDeathRun:
         TNT1 A 0 A_FireCustomMissile("DeathArrow",frandom(-4.5,4.5),0,0,1,0,frandom(-3.75,3.75))
-        TNT1 A 0 A_TakeInventory("BowMana",4)
+        TNT1 A 0 A_TakeInventory("BowMana",3)
         TNT1 A 0 A_Recoil(-0.3)
         TNT1 A 0 A_SetAngle(angle+frandom(-1,1))
         TNT1 A 0 A_SetPitch(pitch-frandom(0.60,1.5))
@@ -266,8 +280,23 @@ ACTOR "Vechnost" : Weapon // Means "Forever"
         RBOW M 5 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         RBOW NNO 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         goto Ready2
+    FireDeathAmmoTake:
+        TNT1 A 0 A_TakeInventory("Counter",100)
+        TNT1 A 0 A_TakeInventory("BowMana",1)
+        goto FireDeath2
 
     Nope:
+        TNT1 A 0 A_ClearRefire
+        RBOW I 5 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        TNT1 A 0 A_TakeInventory("BowFired",1)
+        TNT1 A 0 A_PlaySoundEx("bow/nock","soundslot5",0,0)
+        RBOW HGFE 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        RBOW DCB 1 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
+        goto Ready
+    NopeDeath:
+        TNT1 A 0 A_ClearRefire
+        TNT1 A 0 A_StopSoundEx("soundslot7")
+        TNT1 A 0 A_PlaySoundEx("death/shieldoff","soundslot7",0,0)
         RBOW I 5 A_WeaponReady(WRF_NOFIRE | WRF_NOSWITCH)
         TNT1 A 0 A_TakeInventory("BowFired",1)
         TNT1 A 0 A_PlaySoundEx("bow/nock","soundslot5",0,0)
@@ -480,7 +509,7 @@ actor WindArrow : FastProjectile
     ProjectileKickBack 25
     MissileType WindArrowTrail
     MissileHeight 8
-    Decal BulletChip
+    Decal ArrowCrack
     RenderStyle Add
     Alpha 0.99
     Scale 0.9
@@ -536,7 +565,7 @@ actor FireArrow : FastProjectile
     ProjectileKickBack 25
 // Haha, you wish    MissileType FireArrowTrail
 //    MissileHeight 8
-    Decal BulletChip
+    Decal ArrowCrack
     RenderStyle Add
     Alpha 0.99
     Scale 0.9
@@ -604,7 +633,7 @@ actor ArcaneArrow : FastProjectile
     ProjectileKickBack 25
     MissileType ArcaneArrowTrail
     MissileHeight 8
-    Decal BulletChip
+    Decal ArrowCrack
     RenderStyle Add
     Alpha 0.99
     Scale 0.9
@@ -660,7 +689,7 @@ actor ShadowArrow : FastProjectile
     ProjectileKickBack 25
     MissileType ShadowArrowTrail
     MissileHeight 8
-    Decal BulletChip
+    Decal ArrowCrack
     RenderStyle Add
     Alpha 0.99
     Scale 0.9
@@ -713,7 +742,7 @@ actor DeathArrow : FastProjectile
 {
     Radius 4
     Height 2
-    Damage (15)
+    Damage (75)
     Speed 200
     Projectile
     +DONTREFLECT
@@ -725,7 +754,7 @@ actor DeathArrow : FastProjectile
     ProjectileKickBack 25
     MissileType DeathArrowTrail
     MissileHeight 8
-    Decal BulletChip
+    Decal ArrowCrack
     RenderStyle Add
     Alpha 0.99
     Scale 0.9
@@ -740,6 +769,7 @@ actor DeathArrow : FastProjectile
         TNT1 A 0 A_PlaySound("impact/death",CHAN_5,1.0,0,ATTN_NORM)
         TNT1 AAAAA 0 A_SpawnItemEx("ArrowSmoke",0,0,0,frandom(-0.5,0.5),frandom(-0.5,0.5),frandom(0.1,0.5),random(-180,180),32)
         TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("DeathSpatter",0,0,0,frandom(-1.5,1.5),frandom(-1.5,1.5),frandom(-1.5,1.5),random(-180,180),32)
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("DeathSpatter2",0,0,0,frandom(-1.5,1.5),frandom(-1.5,1.5),frandom(-1.5,1.5),random(-180,180),32)
         TNT1 AAAAAAAAAA 0 A_SpawnItemEx("DeathSpatterLarge",0,0,0,frandom(-0.5,0.5),frandom(-0.5,0.5),frandom(-0.5,0.5),random(-180,180),32)
         TNT1 A 0 A_SetScale(0.1,0.1)
         SPRK F 10 BRIGHT
@@ -750,6 +780,7 @@ actor DeathArrow : FastProjectile
         TNT1 A 0 A_PlaySound("arrow/miss",CHAN_AUTO,1.0,0,ATTN_NORM)
         TNT1 A 0 A_PlaySound("impact/death",CHAN_5,1.0,0,ATTN_NORM)
         TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("DeathSpatter",0,0,0,frandom(-1.5,1.5),frandom(-1.5,1.5),frandom(-1.5,1.5),random(-180,180),32)
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("DeathSpatter2",0,0,0,frandom(-1.5,1.5),frandom(-1.5,1.5),frandom(-1.5,1.5),random(-180,180),32)
         TNT1 AAAAAAAAAA 0 A_SpawnItemEx("DeathSpatterLarge",0,0,0,frandom(-0.5,0.5),frandom(-0.5,0.5),frandom(-0.5,0.5),random(-180,180),32)
         TNT1 A 1
         Stop
@@ -758,6 +789,7 @@ actor DeathArrow : FastProjectile
         TNT1 A 0 A_PlaySound("arrow/hit",CHAN_AUTO,1.0,0,ATTN_NORM)
         TNT1 A 0 A_PlaySound("impact/death",CHAN_5,1.0,0,ATTN_NORM)
         TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("DeathSpatter",0,0,0,frandom(-1.5,1.5),frandom(-1.5,1.5),frandom(-1.5,1.5),random(-180,180),32)
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("DeathSpatter2",0,0,0,frandom(-1.5,1.5),frandom(-1.5,1.5),frandom(-1.5,1.5),random(-180,180),32)
         TNT1 AAAAAAAAAA 0 A_SpawnItemEx("DeathSpatterLarge",0,0,0,frandom(-0.5,0.5),frandom(-0.5,0.5),frandom(-0.5,0.5),random(-180,180),32)
         TNT1 A 1
         Stop
@@ -1107,14 +1139,33 @@ actor DeathArrowTrail
     +CLIENTSIDEONLY
     Scale 0.125
     RenderStyle Add
-    Alpha 0.02
+    Alpha 0.05
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        SPRK F 1 A_SpawnItemEx("DeathArrowTrail2",0,0,0,frandom(-0.25,0.25),frandom(-0.25,0.25),frandom(-0.25,0.25),0,160)
+        SPRK F 3
+    Spawn1:
+        SPRK F 1 A_FadeOut(0.001)
+        loop
+    }
+}
+
+actor DeathArrowTrail2
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Scale 0.1
+    RenderStyle Subtract
+    Alpha 0.035
     States
     {
     Spawn:
         TNT1 A 0
         SPRK F 4
     Spawn1:
-        SPRK F 1 A_FadeOut(0.001)
+        SPRK F 1 A_FadeOut(0.0025)
         loop
     }
 }
@@ -1133,6 +1184,80 @@ actor DeathSpatter
         SPRK F 5
     Spawn1:
         SPRK F 1 A_FadeOut(0.02)
+        loop
+    }
+}
+
+actor DeathSpatter2
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Scale 0.025
+    RenderStyle Subtract
+    Alpha 0.99
+    States
+    {
+    Spawn:
+        TNT1 A 0
+        SPRK F 5
+    Spawn1:
+        SPRK F 1 A_FadeOut(0.02)
+        loop
+    }
+}
+
+actor DeathShield
+{
+    Radius 64
+    Height 32
+    -SOLID
+    +SHOOTABLE
+    +NOBLOOD
+    +NOGRAVITY
+    +NOTELEPORT
+    +INVULNERABLE
+    +DONTRIP
+    +NOBLOODDECALS
+    +FLOORCLIP
+	+NOTIMEFREEZE
+    States
+    {
+    Spawn:
+        TNT1 A 2
+        stop
+    }
+}
+
+actor DeathShieldEffect
+{
+    RenderStyle Add
+    Alpha 0.05
+    XScale 1.1
+    YScale 0.55
+    -SOLID
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    States
+    {
+    Spawn:
+        SPRK F 2 bright A_FadeOut(0.01)
+        loop
+    }
+}
+
+actor DeathShieldEffect2
+{
+    RenderStyle Subtract
+    Alpha 0.05
+    XScale 1.1
+    YScale 0.55
+    -SOLID
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    States
+    {
+    Spawn:
+        SPRK F 2 bright A_FadeOut(0.01)
         loop
     }
 }
