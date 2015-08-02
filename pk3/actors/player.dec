@@ -1,6 +1,7 @@
 Actor Bogatyr : PlayerPawn
 {
     Radius 12
+    Species "Player"
     //Player.DisplayName "Vikenti"
     Player.DisplayName "Story Mode"
     Player.SoundClass "Vikenti"
@@ -15,6 +16,7 @@ Actor Bogatyr : PlayerPawn
     Player.ViewHeight 46
     Player.AttackZOffset 16
     Player.UseRange 64
+    +THRUSPECIES
     States
     {
     Spawn:

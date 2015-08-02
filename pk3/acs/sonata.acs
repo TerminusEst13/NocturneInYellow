@@ -8,6 +8,7 @@
 #include "sonata_tldr5.acs"
 #include "sonata_tldr6.acs"
 #include "sonata_tldr7.acs"
+#include "sonata_tldr8.acs"
 
 #define MaxStepSounds 52
 
@@ -306,14 +307,14 @@ script 433 (int bullshit)
 
     case 9:
         SetHudSize(640,480,FALSE);
-        HudMessage(s:"Pallid Mask: \cjYour bow's effect is not decided yet."; HUDMSG_LOG,0,CR_GOLD,3200.0,64.0,1.0);
+        HudMessage(s:"Pallid Mask: \cjYour arrows hunt down your enemies."; HUDMSG_LOG,0,CR_GOLD,3200.0,64.0,1.0);
         SetFont("PKUPSHAD");
         HudMessage(s:"a"; HUDMSG_FADEINOUT,0,CR_WHITE,320.0,64.0,2.0,0.25,0.25);
     break;
 
     case 10:
         SetHudSize(640,480,FALSE);
-        HudMessage(s:"Burial Belt: \cjYour bow's effect is not decided yet."; HUDMSG_LOG,0,CR_GOLD,3200.0,64.0,1.0);
+        HudMessage(s:"Burial Belt: \cjProtection from the influence of evil."; HUDMSG_LOG,0,CR_GOLD,3200.0,64.0,1.0);
         SetFont("PKUPDETH");
         HudMessage(s:"a"; HUDMSG_FADEINOUT,0,CR_WHITE,320.0,64.0,2.0,0.25,0.25);
     break;

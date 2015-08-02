@@ -1,0 +1,517 @@
+Script 521 (Void)
+{
+    int i;
+    if (talkingtosomeone == 1) { terminate; }
+
+    SetPlayerProperty(0,1,4);
+    SetActorProperty(0,APROP_NOTARGET,1);
+    SetHUDSize(320, 240, TRUE);
+    SetFont("VIK_PTRT");
+    HudMessage(s:"A"; HUDMSG_FADEINOUT, 16, 0, 0.5, 0.5, 5, 1.0, 0);
+    SetHUDSize(320, 240, TRUE);
+    SetFont("TALKGFX");
+    HudMessage(s:"A"; HUDMSG_FADEINOUT, 14, 0, 0.5, 0.5, 5, 1.0, 0);
+    SetHUDSize(480, 280, TRUE);
+    SetFont("SMALLFONT");
+    HudMessage(l:"Use to Continue | Sprint to Exit"; HUDMSG_FADEINOUT, 12, CR_GOLD, 230.0, 10.0, 5, 1.0, 0);
+    HudMessage(l:"MORENA"; HUDMSG_FADEINOUT, 11, CR_RED, 7.5, 195.2, 5, 1.0, 0);
+
+    talkingtosomeone = 1;
+
+    Delay(35);
+
+    SetHUDSize(320, 240, TRUE);
+    SetFont("VIK_PTRT");
+    HudMessage(s:"A"; HUDMSG_PLAIN, 16, 0, 0.5, 0.5, 0);
+    SetHUDSize(320, 240, TRUE);
+    SetFont("TALKGFX");
+    HudMessage(s:"A"; HUDMSG_PLAIN, 14, 0, 0.5, 0.5, 0);
+    SetFont("SMALLFONT");
+    SetHUDSize(480, 280, TRUE);
+    HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
+    HudMessage(l:"Use to Continue | Sprint to Exit"; HUDMSG_PLAIN, 12, CR_GOLD, 230.0, 10.0, 0);
+    HudMessage(l:"It is not your time yet."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+   
+    for (i = 0; i < 350; i++)
+    {
+        if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
+        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
+        Delay(1);
+    }
+
+    HudMessage(s:""; HUDMSG_PLAIN, 10, 0, 0, 0, 0.1);
+    HudMessage(s:""; HUDMSG_PLAIN, 11, 0, 0, 0, 0.1);
+    HudMessage(s:""; HUDMSG_PLAIN, 12, 0, 0, 0, 0.1);
+    HudMessage(s:""; HUDMSG_PLAIN, 14, 0, 0, 0, 0.1);
+    HudMessage(s:""; HUDMSG_PLAIN, 16, 0, 0, 0, 0.1);
+    SetPlayerProperty(0,0,4);
+    SetActorProperty(0,APROP_NOTARGET,0);
+    delay(35);
+
+    talkingtosomeone = 0;
+}
+
+Script 522 (Void)
+{
+    int i;
+    if (talkingtosomeone == 1) { terminate; }
+
+    SetPlayerProperty(0,1,4);
+    SetActorProperty(0,APROP_NOTARGET,1);
+    SetHUDSize(320, 240, TRUE);
+    SetFont("VIK_PTRT");
+    HudMessage(s:"A"; HUDMSG_FADEINOUT, 16, 0, 0.5, 0.5, 5, 1.0, 0);
+    SetHUDSize(320, 240, TRUE);
+    SetFont("TALKGFX");
+    HudMessage(s:"A"; HUDMSG_FADEINOUT, 14, 0, 0.5, 0.5, 5, 1.0, 0);
+    SetHUDSize(480, 280, TRUE);
+    SetFont("SMALLFONT");
+    HudMessage(l:"Use to Continue | Sprint to Exit"; HUDMSG_FADEINOUT, 12, CR_GOLD, 230.0, 10.0, 5, 1.0, 0);
+    HudMessage(l:"MORENA"; HUDMSG_FADEINOUT, 11, CR_RED, 7.5, 195.2, 5, 1.0, 0);
+
+    talkingtosomeone = 1;
+
+    Delay(35);
+
+    SetHUDSize(320, 240, TRUE);
+    SetFont("VIK_PTRT");
+    HudMessage(s:"A"; HUDMSG_PLAIN, 16, 0, 0.5, 0.5, 0);
+    SetHUDSize(320, 240, TRUE);
+    SetFont("TALKGFX");
+    HudMessage(s:"A"; HUDMSG_PLAIN, 14, 0, 0.5, 0.5, 0);
+    SetFont("SMALLFONT");
+    SetHUDSize(480, 280, TRUE);
+    HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
+    HudMessage(l:"Use to Continue | Sprint to Exit"; HUDMSG_PLAIN, 12, CR_GOLD, 230.0, 10.0, 0);
+    HudMessage(l:"Welcome back."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+   
+    for (i = 0; i < 350; i++)
+    {
+        if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
+        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
+        Delay(1);
+    }
+    SetHUDSize(480, 280, TRUE);
+    SetFont("SMALLFONT");
+    HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
+    HudMessage(l:"G-gah! I... A-am I alive?!"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+
+    Delay(10);
+    
+    for (i = 0; i < 350; i++)
+    {
+        if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
+        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
+        Delay(1);
+    }
+    SetHUDSize(480, 280, TRUE);
+    SetFont("SMALLFONT");
+    HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
+    HudMessage(l:"Yes."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+
+    Delay(10);
+    
+    for (i = 0; i < 350; i++)
+    {
+        if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
+        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
+        Delay(1);
+    }
+
+    SetHUDSize(480, 280, TRUE);
+    SetFont("SMALLFONT");
+    HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
+    HudMessage(l:"Where is it? Where did it go?!"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+
+    Delay(10);
+   
+    for (i = 0; i < 350; i++)
+    {
+        if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
+        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
+        Delay(1);
+    }
+    SetHUDSize(480, 280, TRUE);
+    SetFont("SMALLFONT");
+    HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
+    HudMessage(l:"It's gone, to...somewhere. So I pulled you back.\nYou are not yet ready to learn what lies on the other side, just yet."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+
+    Delay(10);
+   
+    for (i = 0; i < 350; i++)
+    {
+        if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
+        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
+        Delay(1);
+    }
+    SetHUDSize(480, 280, TRUE);
+    SetFont("SMALLFONT");
+    HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
+    HudMessage(l:"What? Gone? D-did I...did I defeat it?"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+
+    Delay(10);
+   
+    for (i = 0; i < 350; i++)
+    {
+        if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
+        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
+        Delay(1);
+    }
+
+    SetHUDSize(480, 280, TRUE);
+    SetFont("SMALLFONT");
+    HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
+    HudMessage(l:"I don't know."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+
+    Delay(10);
+   
+    for (i = 0; i < 350; i++)
+    {
+        if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
+        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
+        Delay(1);
+    }
+    SetHUDSize(480, 280, TRUE);
+    SetFont("SMALLFONT");
+    HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
+    HudMessage(l:"I doubt that you overpowered it. Perhaps you dissuaded it?\nOr perhaps you simply inconvenienced it. Perhaps like the buzzing of an insect, causing one to recoil."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+
+    Delay(10);
+   
+    for (i = 0; i < 350; i++)
+    {
+        if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
+        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
+        Delay(1);
+    }
+
+    SetHUDSize(480, 280, TRUE);
+    SetFont("SMALLFONT");
+    HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
+    HudMessage(l:"That...doesn't sound much like a victory."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+
+    Delay(10);
+
+    for (i = 0; i < 350; i++)
+    {
+        if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
+        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
+        Delay(1);
+    }
+
+    SetHUDSize(480, 280, TRUE);
+    SetFont("SMALLFONT");
+    HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
+    HudMessage(l:"Would you only consider this a victory in such concrete terms?\nIf anything, you showed it that there are still people willing to shine a light rather than curse the darkness."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+
+    Delay(10);
+
+    for (i = 0; i < 350; i++)
+    {
+        if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
+        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
+        Delay(1);
+    }
+
+    SetHUDSize(480, 280, TRUE);
+    SetFont("SMALLFONT");
+    HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
+    HudMessage(l:"What this was...just wasn't what it planned for."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+
+    Delay(10);
+
+    for (i = 0; i < 350; i++)
+    {
+        if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
+        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
+        Delay(1);
+    }
+
+    SetHUDSize(480, 280, TRUE);
+    SetFont("SMALLFONT");
+    HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
+    HudMessage(l:"I'll let you wrestle with the deeper implications. I'm just happy that it's gone..."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+
+    Delay(10);
+
+    for (i = 0; i < 350; i++)
+    {
+        if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
+        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
+        Delay(1);
+    }
+
+    SetHUDSize(480, 280, TRUE);
+    SetFont("SMALLFONT");
+    HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
+    HudMessage(l:"What's done is done. And for me, that suffices."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+
+    Delay(10);
+
+    for (i = 0; i < 350; i++)
+    {
+        if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
+        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
+        Delay(1);
+    }
+
+    HudMessage(s:""; HUDMSG_PLAIN, 10, 0, 0, 0, 0.1);
+    HudMessage(s:""; HUDMSG_PLAIN, 11, 0, 0, 0, 0.1);
+    HudMessage(s:""; HUDMSG_PLAIN, 12, 0, 0, 0, 0.1);
+    HudMessage(s:""; HUDMSG_PLAIN, 14, 0, 0, 0, 0.1);
+    HudMessage(s:""; HUDMSG_PLAIN, 16, 0, 0, 0, 0.1);
+    SetPlayerProperty(0,0,4);
+    SetActorProperty(0,APROP_NOTARGET,0);
+    delay(35);
+
+    talkingtosomeone = 0;
+}
+
+Script 523 (Void)
+{
+    int i;
+    if (talkingtosomeone == 1) { terminate; }
+
+    SetPlayerProperty(0,1,4);
+    SetActorProperty(0,APROP_NOTARGET,1);
+    SetHUDSize(320, 240, TRUE);
+    SetFont("VIK_PTRT");
+    HudMessage(s:"A"; HUDMSG_FADEINOUT, 16, 0, 0.5, 0.5, 5, 1.0, 0);
+    SetHUDSize(320, 240, TRUE);
+    SetFont("TALKGFX");
+    HudMessage(s:"A"; HUDMSG_FADEINOUT, 14, 0, 0.5, 0.5, 5, 1.0, 0);
+    SetHUDSize(480, 280, TRUE);
+    SetFont("SMALLFONT");
+    HudMessage(l:"Use to Continue | Sprint to Exit"; HUDMSG_FADEINOUT, 12, CR_GOLD, 230.0, 10.0, 5, 1.0, 0);
+    HudMessage(l:"VIKENTI"; HUDMSG_FADEINOUT, 11, CR_GOLD, 7.5, 195.2, 5, 1.0, 0);
+
+    talkingtosomeone = 1;
+
+    Delay(35);
+
+    SetHUDSize(320, 240, TRUE);
+    SetFont("VIK_PTRT");
+    HudMessage(s:"A"; HUDMSG_PLAIN, 16, 0, 0.5, 0.5, 0);
+    SetHUDSize(320, 240, TRUE);
+    SetFont("TALKGFX");
+    HudMessage(s:"A"; HUDMSG_PLAIN, 14, 0, 0.5, 0.5, 0);
+    SetFont("SMALLFONT");
+    SetHUDSize(480, 280, TRUE);
+    HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
+    HudMessage(l:"Use to Continue | Sprint to Exit"; HUDMSG_PLAIN, 12, CR_GOLD, 230.0, 10.0, 0);
+    HudMessage(l:"Thank God. I may have bought only one more day. But what a day."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+   
+    for (i = 0; i < 350; i++)
+    {
+        if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
+        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
+        Delay(1);
+    }
+
+    SetHUDSize(480, 280, TRUE);
+    SetFont("SMALLFONT");
+    HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
+    HudMessage(l:"Not tomorrow, or the day after. But when the time is right, it will return."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+
+    Delay(10);
+    
+    for (i = 0; i < 350; i++)
+    {
+        if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
+        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
+        Delay(1);
+    }
+
+    SetHUDSize(480, 280, TRUE);
+    SetFont("SMALLFONT");
+    HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
+    HudMessage(l:"Hopefully I won't be around to see that day. Hopefully next time, it'll be somebody else's turn."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+
+    Delay(10);
+    
+    for (i = 0; i < 350; i++)
+    {
+        if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
+        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
+        Delay(1);
+    }
+
+    SetHUDSize(480, 280, TRUE);
+    SetFont("SMALLFONT");
+    HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
+    HudMessage(l:"I'm just going to go home and return this bow to its resting place on the wall."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+
+    Delay(10);
+   
+    for (i = 0; i < 350; i++)
+    {
+        if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
+        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
+        Delay(1);
+    }
+
+    SetHUDSize(480, 280, TRUE);
+    SetFont("SMALLFONT");
+    HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
+    HudMessage(l:"Your home is not safe, you know. The war is not yet done and mankind still bleeds."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+
+    Delay(10);
+   
+    for (i = 0; i < 350; i++)
+    {
+        if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
+        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
+        Delay(1);
+    }
+
+    SetHUDSize(480, 280, TRUE);
+    SetFont("SMALLFONT");
+    HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
+    HudMessage(l:"It'll end. And then we'll patch ourselves up. It's how the stories always go."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+
+    Delay(10);
+   
+    for (i = 0; i < 350; i++)
+    {
+        if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
+        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
+        Delay(1);
+    }
+
+    SetHUDSize(480, 280, TRUE);
+    SetFont("SMALLFONT");
+    HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
+    HudMessage(l:"It never ends. It will keep going. And even when it ends, it'll spark up again. Such is the nature of warriors.\n...But that is not your matter, I suppose. You are not a warrior."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+
+    Delay(10);
+   
+    for (i = 0; i < 350; i++)
+    {
+        if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
+        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
+        Delay(1);
+    }
+
+    SetHUDSize(480, 280, TRUE);
+    SetFont("SMALLFONT");
+    HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
+    HudMessage(l:"No. I'm just a librarian. I catalogue stories."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+
+    Delay(10);
+   
+    for (i = 0; i < 350; i++)
+    {
+        if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
+        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
+        Delay(1);
+    }
+
+    SetHUDSize(480, 280, TRUE);
+    SetFont("SMALLFONT");
+    HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
+    HudMessage(l:"Will you keep this one?"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+
+    Delay(10);
+   
+    for (i = 0; i < 350; i++)
+    {
+        if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
+        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
+        Delay(1);
+    }
+
+    SetHUDSize(480, 280, TRUE);
+    SetFont("SMALLFONT");
+    HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
+    HudMessage(l:"Good Lord, no. I want absolutely nothing to do with this anymore.\nAnd with all due respect, if I ever see you again, it'll be too soon."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+
+    Delay(10);
+   
+    for (i = 0; i < 350; i++)
+    {
+        if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
+        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
+        Delay(1);
+    }
+
+    SetHUDSize(480, 280, TRUE);
+    SetFont("SMALLFONT");
+    HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
+    HudMessage(l:"You won't."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+
+    Delay(10);
+   
+    for (i = 0; i < 350; i++)
+    {
+        if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
+        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
+        Delay(1);
+    }
+
+    SetHUDSize(480, 280, TRUE);
+    SetFont("SMALLFONT");
+    HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
+    HudMessage(l:"Don't lie. You know I will."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+
+    Delay(10);
+   
+    for (i = 0; i < 350; i++)
+    {
+        if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
+        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
+        Delay(1);
+    }
+
+    SetHUDSize(480, 280, TRUE);
+    SetFont("SMALLFONT");
+    HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
+    HudMessage(l:"We will meet again, there is no doubt. But you may not see me."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+
+    Delay(10);
+   
+    for (i = 0; i < 350; i++)
+    {
+        if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
+        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
+        Delay(1);
+    }
+
+    SetHUDSize(480, 280, TRUE);
+    SetFont("SMALLFONT");
+    HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
+    HudMessage(l:"Go, and rest quietly, knowing that you have earned it.\nAnd to echo your sentiments, I hope not to see you again for a long time."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+
+    Delay(10);
+   
+    for (i = 0; i < 350; i++)
+    {
+        if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
+        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
+        Delay(1);
+    }
+
+    SetHUDSize(480, 280, TRUE);
+    SetFont("SMALLFONT");
+    HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
+    HudMessage(l:"Heh."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+
+    Delay(10);
+   
+    for (i = 0; i < 350; i++)
+    {
+        if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
+        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
+        Delay(1);
+    }
+
+    HudMessage(s:""; HUDMSG_PLAIN, 10, 0, 0, 0, 0.1);
+    HudMessage(s:""; HUDMSG_PLAIN, 11, 0, 0, 0, 0.1);
+    HudMessage(s:""; HUDMSG_PLAIN, 12, 0, 0, 0, 0.1);
+    HudMessage(s:""; HUDMSG_PLAIN, 14, 0, 0, 0, 0.1);
+    HudMessage(s:""; HUDMSG_PLAIN, 16, 0, 0, 0, 0.1);
+    SetPlayerProperty(0,0,4);
+    SetActorProperty(0,APROP_NOTARGET,0);
+    delay(35);
+
+    talkingtosomeone = 0;
+}
