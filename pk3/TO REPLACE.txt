@@ -1,11 +1,6 @@
 SPRITES:
 =============
-- Bow
-- Impact sparks
-- Player sprites (Probably not needed, will need just one for the opening title)
 - Nagant casings
-- Bullet sparks
-- Bullet puffs (Could probably use any of the existing smoke sprites)
 - Nezhit's sprites
 - Likho's sprites
 - Bauk's sprites
