@@ -1,0 +1,153 @@
+ACTOR ZmeyGorynychHead 31110
+{
+//$Category Nocturne-Bosses
+    Health 700
+    Radius 31
+    Height 56
+    Mass 400
+    Speed 12
+    PainChance 64
+    Monster
+    +FLOAT
+    +FLOATBOB
+    +MISSILEMORE
+    +MISSILEEVENMORE
+    +NOGRAVITY
+    +NOINFIGHTING
+    +THRUSPECIES
+    +DORMANT
+    Species "Monster"
+    SeeSound "caco/sight"
+    PainSound "caco/pain"
+    DeathSound "caco/death"
+    ActiveSound "caco/active"
+    Obituary ""
+    States
+    {
+    Spawn:
+        HEAD A 10 A_Look
+        Loop
+    See:
+        TNT1 A 0 A_JumpIfInventory("ZmeyCheck2",1,"See3")
+        TNT1 A 0 A_JumpIfInventory("ZmeyCheck1",1,"See2")
+        HEAD A 2 A_Chase
+        HEAD A 2 A_FastChase
+        Loop
+    See2:
+        HEAD A 1 A_Chase
+        HEAD AAA 1 A_FastChase
+        Loop
+    See3:
+        HEAD A 1 A_FastChase
+        Loop
+    Missile:
+        TNT1 A 0 A_JumpIfInventory("ZmeyCheck2",1,"Missile3")
+        TNT1 A 0 A_JumpIfInventory("ZmeyCheck1",1,"Missile2")
+        HEAD BC 3 A_FaceTarget
+        HEAD D 3 Bright A_CustomMissile("DragonFire",16,0,frandom(-3,3),CMF_OFFSETPITCH,frandom(-2,2))
+        Goto See
+    Missile2:
+        HEAD BC 2 A_FaceTarget
+        TNT1 AA 0 A_CustomMissile("DragonFire",16,0,frandom(-10,10),CMF_OFFSETPITCH,frandom(-5,5))
+        HEAD D 2 Bright A_CustomMissile("DragonFire",16,0,frandom(-10,10),CMF_OFFSETPITCH,frandom(-5,5))
+        Goto See
+    Missile3:
+        HEAD BC 2 A_FaceTarget
+        TNT1 AAA 0 A_CustomMissile("DragonFire",16,0,frandom(-10,10),CMF_OFFSETPITCH,frandom(-5,5))
+        HEAD D 2 Bright A_CustomMissile("DragonFire",16,0,frandom(-10,10),CMF_OFFSETPITCH,frandom(-5,5))
+        HEAD C 2 A_FaceTarget
+        TNT1 AAA 0 A_CustomMissile("DragonFire",16,0,frandom(-10,10),CMF_OFFSETPITCH,frandom(-5,5))
+        HEAD D 2 Bright A_CustomMissile("DragonFire",16,0,frandom(-10,10),CMF_OFFSETPITCH,frandom(-5,5))
+        TNT1 A 0 A_Jump(128,"Missile3")
+        Goto See
+    Pain:
+        HEAD E 2
+        HEAD F 4 A_Pain
+        Goto See
+    Death:
+        TNT1 A 0 A_ChangeFlag("FLOATBOB",0)
+        HEAD G 8
+        HEAD H 8 A_Scream
+        HEAD IJ 8
+        HEAD K 8 A_NoBlocking
+        HEAD L -1 A_SetFloorClip
+        Stop
+    }
+}
+
+actor DragonFire
+{
+    Radius 8
+    Height 10
+    Speed 30
+    Damage (random(10,20))
+    Renderstyle Add
+    Alpha 0.99
+    Scale 0.5
+    Projectile
+    +RANDOMIZE
+    +THRUSPECIES
+    Species "Monster"
+    States
+    {
+    Spawn:
+        FIRE A 1 Bright A_SpawnItemEx("DragonFireTrail",0,0,0,frandom(-2,2),frandom(-2,2),frandom(-2,2),0,160)
+        Loop
+    Death:
+        TNT1 AAAAAAA 0 A_SpawnItemEx("DragonFireTrail",0,0,0,frandom(-2,2),frandom(-2,2),frandom(-2,2),0,160)
+        FIRE BCDEFGH 1 Bright
+        stop
+    }
+}
+
+actor DragonFireTrail
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    Renderstyle Add
+    Alpha 0.99
+    Scale 0.4
+    States
+    {
+    Spawn:
+        FIRE ABCDEFGH 1 Bright
+        stop
+    }
+}
+
+actor ZmeyGorynychBody 31102
+{
+//$Category Nocturne-Bosses
+    Health 500
+    Radius 128
+    Height 256
+    Mass 0x7FFFFFFF
+    Scale 1.75
+    Speed 0
+    PainChance 0
+    Monster
+    +NOINFIGHTING
+    +THRUSPECIES
+    +DORMANT
+    Species "Monster"
+    Obituary ""
+    States
+    {
+    Spawn:
+        TNT1 A 0 A_JumpIfInventory("ZmeyCheck3",1,"Spawn2")
+        BODY A 1 HealThing(300)
+        Loop
+    Spawn2:
+        BODY A 1
+        loop
+    Death:
+        BODY H 5
+        BODY I 5 A_Scream
+        BODY JKL 5
+        BODY M 5 A_NoBlocking
+        BODY NO 5 // Oh yes.
+        BODY P 30 A_SpawnItemEx("DragonScalePickup",0,0,0,0,0,8,0,32)
+        BODY P -1 A_BossDeath
+        Stop
+    }
+}

@@ -34,6 +34,7 @@ actor CrucifixPickup : CustomInventory 31045
     Inventory.PickupSound ""
     +QUIET
     +FLOATBOB
+    +LOWGRAVITY
     States
     {
     Spawn:
@@ -60,6 +61,7 @@ actor DragonScalePickup : CustomInventory 31046
     Inventory.PickupSound ""
     +QUIET
     +FLOATBOB
+    +LOWGRAVITY
     States
     {
     Spawn:
@@ -86,6 +88,7 @@ actor WhiteCoalPickup : CustomInventory 31047
     Inventory.PickupSound ""
     +QUIET
     +FLOATBOB
+    +LOWGRAVITY
     States
     {
     Spawn:
@@ -112,6 +115,7 @@ actor AntiqueCoinPickup : CustomInventory 31048
     Inventory.PickupSound ""
     +QUIET
     +FLOATBOB
+    +LOWGRAVITY
     States
     {
     Spawn:
@@ -138,6 +142,7 @@ actor PallidMaskPickup : CustomInventory 31049
     Inventory.PickupSound ""
     +QUIET
     +FLOATBOB
+    +LOWGRAVITY
     States
     {
     Spawn:
@@ -164,6 +169,7 @@ actor BurialBeltPickup : CustomInventory 31050
     Inventory.PickupSound ""
     +QUIET
     +FLOATBOB
+    +LOWGRAVITY
     States
     {
     Spawn:

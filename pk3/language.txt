@@ -34,6 +34,8 @@ STSTR_BEHOLD = "Your memory serves you well. inVuln, Str, Inviso, Rad, Allmap, o
 STSTR_BEHOLDX = "Power-up toggled.";
 STSTR_CHOPPERS = "Your memory serves you well.";
 
+GGSAVED = "Your memories are safe here...";
+
 // Obituaries. Removed, since Nocturne has its own death sequence.
 OB_SUICIDE = " ";
 OB_FALLING = " ";

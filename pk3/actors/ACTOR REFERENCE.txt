@@ -32,6 +32,7 @@ ENEMIES:
 31107 - Yog-Sothoth 2
 31108 - Yog-Sothoth 3
 31109 - Yog-Sothoth Prone
+31110 - Zmey Gorynych Head
 
 WORLD:
 31200 - Blue Skull Torch

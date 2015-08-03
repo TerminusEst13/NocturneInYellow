@@ -7,6 +7,9 @@ actor SprintStopping : Counter { Inventory.MaxAmount 10 }
 
 actor GrenadeAmmoCounter : Counter { Inventory.MaxAmount 20 }
 
+actor ZmeyCheck1 : Boolean {}
+actor ZmeyCheck2 : Boolean {}
+actor ZmeyCheck3 : Boolean {}
 actor WeaponIdle : Boolean {}
 actor Jumped : Boolean {}
 actor RogatinaWallHit : Boolean {}

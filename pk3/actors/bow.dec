@@ -442,7 +442,7 @@ actor HolyArrow : FastProjectile
     Radius 4
     Height 2
     Damage (60)
-    Speed 275
+    Speed 350
     Projectile
     +DONTREFLECT
     +FORCEYBILLBOARD
@@ -846,7 +846,7 @@ actor HolyArrowTrail
     +CLIENTSIDEONLY
     Scale 0.125
     RenderStyle Add
-    Alpha 0.025
+    Alpha 0.04
     States
     {
     Spawn:
