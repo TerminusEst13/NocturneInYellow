@@ -186,6 +186,16 @@ brightmap Texture SWTCH02
    map SWTCHBM2
 }
 
+brightmap Texture SWTCH03
+{
+   map SWTCHBM3
+}
+
+brightmap Texture SWTCH04
+{
+   map SWTCHBM4
+}
+
 flickerlight2 TELEPORTLIGHT
 {
     color 1.0 1.0 1.0
