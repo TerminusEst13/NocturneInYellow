@@ -5,7 +5,7 @@ Script 512 (Void)
 
     SetPlayerProperty(0,1,4);
     SetActorProperty(0,APROP_NOTARGET,1);
-    SetHUDSize(320, 240, TRUE);
+    SetHUDSize(1600, 1200, TRUE);
     SetFont("VIK_PTRT");
     HudMessage(s:"A"; HUDMSG_FADEINOUT, 16, 0, 0.5, 0.5, 5, 1.0, 0);
     SetHUDSize(320, 240, TRUE);
@@ -20,7 +20,7 @@ Script 512 (Void)
 
     Delay(35);
 
-    SetHUDSize(320, 240, TRUE);
+    SetHUDSize(1600, 1200, TRUE);
     SetFont("VIK_PTRT");
     HudMessage(s:"A"; HUDMSG_PLAIN, 16, 0, 0.5, 0.5, 0);
     SetHUDSize(320, 240, TRUE);
@@ -94,7 +94,7 @@ Script 513 (Void)
 
     SetPlayerProperty(0,1,4);
     SetActorProperty(0,APROP_NOTARGET,1);
-    SetHUDSize(320, 240, TRUE);
+    SetHUDSize(1600, 1200, TRUE);
     SetFont("VIK_PTRT");
     HudMessage(s:"A"; HUDMSG_FADEINOUT, 16, 0, 0.5, 0.5, 5, 1.0, 0);
     SetHUDSize(320, 240, TRUE);
@@ -109,7 +109,7 @@ Script 513 (Void)
 
     Delay(35);
 
-    SetHUDSize(320, 240, TRUE);
+    SetHUDSize(1600, 1200, TRUE);
     SetFont("VIK_PTRT");
     HudMessage(s:"A"; HUDMSG_PLAIN, 16, 0, 0.5, 0.5, 0);
     SetHUDSize(320, 240, TRUE);
@@ -237,7 +237,7 @@ Script 514 (Void)
 
     SetPlayerProperty(0,1,4);
     SetActorProperty(0,APROP_NOTARGET,1);
-    SetHUDSize(320, 240, TRUE);
+    SetHUDSize(1600, 1200, TRUE);
     SetFont("VIK_PTRT");
     HudMessage(s:"A"; HUDMSG_FADEINOUT, 16, 0, 0.5, 0.5, 5, 1.0, 0);
     SetHUDSize(320, 240, TRUE);
@@ -252,7 +252,7 @@ Script 514 (Void)
 
     Delay(35);
 
-    SetHUDSize(320, 240, TRUE);
+    SetHUDSize(1600, 1200, TRUE);
     SetFont("VIK_PTRT");
     HudMessage(s:"A"; HUDMSG_PLAIN, 16, 0, 0.5, 0.5, 0);
     SetHUDSize(320, 240, TRUE);

@@ -138,8 +138,16 @@ actor ZmeyGorynychBody 31102
         BODY A 1 HealThing(300)
         Loop
     Spawn2:
-        BODY A 1
+        BODY A 1 A_Look
         loop
+    See:
+        BODY A 1 A_Chase
+        loop
+    Missile:
+        TNT1 AAA 0 A_CustomMissile("DragonFire",16,0,frandom(-2,2),CMF_OFFSETPITCH,frandom(-1,1))
+        BODY A 1 Bright A_CustomMissile("DragonFire",16,0,frandom(-2,2),CMF_OFFSETPITCH,frandom(-1,1))
+        TNT1 A 0 A_CPosRefire
+        goto Missile
     Death:
         BODY H 5
         BODY I 5 A_Scream
