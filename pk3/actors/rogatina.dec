@@ -41,7 +41,8 @@ ACTOR "Koroleva" : Weapon // Means "Queen"
         TNT1 A 0 A_PlayWeaponSound("rogatina/swing")
         ROGA EF 1
         TNT1 A 0 A_FireCustomMissile("rogatinaStab",0,0,0,0)
-        TNT1 A 0 A_Recoil(-0.4)
+        TNT1 A 0 A_FireCustomMissile("rogatinaStab2",0,0,0,0)
+        TNT1 A 0 A_Recoil(-1)
         ROGA G 1 A_JumpIfInventory("rogatinaWallHit",1,"WallHit")
         ROGA H 1 Offset(0,24) A_JumpIfInventory("rogatinaWallHit",1,"WallHit")
 		ROGA H 1 Offset(-1,20) A_JumpIfInventory("rogatinaWallHit",1,"WallHit")
@@ -104,7 +105,7 @@ ACTOR "Koroleva" : Weapon // Means "Queen"
         THRW ABC 1
         TNT1 A 0 A_PlayWeaponSound("grenade/throw")
         THRW DE 1
-        THRW F 1 A_FireCustomMissile("IronGrenade",0,1,2,-4,0,10)
+        THRW F 1 A_FireCustomMissile("IronGrenade",0,1,2,-4,0,5)
         THRW GHI 1
         TNT1 A 2
         Goto BackToNormal
@@ -125,7 +126,7 @@ actor RogatinaStab : FastProjectile
 {
     Radius 2
     Height 2
-    Damage (100)
+    Damage (80)
     Speed 160
     RenderStyle Add
     Alpha 0.6
@@ -156,7 +157,29 @@ actor RogatinaStab : FastProjectile
     Crash:
         TNT1 A 0 A_Stop
         TNT1 A 0 A_SpawnItemEx("RogatinaQuake2",0,0,0,0,0,0,0,32)
+        TNT1 AAAAAAA 0 A_SpawnItemEx("BloodSplatter",0,0,0,frandom(-5,5),frandom(-5,5),frandom(-1,5),0,0,0)
         TNT1 A 0 A_PlaySound("rogatina/hit",CHAN_AUTO,1.0,0,ATTN_NORM)
+        TNT1 A 1
+        stop
+    }
+}
+
+actor RogatinaStab2 : FastProjectile
+{
+    Radius 2
+    Height 2
+    Damage (32)
+    Speed 160
+    DamageType "Spear"
+    Projectile
+    +RIPPER
+    +BLOODSPLATTER
+    +SKYEXPLODE
+    +EXPLODEONWATER
+    +NOEXTREMEDEATH
+    States
+    {
+    Spawn:
         TNT1 A 1
         stop
     }
@@ -172,7 +195,7 @@ actor RogatinaQuake
     {
     Spawn:
         TNT1 A 0
-        TNT1 A 0 Radius_Quake(2,6,0,16,0)
+        TNT1 A 0 Radius_Quake(3,8,0,16,0)
         TNT1 A 1
         stop
     }
