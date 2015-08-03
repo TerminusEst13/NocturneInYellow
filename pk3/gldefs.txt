@@ -176,6 +176,16 @@ brightmap Sprite SNEKH0
    map SNEKBM2
 }
 
+brightmap Texture SWTCH01
+{
+   map SWTCHBM1
+}
+
+brightmap Texture SWTCH02
+{
+   map SWTCHBM2
+}
+
 flickerlight2 TELEPORTLIGHT
 {
     color 1.0 1.0 1.0
