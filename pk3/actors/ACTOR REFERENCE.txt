@@ -59,3 +59,5 @@ WORLD:
 31253 - Teleport for anti-cathedral
 31254-7 - Blue/Purple/Green/Pulsating alien torch // I mess up on the statue once and now Bloax won't let me hear the end of it. :(
 31258 - Ethereal kawaii Statue
+31259 - Fireplace actor
+31260-62 - Floating candle shits

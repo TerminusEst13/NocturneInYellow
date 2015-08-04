@@ -1311,3 +1311,91 @@ actor FireplaceFire 31259
         loop
     }
 }
+
+ACTOR FloatyCandle1 31260
+{
+//$Category Nocturne-CoolStuff
+    Radius 8
+    Height 16
+	Scale 0.625
+    +SOLID
+    +NOGRAVITY
+    +FORCEYBILLBOARD
+    +RANDOMIZE
+    var int user_floatyfloatyfloat1;
+    States
+    {
+    Spawn:
+		CNFL A 0 Bright
+	Start: // code duplication is a-ok!!!1!!
+		CNFL A 0 Bright A_SetUserVar("user_floatyfloatyfloat1",0)
+		CNFL A 1 Bright ThrustThingZ(0,1.25,0,0)
+	FloatyFloaty:
+        CNFL A 0 Bright A_JumpIf(user_floatyfloatyfloat1 >= 60,"ThrustDown")
+		CNFL ABCDE 3 Bright A_ScaleVelocity(1.00834)
+		CNFL E 0 Bright A_SetUserVar("user_floatyfloatyfloat1",user_floatyfloatyfloat1+15)
+        loop
+	ThrustDown:
+		CNFL A 0 Bright A_SetUserVar("user_floatyfloatyfloat1",0)
+		CNFL A 1 Bright ThrustThingZ(0,1.25,1,0)
+	FloatyFloaty2:
+        CNFL A 0 Bright A_JumpIf(user_floatyfloatyfloat1 >= 60,"Start")
+		CNFL ABCDE 3 Bright A_ScaleVelocity(1.00834)
+		CNFL E 0 Bright A_SetUserVar("user_floatyfloatyfloat1",user_floatyfloatyfloat1+15)
+        loop
+    }
+}
+
+ACTOR FloatyCandle2 : FloatyCandle1 31261
+{
+//$Category Nocturne-CoolStuff
+    var int user_floatyfloatyfloat2;
+    States
+    {
+    Spawn:
+		CNFL F 0 Bright
+	Start: // code duplication is a-ok!!!1!!
+		CNFL F 0 Bright A_SetUserVar("user_floatyfloatyfloat2",0)
+		CNFL F 1 Bright ThrustThingZ(0,1.25,0,0)
+	FloatyFloaty:
+        CNFL A 0 Bright A_JumpIf(user_floatyfloatyfloat2 >= 60,"ThrustDown")
+		CNFL FGHIJ 3 Bright A_ScaleVelocity(1.00834)
+		CNFL B 0 Bright A_SetUserVar("user_floatyfloatyfloat2",user_floatyfloatyfloat2+15)
+        loop
+	ThrustDown:
+		CNFL F 0 Bright A_SetUserVar("user_floatyfloatyfloat2",0)
+		CNFL F 1 Bright ThrustThingZ(0,1.25,1,0)
+	FloatyFloaty2:
+        CNFL F 0 Bright A_JumpIf(user_floatyfloatyfloat2 >= 60,"Start")
+		CNFL FGHIJ 3 Bright A_ScaleVelocity(1.00834)
+		CNFL J 0 Bright A_SetUserVar("user_floatyfloatyfloat2",user_floatyfloatyfloat2+15)
+        loop
+    }
+}
+
+ACTOR FloatyCandle3 : FloatyCandle1 31262
+{
+//$Category Nocturne-CoolStuff
+    var int user_floatyfloatyfloat3;
+    States
+    {
+    Spawn:
+		CNFL K 0 Bright
+	Start: // code duplication is a-ok!!!1!!
+		CNFL A 0 Bright A_SetUserVar("user_floatyfloatyfloat3",0)
+		CNFL K 1 Bright ThrustThingZ(0,1.25,0,0)
+	FloatyFloaty:
+        CNFL A 0 Bright A_JumpIf(user_floatyfloatyfloat3 >= 60,"ThrustDown")
+		CNFL KLMNO 3 Bright A_ScaleVelocity(1.00834)
+		CNFL B 0 Bright A_SetUserVar("user_floatyfloatyfloat3",user_floatyfloatyfloat3+15)
+        loop
+	ThrustDown:
+		CNFL A 0 Bright A_SetUserVar("user_floatyfloatyfloat3",0)
+		CNFL K 1 Bright ThrustThingZ(0,1.25,1,0)
+	FloatyFloaty2:
+        CNFL K 0 Bright A_JumpIf(user_floatyfloatyfloat3 >= 60,"Start")
+		CNFL KLMNO 3 Bright A_ScaleVelocity(1.00834)
+		CNFL O 0 Bright A_SetUserVar("user_floatyfloatyfloat3",user_floatyfloatyfloat3+15)
+        loop
+    }
+}
