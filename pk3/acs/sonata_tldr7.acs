@@ -6,7 +6,7 @@ Script 518 (Void)
     SetPlayerProperty(0,1,4);
     SetActorProperty(0,APROP_NOTARGET,1);
     SetHUDSize(1600, 1200, TRUE);
-    SetFont("VI2_PTRT");
+    SetFont("VI3_PTRT");
     HudMessage(s:"A"; HUDMSG_FADEINOUT, 16, 0, 0.5, 0.5, 5, 1.0, 0);
     SetHUDSize(320, 240, TRUE);
     SetFont("TALKGFX");
@@ -21,7 +21,7 @@ Script 518 (Void)
     Delay(35);
 
     SetHUDSize(1600, 1200, TRUE);
-    SetFont("VI2_PTRT");
+    SetFont("VI3_PTRT");
     HudMessage(s:"A"; HUDMSG_PLAIN, 16, 0, 0.5, 0.5, 0);
     SetHUDSize(320, 240, TRUE);
     SetFont("TALKGFX");
@@ -84,7 +84,7 @@ Script 519 (Void)
     SetActorProperty(0,APROP_NOTARGET,1);
     SetHUDSize(320, 240, TRUE);
     SetFont("BLACKTXT");
-    HudMessage(s:"A"; HUDMSG_FADEINOUT, 16, 0, 0.5, 0.5, 5, 1.0, 0);
+    HudMessage(s:"A"; HUDMSG_FADEINOUT, 16, 0, 160.0, 120.0, 5, 1.0, 0);
     SetHUDSize(320, 240, TRUE);
     SetFont("TALKGFX");
     HudMessage(s:"A"; HUDMSG_FADEINOUT, 14, 0, 0.5, 0.5, 5, 1.0, 0);
@@ -272,7 +272,7 @@ Script 520 (Void)
 
     SetHUDSize(320, 240, TRUE);
     SetFont("BLACKTXT");
-    HudMessage(s:"A"; HUDMSG_PLAIN, 16, 0, 0.5, 0.5, 0);
+    HudMessage(s:"A"; HUDMSG_PLAIN, 16, 0, 160.0, 120.0, 0);
     SetHUDSize(320, 240, TRUE);
     SetFont("TALKGFX");
     HudMessage(s:"A"; HUDMSG_PLAIN, 14, 0, 0.5, 0.5, 0);
