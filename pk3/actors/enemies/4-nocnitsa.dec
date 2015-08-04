@@ -42,8 +42,8 @@ ACTOR Nocnitsa 31093
         NSHA E 4 Bright
         Goto See
     Melee:
-        NSHA E 4 Bright
-        NSHA F 4 Bright A_CustomMeleeAttack(random(10,15),"","nezhit/hit")
+        NSHA E 5 Bright
+        NSHA F 5 Bright A_CustomMeleeAttack(random(10,15),"","nezhit/hit")
         goto See
     Pain:
         NSHA G 3 Bright

@@ -1,0 +1,174 @@
+actor PowerTempProtection : PowerProtection
+{
+    DamageFactor "Normal", 0.0
+    Powerup.Duration 0x7FFFFFFF
+}
+
+ACTOR Domovoi 31103
+{
+//$Category Nocturne-Bosses
+    Health 3000
+    Radius 32
+    Height 112
+    Mass 100
+    Speed 12
+    PainChance 64
+    Monster
+    RenderStyle Add
+    Alpha 0.75
+    XScale 0.75
+    YScale 0.65
+    RadiusDamageFactor 0.25
+    +FLOATBOB
+    +NOINFIGHTING
+    +THRUSPECIES
+    +MISSILEMORE
+    +MISSILEEVENMORE
+    +DORMANT
+    Species "Monster"
+    SeeSound "imp/sight"
+    PainSound "imp/pain"
+    DeathSound "imp/death"
+    ActiveSound "imp/active"
+    Obituary " "
+    States
+    {
+    Spawn:
+        DOMV A 10 A_Look
+        Loop
+    See:
+        DOMV AABB 2 A_Chase
+        Loop
+    Missile:
+        TNT1 A 0 A_Jump(64,"Missile2")
+        DOMV CD 3 A_FaceTarget
+        DOMV E 3 A_CustomMissile("DomovoiFireball",32,0,frandom(-3.5,3.5),CMF_OFFSETPITCH,frandom(-2,2))
+        Goto See
+    Missile2:
+        DOMV CD 3 A_FaceTarget
+        TNT1 AA 0 A_CustomMissile("DomovoiFireball",32,0,frandom(-3.5,3.5),CMF_OFFSETPITCH,frandom(-2,2))
+        DOMV E 3 A_CustomMissile("DomovoiFireball",32,0,frandom(-3.5,3.5),CMF_OFFSETPITCH,frandom(-2,2))
+        Goto See
+    Pain:
+        DOMV F 2
+        DOMV F 2 A_Pain
+        Goto See
+    Death:
+        DOMV G 8
+        TNT1 A 0 A_KillChildren
+        DOMV G 8 A_Scream
+        DOMV GGGGGGGGGGGGGGGGGGGG 5 A_FadeOut(0.05)
+        DOMV G 1
+        Stop
+    }
+}
+
+actor DomovoiFireball
+{
+    Radius 8
+    Height 10
+    Speed 15
+    Damage (random(5,10))
+    Renderstyle Add
+    Alpha 0.99
+    Scale 0.5
+    Projectile
+    BounceCount 6
+    BounceFactor 0.95
+    -NOGRAVITY
+    +LOWGRAVITY
+    +DOOMBOUNCE
+    +RANDOMIZE
+    +THRUSPECIES
+    Species "Monster"
+    States
+    {
+    Spawn:
+        FIRE A 1 Bright A_SpawnItemEx("DragonFireTrail",0,0,0,frandom(-2,2),frandom(-2,2),frandom(-2,2),0,160)
+        Loop
+    Death:
+        TNT1 AAAAAAA 0 A_SpawnItemEx("DragonFireTrail",0,0,0,frandom(-2,2),frandom(-2,2),frandom(-2,2),0,160)
+        TNT1 A 0 A_SpawnItemEx("DomovoiTurret",0,0,48,0,0,0,0,SXF_SETMASTER | SXF_NOCHECKPOSITION)
+        FIRE BCDEFGH 1 Bright
+        stop
+    }
+}
+
+actor DomovoiTurret
+{
+    Radius 16
+    Height 32
+    Renderstyle Add
+    Alpha 0.99
+    Scale 1.0
+    Health 100
+    Speed 0
+    PainChance 128
+    //ReactionTime 8
+    MONSTER
+    -SOLID
+    +NOBLOOD
+    +NOINFIGHTING
+    +THRUSPECIES
+    +LOOKALLAROUND
+    Species "Monster"
+    Obituary " "
+    States
+    {
+    Spawn:
+        TNT1 A 0 A_SpawnItemEx("DragonFireTrail",0,0,frandom(16,32),frandom(-2,2),frandom(-2,2),frandom(-2,2),0,160)
+        TNT1 A 1 A_Look
+        Loop
+    See:
+        TNT1 A 0 A_SpawnItemEx("DragonFireTrail",0,0,frandom(16,32),frandom(-2,2),frandom(-2,2),frandom(-2,2),0,160)
+        TNT1 A 1 A_Chase
+        Loop
+    Missile:
+        TNT1 A 0 A_SpawnItemEx("DragonFireTrail",0,0,frandom(16,32),frandom(-2,2),frandom(-2,2),frandom(-2,2),0,160)
+        TNT1 A 0 A_FaceTarget
+        TNT1 A 1 A_CustomMissile("FireTurretAttack",32,0,frandom(-5,5),CMF_OFFSETPITCH,frandom(-3.5,3))
+        TNT1 A 0 A_GiveInventory("Counter")
+        TNT1 A 0 A_JumpIfInventory("Counter",8,"ForceDeath")
+        Goto See
+    Pain:
+        TNT1 AAAA 0 A_SpawnItemEx("DragonFireTrail",0,0,frandom(16,32),frandom(-2,2),frandom(-2,2),frandom(-2,2),0,160)
+        TNT1 A 1
+        Goto See
+    ForceDeath:
+        TNT1 A 0
+        TNT1 A 0 A_Die
+        goto Death
+    Death:
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("DragonFireTrail",0,0,frandom(16,32),frandom(-2,2),frandom(-2,2),frandom(-2,2),0,160)
+        TNT1 A 0 A_Scream
+        TNT1 A 1 A_NoBlocking
+        TNT1 A 1
+        Stop
+    }
+}
+
+actor FireTurretAttack
+{
+    Radius 8
+    Height 10
+    Speed 5
+    Damage (random(2,5))
+    Renderstyle Add
+    Alpha 0.99
+    Scale 0.5
+    Projectile
+    +RANDOMIZE
+    +THRUSPECIES
+    Species "Monster"
+    Obituary " "
+    States
+    {
+    Spawn:
+        FIRE A 1 Bright A_SpawnItemEx("DragonFireTrail",0,0,0,frandom(-2,2),frandom(-2,2),frandom(-2,2),0,160)
+        Loop
+    Death:
+        TNT1 AAAAAAA 0 A_SpawnItemEx("DragonFireTrail",0,0,0,frandom(-2,2),frandom(-2,2),frandom(-2,2),0,160)
+        FIRE BCDEFGH 1 Bright
+        stop
+    }
+}

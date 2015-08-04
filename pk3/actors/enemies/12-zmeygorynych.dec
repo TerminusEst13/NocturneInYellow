@@ -129,6 +129,7 @@ actor ZmeyGorynychBody 31102
     +NOINFIGHTING
     +THRUSPECIES
     +DORMANT
+    RadiusDamageFactor 0.5
     Species "Monster"
     Obituary ""
     States

@@ -96,7 +96,7 @@ map MAP04 "The Dead Library"
     LevelNum = 4
     music = "MUS_MAP4" // Kevin MacLeod - Metaphysik
     SmoothLighting
-    Next = "MAP06" // Next = "MAP05"
+    Next = "MAP05"
     NoIntermission
 }
 

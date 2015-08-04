@@ -1298,3 +1298,16 @@ actor EtherealSaveStatue : SaveStatue 31258
         loop
     }
 }
+
+actor FireplaceFire 31259
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    States
+    {
+    Spawn:
+        TNT1 A 0 A_SpawnItemEx("DragonFireTrail",0,0,frandom(1,5),frandom(-2,2),frandom(-2,2),frandom(1,4),0,160)
+        TNT1 A 1 A_SpawnItemEx("DragonFireTrail",0,0,frandom(1,5),frandom(-2,2),frandom(-2,2),frandom(1,4),0,160)
+        loop
+    }
+}
