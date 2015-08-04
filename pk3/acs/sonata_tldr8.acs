@@ -479,7 +479,7 @@ Script 523 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"Go, and rest quietly, knowing that you have earned it.\nAnd to echo your sentiments, I hope not to see you again for a long time."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"Go, and rest quietly, knowing that you have earned it.\nAnd to echo your sentiments, I hope not to see you again for a long time.\nDirty liar."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
