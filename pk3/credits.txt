@@ -6,6 +6,7 @@ ETC:
 - Jared Tarbell, for the "Levitated Runes" font off levitated.net, released as free to use.
 - fgsfds, for fact-checking and assistance in translating things to Russian.
 - Freedoom, for the palette.
+- iSpook, for GLDefs assistance.
 
 SPRITES:
 ===========
@@ -106,3 +107,14 @@ STORY TEXT:
 - Dreamstime, for "Tattered book", "Turning pages of old book", and "Man With Bow", royalty-free stock imagery (STORYTX4 / STORYTX6 / STORYTX8)
 - Thomas Nemcsek, for "Attic CZ" off zeitfaenger.at, released under Attribution 2.0 Generic (CC BY 2.0) (STORYTX8)
 - HTPstock, for "crazy static texture" off deviantart.com, released under the "message me with the final product" license. Is that even a license? I dunno. Probably not. (STORYTX7)
+
+
+SPECIAL THANKS:
+===========
+- John Carmack & John Romero (The forefathers of everything, and creators of Doom)
+- Randy Heit & Christoph Oelckers (The GZDoom engine)
+- marrub (The GLOOME engine)
+
+...and you.
+
+Thank you for playing!

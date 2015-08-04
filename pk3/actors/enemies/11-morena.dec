@@ -1,2 +1,296 @@
 // 31100 - Morena, first time
+
+actor Morena1 31100
+{
+//$Category Nocturne-Bosses
+    Health 3250
+    Radius 20
+    Height 56
+    Speed 15
+    PainChance 64
+    Mass 0x7FFFFFFF
+    Monster
+    +FLOORCLIP
+    +LOWGRAVITY
+    +MISSILEMORE
+    +MISSILEEVENMORE
+    +DORMANT
+    SeeSound "grunt/sight"
+    AttackSound "grunt/attack"
+    PainSound "grunt/pain"
+    DeathSound "grunt/death"
+    ActiveSound "grunt/active"
+    Obituary " "
+    States
+    {
+    Spawn:
+        POSS A 10 A_Look
+        Loop
+    See:
+        TNT1 A 0 A_TakeInventory("Counter",100)
+        POSS A 1 A_Chase("","")
+        POSS A 3 A_Chase
+        Loop
+    Missile:
+        TNT1 A 0 A_Jump(16,"Teleport")
+        TNT1 A 0 A_Jump(32,"Spin")
+        TNT1 A 0 A_Jump(64,"SideSwipe")
+        TNT1 A 0 A_Jump(64,"Missile2")
+    Missile1:
+        TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_CustomMissile("MorenaShot",32,0,frandom(-3,3),CMF_OFFSETPITCH,frandom(-2,2))
+        Goto See
+    Missile2:
+        TNT1 A 0 A_FaceTarget
+        TNT1 AAA 0 A_CustomMissile("MorenaShot",32,0,frandom(-5,5),CMF_OFFSETPITCH,frandom(-3,3))
+        POSS EEAAAA 1 A_Chase("","")
+        TNT1 A 0 A_FaceTarget
+        TNT1 AAA 0 A_CustomMissile("MorenaShot",32,0,frandom(-5,5),CMF_OFFSETPITCH,frandom(-3,3))
+        POSS EEAAAA 1 A_Chase("","")
+        TNT1 A 0 A_FaceTarget
+        TNT1 AAA 0 A_CustomMissile("MorenaShot",32,0,frandom(-5,5),CMF_OFFSETPITCH,frandom(-3,3))
+        POSS EEAAAA 1 A_Chase("","")
+        Goto See
+    SideSwipe:
+        TNT1 A 0 A_FaceTarget
+        TNT1 A 0 ThrustThingZ(0,16,0,0)
+        TNT1 A 0 A_Jump(255,"SideSwipe1","SideSwipe2")
+    SideSwipe1:
+        TNT1 A 0 ThrustThing(angle*256/360+64, 32, 0, 0)
+        goto SideSwipeContinue
+    SideSwipe2:
+        TNT1 A 0 ThrustThing(angle*256/360+192, 32, 0, 0)
+    SideSwipeContinue:
+        TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_CustomMissile("MorenaShot",32,0,frandom(-1,1),CMF_OFFSETPITCH,frandom(-0.25,0.25))
+        POSS E 3
+        TNT1 A 0 A_CheckFloor("SideSwipeFinish")
+        TNT1 A 0 A_GiveInventory("Counter",1)
+        TNT1 A 0 A_JumpIfInventory("Counter",70,"SideSwipeFinish")
+        loop
+    SideSwipeFinish:
+        TNT1 A 0 A_TakeInventory("Counter",100)
+        POSS A 3 A_Chase("","")
+        goto See
+    Spin:
+        TNT1 A 0 A_CustomMissile("MorenaLightShot",32,0,frandom(-1,1),CMF_AIMDIRECTION,frandom(-0.25,0.25))
+        POSS E 1 A_SetAngle(angle+10)
+        TNT1 A 0 A_GiveInventory("Counter",1)
+        TNT1 A 0 A_JumpIfInventory("Counter",35,"SpinFinish")
+        loop
+    SpinFinish:
+        TNT1 A 0 A_TakeInventory("Counter",100)
+        POSS A 1
+        goto See
+    Teleport:
+        TNT1 A 0 A_SpawnItemEx("FakeMorena",0,0,0,0,0,0,0,32)
+        TNT1 AAAAAA 0 A_CustomMissile("MorenaHomingShot",32,0,frandom(-180,180),CMF_OFFSETPITCH,frandom(-5,5))
+        POSS A 1
+        TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_Wander
+        TNT1 A 35
+        goto See
+    Pain:
+        TNT1 A 0 A_TakeInventory("Counter",100)
+        TNT1 A 0 A_Jump(64,"Teleport")
+        POSS G 2
+        POSS G 2 A_Pain
+        Goto See
+    Death:
+        POSS G 5
+        //TNT1 A 0 A_SpawnItemEx("CrucifixPickup",0,0,0,0,0,8,0,32)
+        TNT1 A 0 A_FaceTarget
+        POSS G 1
+        //TNT1 A 0 A_SpawnItemEx("RedSkull",0,0,0,frandom(-16,-6),frandom(-16,-6),frandom(8,16),0,32) // Let's throw it away from the player.
+        POSS GGGGGGGGGGGGGGGGGGGG 5 A_FadeOut(0.05)
+        POSS G 1
+        Stop
+    }
+}
+
+ACTOR MorenaShot
+{
+    Radius 6
+    Height 8
+    Speed 40
+    Damage (random(5,10))
+    Projectile
+    +RANDOMIZE
+    RenderStyle Add
+    Alpha 0.99
+    Scale 0.65
+    SeeSound "imp/attack"
+    DeathSound "imp/shotx"
+    States
+    {
+    Spawn:
+        BAL1 AB 2 Bright
+        Loop
+    Death:
+        BAL1 CDE 3 Bright
+        Stop
+    }
+}
+
+actor FakeMorena
+{
+    Radius 20
+    Height 56
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    RenderStyle Translucent
+    Alpha 1.00
+    States
+    {
+    Spawn:
+        POSS A 15
+        POSS AAAAAAAAAAAA 3 A_FadeOut(0.1)
+        stop
+    }
+}
+
+actor MorenaLightShot : MorenaShot
+{
+    Damage (random(1,5))
+}
+
+actor MorenaHomingShot
+{
+    Radius 6
+    Height 8
+    Speed 10
+    Damage (random(10,20))
+    Projectile
+    +RANDOMIZE
+    +SEEKERMISSILE
+    ReactionTime 50
+    RenderStyle Add
+    Alpha 1
+    SeeSound "caco/attack"
+    DeathSound "caco/shotx"
+    States
+    {
+    Spawn:
+        BAL2 AB 2 Bright A_SeekerMissile(10,20, SMF_PRECISE)
+        TNT1 A 0 A_CountDown
+        Loop
+    Death:
+        BAL2 CDE 6 Bright
+        Stop
+    }
+}
+
+
+
+
 // 31101 - Morena, second time
+
+
+actor Morena2 31101
+{
+//$Category Nocturne-Bosses
+    Health 6660 // WHOAH EGY
+    Radius 20
+    Height 56
+    Speed 15
+    PainChance 64
+    Mass 0x7FFFFFFF
+    Monster
+    +FLOORCLIP
+    +LOWGRAVITY
+    +MISSILEMORE
+    +MISSILEEVENMORE
+    +DORMANT
+    RadiusDamageFactor 0.5
+    SeeSound "grunt/sight"
+    AttackSound "grunt/attack"
+    PainSound "grunt/pain"
+    DeathSound "grunt/death"
+    ActiveSound "grunt/active"
+    Obituary " "
+    States
+    {
+    Spawn:
+        POSS A 10 A_Look
+        Loop
+    See:
+        TNT1 A 0 A_TakeInventory("Counter",100)
+        POSS A 1 A_Chase("","")
+        POSS A 3 A_Chase
+        Loop
+    Missile:
+        TNT1 A 0 A_Jump(32,"Teleport")
+        TNT1 A 0 A_Jump(64,"Spin")
+        TNT1 A 0 A_Jump(128,"SideSwipe")
+        TNT1 A 0 A_Jump(128,"Missile2")
+    Missile1:
+        TNT1 A 0 A_FaceTarget
+        TNT1 AAA 0 A_CustomMissile("MorenaShot",32,0,frandom(-3,3),CMF_OFFSETPITCH,frandom(-2,2))
+        Goto See
+    Missile2:
+        TNT1 A 0 A_FaceTarget
+        TNT1 AAAAA 0 A_CustomMissile("MorenaShot",32,0,frandom(-5,5),CMF_OFFSETPITCH,frandom(-3,3))
+        POSS EEAAAA 1 A_Chase("","")
+        TNT1 A 0 A_FaceTarget
+        TNT1 AAAAA 0 A_CustomMissile("MorenaShot",32,0,frandom(-5,5),CMF_OFFSETPITCH,frandom(-3,3))
+        POSS EEAAAA 1 A_Chase("","")
+        TNT1 A 0 A_FaceTarget
+        TNT1 AAAAA 0 A_CustomMissile("MorenaShot",32,0,frandom(-5,5),CMF_OFFSETPITCH,frandom(-3,3))
+        POSS EEAAAA 1 A_Chase("","")
+        Goto See
+    SideSwipe:
+        TNT1 A 0 A_FaceTarget
+        TNT1 A 0 ThrustThingZ(0,16,0,0)
+        TNT1 A 0 A_Jump(255,"SideSwipe1","SideSwipe2")
+    SideSwipe1:
+        TNT1 A 0 ThrustThing(angle*256/360+64, 32, 0, 0)
+        goto SideSwipeContinue
+    SideSwipe2:
+        TNT1 A 0 ThrustThing(angle*256/360+192, 32, 0, 0)
+    SideSwipeContinue:
+        TNT1 A 0 A_FaceTarget
+        TNT1 AAA 0 A_CustomMissile("MorenaShot",32,0,frandom(-1,1),CMF_OFFSETPITCH,frandom(-0.25,0.25))
+        POSS E 2
+        TNT1 A 0 A_CheckFloor("SideSwipeFinish")
+        TNT1 A 0 A_GiveInventory("Counter",1)
+        TNT1 A 0 A_JumpIfInventory("Counter",70,"SideSwipeFinish")
+        loop
+    SideSwipeFinish:
+        TNT1 A 0 A_TakeInventory("Counter",100)
+        POSS A 3 A_Chase("","")
+        goto See
+    Spin:
+        TNT1 AAA 0 A_CustomMissile("MorenaLightShot",32,0,frandom(-5,5),CMF_AIMDIRECTION,frandom(-2.5,2.5))
+        POSS E 1 A_SetAngle(angle+10)
+        TNT1 A 0 A_GiveInventory("Counter",1)
+        TNT1 A 0 A_JumpIfInventory("Counter",35,"SpinFinish")
+        loop
+    SpinFinish:
+        TNT1 A 0 A_TakeInventory("Counter",100)
+        POSS A 1
+        goto See
+    Teleport:
+        TNT1 A 0 A_SpawnItemEx("FakeMorena",0,0,0,0,0,0,0,32)
+        TNT1 AAAAAAAAAAAA 0 A_CustomMissile("MorenaHomingShot",32,0,frandom(-180,180),CMF_OFFSETPITCH,frandom(-5,5))
+        POSS A 1
+        TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_Wander
+        TNT1 A 35
+        TNT1 A 0 A_Jump(16,"Teleport")
+        TNT1 A 0 A_Jump(32,"Spin")
+        TNT1 A 0 A_Jump(64,"SideSwipe")
+        TNT1 A 0 A_Jump(64,"Missile2")
+        goto See
+    Pain:
+        TNT1 A 0 A_TakeInventory("Counter",100)
+        TNT1 A 0 A_Jump(128,"Teleport")
+        POSS G 2
+        POSS G 2 A_Pain
+        Goto See
+    Death:
+        POSS G 5
+        //TNT1 A 0 A_SpawnItemEx("BurialBeltPickup",0,0,0,frandom(-5,5),frandom(-5,5),8,0,32)
+        TNT1 A 0 A_FaceTarget
+        POSS A 1
+        POSS A -1
+        Stop
+    }
+}

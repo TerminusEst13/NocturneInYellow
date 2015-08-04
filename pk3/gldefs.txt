@@ -219,3 +219,38 @@ Skybox WTF_SKY
   WTF_T
   WTF_B
 }
+
+object OutDoorTorch1
+{
+    frame TCH5 { light BIGPURPLETORCH }
+}
+
+object OutDoorTorch2
+{
+    frame TCH6 { light BIGREDTORCH }
+}
+
+object OutDoorTorch3
+{
+    frame TCH7 { light BIGGREENTORCH }
+}
+
+object OutDoorTorch4
+{
+    frame TCH8 { light BIGBLUETORCH }
+}
+
+object AlienTorch1
+{
+    frame WTFB { light BIGBLUETORCH }
+}
+
+object AlienTorch2
+{
+    frame WTFP { light BIGPURPLETORCH }
+}
+
+object AlienTorch3
+{
+    frame WTFG { light BIGGREENTORCH }
+}
