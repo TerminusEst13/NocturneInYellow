@@ -13,6 +13,9 @@ InInventory InGame, 1
     InInventory EquippedAntiqueCoin, 1 { DrawImage "ANTICOIN", 5, 11; }
     InInventory EquippedPallidMask, 1 { DrawImage "PALDMASK", 5, 11; }
     InInventory EquippedBurialBelt, 1 { DrawImage "BURLBELT", 5, 11; }
+    InInventory RedCard, 1 { DrawImage "HKEYA0", 20, 33; }
+    InInventory YellowCard, 1 { DrawImage "HKEYB0", 25, 33; }
+    InInventory BlueCard, 1 { DrawImage "HKEYC0", 30, 33; }
     DrawBar "HLTHBFUL", "HLTHBEMP", Health, horizontal, interpolate (5), 25, 16;
     DrawBar "STAMBFUL", "STAMBEMP", RunningStamina, horizontal, interpolate (5), 25, 28;
 
@@ -22,6 +25,9 @@ InInventory InGame, 1
         IsSelected not "Cursed Vintovka Mosina" { DrawBar "AMMOBFUL", "AMMOBEMP", BowMana, horizontal, reverse, interpolate (5), 197, 19; }
         IsSelected "Cursed Vintovka Mosina" { DrawBar "BULLTBAR", "AMMOBEMP", CursedNagantAmmo, horizontal, reverse, 197, 19; }
     }
+    InInventory RedSkull, 1 { DrawImage "HKEYD0", 267, 31; }
+    InInventory YellowSkull, 1 { DrawImage "HKEYE0", 277, 31; }
+    InInventory BlueSkull, 1 { DrawImage "HKEYF0", 287, 31; }
     InInventory GrenadeAmmoCounter, 1 { DrawImage "GRNDEMPT", 288, 30; }
     InInventory GrenadeAmmoCounter, 2 { DrawImage "GRNDEMPT", 283, 30; }
     InInventory GrenadeAmmoCounter, 3 { DrawImage "GRNDEMPT", 278, 30; }
@@ -74,6 +80,9 @@ InInventory InGame, 1
     InInventory EquippedAntiqueCoin, 1 { DrawImage "ANTICOIN", -10, 11; }
     InInventory EquippedPallidMask, 1 { DrawImage "PALDMASK", -10, 11; }
     InInventory EquippedBurialBelt, 1 { DrawImage "BURLBELT", -10, 11; }
+    InInventory RedCard, 1 { DrawImage "HKEYA0", 5, 33; }
+    InInventory YellowCard, 1 { DrawImage "HKEYB0", 15, 33; }
+    InInventory BlueCard, 1 { DrawImage "HKEYC0", 25, 33; }
     DrawBar "HLTHBFUL", "HLTHBEMP", Health, horizontal, interpolate (5), 10, 16;
     DrawBar "STAMBFUL", "STAMBEMP", RunningStamina, horizontal, interpolate (5), 10, 28;
 
@@ -83,6 +92,9 @@ InInventory InGame, 1
         IsSelected not "Cursed Vintovka Mosina" { DrawBar "AMMOBFUL", "AMMOBEMP", BowMana, horizontal, reverse, interpolate (5), 211, 19; }
         IsSelected "Cursed Vintovka Mosina" { DrawBar "BULLTBAR", "AMMOBEMP", CursedNagantAmmo, horizontal, reverse, 211, 19; }
     }
+    InInventory RedSkull, 1 { DrawImage "HKEYD0", 281, 31; }
+    InInventory YellowSkull, 1 { DrawImage "HKEYE0", 291, 31; }
+    InInventory BlueSkull, 1 { DrawImage "HKEYF0", 301, 31; }
     InInventory GrenadeAmmoCounter, 1 { DrawImage "GRNDEMPT", 302, 30; }
     InInventory GrenadeAmmoCounter, 2 { DrawImage "GRNDEMPT", 297, 30; }
     InInventory GrenadeAmmoCounter, 3 { DrawImage "GRNDEMPT", 292, 30; }
@@ -135,6 +147,9 @@ InInventory InGame, 1
     InInventory EquippedAntiqueCoin, 1 { DrawImage "ANTICOIN", -25, 11; }
     InInventory EquippedPallidMask, 1 { DrawImage "PALDMASK", -25, 11; }
     InInventory EquippedBurialBelt, 1 { DrawImage "BURLBELT", -25, 11; }
+    InInventory RedCard, 1 { DrawImage "HKEYA0", -10, 33; }
+    InInventory YellowCard, 1 { DrawImage "HKEYB0", 0, 33; }
+    InInventory BlueCard, 1 { DrawImage "HKEYC0", 10, 33; }
     DrawBar "HLTHBFUL", "HLTHBEMP", Health, horizontal, interpolate (5), -5, 16;
     DrawBar "STAMBFUL", "STAMBEMP", RunningStamina, horizontal, interpolate (5), -5, 28;
 
@@ -144,6 +159,205 @@ InInventory InGame, 1
         IsSelected not "Cursed Vintovka Mosina" { DrawBar "AMMOBFUL", "AMMOBEMP", BowMana, horizontal, reverse, interpolate (5), 225, 19; }
         IsSelected "Cursed Vintovka Mosina" { DrawBar "BULLTBAR", "AMMOBEMP", CursedNagantAmmo, horizontal, reverse, 225, 19; }
     }
+    InInventory RedSkull, 1 { DrawImage "HKEYD0", 295, 31; }
+    InInventory YellowSkull, 1 { DrawImage "HKEYE0", 305, 31; }
+    InInventory BlueSkull, 1 { DrawImage "HKEYF0", 315, 31; }
+    InInventory GrenadeAmmoCounter, 1 { DrawImage "GRNDEMPT", 316, 30; }
+    InInventory GrenadeAmmoCounter, 2 { DrawImage "GRNDEMPT", 311, 30; }
+    InInventory GrenadeAmmoCounter, 3 { DrawImage "GRNDEMPT", 306, 30; }
+    InInventory GrenadeAmmoCounter, 4 { DrawImage "GRNDEMPT", 301, 30; }
+    InInventory GrenadeAmmoCounter, 5 { DrawImage "GRNDEMPT", 296, 30; }
+    InInventory GrenadeAmmoCounter, 6 { DrawImage "GRNDEMPT", 291, 30; }
+    InInventory GrenadeAmmoCounter, 7 { DrawImage "GRNDEMPT", 286, 30; }
+    InInventory GrenadeAmmoCounter, 8 { DrawImage "GRNDEMPT", 281, 30; }
+    InInventory GrenadeAmmoCounter, 9 { DrawImage "GRNDEMPT", 276, 30; }
+    InInventory GrenadeAmmoCounter, 10 { DrawImage "GRNDEMPT", 271, 30; }
+    InInventory GrenadeAmmoCounter, 11 { DrawImage "GRNDEMPT", 266, 30; }
+    InInventory GrenadeAmmoCounter, 12 { DrawImage "GRNDEMPT", 261, 30; }
+    InInventory GrenadeAmmoCounter, 13 { DrawImage "GRNDEMPT", 256, 30; }
+    InInventory GrenadeAmmoCounter, 14 { DrawImage "GRNDEMPT", 251, 30; }
+    InInventory GrenadeAmmoCounter, 15 { DrawImage "GRNDEMPT", 246, 30; }
+    InInventory GrenadeAmmoCounter, 16 { DrawImage "GRNDEMPT", 241, 30; }
+    InInventory GrenadeAmmoCounter, 17 { DrawImage "GRNDEMPT", 236, 30; }
+    InInventory GrenadeAmmoCounter, 18 { DrawImage "GRNDEMPT", 231, 30; }
+    InInventory GrenadeAmmoCounter, 19 { DrawImage "GRNDEMPT", 226, 30; }
+    InInventory GrenadeAmmoCounter, 20 { DrawImage "GRNDEMPT", 221, 30; }
+    InInventory GrenadeAmmo, 1 { DrawImage "GRNDFULL", 316, 30; }
+    InInventory GrenadeAmmo, 2 { DrawImage "GRNDFULL", 311, 30; }
+    InInventory GrenadeAmmo, 3 { DrawImage "GRNDFULL", 306, 30; }
+    InInventory GrenadeAmmo, 4 { DrawImage "GRNDFULL", 301, 30; }
+    InInventory GrenadeAmmo, 5 { DrawImage "GRNDFULL", 296, 30; }
+    InInventory GrenadeAmmo, 6 { DrawImage "GRNDFULL", 291, 30; }
+    InInventory GrenadeAmmo, 7 { DrawImage "GRNDFULL", 286, 30; }
+    InInventory GrenadeAmmo, 8 { DrawImage "GRNDFULL", 281, 30; }
+    InInventory GrenadeAmmo, 9 { DrawImage "GRNDFULL", 276, 30; }
+    InInventory GrenadeAmmo, 10 { DrawImage "GRNDFULL", 271, 30; }
+    InInventory GrenadeAmmo, 11 { DrawImage "GRNDFULL", 266, 30; }
+    InInventory GrenadeAmmo, 12 { DrawImage "GRNDFULL", 261, 30; }
+    InInventory GrenadeAmmo, 13 { DrawImage "GRNDFULL", 256, 30; }
+    InInventory GrenadeAmmo, 14 { DrawImage "GRNDFULL", 251, 30; }
+    InInventory GrenadeAmmo, 15 { DrawImage "GRNDFULL", 246, 30; }
+    InInventory GrenadeAmmo, 16 { DrawImage "GRNDFULL", 241, 30; }
+    InInventory GrenadeAmmo, 17 { DrawImage "GRNDFULL", 236, 30; }
+    InInventory GrenadeAmmo, 18 { DrawImage "GRNDFULL", 231, 30; }
+    InInventory GrenadeAmmo, 19 { DrawImage "GRNDFULL", 226, 30; }
+    InInventory GrenadeAmmo, 20 { DrawImage "GRNDFULL", 221, 30; }
+  }
+}
+}
+
+statusbar Fullscreen, forcescaled
+{
+InInventory InGame, 1
+{
+  AspectRatio "4:3"
+  {
+    InInventory EquippedCrucifix, 1 { DrawImage "CRUCIFIX", 5, 11; }
+    InInventory EquippedDragonScale, 1 { DrawImage "DRAGNSCL", 5, 11; }
+    InInventory EquippedWhiteCoal, 1 { DrawImage "CHARCOAL", 5, 11; }
+    InInventory EquippedAntiqueCoin, 1 { DrawImage "ANTICOIN", 5, 11; }
+    InInventory EquippedPallidMask, 1 { DrawImage "PALDMASK", 5, 11; }
+    InInventory EquippedBurialBelt, 1 { DrawImage "BURLBELT", 5, 11; }
+    InInventory RedCard, 1 { DrawImage "HKEYA0", 20, 33; }
+    InInventory YellowCard, 1 { DrawImage "HKEYB0", 25, 33; }
+    InInventory BlueCard, 1 { DrawImage "HKEYC0", 30, 33; }
+    DrawBar "HLTHBFUL", "HLTHBEMP", Health, horizontal, interpolate (5), 25, 16;
+    DrawBar "STAMBFUL", "STAMBEMP", RunningStamina, horizontal, interpolate (5), 25, 28;
+
+    InInventory GotArtifact, 1
+    {
+        IsSelected not "Cursed Vintovka Mosina" { DrawBar "AMMOBFUL", "AMMOBEMP", BowMana, horizontal, reverse, interpolate (5), 197, 19; }
+        IsSelected "Cursed Vintovka Mosina" { DrawBar "BULLTBAR", "AMMOBEMP", CursedNagantAmmo, horizontal, reverse, 197, 19; }
+    }
+    InInventory RedSkull, 1 { DrawImage "HKEYD0", 267, 31; }
+    InInventory YellowSkull, 1 { DrawImage "HKEYE0", 277, 31; }
+    InInventory BlueSkull, 1 { DrawImage "HKEYF0", 287, 31; }
+    InInventory GrenadeAmmoCounter, 1 { DrawImage "GRNDEMPT", 288, 30; }
+    InInventory GrenadeAmmoCounter, 2 { DrawImage "GRNDEMPT", 283, 30; }
+    InInventory GrenadeAmmoCounter, 3 { DrawImage "GRNDEMPT", 278, 30; }
+    InInventory GrenadeAmmoCounter, 4 { DrawImage "GRNDEMPT", 273, 30; }
+    InInventory GrenadeAmmoCounter, 5 { DrawImage "GRNDEMPT", 268, 30; }
+    InInventory GrenadeAmmoCounter, 6 { DrawImage "GRNDEMPT", 263, 30; }
+    InInventory GrenadeAmmoCounter, 7 { DrawImage "GRNDEMPT", 258, 30; }
+    InInventory GrenadeAmmoCounter, 8 { DrawImage "GRNDEMPT", 253, 30; }
+    InInventory GrenadeAmmoCounter, 9 { DrawImage "GRNDEMPT", 248, 30; }
+    InInventory GrenadeAmmoCounter, 10 { DrawImage "GRNDEMPT", 243, 30; }
+    InInventory GrenadeAmmoCounter, 11 { DrawImage "GRNDEMPT", 238, 30; }
+    InInventory GrenadeAmmoCounter, 12 { DrawImage "GRNDEMPT", 233, 30; }
+    InInventory GrenadeAmmoCounter, 13 { DrawImage "GRNDEMPT", 228, 30; }
+    InInventory GrenadeAmmoCounter, 14 { DrawImage "GRNDEMPT", 223, 30; }
+    InInventory GrenadeAmmoCounter, 15 { DrawImage "GRNDEMPT", 218, 30; }
+    InInventory GrenadeAmmoCounter, 16 { DrawImage "GRNDEMPT", 213, 30; }
+    InInventory GrenadeAmmoCounter, 17 { DrawImage "GRNDEMPT", 208, 30; }
+    InInventory GrenadeAmmoCounter, 18 { DrawImage "GRNDEMPT", 203, 30; }
+    InInventory GrenadeAmmoCounter, 19 { DrawImage "GRNDEMPT", 198, 30; }
+    InInventory GrenadeAmmoCounter, 20 { DrawImage "GRNDEMPT", 193, 30; }
+    InInventory GrenadeAmmo, 1 { DrawImage "GRNDFULL", 288, 30; }
+    InInventory GrenadeAmmo, 2 { DrawImage "GRNDFULL", 283, 30; }
+    InInventory GrenadeAmmo, 3 { DrawImage "GRNDFULL", 278, 30; }
+    InInventory GrenadeAmmo, 4 { DrawImage "GRNDFULL", 273, 30; }
+    InInventory GrenadeAmmo, 5 { DrawImage "GRNDFULL", 268, 30; }
+    InInventory GrenadeAmmo, 6 { DrawImage "GRNDFULL", 263, 30; }
+    InInventory GrenadeAmmo, 7 { DrawImage "GRNDFULL", 258, 30; }
+    InInventory GrenadeAmmo, 8 { DrawImage "GRNDFULL", 253, 30; }
+    InInventory GrenadeAmmo, 9 { DrawImage "GRNDFULL", 248, 30; }
+    InInventory GrenadeAmmo, 10 { DrawImage "GRNDFULL", 243, 30; }
+    InInventory GrenadeAmmo, 11 { DrawImage "GRNDFULL", 238, 30; }
+    InInventory GrenadeAmmo, 12 { DrawImage "GRNDFULL", 233, 30; }
+    InInventory GrenadeAmmo, 13 { DrawImage "GRNDFULL", 228, 30; }
+    InInventory GrenadeAmmo, 14 { DrawImage "GRNDFULL", 223, 30; }
+    InInventory GrenadeAmmo, 15 { DrawImage "GRNDFULL", 218, 30; }
+    InInventory GrenadeAmmo, 16 { DrawImage "GRNDFULL", 213, 30; }
+    InInventory GrenadeAmmo, 17 { DrawImage "GRNDFULL", 208, 30; }
+    InInventory GrenadeAmmo, 18 { DrawImage "GRNDFULL", 203, 30; }
+    InInventory GrenadeAmmo, 19 { DrawImage "GRNDFULL", 198, 30; }
+    InInventory GrenadeAmmo, 20 { DrawImage "GRNDFULL", 193, 30; }
+  }
+  AspectRatio "16:10"
+  {
+    InInventory EquippedCrucifix, 1 { DrawImage "CRUCIFIX", -10, 11; }
+    InInventory EquippedDragonScale, 1 { DrawImage "DRAGNSCL", -10, 11; }
+    InInventory EquippedWhiteCoal, 1 { DrawImage "CHARCOAL", -10, 11; }
+    InInventory EquippedAntiqueCoin, 1 { DrawImage "ANTICOIN", -10, 11; }
+    InInventory EquippedPallidMask, 1 { DrawImage "PALDMASK", -10, 11; }
+    InInventory EquippedBurialBelt, 1 { DrawImage "BURLBELT", -10, 11; }
+    InInventory RedCard, 1 { DrawImage "HKEYA0", 5, 33; }
+    InInventory YellowCard, 1 { DrawImage "HKEYB0", 15, 33; }
+    InInventory BlueCard, 1 { DrawImage "HKEYC0", 25, 33; }
+    DrawBar "HLTHBFUL", "HLTHBEMP", Health, horizontal, interpolate (5), 10, 16;
+    DrawBar "STAMBFUL", "STAMBEMP", RunningStamina, horizontal, interpolate (5), 10, 28;
+
+    InInventory GotArtifact, 1
+    {
+        IsSelected not "Cursed Vintovka Mosina" { DrawBar "AMMOBFUL", "AMMOBEMP", BowMana, horizontal, reverse, interpolate (5), 211, 19; }
+        IsSelected "Cursed Vintovka Mosina" { DrawBar "BULLTBAR", "AMMOBEMP", CursedNagantAmmo, horizontal, reverse, 211, 19; }
+    }
+    InInventory RedSkull, 1 { DrawImage "HKEYD0", 281, 31; }
+    InInventory YellowSkull, 1 { DrawImage "HKEYE0", 291, 31; }
+    InInventory BlueSkull, 1 { DrawImage "HKEYF0", 301, 31; }
+    InInventory GrenadeAmmoCounter, 1 { DrawImage "GRNDEMPT", 302, 30; }
+    InInventory GrenadeAmmoCounter, 2 { DrawImage "GRNDEMPT", 297, 30; }
+    InInventory GrenadeAmmoCounter, 3 { DrawImage "GRNDEMPT", 292, 30; }
+    InInventory GrenadeAmmoCounter, 4 { DrawImage "GRNDEMPT", 287, 30; }
+    InInventory GrenadeAmmoCounter, 5 { DrawImage "GRNDEMPT", 282, 30; }
+    InInventory GrenadeAmmoCounter, 6 { DrawImage "GRNDEMPT", 277, 30; }
+    InInventory GrenadeAmmoCounter, 7 { DrawImage "GRNDEMPT", 272, 30; }
+    InInventory GrenadeAmmoCounter, 8 { DrawImage "GRNDEMPT", 267, 30; }
+    InInventory GrenadeAmmoCounter, 9 { DrawImage "GRNDEMPT", 262, 30; }
+    InInventory GrenadeAmmoCounter, 10 { DrawImage "GRNDEMPT", 257, 30; }
+    InInventory GrenadeAmmoCounter, 11 { DrawImage "GRNDEMPT", 252, 30; }
+    InInventory GrenadeAmmoCounter, 12 { DrawImage "GRNDEMPT", 247, 30; }
+    InInventory GrenadeAmmoCounter, 13 { DrawImage "GRNDEMPT", 242, 30; }
+    InInventory GrenadeAmmoCounter, 14 { DrawImage "GRNDEMPT", 237, 30; }
+    InInventory GrenadeAmmoCounter, 15 { DrawImage "GRNDEMPT", 232, 30; }
+    InInventory GrenadeAmmoCounter, 16 { DrawImage "GRNDEMPT", 227, 30; }
+    InInventory GrenadeAmmoCounter, 17 { DrawImage "GRNDEMPT", 222, 30; }
+    InInventory GrenadeAmmoCounter, 18 { DrawImage "GRNDEMPT", 217, 30; }
+    InInventory GrenadeAmmoCounter, 19 { DrawImage "GRNDEMPT", 212, 30; }
+    InInventory GrenadeAmmoCounter, 20 { DrawImage "GRNDEMPT", 207, 30; }
+    InInventory GrenadeAmmo, 1 { DrawImage "GRNDFULL", 302, 30; }
+    InInventory GrenadeAmmo, 2 { DrawImage "GRNDFULL", 297, 30; }
+    InInventory GrenadeAmmo, 3 { DrawImage "GRNDFULL", 292, 30; }
+    InInventory GrenadeAmmo, 4 { DrawImage "GRNDFULL", 287, 30; }
+    InInventory GrenadeAmmo, 5 { DrawImage "GRNDFULL", 282, 30; }
+    InInventory GrenadeAmmo, 6 { DrawImage "GRNDFULL", 277, 30; }
+    InInventory GrenadeAmmo, 7 { DrawImage "GRNDFULL", 272, 30; }
+    InInventory GrenadeAmmo, 8 { DrawImage "GRNDFULL", 267, 30; }
+    InInventory GrenadeAmmo, 9 { DrawImage "GRNDFULL", 262, 30; }
+    InInventory GrenadeAmmo, 10 { DrawImage "GRNDFULL", 257, 30; }
+    InInventory GrenadeAmmo, 11 { DrawImage "GRNDFULL", 252, 30; }
+    InInventory GrenadeAmmo, 12 { DrawImage "GRNDFULL", 247, 30; }
+    InInventory GrenadeAmmo, 13 { DrawImage "GRNDFULL", 242, 30; }
+    InInventory GrenadeAmmo, 14 { DrawImage "GRNDFULL", 237, 30; }
+    InInventory GrenadeAmmo, 15 { DrawImage "GRNDFULL", 232, 30; }
+    InInventory GrenadeAmmo, 16 { DrawImage "GRNDFULL", 227, 30; }
+    InInventory GrenadeAmmo, 17 { DrawImage "GRNDFULL", 222, 30; }
+    InInventory GrenadeAmmo, 18 { DrawImage "GRNDFULL", 217, 30; }
+    InInventory GrenadeAmmo, 19 { DrawImage "GRNDFULL", 212, 30; }
+    InInventory GrenadeAmmo, 20 { DrawImage "GRNDFULL", 207, 30; }
+  }
+  AspectRatio "16:9"
+  {
+    InInventory EquippedCrucifix, 1 { DrawImage "CRUCIFIX", -25, 11; }
+    InInventory EquippedDragonScale, 1 { DrawImage "DRAGNSCL", -25, 11; }
+    InInventory EquippedWhiteCoal, 1 { DrawImage "CHARCOAL", -25, 11; }
+    InInventory EquippedAntiqueCoin, 1 { DrawImage "ANTICOIN", -25, 11; }
+    InInventory EquippedPallidMask, 1 { DrawImage "PALDMASK", -25, 11; }
+    InInventory EquippedBurialBelt, 1 { DrawImage "BURLBELT", -25, 11; }
+    InInventory RedCard, 1 { DrawImage "HKEYA0", -10, 33; }
+    InInventory YellowCard, 1 { DrawImage "HKEYB0", 0, 33; }
+    InInventory BlueCard, 1 { DrawImage "HKEYC0", 10, 33; }
+    DrawBar "HLTHBFUL", "HLTHBEMP", Health, horizontal, interpolate (5), -5, 16;
+    DrawBar "STAMBFUL", "STAMBEMP", RunningStamina, horizontal, interpolate (5), -5, 28;
+
+    InInventory GotArtifact, 1
+    {
+        IsSelected not "Cursed Vintovka Mosina" { DrawBar "AMMOBFUL", "AMMOBEMP", BowMana, horizontal, reverse, interpolate (5), 225, 19; }
+        IsSelected "Cursed Vintovka Mosina" { DrawBar "BULLTBAR", "AMMOBEMP", CursedNagantAmmo, horizontal, reverse, 225, 19; }
+    }
+    InInventory RedSkull, 1 { DrawImage "HKEYD0", 295, 31; }
+    InInventory YellowSkull, 1 { DrawImage "HKEYE0", 305, 31; }
+    InInventory BlueSkull, 1 { DrawImage "HKEYF0", 315, 31; }
     InInventory GrenadeAmmoCounter, 1 { DrawImage "GRNDEMPT", 316, 30; }
     InInventory GrenadeAmmoCounter, 2 { DrawImage "GRNDEMPT", 311, 30; }
     InInventory GrenadeAmmoCounter, 3 { DrawImage "GRNDEMPT", 306, 30; }
