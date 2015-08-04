@@ -30,7 +30,7 @@ Script 518 (Void)
     SetHUDSize(480, 280, TRUE);
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
     HudMessage(l:"Use to Continue | Sprint to Exit"; HUDMSG_PLAIN, 12, CR_GOLD, 230.0, 10.0, 0);
-    HudMessage(l:"What? Where am I...?\nThese colors, these lights. It's...beautiful."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"What? Where am I?\nThose colors, those lights. It's.. beautiful."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
    
     for (i = 0; i < 350; i++)
     {
@@ -40,7 +40,7 @@ Script 518 (Void)
     }
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
-    HudMessage(l:"Everything feels so different. So alien.\nAnd yet, so wrong..."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"Everything feels so different. So alien.\nAnd yet, so wrong.."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
     
@@ -52,7 +52,7 @@ Script 518 (Void)
     }
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
-    HudMessage(l:"...F-focus! Focus. What can I do here?"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"F-focus! Focus. What can I do here?"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
     
@@ -131,7 +131,7 @@ Script 519 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     //HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"I saw it and I flinched.\nIt spoke and I shuddered."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"I saw it and I flinched.\nIt spoke and I shuddered at its call."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
     
@@ -152,7 +152,7 @@ Script 519 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     //HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"There's a lot of questions as to what the true nature of a man is.\nHow to find out who a person truly is, what their character is."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"There are a lot of questions as to what the true nature of a man is.\nHow to find out who a person truly is, what their character is."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -178,7 +178,7 @@ Script 519 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     //HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"That's when you know who you truly are."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"That is when you finally know who you truly are."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -225,7 +225,7 @@ Script 519 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     //HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"Maybe I'm a fighter, after all."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"Maybe I am a warrior after all."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
 
@@ -280,7 +280,7 @@ Script 520 (Void)
     SetHUDSize(480, 280, TRUE);
     //HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
     HudMessage(l:"Use to Continue | Sprint to Exit"; HUDMSG_PLAIN, 12, CR_GOLD, 230.0, 10.0, 0);
-    HudMessage(l:"I don't know what happened after that last arrow."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"I don't know what happened after that final blow."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
    
     for (i = 0; i < 350; i++)
     {
