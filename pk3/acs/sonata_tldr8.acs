@@ -97,7 +97,7 @@ Script 522 (Void)
     HudMessage(l:"Urghh...\nI...am alive?"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
-    
+
     for (i = 0; i < 350; i++)
     {
         if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
@@ -110,7 +110,7 @@ Script 522 (Void)
     HudMessage(l:"Yes."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
-    
+
     for (i = 0; i < 350; i++)
     {
         if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
@@ -124,7 +124,7 @@ Script 522 (Void)
     HudMessage(l:"Where is it? Where did it go?!"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
-   
+
     for (i = 0; i < 350; i++)
     {
         if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
@@ -137,7 +137,7 @@ Script 522 (Void)
     HudMessage(l:"It's gone, to...somewhere. So I pulled you back.\nIt was not your time to learn what lies on the other side, just yet."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
-   
+
     for (i = 0; i < 350; i++)
     {
         if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
@@ -150,7 +150,7 @@ Script 522 (Void)
     HudMessage(l:"What? Gone? Did I...did I defeat it?"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
-   
+
     for (i = 0; i < 350; i++)
     {
         if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
@@ -164,7 +164,7 @@ Script 522 (Void)
     HudMessage(l:"I don't know."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
-   
+
     for (i = 0; i < 350; i++)
     {
         if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
@@ -177,7 +177,7 @@ Script 522 (Void)
     HudMessage(l:"I doubt that you overpowered it. Perhaps you dissuaded it?\nOr perhaps you simply inconvenienced it. Perhaps like the buzzing of an insect, causing one to recoil."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
-   
+
     for (i = 0; i < 350; i++)
     {
         if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
@@ -507,7 +507,7 @@ Script 523 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"Yeah. I guess so.\nUntil the next time my blood starts burning again."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"Yeah. I guess so.\nUntil we meet again."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
