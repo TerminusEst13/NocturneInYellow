@@ -40,7 +40,7 @@ Script 509 (Void)
     }
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
-    HudMessage(l:"But what was all this about not having a choice?"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"But what was all that talk about not having a choice?"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
     
@@ -52,7 +52,7 @@ Script 509 (Void)
     }
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
-    HudMessage(l:"Whatever strange power is abound..\nDoes it truly have this firm a grasp over everything here?"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"Whatever strange power is around...\nDoes it really have this firm a grasp over everything here?"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
     
@@ -131,7 +131,7 @@ Script 510 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"KOSCHEI"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"Foolish mortal. I have been watching you prancing about the castle, chasing your tail for hours.\nWhat are you searching for, fool?"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"Foolish mortal. I have been watching you prancing about the castle, chasing your tail for hours.\nWhat are you searching for, human?"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
     
@@ -183,7 +183,7 @@ Script 510 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"You sound strangely delighted to be his will-less thrall."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"You sound strangely delighted to be a thrall."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -209,7 +209,7 @@ Script 510 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"I have been told that everyone on this island is bound to his will, forced to serve him without choice.\nIs this true?"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"I was told that everyone on this island is bound to his will, forced to serve him without choice.\nIs this true?"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -222,7 +222,7 @@ Script 510 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"KOSCHEI"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"Your foolish ears pick up some intriguing tidbits, do they not?\nYour hearing does not lie to you.\nThe dead rise to serve as animals, blinded by rage and forced to fight.\nAnd then there are us, with our functional minds..."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"Your ears pick up some intriguing tidbits, yes? Indeed, they do not lie to you!\nThe dead rise to serve as animals, blinded by rage and forced to fight. The creatures of darkness are pulled by strange chains, drug along to our lines.\nAnd then there are us, with our functional minds..."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -235,7 +235,7 @@ Script 510 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"KOSCHEI"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"We are driven by something else. Something more.. primal."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"We are driven by something else. Something more...primal."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -248,7 +248,7 @@ Script 510 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"Please, tell me more of these desires."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"Primal? Please, tell me more."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -274,7 +274,7 @@ Script 510 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"Oh come on - not again!"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"Oh come on, not again!"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -341,7 +341,7 @@ Script 511 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"KOSCHEI"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"Ahaha! Yes, very good!\nYes.. you seem extremely capable.."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"Ahaha! Yes, very good!\nYes...you seem extremely capable..."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
     
@@ -355,7 +355,7 @@ Script 511 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"Quit with the games! Do you think this is a time and place for games?"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"Quit with the games! Do you think this is a time and place for play?"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
     
@@ -369,7 +369,7 @@ Script 511 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"KOSCHEI"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"Oh, my friend, please! No, not at all, no no no. I should wish this was just for amusement.."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"Oh, my friend, please! No, not at all, no no no. I should wish this was just for amusement..."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -397,7 +397,7 @@ Script 511 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"I am all ears."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"I'm all ears."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -453,7 +453,7 @@ Script 511 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"Some sort of compulsion? A threat, a true name, mind control - perhaps?"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"Some sort of compulsion? A threat, a true name, mind control, perhaps?"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -495,7 +495,7 @@ Script 511 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"..You? Afraid? That's ridiculous. You just fought me as if it was for good sport!"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"...You? Afraid? That's ridiculous. You just fought me as if it was for good sport!"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -565,7 +565,7 @@ Script 511 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"KOSCHEI"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"I swore that I would serve it. Anything to keep that terrible gaze away.\nAnd it took me here to do its bidding. And now here you are, too.\nBut interestingly enough.. you came of your own accord."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"I swore that I would serve it. Anything to keep that terrible gaze away.\nAnd it took me here to do its bidding. And now here you are, too.\nBut interestingly enough...you came of your own accord."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -579,7 +579,7 @@ Script 511 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"I didn't want to. I didn't want to come at all.\nYet a burning desire to know the end of this flows through my veins."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"I didn't want to. I didn't want to come at all.\nYet a fire flowed through my veins, pushing me on to the end of this."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -593,7 +593,7 @@ Script 511 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"KOSCHEI"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"Yes, and here you are now. Whether you want it or not.\nThough this boiling blood of yours is especially interesting, with how far it has gotten you.\nI wanted to see how you would fare in the face of overwhelming power, and yet - my power was not so overwhelming."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"Yes, and here you are now, thanks to your boiling blood. It drives you on whether you want it or not, and it has driven you so far, too!\nI wanted to see how your tenacity would fare in the face of overwhelming power, and yet my power was not so overwhelming."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -635,7 +635,7 @@ Script 511 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"KOSCHEI"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"Simply put, I want out of here, so I seek a distraction to throw at the master.\nIf you can face my power, then that means.. that you may have a chance against him."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"Simply put, I wish out of here, so I seek a distraction to throw at the master.\nIf you can face my power, then that means...that you may have a chance against him."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -649,7 +649,7 @@ Script 511 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"KOSCHEI"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"I would give anything to never see that terrible gaze again, that terrible stare that obliterates all rational thought.\nBut if nothing else, you are.. eerily tenacious. Perhaps even under his eldritch gaze, you would remain steadfast."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"I would give anything to never see that terrible gaze again, that terrible stare that obliterates all rational thought.\nBut if nothing else, you are...eerily tenacious. Perhaps even under his eldritch gaze, you would remain steadfast."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -691,7 +691,64 @@ Script 511 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"I suppose so, though I am not entirely certain."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"I'm not entirely certain. But if you'd call him eldritch, then I have a few guesses."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+
+    Delay(10);
+   
+    for (i = 0; i < 350; i++)
+    {
+        if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
+        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
+        Delay(1);
+    }
+
+    SetHUDSize(480, 280, TRUE);
+    SetFont("SMALLFONT");
+    HudMessage(l:"KOSCHEI"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
+    HudMessage(l:"And yet, you're still going to push on."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+
+    Delay(10);
+   
+    for (i = 0; i < 350; i++)
+    {
+        if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
+        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
+        Delay(1);
+    }
+
+    SetHUDSize(480, 280, TRUE);
+    SetFont("SMALLFONT");
+    HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
+    HudMessage(l:"I've no choice."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+
+    Delay(10);
+   
+    for (i = 0; i < 350; i++)
+    {
+        if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
+        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
+        Delay(1);
+    }
+
+    SetHUDSize(480, 280, TRUE);
+    SetFont("SMALLFONT");
+    HudMessage(l:"KOSCHEI"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
+    HudMessage(l:"Ahaha, of course not. Your blood pushes you onwards, yes? Not that it's any concern of mine, I suppose.\nBut I will confess how interesting it is that our steps would intertwine on such similar paths."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+
+    Delay(10);
+   
+    for (i = 0; i < 350; i++)
+    {
+        if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
+        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
+        Delay(1);
+    }
+
+    SetHUDSize(480, 280, TRUE);
+    SetFont("SMALLFONT");
+    HudMessage(l:"KOSCHEI"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
+    HudMessage(l:"Wanting nothing to do with this situation, and yet thrown in anyway even as the walls crumble around you.\nPushed forward down the path, with no conscious desire to keep on going and yet a stubborn persistence dragging your feet onwards nonetheless."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    // NOT THAT WE'D KNOW ANYTHING ABOUT THIS IN THIS MONTH OF "WHY THE FUCK ARE WE DOING THIS", NOPE
 
     Delay(10);
    

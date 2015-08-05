@@ -30,7 +30,7 @@ Script 506 (Void)
     SetHUDSize(480, 280, TRUE);
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
     HudMessage(l:"Use to Continue | Sprint to Exit"; HUDMSG_PLAIN, 12, CR_GOLD, 230.0, 10.0, 0);
-    HudMessage(l:"And yet here I go.\nGoing onwards.\nThrough the coward's muppets."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"And yet here I am, still going onwards, through the army of damned puppets."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
    
     for (i = 0; i < 350; i++)
     {
@@ -40,7 +40,7 @@ Script 506 (Void)
     }
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
-    HudMessage(l:"Who am I kidding?\nI am a fool.\nI am a dead, dead fool."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"I'm a fool.\nI'm dead and a fool."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
     
@@ -106,7 +106,7 @@ Script 507 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"I don't belong, no. But yet I find myself unable to just run away."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"I don't belong, no. But I find myself not able to just run away."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
     
@@ -145,7 +145,7 @@ Script 507 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"What? No! There is no need for fighting! We can talk this over."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"What? No! There's no need for fighting! We can talk this over!"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -184,7 +184,7 @@ Script 507 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"No. Everyone has a choice. We can choose our lot in life, we choose what to do -\nand we choose how to live our lives."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"No. Everyone has a choice. We can choose our lot in life, we choose what to do, and we choose how to live our lives."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -197,7 +197,7 @@ Script 507 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"DOMOVOI"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"Do ye think yer decisions matter in the face of a storm?\nYe can say ye won't get swept away,\nbut words will fall on deaf ears when wind and rain lash in their blind rage."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"Do ye think yer decisions matter in the face of a storm?\nYe can say ye won't get swept away,\nbut the wind and rain lash out in blind rage anyway."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -372,7 +372,7 @@ Script 508 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"I did not intend this to end this way. Why must it end so?"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"I didn't want it to end this way. Why does it have to?"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -428,7 +428,7 @@ Script 508 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"The world is a cruel mistress, but your master is crueler yet."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"The world may be a cruel mistress, but your master is crueler yet."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -442,7 +442,7 @@ Script 508 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"..Ah. He's gone."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"...Ah. He's gone."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -453,10 +453,10 @@ Script 508 (Void)
         Delay(1);
     }
 
+    HudMessage(l:"I'm sorry it had to end this way.\nMay your spirit rest in peace, good guardian of these fallen lands."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"I am sorry it had to end this way.\nMay your spirit rest in peace,\ngood guardian of these fallen lands."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    

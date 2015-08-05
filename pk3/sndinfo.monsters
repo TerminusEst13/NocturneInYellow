@@ -1,6 +1,11 @@
 // MONSTERS
 // =================
 
+death/splode              DETHSPLD // Taken from the General Series 6000
+death/splode2             DETHSPL2 // Mixed from the General Series 6000
+$limit death/splode 0
+$limit death/splode2 0
+
 // Nezhit
 nezhit/see                NEZHSITE // Mixed from Huminaatio's Zombie breathing
 nezhit/idle               NEZHIDLE // Mixed from ArriGD's Zombie Roar 7 and soykevin's Zombie Attack

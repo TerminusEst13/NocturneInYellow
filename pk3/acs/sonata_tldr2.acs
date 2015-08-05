@@ -30,7 +30,7 @@ Script 503 (Void)
     SetHUDSize(480, 280, TRUE);
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
     HudMessage(l:"Use to Continue | Sprint to Exit"; HUDMSG_PLAIN, 12, CR_GOLD, 230.0, 10.0, 0);
-    HudMessage(l:"Goodness, what am I doing?"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"God, what am I doing?"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
    
     for (i = 0; i < 350; i++)
     {
@@ -40,7 +40,7 @@ Script 503 (Void)
     }
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
-    HudMessage(l:"She is right. I am no warrior, I cannot fight.\nI stand no chance against that kind of power."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"She's right. I'm no warrior, I can't fight.\nI don't stand a chance against that kind of power."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
     
@@ -52,7 +52,7 @@ Script 503 (Void)
     }
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
-    HudMessage(l:"But there is no turning back for me now."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"But there's no turning back for me now."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
     
@@ -64,7 +64,7 @@ Script 503 (Void)
     }
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
-    HudMessage(l:"Pfft. I am a dead man.\nI am so, so dead."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"I'm dead. I am so, so dead."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
     
@@ -119,7 +119,7 @@ Script 504 (Void)
     SetHUDSize(480, 280, TRUE);
     HudMessage(l:"ZMEY GORYNYCH"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
     HudMessage(l:"Use to Continue | Sprint to Exit"; HUDMSG_PLAIN, 12, CR_GOLD, 230.0, 10.0, 0);
-    HudMessage(l:"I smell.. life."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"I smell...life..."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
    
     for (i = 0; i < 350; i++)
     {
@@ -130,7 +130,7 @@ Script 504 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"Goodness, this is a big one!"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"Wait, speech? You can speak, sir?"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
     
@@ -143,7 +143,7 @@ Script 504 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"ZMEY GORYNYCH"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"You.. do not.. belong here..."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"You...do not...belong here..."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
     
@@ -156,7 +156,7 @@ Script 504 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"ZMEY GORYNYCH"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"This is a world.. of death..."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"This is a world...of death..."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -169,7 +169,7 @@ Script 504 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"You say that, but why do you haunt this godforsaken place?"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"Why do you haunt this godforsaken place? Were your spirits disturbed?"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -182,7 +182,7 @@ Script 504 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"ZMEY GORYNYCH"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"We were.. awoken. Pulled back into.. bodies..."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"Haunt? We were...awoken. Pulled back into...bodies..."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -195,7 +195,7 @@ Script 504 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"If you are back among the living, why are you all so violent?"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"But then you'd be alive again, right? If you're back among the living,\nwhy are you all so violent?"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -208,7 +208,7 @@ Script 504 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"ZMEY GORYNYCH"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"We live again.. a life..\nof darkness.."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"We do not live again... It is a life...of darkness..."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -221,7 +221,7 @@ Script 504 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"ZMEY GORYNYCH"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"We watch.. we hear.. we hunger...\nBut we.. do not live..."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"We watch...we hear...we hunger...\nBut we...do not live..."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -234,7 +234,7 @@ Script 504 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"ZMEY GORYNYCH"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"We move.. by foreign hand...\nWe hate.. this cursed land..."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"We move...by a foreign hand...\nWe hate...this cursed land..."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -260,7 +260,7 @@ Script 504 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"ZMEY GORYNYCH"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"We hunger.. hungry... So hungry..."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"We hunger... Hungry... So hungry..."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -273,7 +273,7 @@ Script 504 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"ZMEY GORYNYCH"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"..!! You...! FEAST!"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"...! You...! FEAST!"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -367,7 +367,7 @@ Script 505 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"This is unbelievable. What kind of power does it take to reach beyond death itself?\nIt is a rebellion against all natural laws."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"This is unbelievable. What kind of power does it take to reach beyond death itself?\nIt's a rebellion against all natural laws."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
     

@@ -96,12 +96,10 @@ actor Morena1 31100
         POSS G 2 A_Pain
         Goto See
     Death:
-        POSS G 5
-        //TNT1 A 0 A_SpawnItemEx("CrucifixPickup",0,0,0,0,0,8,0,32)
-        TNT1 A 0 A_FaceTarget
         POSS G 1
-        //TNT1 A 0 A_SpawnItemEx("RedSkull",0,0,0,frandom(-16,-6),frandom(-16,-6),frandom(8,16),0,32) // Let's throw it away from the player.
-        POSS GGGGGGGGGGGGGGGGGGGG 5 A_FadeOut(0.05)
+        POSS GGGGGGGGGGGGGGGGGGGG 5 A_SpawnItemEx("DeathExplosionSmall",frandom(-16,16),frandom(-16,16),frandom(16,42),0,0,0,0,32)
+        TNT1 A 0 A_SpawnItemEx("DeathExplosionLarge",0,0,32,0,0,0,0,32)
+        POSS GGGGGGGGGG 1 A_FadeOut(0.1)
         POSS G 1
         Stop
     }
@@ -286,11 +284,16 @@ actor Morena2 31101
         POSS G 2 A_Pain
         Goto See
     Death:
-        POSS G 5
-        //TNT1 A 0 A_SpawnItemEx("BurialBeltPickup",0,0,0,frandom(-5,5),frandom(-5,5),8,0,32)
-        TNT1 A 0 A_FaceTarget
-        POSS A 1
-        POSS A -1
+        POSS G 1
+        TNT1 A 0 A_JumpIfInTargetInventory("NoStory",1,"Deathsplosion")
+        POSS GGGGGGGGGG 1 A_FadeOut(0.1)
+        POSS G 1
+        Stop
+    DeathSplosion:
+        POSS GGGGGGGGGGGGGGGGGGGG 5 A_SpawnItemEx("DeathExplosionSmall",frandom(-16,16),frandom(-16,16),frandom(16,42),0,0,0,0,32)
+        TNT1 A 0 A_SpawnItemEx("DeathExplosionLarge",0,0,32,0,0,0,0,32)
+        POSS GGGGGGGGGG 1 A_FadeOut(0.1)
+        POSS G 1
         Stop
     }
 }

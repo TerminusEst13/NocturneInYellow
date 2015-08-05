@@ -30,7 +30,7 @@ Script 521 (Void)
     SetHUDSize(480, 280, TRUE);
     HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
     HudMessage(l:"Use to Continue | Sprint to Exit"; HUDMSG_PLAIN, 12, CR_GOLD, 230.0, 10.0, 0);
-    HudMessage(l:"Young warrior,\nnow is not your time."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"Not yet. Now is not your time."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
    
     for (i = 0; i < 350; i++)
     {
@@ -94,7 +94,7 @@ Script 522 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"Urghh..\nI.. am alive?\nIt certainly feels like I am."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"Urghh...\nI...am alive?"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
     
@@ -134,7 +134,7 @@ Script 522 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"It's gone, to.. somewhere. So I pulled you back.\nIt was not your time to learn what lies on the other side, just yet."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"It's gone, to...somewhere. So I pulled you back.\nIt was not your time to learn what lies on the other side, just yet."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -147,7 +147,7 @@ Script 522 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"What? Gone? Did I.. did I defeat it?"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"What? Gone? Did I...did I defeat it?"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -188,7 +188,7 @@ Script 522 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"That.. doesn't sound much like a victory."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"That...doesn't sound much like a victory."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
 
@@ -216,7 +216,7 @@ Script 522 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"What this was.. it just wasn't what it planned for."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"What this was...it just wasn't what it planned for."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
 
@@ -314,7 +314,7 @@ Script 523 (Void)
     HudMessage(l:"Not tomorrow, or the day after. But when the time is right, it will return."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
-    
+
     for (i = 0; i < 350; i++)
     {
         if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
@@ -328,7 +328,7 @@ Script 523 (Void)
     HudMessage(l:"Hopefully I won't be around to see that day. Hopefully next time, it'll be somebody else's turn."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
-    
+
     for (i = 0; i < 350; i++)
     {
         if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
@@ -339,7 +339,91 @@ Script 523 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"I'm just going to go home and return this bow to its resting place on the wall."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"I'm just going to go home and return this bow to its resting place on the wall.\nGod willing, I'll never have to pick it up again."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+
+    Delay(10);
+
+    for (i = 0; i < 350; i++)
+    {
+        if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
+        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
+        Delay(1);
+    }
+
+    SetHUDSize(480, 280, TRUE);
+    SetFont("SMALLFONT");
+    HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
+    HudMessage(l:"Your home is not safe. The war is not yet done and mankind still bleeds."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+
+    Delay(10);
+
+    for (i = 0; i < 350; i++)
+    {
+        if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
+        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
+        Delay(1);
+    }
+
+    SetHUDSize(480, 280, TRUE);
+    SetFont("SMALLFONT");
+    HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
+    HudMessage(l:"It'll end. And then we'll patch ourselves up. It's how the stories always go."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+
+    Delay(10);
+
+    for (i = 0; i < 350; i++)
+    {
+        if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
+        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
+        Delay(1);
+    }
+
+    SetHUDSize(480, 280, TRUE);
+    SetFont("SMALLFONT");
+    HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
+    HudMessage(l:"It never ends. It will keep going. And even when it ends, it will spark up again. Such is the nature of warriors.\nWould you dive into it again so soon, young warrior?"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+
+    Delay(10);
+
+    for (i = 0; i < 350; i++)
+    {
+        if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
+        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
+        Delay(1);
+    }
+
+    SetHUDSize(480, 280, TRUE);
+    SetFont("SMALLFONT");
+    HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
+    HudMessage(l:"No. I'm not a warrior. I'm just a librarian. I only catalogue stories of warriors and such."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+
+    Delay(10);
+
+    for (i = 0; i < 350; i++)
+    {
+        if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
+        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
+        Delay(1);
+    }
+
+    SetHUDSize(480, 280, TRUE);
+    SetFont("SMALLFONT");
+    HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
+    HudMessage(l:"And yet, you still pushed on. Your profession may be different, but the fire of a warrior surged through your veins."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+
+    Delay(10);
+
+    for (i = 0; i < 350; i++)
+    {
+        if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
+        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
+        Delay(1);
+    }
+
+    SetHUDSize(480, 280, TRUE);
+    SetFont("SMALLFONT");
+    HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
+    HudMessage(l:"Good Lord, no. I didn't push on because I wanted to. I wanted absolutely nothing to do with this. If you're trying to imply I'm a courageous hero--"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -353,24 +437,10 @@ Script 523 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"Your home is not safe, young warrior. The war is not yet done and mankind still bleeds."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"Are you so quick to dismiss yourself because of it? You cannot deny your deeds.\nYou could pass it on to a variety of different causes. Perhaps you saw the suffering and wanted to see it end? Or perhaps a force from beyond urged you to do this?\nRegardless of whatever you convince yourself guided you on, you pushed on all the same."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
-   
-    for (i = 0; i < 350; i++)
-    {
-        if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
-        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
-        Delay(1);
-    }
 
-    SetHUDSize(480, 280, TRUE);
-    SetFont("SMALLFONT");
-    HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"It will end. And then we will patch ourselves up. It is how the stories always go."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
-
-    Delay(10);
-   
     for (i = 0; i < 350; i++)
     {
         if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
@@ -381,7 +451,7 @@ Script 523 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"It never ends. It will keep going. And even when it ends, it will spark up again. Such is the nature of warriors.\n..But that is not your matter, I suppose. You are not a warrior by profession."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"I will leave wrestling with the deeper implications to you.\nWith all due respect, I hope we never see each other again."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -395,63 +465,7 @@ Script 523 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"No - I am just a librarian. I catalogue stories of warriors and such."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
-
-    Delay(10);
-   
-    for (i = 0; i < 350; i++)
-    {
-        if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
-        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
-        Delay(1);
-    }
-
-    SetHUDSize(480, 280, TRUE);
-    SetFont("SMALLFONT");
-    HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"Will you keep this one of yours?"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
-
-    Delay(10);
-   
-    for (i = 0; i < 350; i++)
-    {
-        if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
-        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
-        Delay(1);
-    }
-
-    SetHUDSize(480, 280, TRUE);
-    SetFont("SMALLFONT");
-    HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"Good Lord, no. I want absolutely nothing to do with this anymore.\nAnd with all due respect, if I ever see you again, it will still be far too soon."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
-
-    Delay(10);
-   
-    for (i = 0; i < 350; i++)
-    {
-        if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
-        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
-        Delay(1);
-    }
-
-    SetHUDSize(480, 280, TRUE);
-    SetFont("SMALLFONT");
-    HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"You won't."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
-
-    Delay(10);
-   
-    for (i = 0; i < 350; i++)
-    {
-        if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
-        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
-        Delay(1);
-    }
-
-    SetHUDSize(480, 280, TRUE);
-    SetFont("SMALLFONT");
-    HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"Don't lie. You know I will."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"Don't lie to me. You know I will."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -479,7 +493,7 @@ Script 523 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"Go, and rest quietly, knowing that you have earned it.\nAnd to echo your sentiments, I hope not to see you again for a long time.\nDirty liar."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"Go and rest quietly, young warrior, knowing that you have earned it."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -493,7 +507,7 @@ Script 523 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"Heh."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"Yeah. I guess so.\nUntil the next time my blood starts burning again."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
