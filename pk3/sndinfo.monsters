@@ -118,6 +118,22 @@ upyr/firedistant          UPYRFFIR // Mixed from the Free Firearm Sound Library
 $rolloff upyr/firedistant 1200 3200
 
 
+// Zmey Gorynych - All sounds by BouncyTEM
+zmey/attack               ZMEYATAK
+zmey/sight                ZMEYSEE
+zmey/idle                 ZMEYIDLE
+zmey/pain                 ZMEYPAIN
+zmey/headdeath            ZMEYHDIE
+zmey/bodydeath            ZMEYBDIE
+
+$limit zmey/attack 0
+
+$rolloff zmey/attack 400 2400
+$rolloff zmey/sight 400 2400
+$rolloff zmey/idle 400 2400
+$rolloff zmey/pain 400 2400
+$rolloff zmey/headdeath 400 2400
+$rolloff zmey/bodydeath 400 2400
 
 
 // King in Yellow
