@@ -1,0 +1,153 @@
+actor KoscheiTheDeathless 31104
+{
+//$category Nocturne-Bosses
+    Health 3750
+    Radius 20
+    Height 56
+    Mass 500
+    Speed 15
+    PainChance 64
+    Monster
+    RadiusDamageFactor 0.55
+    +FLOATBOB
+    +FLOAT
+    +NOGRAVITY
+    +AVOIDMELEE
+    +NOINFIGHTING
+    +THRUSPECIES
+    +MISSILEMORE
+    +MISSILEEVENMORE
+    +DORMANT
+    Species "Monster"
+    SeeSound "vile/sight"
+    PainSound "vile/pain"
+    DeathSound "vile/death"
+    ActiveSound "vile/active"
+    Obituary " "
+    States
+    {
+    Spawn:
+        VILE A 10 A_Look
+        Loop
+    See:
+        VILE A 2 A_FastChase
+        Loop
+    Missile:
+        TNT1 A 0 A_Jump(64,"Summon")
+        TNT1 A 0 A_Jump(96,"SpreadMissile")
+        TNT1 A 0 A_Jump(128,"RapidMissile")
+    MissileBasic:
+        VILE G 5 A_FaceTarget
+        VILE GG 1 A_Chase("","",CHF_FASTCHASE)
+        TNT1 AAA 0 A_CustomMissile("KoscheiShot",32,0,frandom(-2,2),CMF_OFFSETPITCH,frandom(-1,1))
+        VILE N 5 BRIGHT A_CustomMissile("KoscheiShot",32,0,frandom(-2,2),CMF_OFFSETPITCH,frandom(-1,1))
+        TNT1 A 0 A_Jump(64,"MissileBasic")
+        TNT1 A 0 A_Jump(32,"SpreadMissile")
+        TNT1 A 0 A_Jump(64,"RapidMissile")
+        TNT1 A 0 A_Jump(16,"Summon")
+        goto See
+    SpreadMissile:
+        TNT1 A 0 A_FaceTarget
+        VILE GG 1 A_Chase("","",CHF_FASTCHASE)
+        VILE G 10 A_FaceTarget
+        VILE G 5 A_FaceTarget
+        TNT1 AAAAAAAAAA 0 A_CustomMissile("KoscheiSpreadBall",32,0,frandom(-16,16),CMF_OFFSETPITCH,frandom(-8,8))
+        VILE N 8 Bright A_CustomMissile("KoscheiSpreadBall",32,0,frandom(-16,16),CMF_OFFSETPITCH,frandom(-8,8))
+        TNT1 A 0 A_Jump(64,"SpreadMissile")
+        TNT1 A 0 A_Jump(64,"MissileBasic")
+        TNT1 A 0 A_Jump(64,"RapidMissile")
+        TNT1 A 0 A_Jump(16,"Summon")
+        Goto See
+    RapidMissile:
+        VILE N 2 A_FaceTarget
+        VILE NN 1 A_Chase("","",CHF_FASTCHASE)
+        VILE N 4 Bright A_CustomMissile("KoscheiFastShot",32,0,frandom(-2,2),CMF_AIMOFFSET,frandom(-1,1))
+        TNT1 A 0 A_Jump(8,"See")
+        TNT1 A 0 A_Jump(8,"SpreadMissile")
+        TNT1 A 0 A_Jump(8,"MissileBasic")
+        TNT1 A 0 A_Jump(1,"Summon")
+        TNT1 A 0 A_MonsterRefire(130,"See")
+        goto RapidMissile
+    Summon:
+        VILE G 20
+        VILE NN 5 Bright A_CustomMissile("SummonBall",32,0,frandom(-2,2),CMF_AIMOFFSET,frandom(-1,1))
+        VILE N 10
+        goto See
+    Pain:
+        VILE Q 5   
+        VILE Q 5 A_Pain
+        Goto See
+    Death:
+        VILE Q 5
+        TNT1 A 0 A_KillChildren
+        VILE QQQQQQQQQQQQQQQQQQQQ 5 A_FadeOut(0.05)
+        VILE Q 1
+        Stop
+    }
+}
+
+ACTOR KoscheiShot
+{
+    Radius 6
+    Height 8
+    Speed 25
+    Damage (random(5,10))
+    Projectile
+    +RANDOMIZE
+    RenderStyle Add
+    Alpha 0.99
+    Scale 0.65
+    SeeSound "imp/attack"
+    DeathSound "imp/shotx"
+    States
+    {
+    Spawn:
+        BAL1 AB 2 Bright
+        Loop
+    Death:
+        BAL1 CDE 3 Bright
+        Stop
+    }
+}
+
+ACTOR SummonBall
+{
+    Radius 6
+    Height 8
+    Speed 10
+    Damage (0)
+    Projectile
+    +RANDOMIZE
+    +LOWGRAVITY
+    +BOUNCEONWALLS
+    +BOUNCEONCEILINGS
+    +BOUNCEONACTORS
+    +THRUSPECIES
+    Species "Monster"
+    RenderStyle Add
+    Alpha 0.99
+    SeeSound "caco/attack"
+    DeathSound "caco/shotx"
+    States
+    {
+    Spawn:
+        BAL2 AB 2 Bright
+        Loop
+    Death:
+        TNT1 A 0 A_SpawnItemEx("LikhoGhost",0,0,16,0,0,0,0,SXF_SETMASTER)
+        BAL2 CDE 6 Bright
+        Stop
+    }
+}
+
+actor LikhoGhost : Likho
+{
+    RenderStyle Subtract
+    Alpha 0.75
+    DropItem "LifeEssencePickup", 128
+    DropItem "RandomBowManaPickup", 128
+    +BRIGHT
+}
+
+actor KoscheiSpreadBall : KoscheiShot { Damage (random(1,5)) Speed 20 }
+actor KoscheiFastShot : KoscheiShot { Speed 35 }
