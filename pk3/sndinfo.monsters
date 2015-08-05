@@ -136,6 +136,22 @@ $rolloff zmey/headdeath 400 2400
 $rolloff zmey/bodydeath 400 2400
 
 
+// Koschei the Deathless - All sounds by BouncyTEM
+$random koschei/attack { katk1 katk2 katk3 katk4 }
+katk1    KOSCATK1
+katk2    KOSCATK2
+katk3    KOSCATK3
+katk4    KOSCATK4
+koschei/sight             KOSCSEE1
+koschei/pain              KOSCPAIN
+koschei/death             KOSCDETH
+
+$rolloff koschei/attack 400 2400
+$rolloff koschei/sight 400 2400
+$rolloff koschei/pain 400 2400
+$rolloff koschei/death 400 2400
+
+
 // King in Yellow
 king/pulse                KINGPULS // By BouncyTEM
 king/blind                KINGBLND // By BouncyTEM
