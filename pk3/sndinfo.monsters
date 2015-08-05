@@ -111,3 +111,11 @@ upattack4                 UPYRATK4
 upyr/fire                 UPYRFIRE // Mixed from the General Series 6000, Sony Pictures Sound Effects Series, and the Free Firearm Sound Library
 upyr/firedistant          UPYRFFIR // Mixed from the Free Firearm Sound Library
 $rolloff upyr/firedistant 1200 3200
+
+
+
+
+// King in Yellow
+king/pulse                KINGPULS // By BouncyTEM
+king/blind                KINGBLND // By BouncyTEM
+king/death                KINGDETH // Taken from Twisted Reality
