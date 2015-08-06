@@ -45,8 +45,8 @@ actor KoscheiTheDeathless 31104
         TNT1 A 0 A_TakeInventory("LaughCounter",4)
         KOSC B 5 A_FaceTarget
         KOSC CC 1 A_Chase("","",CHF_FASTCHASE)
-        TNT1 AAA 0 A_CustomMissile("KoscheiShot",32,0,frandom(-2,2),CMF_OFFSETPITCH,frandom(-1,1))
-        KOSC D 5 BRIGHT A_CustomMissile("KoscheiShot",32,0,frandom(-2,2),CMF_OFFSETPITCH,frandom(-1,1))
+        TNT1 AAA 0 A_CustomMissile("KoscheiShot",48,0,frandom(-2,2),CMF_OFFSETPITCH,frandom(-1,1))
+        KOSC D 5 BRIGHT A_CustomMissile("KoscheiShot",48,0,frandom(-2,2),CMF_OFFSETPITCH,frandom(-1,1))
         TNT1 A 0 A_Jump(64,"MissileBasic")
         TNT1 A 0 A_Jump(32,"SpreadMissile")
         TNT1 A 0 A_Jump(64,"RapidMissile")
@@ -58,8 +58,8 @@ actor KoscheiTheDeathless 31104
         KOSC BB 1 A_Chase("","",CHF_FASTCHASE)
         KOSC B 10 A_FaceTarget
         KOSC C 5 A_FaceTarget
-        TNT1 AAAAAAAAAA 0 A_CustomMissile("KoscheiSpreadBall",32,0,frandom(-16,16),CMF_OFFSETPITCH,frandom(-8,8))
-        KOSC D 8 Bright A_CustomMissile("KoscheiSpreadBall",32,0,frandom(-16,16),CMF_OFFSETPITCH,frandom(-8,8))
+        TNT1 AAAAAAAAAA 0 A_CustomMissile("KoscheiSpreadBall",48,0,frandom(-16,16),CMF_OFFSETPITCH,frandom(-8,8))
+        KOSC D 8 Bright A_CustomMissile("KoscheiSpreadBall",48,0,frandom(-16,16),CMF_OFFSETPITCH,frandom(-8,8))
         TNT1 A 0 A_Jump(64,"SpreadMissile")
         TNT1 A 0 A_Jump(64,"MissileBasic")
         TNT1 A 0 A_Jump(64,"RapidMissile")
@@ -69,7 +69,7 @@ actor KoscheiTheDeathless 31104
         TNT1 A 0 A_TakeInventory("LaughCounter",4)
         KOSC B 2 A_FaceTarget
         KOSC CC 1 A_Chase("","",CHF_FASTCHASE)
-        KOSC D 4 Bright A_CustomMissile("KoscheiFastShot",32,0,frandom(-2,2),CMF_AIMOFFSET,frandom(-1,1))
+        KOSC D 4 Bright A_CustomMissile("KoscheiFastShot",48,0,frandom(-2,2),CMF_AIMOFFSET,frandom(-1,1))
         TNT1 A 0 A_Jump(8,"See")
         TNT1 A 0 A_Jump(8,"SpreadMissile")
         TNT1 A 0 A_Jump(8,"MissileBasic")
@@ -79,7 +79,7 @@ actor KoscheiTheDeathless 31104
     Summon:
         TNT1 A 0 A_TakeInventory("LaughCounter",20)
         KOSC B 20
-        KOSC CC 5 Bright A_CustomMissile("SummonBall",32,0,frandom(-2,2),CMF_AIMOFFSET,frandom(-1,1))
+        KOSC CC 5 Bright A_CustomMissile("SummonBall",48,0,frandom(-2,2),CMF_AIMOFFSET,frandom(-1,1))
         KOSC D 10
         goto See
     Pain:
