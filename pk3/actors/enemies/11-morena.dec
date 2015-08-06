@@ -32,6 +32,12 @@ actor Morena1 31100
         POSS A 3 A_Chase
         Loop
     Missile:
+        TNT1 A 0 A_JumpIfCloser(1536,"Missile0")
+        TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_Recoil(-50)
+        POSS A 1
+        goto See
+    Missile0:
         TNT1 A 0 A_Jump(16,"Teleport")
         TNT1 A 0 A_Jump(32,"Spin")
         TNT1 A 0 A_Jump(64,"SideSwipe")
@@ -113,6 +119,8 @@ ACTOR MorenaShot
     Damage (random(5,10))
     Projectile
     +RANDOMIZE
+    +THRUSPECIES
+    Species "Monster"
     RenderStyle Add
     Alpha 0.99
     Scale 0.65
@@ -160,6 +168,8 @@ actor MorenaHomingShot
     Projectile
     +RANDOMIZE
     +SEEKERMISSILE
+    +THRUSPECIES
+    Species "Monster"
     ReactionTime 50
     RenderStyle Add
     Alpha 1
@@ -189,7 +199,7 @@ actor Morena2 31101
     Health 6660 // WHOAH EGY
     Radius 20
     Height 56
-    Speed 15
+    Speed 25
     PainChance 64
     Mass 0x7FFFFFFF
     Monster
@@ -198,6 +208,7 @@ actor Morena2 31101
     +MISSILEMORE
     +MISSILEEVENMORE
     +DORMANT
+    MinMissileChance 10
     RadiusDamageFactor 0.5
     SeeSound "grunt/sight"
     AttackSound "grunt/attack"
@@ -216,6 +227,12 @@ actor Morena2 31101
         POSS A 3 A_Chase
         Loop
     Missile:
+        TNT1 A 0 A_JumpIfCloser(1536,"Missile0")
+        TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_Recoil(-50)
+        POSS A 1
+        goto See
+    Missile0:
         TNT1 A 0 A_Jump(32,"Teleport")
         TNT1 A 0 A_Jump(64,"Spin")
         TNT1 A 0 A_Jump(128,"SideSwipe")
@@ -246,7 +263,7 @@ actor Morena2 31101
         TNT1 A 0 ThrustThing(angle*256/360+192, 32, 0, 0)
     SideSwipeContinue:
         TNT1 A 0 A_FaceTarget
-        TNT1 AAA 0 A_CustomMissile("MorenaShot",32,0,frandom(-1,1),CMF_OFFSETPITCH,frandom(-0.25,0.25))
+        TNT1 AA 0 A_CustomMissile("MorenaShot",32,0,frandom(-1,1),CMF_OFFSETPITCH,frandom(-0.25,0.25))
         POSS E 2
         TNT1 A 0 A_CheckFloor("SideSwipeFinish")
         TNT1 A 0 A_GiveInventory("Counter",1)
@@ -257,7 +274,7 @@ actor Morena2 31101
         POSS A 3 A_Chase("","")
         goto See
     Spin:
-        TNT1 AAA 0 A_CustomMissile("MorenaLightShot",32,0,frandom(-5,5),CMF_AIMDIRECTION,frandom(-2.5,2.5))
+        TNT1 AA 0 A_CustomMissile("MorenaLightShot",32,0,frandom(-5,5),CMF_AIMDIRECTION,frandom(-2.5,2.5))
         POSS E 1 A_SetAngle(angle+10)
         TNT1 A 0 A_GiveInventory("Counter",1)
         TNT1 A 0 A_JumpIfInventory("Counter",35,"SpinFinish")

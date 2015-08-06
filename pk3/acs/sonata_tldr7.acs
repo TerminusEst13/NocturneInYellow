@@ -35,7 +35,7 @@ Script 518 (Void)
     for (i = 0; i < 350; i++)
     {
         if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
-        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
+        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); GiveInventory("DrowningProtection",1); terminate; }
         Delay(1);
     }
     SetHUDSize(480, 280, TRUE);
@@ -47,7 +47,7 @@ Script 518 (Void)
     for (i = 0; i < 350; i++)
     {
         if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
-        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
+        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); GiveInventory("DrowningProtection",1); terminate; }
         Delay(1);
     }
     SetHUDSize(480, 280, TRUE);
@@ -59,10 +59,11 @@ Script 518 (Void)
     for (i = 0; i < 350; i++)
     {
         if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
-        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
+        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); GiveInventory("DrowningProtection",1); terminate; }
         Delay(1);
     }
 
+    GiveInventory("DrowningProtection",1);
     HudMessage(s:""; HUDMSG_PLAIN, 10, 0, 0, 0, 0.1);
     HudMessage(s:""; HUDMSG_PLAIN, 11, 0, 0, 0, 0.1);
     HudMessage(s:""; HUDMSG_PLAIN, 12, 0, 0, 0, 0.1);

@@ -160,8 +160,11 @@ actor LikhoGhost : Likho
     Alpha 0.75
     DropItem "LifeEssencePickup", 128
     DropItem "RandomBowManaPickup", 128
+    RadiusDamageFactor 5.00
     +BRIGHT
 }
+
+actor LikhoGhost2 : LikhoGhost { RenderStyle Add }
 
 actor KoscheiSpreadBall : KoscheiShot { Damage (random(1,5)) Speed 20 }
 actor KoscheiFastShot : KoscheiShot { Speed 35 }
