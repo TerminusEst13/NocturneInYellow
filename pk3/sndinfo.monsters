@@ -136,6 +136,14 @@ $rolloff zmey/headdeath 400 2400
 $rolloff zmey/bodydeath 400 2400
 
 
+// Domovoi - All sounds taken from the General Series 6000
+domovoi/sight             DOMVSEE
+domovoi/shot              DOMVSHOT
+domovoi/shothit           DOMVSHIT
+domovoi/pain              DOMVPAIN
+domovoi/death             DOMVDETH
+
+
 // Koschei the Deathless - All sounds by BouncyTEM
 $random koschei/attack { katk1 katk2 katk3 katk4 }
 katk1    KOSCATK1
