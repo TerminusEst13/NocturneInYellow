@@ -151,6 +151,11 @@ $rolloff koschei/sight 400 2400
 $rolloff koschei/pain 400 2400
 $rolloff koschei/death 400 2400
 
+koschei/summonshot        KOSCSSHT // Taken from the General Series 6000
+koschei/summonhit         KOSCSUMN // Taken from the General Series 6000
+koschei/shot              KOSCSHOT // Mixed from the General Series 6000
+koschei/shothit           KOSCSHIT // Mixed from the General Series 6000
+
 
 // King in Yellow
 king/pulse                KINGPULS // By BouncyTEM
