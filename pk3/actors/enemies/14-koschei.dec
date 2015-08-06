@@ -8,6 +8,7 @@ actor KoscheiTheDeathless 31104
     Speed 15
     PainChance 64
     Monster
+    Scale 0.75
     RadiusDamageFactor 0.55
     +FLOATBOB
     +FLOAT

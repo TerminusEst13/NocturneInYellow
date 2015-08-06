@@ -26,32 +26,32 @@ ACTOR Vodyanoy 31094
     States
     {
     Spawn:
-        INCB A 10 A_Look
+        VODY A 10 A_Look
         Loop
     See:
-        INCB AABB 5 A_Chase
+        VODY AABB 5 A_Chase
         TNT1 A 0 Radius_Quake(1,2,0,12,0)
         TNT1 A 0 A_PlaySound("vodyanoy/walk","soundslot6",1.0,0,ATTN_NORM)
-        INCB CCDD 5 A_Chase
+        VODY CCDD 5 A_Chase
         TNT1 A 0 Radius_Quake(1,2,0,12,0)
         TNT1 A 0 A_PlaySound("vodyanoy/walk","soundslot6",1.0,0,ATTN_NORM)
         Loop
     Missile:
-        INCB E 8
+        VODY A 8
         TNT1 A 0 A_PlaySoundEx("vodyanoy/attack","soundslot5",0,0)
-        INCB H 8 Bright A_CustomMissile("VodyanoyShot")
-        INCB E 1 A_CPosRefire
+        VODY B 8 Bright A_CustomMissile("VodyanoyShot")
+        VODY A 1 A_CPosRefire
         Goto Missile
     Pain:
-        INCB J 3
-        INCB J 3 A_Pain
+        VODY A 3
+        VODY A 3 A_Pain
         Goto See
     Death:
-        INCB I 6 A_Scream
-        INCB J 6
-        INCB K 6 A_NoBlocking
-        INCB LMN 6
-        INCB N -1 A_BossDeath
+        VODY E 4 A_Scream
+        VODY FG 4
+        VODY H 4 A_NoBlocking
+        VODY IJKLMN 4
+        VODY O -1 A_BossDeath
         Stop
     }
 }
