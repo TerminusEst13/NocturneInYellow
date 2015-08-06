@@ -3,7 +3,7 @@
 actor Morena1 31100
 {
 //$Category Nocturne-Bosses
-    Health 3250
+    Health 2550
     Radius 20
     Height 56
     Speed 15
@@ -196,7 +196,7 @@ actor MorenaHomingShot
 actor Morena2 31101
 {
 //$Category Nocturne-Bosses
-    Health 6660 // WHOAH EGY
+    Health 4000
     Radius 20
     Height 56
     Speed 25
