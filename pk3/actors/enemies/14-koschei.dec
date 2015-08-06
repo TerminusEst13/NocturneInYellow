@@ -1,7 +1,7 @@
 actor KoscheiTheDeathless 31104
 {
 //$category Nocturne-Bosses
-    Health 3750
+    Health 3500
     Radius 20
     Height 56
     Mass 500
@@ -117,10 +117,10 @@ ACTOR KoscheiShot
     States
     {
     Spawn:
-        BAL1 AB 2 Bright
+        KBAL ABCD 2 Bright
         Loop
     Death:
-        BAL1 CDE 3 Bright
+        KBAL EFGHIJ 3 Bright
         Stop
     }
 }
@@ -146,11 +146,11 @@ ACTOR SummonBall
     States
     {
     Spawn:
-        BAL2 AB 2 Bright
+        KSMN AB 2 Bright
         Loop
     Death:
         TNT1 A 0 A_SpawnItemEx("LikhoGhost",0,0,16,0,0,0,0,SXF_SETMASTER)
-        BAL2 CDE 6 Bright
+        KSMN CDEFG 6 Bright
         Stop
     }
 }
