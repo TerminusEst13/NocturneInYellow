@@ -2,7 +2,7 @@ actor RunningStamina : Counter { Inventory.MaxAmount 2000 }
 actor WeaponIdleCounter : Counter { Inventory.MaxAmount 200 }
 actor SprintCooldown : Counter { Inventory.MaxAmount 140 }
 actor JumpCooldown : Counter { Inventory.MaxAmount 7 }
-actor SwapCooldown : Counter { Inventory.MaxAmount 70 }
+actor SwapCooldown : Counter { Inventory.MaxAmount 20 }
 actor SprintStopping : Counter { Inventory.MaxAmount 10 }
 
 actor LaughCounter : Counter { Inventory.MaxAmount 200 }
