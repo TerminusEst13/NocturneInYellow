@@ -1,5 +1,6 @@
 actor KingInYellow 31105
 {
+//$category Nocturne-Bosses
     Health 1500
     RenderStyle Translucent
     Alpha 0.25
@@ -7,19 +8,20 @@ actor KingInYellow 31105
     Radius 20
     Height 56
     Mass 0x7FFFFFFF
-    Speed 10
+    Speed 11
     DamageFactor "ArcaneBow", 0.25
     RadiusDamageFactor 0.25
     PainChance 255
     PainChance "ArcaneBow", 32
     Monster
-    MeleeRange 128
+    MeleeRange 96
     BloodColor "Yellow"
     +FLOORCLIP
     +LOOKALLAROUND
     +NOINFIGHTING
     +NOTARGET
     -SOLID
+    +DORMANT
     Obituary " "
     States
     {
