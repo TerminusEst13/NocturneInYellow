@@ -118,6 +118,22 @@ upyr/firedistant          UPYRFFIR // Mixed from the Free Firearm Sound Library
 $rolloff upyr/firedistant 1200 3200
 
 
+// Morena - All sounds from the General Series 6000
+morena/sight              MORNSITE
+morena/attack             MORNATAK
+morena/pain               MORNPAIN
+morena/death              MORNDETH
+morena/knifeshot          MORNSHOT
+morena/knifehit           MORNSHIT // I am easily amused.
+morena/homingshot         MORNSSHT
+morena/hominghit          MORNSIMP
+
+$rolloff morena/sight 400 2400
+$rolloff morena/attack 400 2400
+$rolloff morena/pain 400 2400
+$rolloff morena/death 400 2400
+
+
 // Zmey Gorynych - All sounds by BouncyTEM
 zmey/attack               ZMEYATAK
 zmey/sight                ZMEYSEE
@@ -142,6 +158,10 @@ domovoi/shot              DOMVSHOT
 domovoi/shothit           DOMVSHIT
 domovoi/pain              DOMVPAIN
 domovoi/death             DOMVDETH
+
+$rolloff domovoi/sight 400 2400
+$rolloff domovoi/pain 400 2400
+$rolloff domovoi/death 400 2400
 
 
 // Koschei the Deathless - All sounds by BouncyTEM
