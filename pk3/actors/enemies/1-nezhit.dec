@@ -23,26 +23,26 @@ ACTOR Nezhit 31090
     States
     {
     Spawn:
-        AGUR A 10 A_Look
+        NEZH A 10 A_Look
         Loop
     See:
-        AGUR AABBCCDD 4 A_Chase
+        NEZH AABBCCDD 4 A_Chase
         Loop
     Melee:
         TNT1 A 0 A_PlaySoundEx("nezhit/attack","soundslot5",0,0)
-        AGUR EF 8 A_FaceTarget
-        AGUR G 8 A_CustomMeleeAttack(random(5,15),"nezhit/hit","silence")
+        NEZH EF 8 A_FaceTarget
+        NEZH G 8 A_CustomMeleeAttack(random(5,15),"nezhit/hit","silence")
         Goto See
     Pain:
-        AGUR H 3
-        AGUR H 4 A_Pain
+        NEZH I 3
+        NEZH I 4 A_Pain
         Goto See
     Death:
-        AGUR I 5 A_Scream
-        AGUR J 5
-        AGUR K 5 A_NoBlocking
-        AGUR LM 5
-        AGUR N -1
+        NEZH H 4 A_Scream
+        NEZH IJ 4
+        NEZH K 4 A_NoBlocking
+        NEZH L 4
+        NEZH M -1
         Stop
     }
 }
