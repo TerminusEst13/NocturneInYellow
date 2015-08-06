@@ -15,7 +15,7 @@ SPRITES:
 - chabull, for "explosions.zip" off OpenGameArt.org, released under Attribution 3.0 Unported (CC BY 3.0)
 - Ville Seppanen/Osmic, for "gems.zip" off OpenGameArt.org, released under Attribution 3.0 Unported (CC BY 3.0)
 - Freedoom project, for FIRE*0, TBLU*0, TGRN*0, KWAL*, and LBAL*0
-- Eriance for DIRN*0, SPLD*0, and VODB*0 sprites, released for people to use "as they see fit"
+- Eriance for DIRN*0, SPLD*0, NOCN*0, and VODB*0 sprites, released for people to use "as they see fit"
 - Bloax for DOOMCURS, HUDBAR, HLTHBEMP, HLTHBFUL, STAMBEMP, STAMBFUL, AMMOBEMP, and AMMOBFUL, made specifically for Nocturne in Yellow
 - Bloax for ABLL*0, used with permission
 - Bloax for CND**0 and TCH**0, made specifically for Nocturne in Yellow
