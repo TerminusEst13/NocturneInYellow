@@ -120,7 +120,7 @@ Actor Upyr 31097
         TNT1 A 0 A_PlaySoundEx("nagant/lever","soundslot5",0,0)
         ZSP3 A 4 A_Wander
         TNT1 A 0 A_PlaySoundEx("nagant/pull","soundslot6",0,0)
-        TNT1 A 0 A_CustomMissile("NagantCasingSpawner",32,-14,frandom(2,10),CMF_AIMDIRECTION)
+        TNT1 A 0 //A_CustomMissile("NagantCasingSpawner",32,-14,frandom(2,10),CMF_AIMDIRECTION)
         ZSP3 A 4 A_Wander
         ZSP3 B 4 A_Wander
         ZSP3 B 4 A_Wander
@@ -190,7 +190,7 @@ Actor Upyr 31097
         TNT1 A 0 A_PlaySoundEx("nagant/lever","soundslot5",0,0)
         ZSP3 A 4 A_Chase("","", CHF_FASTCHASE)
         TNT1 A 0 A_PlaySoundEx("nagant/pull","soundslot6",0,0)
-        TNT1 A 0 A_CustomMissile("NagantCasingSpawner",32,-14,frandom(2,10),CMF_AIMDIRECTION)
+        TNT1 A 0 //A_CustomMissile("NagantCasingSpawner",32,-14,frandom(2,10),CMF_AIMDIRECTION)
         ZSP3 A 4 A_Chase("","", CHF_FASTCHASE)
         ZSP3 B 4 A_Chase("","", CHF_FASTCHASE)
         ZSP3 B 4 A_Chase("","", CHF_FASTCHASE)
@@ -232,7 +232,7 @@ Actor Upyr 31097
         TNT1 A 0 A_PlaySoundEx("nagant/lever","soundslot5",0,0)
         ZSP3 AA 2 A_Chase("","")
         TNT1 A 0 A_PlaySoundEx("nagant/pull","soundslot6",0,0)
-        TNT1 A 0 A_CustomMissile("NagantCasingSpawner",32,-14,frandom(2,10),CMF_AIMDIRECTION)
+        TNT1 A 0 //A_CustomMissile("NagantCasingSpawner",32,-14,frandom(2,10),CMF_AIMDIRECTION)
         ZSP3 BB 2 A_Chase("","")
         ZSP3 CC 2 A_Chase("","")
         ZSP3 DD 2 A_Chase("","")
