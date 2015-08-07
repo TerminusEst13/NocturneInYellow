@@ -4,8 +4,8 @@ actor Morena1 31100
 {
 //$Category Nocturne-Bosses
     Health 2200
-    Radius 20
-    Height 56
+    Radius 24
+    Height 76
     Speed 10
     PainChance 64
     Mass 0x7FFFFFFF
@@ -211,8 +211,8 @@ actor Morena2 31101
 {
 //$Category Nocturne-Bosses
     Health 4000
-    Radius 20
-    Height 56
+    Radius 24
+    Height 76
     Speed 14
     PainChance 64
     Mass 0x7FFFFFFF
