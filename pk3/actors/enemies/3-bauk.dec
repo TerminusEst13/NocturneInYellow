@@ -140,7 +140,7 @@ Actor BaukTrail
    }
 }
 
-Actor BaukTrail3 : Bauktrail
+Actor BaukTrail2 : Bauktrail
 {
    States
    {
