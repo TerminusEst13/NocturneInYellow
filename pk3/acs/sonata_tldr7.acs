@@ -100,7 +100,7 @@ Script 519 (Void)
 
     SetHUDSize(320, 240, TRUE);
     SetFont("BLACKTXT");
-    HudMessage(s:"A"; HUDMSG_PLAIN, 16, 0, 0.5, 0.5, 0);
+    HudMessage(s:"A"; HUDMSG_PLAIN, 16, 0, 160.0, 120.0, 0);
     SetHUDSize(320, 240, TRUE);
     SetFont("TALKGFX");
     HudMessage(s:"A"; HUDMSG_PLAIN, 14, 0, 0.5, 0.5, 0);

@@ -184,7 +184,7 @@ actor KingInYellowPulse
 actor KingInYellowAppear
 {
     RenderStyle Add
-    Alpha 0.125
+    Alpha 0.175
     Scale 0.4
     +NOINTERACTION
     +CLIENTSIDEONLY
