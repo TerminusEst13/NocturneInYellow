@@ -184,8 +184,22 @@ koschei/summonhit         KOSCSUMN // Taken from the General Series 6000
 koschei/shot              KOSCSHOT // Mixed from the General Series 6000
 koschei/shothit           KOSCSHIT // Mixed from the General Series 6000
 
-
 // King in Yellow
 king/pulse                KINGPULS // By BouncyTEM
 king/blind                KINGBLND // By BouncyTEM
 king/death                KINGDETH // Taken from Twisted Reality
+
+// Yog-Sothoth - By BouncyTEM
+yog/eyeshot               YOGESHOT
+yog/eyeshothit            YOGESHIT // I am easily amused by filenames
+yog/eyepain               YOGEPAIN
+yog/eyedeath              YOGEDETH
+
+yog/soulactivate          YOGSACTV
+yog/soulcharge            YOGSCHRG
+yog/soulsight             YOGSSITE
+
+yog/coredeath             YOGMDETH
+yog/corepain              YOGMPAIN
+
+yog/teleport              YOGTELEP

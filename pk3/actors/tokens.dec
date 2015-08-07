@@ -5,6 +5,8 @@ actor JumpCooldown : Counter { Inventory.MaxAmount 7 }
 actor SwapCooldown : Counter { Inventory.MaxAmount 20 }
 actor SprintStopping : Counter { Inventory.MaxAmount 10 }
 
+actor SothothDamageCounter : Counter { Inventory.MaxAmount 6 }
+
 actor LaughCounter : Counter { Inventory.MaxAmount 200 }
 
 actor GrenadeAmmoCounter : Counter { Inventory.MaxAmount 20 }

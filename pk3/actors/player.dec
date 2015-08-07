@@ -10,6 +10,7 @@ Actor Bogatyr : PlayerPawn
     Player.StartItem "GrenadeAmmo", 5
     Player.StartItem "GrenadeAmmoCounter", 5
     Player.StartItem "RunningStamina", 200
+    DamageFactor "EldritchDamage", 0.0
     Player.ForwardMove 1.4, 0.8
     Player.SideMove 1.2, 0.65
     Player.JumpZ 9
