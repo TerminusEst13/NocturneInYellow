@@ -94,7 +94,7 @@ Script 522 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"Urghh...\nI...am alive?"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"Urghh... Am...I alive?"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
 
@@ -134,7 +134,7 @@ Script 522 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"It's gone, to...somewhere. So I pulled you back.\nIt was not your time to learn what lies on the other side, just yet."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"It's gone, to...somewhere. So I pulled you back. It was not your time to learn\nwhat lies on the other side, just yet."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
 
@@ -174,7 +174,7 @@ Script 522 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"I doubt that you overpowered it. Perhaps you dissuaded it?\nOr perhaps you simply inconvenienced it. Perhaps like the buzzing of an insect, causing one to recoil."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"I doubt that you overpowered it. Perhaps you dissuaded it? Or perhaps you simply inconvenienced it.\nPerhaps like the buzzing of an insect, causing one to recoil."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
 
@@ -202,7 +202,7 @@ Script 522 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"Would you only consider this a victory in such concrete terms?\nIf anything, you showed it that there are still people willing to shine a light rather than curse the darkness."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"Would you only consider this a victory in such concrete terms? If anything, you showed it that there\nare still people willing to shine a light rather than curse the darkness."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
 
@@ -339,7 +339,7 @@ Script 523 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"I'm just going to go home and return this bow to its resting place on the wall.\nGod willing, I'll never have to pick it up again."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"I'm just going to go home and return this bow to its resting place on the wall. God willing,\nI'll never have to pick it up again."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
 
@@ -381,7 +381,7 @@ Script 523 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"It never ends. It will keep going. And even when it ends, it will spark up again. Such is the nature of warriors.\nWould you dive into it again so soon, young warrior?"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"It never ends. It will keep going. And even when it ends, it will spark up again. Such is the nature\nof warriors. Would you dive into it again so soon, young warrior?"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
 
@@ -423,7 +423,7 @@ Script 523 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"Good Lord, no. I didn't push on because I wanted to. I wanted absolutely nothing to do with this. If you're trying to imply I'm a courageous hero--"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"Good Lord, no. I didn't push on because I wanted to. I wanted absolutely nothing to do with this.\nIf you're trying to imply I'm a courageous hero--"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -437,7 +437,7 @@ Script 523 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"Are you so quick to dismiss yourself because of it? You cannot deny your deeds.\nYou could pass it on to a variety of different causes. Perhaps you saw the suffering and wanted to see it end? Or perhaps a force from beyond urged you to do this?\nRegardless of whatever you convince yourself guided you on, you pushed on all the same."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"Are you so quick to dismiss yourself because of it? You cannot deny your deeds. You could pass\nit on to a variety of different causes. Perhaps you saw the suffering and wanted to see it end?\nOr perhaps a force from beyond urged you to do this? Regardless of whatever you convince yourself guided\nyou on, you pushed on all the same."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
 
@@ -451,7 +451,7 @@ Script 523 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"I will leave wrestling with the deeper implications to you.\nWith all due respect, I hope we never see each other again."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"I will leave wrestling with the deeper implications to you. With all due respect, I hope\nwe never see each other again."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -494,20 +494,6 @@ Script 523 (Void)
     SetFont("SMALLFONT");
     HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
     HudMessage(l:"Go and rest quietly, young warrior, knowing that you have earned it."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
-
-    Delay(10);
-   
-    for (i = 0; i < 350; i++)
-    {
-        if (keyDown(BT_USE)) { ambientsound("vn/forward",127); break; }
-        if (keyDown(BT_SPEED)) { ambientsound("vn/cancel",127); stoptalking(); terminate; }
-        Delay(1);
-    }
-
-    SetHUDSize(480, 280, TRUE);
-    SetFont("SMALLFONT");
-    HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"Yeah. I guess so.\nUntil we meet again."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    

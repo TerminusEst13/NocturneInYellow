@@ -40,7 +40,7 @@ Script 512 (Void)
     }
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
-    HudMessage(l:"In stories, all heroes have some sort of mantra they can talk about so that they can\novercome fear and charge straight ahead."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"In stories, all heroes have some sort of mantra they can talk about so that they can overcome\nfear and charge straight ahead. Even the villains do. Everyone's got something that guides them."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
     
@@ -52,7 +52,7 @@ Script 512 (Void)
     }
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
-    HudMessage(l:"...I wish I did. But all I did was just hide from the war in the mainland."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"...I wish I did. All I did was just hide from the war in the mainland."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
     

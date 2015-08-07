@@ -40,7 +40,7 @@ Script 506 (Void)
     }
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
-    HudMessage(l:"I'm a fool.\nI'm dead and a fool."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"I'm making headway, I suppose, but everything's stacked against me here..."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
     
@@ -158,7 +158,7 @@ Script 507 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"DOMOVOI"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"Boy, it ain't always like that. Ye can't talk and talk and expect that yer rules of logic\nand sense can apply to everything. Where we are is long beyond that."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"Boy, it ain't always like that. Ye can't talk and talk and expect that yer rules of logic and\nsense can apply to everything. Where we are is long beyond that."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -171,7 +171,7 @@ Script 507 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"DOMOVOI"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"The world is full of evil without reason or purpose. Ye ain't gonna git anywhere with tryin' to\ndissect the 'why'."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"The world is full of evil without reason or purpose. Ye ain't gonna git anywhere with tryin' to\ndissect the 'why' every time it rears its ugly head."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -184,7 +184,7 @@ Script 507 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"No. Everyone has a choice. We can choose our lot in life, we choose what to do, and we choose how to live our lives."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"No. Everyone has a choice. We can choose our lot in life, we choose what to do, and we choose\nhow to live our lives."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -197,7 +197,7 @@ Script 507 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"DOMOVOI"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"Do ye think yer decisions matter in the face of a storm?\nYe can say ye won't get swept away,\nbut the wind and rain lash out in blind rage anyway."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"Do ye think yer decisions matter in the face of a storm? Ye can say ye won't get\nswept away, but the wind and rain lash out in blind rage anyway."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -210,7 +210,7 @@ Script 507 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"DOMOVOI"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"I've lived here fer millenia. Protected the people here.\nThen in comes this new guy, marchin' all over me and then suddenly..they're gone. Now he lives here."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"I've lived here fer millenia. Protected the people here.\nThen in comes this new guy, marchin' all over me and then suddenly...they're gone.\nPoof. It seemed like it only took me time to blink before he moved in here."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -223,7 +223,7 @@ Script 507 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"DOMOVOI"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"And now I'm guardin' him, movin' to his hand and dancin' to his damned songs.\nI can choose to have mercy on ye, but I'm still the guardian of this castle and I gotta guard it."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"And now I'm guardin' him, movin' to his hand and dancin' to his damned songs. I can choose\nto have mercy on ye, but I'm still the guardian of this castle and I gotta guard it."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -316,7 +316,7 @@ Script 508 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"DOMOVOI"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"Nay...\nIf this is how it ends, then this is how it ends..."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"Nay... If this is how it ends, then this is how it ends..."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
     
@@ -330,7 +330,7 @@ Script 508 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"No, I didn't mean to.."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"No, I didn't mean to..."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
     
@@ -358,7 +358,7 @@ Script 508 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"DOMOVOI"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"Ye've been runnin' through, stabbin' all sorts of critters and now ye stab me and yer all teary-eyed?"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"Ye've been runnin' through, stabbin' all sorts of critters and now ye stab me and yer all\nteary-eyed? Yer a strange one, boy, but I ain't mind it."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -400,7 +400,7 @@ Script 508 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"DOMOVOI"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"Not all of us got the ability to forge our own paths.\nWhen a blockade arises and someone pushes us down a road, we walk down what we've been given.\nSome fall immediately, others keep on walkin' 'till they drop."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"Not all of us got the ability to forge our own paths. When a blockade arises and someone\npushes us down a road, we walk down what we've been given. Some fall immediately,\nothers keep on walkin' 'till they drop."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -414,7 +414,7 @@ Script 508 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"DOMOVOI"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"I was dead th'moment that being arrived here, boy. The only question was when it'd catch up t'me."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"I was dead th'moment that being arrived here, boy. The only question was when it'd catch up t'me.\nI died fighting for a cause, at least..."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -428,7 +428,7 @@ Script 508 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"The world may be a cruel mistress, but your master is crueler yet."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"To die fighting for a cause you never wanted... I can't think of a crueler fate."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    

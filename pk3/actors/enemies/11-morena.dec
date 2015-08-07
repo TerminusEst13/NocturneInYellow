@@ -224,11 +224,9 @@ actor Morena2 31101
     +DORMANT
     MinMissileChance 10
     RadiusDamageFactor 0.5
-    SeeSound "grunt/sight"
-    AttackSound "grunt/attack"
-    PainSound "grunt/pain"
-    DeathSound "grunt/death"
-    ActiveSound "grunt/active"
+    SeeSound "morena/sight"
+    PainSound "morena/pain"
+    DeathSound "morena/death"
     Obituary " "
     States
     {

@@ -54,7 +54,7 @@ Script 515 (Void)
 
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
-    HudMessage(l:"That wasn't of this world! That gaze, those sounds, that cold presence, everything was just...so hideous!\nIf that was only a taste of the cursed power gripping everything, no wonder everyone moves as puppets by its hand."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"That wasn't of this world! That gaze, those sounds, that cold presence, everything was just...\nso hideous! If that was only a taste of the cursed power gripping everything, no wonder everyone\nmoves as puppets by its hand."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
     
@@ -67,7 +67,7 @@ Script 515 (Void)
 
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
-    HudMessage(l:"Sensible men who value their lives would've called it quits already.\nAnd yet here I am, like a suicidal lamb begging for the knife to come swiftly."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"And yet here I am, still marching onwards, like a suicidal lamb begging for the knife to come swiftly.\nSensible men who value their lives would've called it quits already..."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
     
@@ -172,7 +172,7 @@ Script 516 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"I'm afraid. I'm afraid of the forces I have yet to reckon with.\nI'm afraid what kind of power resides here. I'm afraid of moving forward."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"I'm afraid. I'm afraid of the forces I have yet to reckon with. I'm afraid of what kind\nof power resides here. I'm afraid of moving forward. I'm afraid of what lies at the end."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -185,7 +185,7 @@ Script 516 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"But while everyone is focused on the war, I'm the only one here.\nEverything else on this island is firmly within the iron fist of this power, but I push through, because I am the only one who can do this.\nEven if that means pushing you out of the way."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"But while everyone is focused on the war, I'm the only one here. And everything else on this island\nis firmly within the iron fist of this power, so I'm the only one here that can fight. I push through,\nnot because I want to, but simply because I'm the only one who can do this. Even if that means pushing you out of the way."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -211,7 +211,7 @@ Script 516 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"I have been Freyja. I have been Thanatos. I have been Maman Brigitte, I have been Anubis, Izanami-no-Mikoto, Morta, Ereshkigal, Hades, Santa Muerte, Azrael, and more.\nYou would call me Morena."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"I have been Freyja. I have been Thanatos. I have been Maman Brigitte, I have been Anubis, Izanami-no-Mikoto, Morta, Ereshkigal, Hades, Santa Muerte, Azrael, Daena, Ankou, and more.\nYou would call me Morena."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -224,7 +224,7 @@ Script 516 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"Whatever I am called, though, my job is the same.\nI oversee the inevitable end of everything in this world.\nI am Death."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"Whatever I am called, though, my job is the same. I oversee the inevitable end of everything\nin this world. Simply, I am Death."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -263,7 +263,7 @@ Script 516 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"Few plan to die. And yet, here we are.\nCare for a dance?"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"Few plan to die. And yet, here I am. Care for a dance?"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -414,7 +414,7 @@ Script 517 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"Except for something with powers that go beyond death.\nSomething more powerful than death would just be BEYOND what you know."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"Except for something with powers that go beyond death. Something more powerful than\ndeath would just be BEYOND what you know."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -484,7 +484,7 @@ Script 517 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"It's...impossible. That's not what happens to souls!\nBut it pulls them from my grasp and consumes them anyway, as if it wasn't even a thought."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"It's...impossible. That's not what happens to souls! But it pulls them from my grasp and consumes\nthem anyway, as if it wasn't even a thought. Almost an unconscious action, like walking or blinking."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -624,7 +624,7 @@ Script 517 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"What happens when we die? Where do we go? Do our souls pass on to an afterlife?\nDo we float in a void for eternity? Do we even know that we're dead?"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"What happens when we die? Where do we go? Do our souls pass on to an afterlife? Do we\nfloat in a void for eternity? Do we even know that we're dead?"; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -638,7 +638,7 @@ Script 517 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"None of us want to die. Many of us spend our entire lives with distractions,\ntrying to ignore your silent waltz towards us."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"None of us want to die. Many of us spend our entire lives with distractions, trying to ignore\nyour silent waltz towards us."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -652,7 +652,7 @@ Script 517 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"We're taught that it's all right to be scared. Fear by itself is fine.\nBut you should never let it control you."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"We're taught that it's all right to be scared. Fear by itself is fine. But it shouldn't control you."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -666,7 +666,7 @@ Script 517 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"But it scarcely works. Pretty words don't really mean anything when we get into something dangerous.\nBut we get by. And we keep on going with life. Keep on living on a single prayer to see the light of another day."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"But it scarcely works. Pretty words don't really mean anything when we get into something\ndangerous. But we get by. And we keep on going with life. Keep on living on a single prayer to\nsee the light of another day."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -736,7 +736,7 @@ Script 517 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"Throughout this entire adventure, I have been constantly moving forward.\nI can't... I won't turn back. Thus I will push."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"Throughout this entire adventure, I have been constantly moving forward. I can't...\nI won't turn back. Thus I will push on forward."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -764,7 +764,7 @@ Script 517 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"There may perhaps be something I can do. However, I do not lie when I say this. You will die if you continue."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"There may perhaps be something I can do. However, I do not lie when I say this. You will die if you\ncontinue down this path."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -778,7 +778,7 @@ Script 517 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"I can take your soul out of your body, and deliver you to the mass of the master.\nAnd then from there, you can work from the inside."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"I can take your soul out of your body, and deliver you to the mass of the master. And then\nfrom there, you can work from the inside."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -792,7 +792,7 @@ Script 517 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"It would be a death without dying, so to speak.\nA gentle repose; your body would still function, you would lie and breathe as if asleep.\nBut you would be gone, if only temporarily."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"It would be a death without dying, so to speak. A gentle repose; your body would still function,\nyou would lie and breathe as if asleep. But you would be gone,\nif only temporarily."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -806,7 +806,7 @@ Script 517 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"G-grhk.\nI-I'm not sure how comfortable I am with this plan."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"G-grhk. I-I'm not sure how comfortable I am with this plan."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -834,7 +834,7 @@ Script 517 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"No. I don't want to die. I'm not a fighter!\nEverything yells at me not to, but I'll do it anyway."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"No. I don't want to die. I'm not a fighter! Everything yells at me not to, but I'll do it anyway."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -848,7 +848,7 @@ Script 517 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"VIKENTI"; HUDMSG_PLAIN, 11, CR_GOLD, 7.5, 195.2, 0);
-    HudMessage(l:"I swear, this stubborn burning in my veins will get the better of me sooner rather than later."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"Is this insanity? Knowing that what I'm doing could result in nothing but misery and suffering,\nand yet charging ahead anyway? Without regard for self-preservation? This burning will be the end of me."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
@@ -876,7 +876,7 @@ Script 517 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"So that's what it was all along. All right.\nGood luck."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"Some would call it insanity. But I would not."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    

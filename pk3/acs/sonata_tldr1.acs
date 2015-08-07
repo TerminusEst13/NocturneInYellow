@@ -467,7 +467,7 @@ Script 502 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"You have a life ahead of you, but if you continue it will be cut short.\nPush on and you will personally embrace the endless silence awaiting your arrival. The world will not mourn your demise."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"You have a life ahead of you, but if you continue it will be cut short. Push on and\nyou will personally embrace the endless silence awaiting your arrival. The world will not mourn your demise."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
    
