@@ -12,6 +12,7 @@ actor Morena1 31100
     Monster
     +FLOORCLIP
     +LOWGRAVITY
+	+NEVERFAST
 	+FLOATBOB
     +MISSILEMORE
     +DORMANT
@@ -33,7 +34,7 @@ actor Morena1 31100
         TNT1 A 0 A_JumpIfCloser(1536,"Missile0")
         TNT1 A 0 A_FaceTarget
         MREN A 1
-        TNT1 A 0 A_Recoil(-50)
+        TNT1 A 0 A_Recoil(-33)
         goto See
     Missile0:
         TNT1 A 0 A_Jump(16,"Teleport")
@@ -220,6 +221,7 @@ actor Morena2 31101
     +FLOORCLIP
 	+FLOATBOB
     +LOWGRAVITY
+	+NEVERFAST
     +MISSILEMORE
     +DORMANT
     MinMissileChance 10
@@ -242,7 +244,7 @@ actor Morena2 31101
         TNT1 A 0 A_JumpIfCloser(1536,"Missile0")
         TNT1 A 0 A_FaceTarget
         MREN A 1
-        TNT1 A 0 A_Recoil(-50)
+        TNT1 A 0 A_Recoil(-33)
         goto See
     Missile0:
         TNT1 A 0 A_Jump(32,"Teleport")
