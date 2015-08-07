@@ -1,5 +1,6 @@
 actor YogSothothMain 31106
 {
+//$Category Nocturne-Bosses
     Health 0x7FFFFFFF
     Radius 64
     Height 128
@@ -19,6 +20,7 @@ actor YogSothothMain 31106
     +THRUSPECIES
     +NOBLOOD
     +DONTFALL
+    +DORMANT
     Species "Monster"
     SeeSound "yog/soulsight"
     PainSound "yog/soulactivate"
@@ -235,6 +237,7 @@ actor YogSothothMain 31106
 
 actor YogSothothEye 31107
 {
+//$Category Nocturne-Bosses
     Health 200
     Radius 31
     Height 56
@@ -256,9 +259,6 @@ actor YogSothothEye 31107
     Species "Monster"
     PainSound "yog/eyepain"
     DeathSound "yog/eyedeath"
-    DropItem "LifeEssencePickup", 128
-    DropItem "RandomBowManaPickup", 128
-    DropItem "GrenadeAmmoPickup", 64
     Obituary " "
     States
     {
@@ -381,6 +381,7 @@ ACTOR SothothBallTrail
 
 actor YogSothothCore 31108
 {
+//$Category Nocturne-Bosses
     Health 0x7FFFFFFF
     Radius 128
     Height 256
@@ -443,6 +444,7 @@ ACTOR TeleportToInterior : CustomInventory
         TNT1 A 0
         TNT1 A 0 A_PlaySoundEx("yog/teleport","soundslot7",0,2)
         TNT1 A 0 A_SetBlend("Black",1.0,105)
+        TNT1 A 0 ACS_ExecuteAlways(664,0,0,0,0)
         TNT1 A 0 A_SetAngle(angle+frandom(-180,180))
         TNT1 A 0 A_SetPitch(pitch+frandom(-25,25))
         stop
@@ -466,6 +468,7 @@ ACTOR TeleportToExterior : CustomInventory
         TNT1 A 0
         TNT1 A 0 A_PlaySoundEx("yog/teleport","soundslot7",0,2)
         TNT1 A 0 A_SetBlend("Black",1.0,105)
+        TNT1 A 0 ACS_ExecuteAlways(665,0,0,0,0)
         TNT1 A 0 A_SetAngle(angle+frandom(-180,180))
         TNT1 A 0 A_SetPitch(pitch+frandom(-25,25))
         stop
