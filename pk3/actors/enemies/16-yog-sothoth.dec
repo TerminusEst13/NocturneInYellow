@@ -384,13 +384,13 @@ ACTOR SothothBallTrail
 actor YogSothothCore 31108
 {
 //$Category Nocturne-Bosses
-    Health 0x7FFFFFFF
+    Health 999999999
     Radius 128
     Height 128
     Mass 0x7FFFFFFF
     Speed 0
-    PainChance 32
-    PainChance "ArcaneBow", 16
+    PainChance 48
+    PainChance "ArcaneBow", 32
     RenderStyle Subtract
     Alpha 0.95
     Scale 1.5
