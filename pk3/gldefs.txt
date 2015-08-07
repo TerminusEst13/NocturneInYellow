@@ -176,6 +176,26 @@ brightmap Sprite SNEKH0
    map SNEKBM2
 }
 
+brightmap Sprite MRENA0
+{
+   map MRENBM1
+}
+
+brightmap Sprite MRENB0
+{
+   map MRENBM2
+}
+
+brightmap Sprite MRENC0
+{
+   map MRENBM3
+}
+
+brightmap Sprite MREND0
+{
+   map MRENBM4
+}
+
 brightmap Texture SWTCH01
 {
    map SWTCHBM1
