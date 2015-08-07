@@ -358,31 +358,40 @@ script 434 (void) // I should not be devoting an entire script just to simply sa
 
 script 600 (void)
 {
-    int i, i2;
-
-    SetPlayerProperty(0,1,4);
-    SetActorProperty(0,APROP_NOTARGET,1);
-    SetHUDSize(320, 240, TRUE);
-    SetFont("BLACKTXT");
-    HudMessage(s:"A"; HUDMSG_FADEINOUT, 16, 0, 160.0, 120.0, 5, 1.0, 0);
-
-    Delay(35);
-
-    SetHUDSize(320, 240, TRUE);
-    SetFont("BLACKTXT");
-    HudMessage(s:"A"; HUDMSG_PLAIN, 16, 0, 160.0, 120.0, 0);
-
-    Delay(35);
-    i = 1700.0;
-    while(1)
-    {
-        i2 = i;
-        i = i2 - 0.5;
-
-        SetHUDSize(640, 480, TRUE);
-        SetFont("CREDITS");
-        HudMessage(s:"A"; HUDMSG_PLAIN, 14, 0, 320.0, i, 5, 1.0, 0);
-        HudMessage(s:"A"; HUDMSG_PLAIN, 13, 0, 320.0, i2, 5, 1.0, 0); // Without this, there's strange flickering going on. Wtf?
-        delay(1);
-    }
+    SetHudSize(640,480,FALSE);
+    SetFont("CREDITS1");
+    HudMessage(s:"A"; HUDMSG_FADEINOUT, 16, 0, 320.0, 240.0, 5.0, 1.0, 1.0);
+    delay(35*7);
+    SetFont("CREDITS2");
+    HudMessage(s:"A"; HUDMSG_FADEINOUT, 16, 0, 320.0, 240.0, 5.0, 1.0, 1.0);
+    delay(35*7);
+    SetFont("CREDITS3");
+    HudMessage(s:"A"; HUDMSG_FADEINOUT, 16, 0, 320.0, 240.0, 5.0, 1.0, 1.0);
+    delay(35*7);
+    SetFont("CREDITS4");
+    HudMessage(s:"A"; HUDMSG_FADEINOUT, 16, 0, 320.0, 240.0, 5.0, 1.0, 1.0);
+    delay(35*7);
+    SetFont("CREDITS5");
+    HudMessage(s:"A"; HUDMSG_FADEINOUT, 16, 0, 320.0, 240.0, 5.0, 1.0, 1.0);
+    delay(35*7);
+    SetFont("CREDITS6");
+    HudMessage(s:"A"; HUDMSG_FADEINOUT, 16, 0, 320.0, 240.0, 5.0, 1.0, 1.0);
+    delay(35*7);
+    SetFont("CREDITS7");
+    HudMessage(s:"A"; HUDMSG_FADEINOUT, 16, 0, 320.0, 240.0, 5.0, 1.0, 1.0);
+    delay(35*7);
+    SetFont("CREDITS8");
+    HudMessage(s:"A"; HUDMSG_FADEINOUT, 16, 0, 320.0, 240.0, 5.0, 1.0, 1.0);
+    delay(35*7);
+    SetFont("CREDITS9");
+    HudMessage(s:"A"; HUDMSG_FADEINOUT, 16, 0, 320.0, 240.0, 5.0, 1.0, 1.0);
+    delay(35*7);
+    SetFont("CREDITSA");
+    HudMessage(s:"A"; HUDMSG_FADEINOUT, 16, 0, 320.0, 240.0, 5.0, 1.0, 1.0);
+    delay(35*7);
+    SetFont("CREDITSB");
+    HudMessage(s:"A"; HUDMSG_FADEINOUT, 16, 0, 320.0, 240.0, 5.0, 1.0, 1.0);
+    delay(35*9);
+    SetFont("THEEND");
+    HudMessage(s:"A"; HUDMSG_FADEINOUT, 16, 0, 320.0, 240.0, 600.0, 1.0, 600.0);
 }
