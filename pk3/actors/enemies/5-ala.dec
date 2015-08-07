@@ -1,4 +1,4 @@
-ACTOR Ala 31095
+ACTOR Ala 31095 // Absolutely no relation to deities.
 {
 //$Category Nocturne-Monsters
     Health 250
@@ -25,43 +25,53 @@ ACTOR Ala 31095
     States
     {
     Spawn:
-        WICK A 10 A_Look
+        ALAH A 10 A_Look
         Loop
     See:
         TNT1 A 0 A_Jump(64,"See1")
         TNT1 A 0 A_Jump(64,"See2")
-        WICK AABBCCDD 3 A_Chase
+        ALAH AA 3 A_Chase
         Loop
     See1:
-        WICK EEFFGGHH 2 A_Chase
+        ALAH AA 2 A_Chase
+        TNT1 A 0 A_Jump(1,"See")
         Loop
     See2:
-        WICK EEFFGGHH 2 A_FastChase
+        ALAH AA 2 A_FastChase
+        TNT1 A 0 A_Jump(1,"See")
         Loop
     Missile:
         //TNT1 A 0 A_JumpIfCloser(256,"BlowBack")
         TNT1 A 0 A_PlaySoundEx("ala/attack","soundslot5",0,0)
-        WICK IJ 3 A_FaceTarget
-        WICK K 3 A_FaceTarget
+        ALAH BB 2 A_FaceTarget
+        ALAH C 4 A_FaceTarget
         TNT1 AAA 0 A_CustomMissile("AlaHail",32,0,frandom(-10,10),CMF_OFFSETPITCH,frandom(-4,4))
-        WICK L 4 Bright A_CustomMissile("AlaHail",32,0,0,0)
+        ALAH D 4 Bright A_CustomMissile("AlaHail",32,0,0,0)
         Goto See
     Pain:
-        WICK M 3
-        WICK M 3 A_Pain
+        ALAH B 3
+        ALAH B 3 A_Pain
         Goto See
     Death:
-        WICK N 5 A_Scream
-        WICK OP 5
-        WICK Q 5
-        WICK R 5
-        Wait
-    Crash:
-        WICK S 1 A_SetFloorClip
-        WICK S 4
-        WICK TUV 5
-        WICK W -1
+        TNT1 AAAAAAAAAA 0 A_SpawnItemEx("AlaDeathHail",frandom(-2,2),frandom(-2,2),frandom(16,32),frandom(-5,5),frandom(-5,5),frandom(-5,5),0,160)
+        ALAH E 5 A_Scream
+        ALAH E -1
         Stop
+    }
+}
+
+ACTOR AlaDeathHail
+{
+    +NOINTERACTION
+    +CLIENTSIDEONLY
+    RenderStyle Add
+    Alpha 0.99
+    Scale 0.5
+    States
+    {
+    Spawn:
+        ABLL BCDEFGHIJKLM 2 Bright
+        stop
     }
 }
 
