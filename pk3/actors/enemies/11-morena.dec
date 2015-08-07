@@ -224,6 +224,7 @@ actor Morena2 31101
 	+NEVERFAST
     +MISSILEMORE
     +DORMANT
+	+NOINFIGHTING
     MinMissileChance 10
     RadiusDamageFactor 0.5
     SeeSound "morena/sight"
