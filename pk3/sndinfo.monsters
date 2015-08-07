@@ -128,10 +128,10 @@ morena/knifehit           MORNSHIT // I am easily amused.
 morena/homingshot         MORNSSHT
 morena/hominghit          MORNSIMP
 
-$rolloff morena/sight 400 2400
-$rolloff morena/attack 400 2400
-$rolloff morena/pain 400 2400
-$rolloff morena/death 400 2400
+$rolloff morena/sight 1500 5500
+$rolloff morena/attack 4500 10000
+$rolloff morena/pain 1500 5500
+$rolloff morena/death 4500 10000
 
 
 // Zmey Gorynych - All sounds by BouncyTEM

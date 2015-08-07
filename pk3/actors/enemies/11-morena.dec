@@ -211,7 +211,7 @@ actor MorenaHomingShot
 actor Morena2 31101
 {
 //$Category Nocturne-Bosses
-    Health 3750
+    Health 2800
     Radius 24
     Height 76
     Speed 14
