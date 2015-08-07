@@ -8,6 +8,7 @@ ACTOR Likho 31091
     PainChance 180
     PainChance "Spear", 255
     DamageFactor "Bullet", 2.0
+    Scale 0.45
     Monster
     +FLOORCLIP
     +MISSILEMORE
@@ -26,29 +27,30 @@ ACTOR Likho 31091
         LIKH A 10 A_Look
         Loop
     See:
-        LIKH AABBCCDD 3 A_Chase
+        LIKH AABBCCBB 3 A_Chase
         Loop
     Missile:
         TNT1 A 0 A_Jump(64,"Missile2")
-        LIKH EF 6 A_FaceTarget
-        LIKH G 5 A_CustomMissile("LikhoBall")
+        LIKH D 6 A_FaceTarget
+        LIKH D 5 bright A_CustomMissile("LikhoBall",24)
         Goto See
     Missile2:
-        LIKH EF 5 A_FaceTarget
-        LIKH G 4 A_CustomMissile("LikhoBall")
-        LIKH EF 5 A_FaceTarget
-        LIKH G 4 A_CustomMissile("LikhoBall")
+        LIKH D 5 A_FaceTarget
+        LIKH D 4 bright A_CustomMissile("LikhoBall",24)
+        LIKH D 5 A_FaceTarget
+        LIKH D 4 bright A_CustomMissile("LikhoBall",24)
         Goto See
     Pain:
-        LIKH H 2
-        LIKH H 2 A_Pain
+        LIKH A 2
+        LIKH A 2 A_Pain
         Goto See
     Death:
-        LIKH I 5 A_Scream
-        LIKH JK 5
-        LIKH L 4 A_NoBlocking
-        LIKH MN 3
-        LIKH O -1
+        TNT1 A 0 A_SetScale(1.0,1.0)
+        BAUK D 4 A_Scream
+        BAUK EF 4
+        BAUK G 4 A_NoBlocking
+        BAUK HIJKLM 4
+        BAUK N -1
         Stop
     }
 }
