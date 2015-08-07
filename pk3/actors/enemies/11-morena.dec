@@ -81,7 +81,7 @@ actor Morena1 31100
         TNT1 A 0 A_CustomMissile("MorenaShot",32,0,frandom(-1,1),CMF_OFFSETPITCH,frandom(-0.25,0.25))
         MREN D 3
         TNT1 A 0 A_CheckFloor("SideSwipeFinish")
-        TNT1 A 0 A_GiveInventory("Counter",1)
+        TNT1 A 0 A_GiveInventory("Counter",random(1,2))
         TNT1 A 0 A_JumpIfInventory("Counter",70,"SideSwipeFinish")
         loop
     SideSwipeFinish:
@@ -292,7 +292,7 @@ actor Morena2 31101
         TNT1 AA 0 A_CustomMissile("MorenaShot",32,0,frandom(-1,1),CMF_OFFSETPITCH,frandom(-0.25,0.25))
         MREN D 2
         TNT1 A 0 A_CheckFloor("SideSwipeFinish")
-        TNT1 A 0 A_GiveInventory("Counter",1)
+        TNT1 A 0 A_GiveInventory("Counter",random(2,5))
         TNT1 A 0 A_JumpIfInventory("Counter",70,"SideSwipeFinish")
         loop
     SideSwipeFinish:
