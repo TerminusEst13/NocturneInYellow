@@ -54,6 +54,7 @@ ACTOR Drekavac 31096
         TNT1 A 0 ACS_ExecuteWithResult(433,12)//A_ActiveSound//A_PlaySoundEx("drekavac/screamfar","soundslot5",0,0)
         TNT1 A 0 Radius_Quake(1,5,0,16,0)
         TNT1 A 0 A_RadiusThrust(1024,1024,RTF_NOTMISSILE,896)
+        DREK A 1 A_Chase("","")
         Goto See
     Pain:
         DREK A 2
