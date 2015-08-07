@@ -55,6 +55,7 @@ ACTOR Ala 31095 // Absolutely no relation to deities.
     Death:
         TNT1 AAAAAAAAAA 0 A_SpawnItemEx("AlaDeathHail",frandom(-2,2),frandom(-2,2),frandom(16,32),frandom(-5,5),frandom(-5,5),frandom(-5,5),0,160)
         ALAH E 5 A_Scream
+        TNT1 A 0 A_NoBlocking
         ALAH E -1
         Stop
     }
