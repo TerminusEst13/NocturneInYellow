@@ -280,7 +280,7 @@ actor YogSothothEye 31107
         goto See
     Death:
         TNT1 A 0 A_SpawnItemEx("SothothTrailExpand",0,0,32,0,0,0,0,160)
-        TNT1 A 0 A_RadiusGive("Boolean",256,RGF_MONSTERS,1)//A_Explode(16,196,0,0,196)
+        TNT1 A 0 A_RadiusGive("Boolean",320,RGF_MONSTERS,1)//A_Explode(16,196,0,0,196)
         TNT1 A 0 A_NoBlocking
         TNT1 A 0 A_Scream
     Death2:
