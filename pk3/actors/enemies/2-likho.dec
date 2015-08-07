@@ -27,18 +27,18 @@ ACTOR Likho 31091
         LIKH A 10 A_Look
         Loop
     See:
-        LIKH AABBCCBB 3 A_Chase
+        LIKH AABBCCDD 3 A_Chase
         Loop
     Missile:
         TNT1 A 0 A_Jump(64,"Missile2")
-        LIKH D 6 A_FaceTarget
-        LIKH D 5 bright A_CustomMissile("LikhoBall",24)
+        LIKH E 6 A_FaceTarget
+        LIKH E 5 bright A_CustomMissile("LikhoBall",24)
         Goto See
     Missile2:
-        LIKH D 5 A_FaceTarget
-        LIKH D 4 bright A_CustomMissile("LikhoBall",24)
-        LIKH D 5 A_FaceTarget
-        LIKH D 4 bright A_CustomMissile("LikhoBall",24)
+        LIKH E 5 A_FaceTarget
+        LIKH E 4 bright A_CustomMissile("LikhoBall",24)
+        LIKH E 5 A_FaceTarget
+        LIKH E 4 bright A_CustomMissile("LikhoBall",24)
         Goto See
     Pain:
         LIKH A 2
