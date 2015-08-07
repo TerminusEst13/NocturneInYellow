@@ -55,3 +55,17 @@ CONFIRM_EASY = "You take less damage and monsters have less health.\n\nWe choose
 CONFIRM_NORMAL = "The default difficulty. No special changes or behavior.\n\nYou are familiar with shooters and want an adventure.";
 CONFIRM_HARD = "You take more damage and monsters have more health.\n\nYou are skilled at shooters and want a challenge.";
 CONFIRM_VERYHARD = "You are but a mere human, and monsters have plagued your history for aeons.\n\nYou are a madman and wish for a quick death.";
+
+
+PD_BLUEO = "You need a blue key to activate this.";
+PD_REDO = "You need a red key to activate this.";
+PD_YELLOWO = "You need a yellow key to activate this.";
+PD_BLUEK = "You need a blue key to open this.";
+PD_REDK = "You need a red key to open this.";
+PD_YELLOWK = "You need a yellow key to open this.";
+PD_BLUECO = "You need a blue key to activate this.";
+PD_REDCO = "You need a red key to activate this.";
+PD_YELLOWCO = "You need a yellow key to activate this.";
+PD_BLUESO = "You need a blue key to activate this.";
+PD_REDSO = "You need a red key to activate this.";
+PD_YELLOWSO = "You need a yellow key to activate this.";
