@@ -1,7 +1,7 @@
 actor YogSothothMain 31106
 {
 //$Category Nocturne-Bosses
-    Health 0x7FFFFFFF
+    Health 9999999
     Radius 64
     Height 128
     Mass 0x7FFFFFFF

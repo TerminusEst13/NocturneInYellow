@@ -51,9 +51,9 @@ ACTOR Nocnitsa 31093
         Goto See
     Death:
         NOCN D 2 Bright A_Scream
-        NOCN DD 2 Bright A_FadeOut(0.01)
+        NOCN DD 2 Bright A_FadeOut(0.1)
         TNT1 A 0 A_NoBlocking
-        NOCN DDDDDDDDDDDDDDD 2 Bright A_FadeOut(0.01)
+        NOCN DDDDDDDDDDDDDDD 1 Bright A_FadeOut(0.05)
         Stop
     }
 }

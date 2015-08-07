@@ -146,7 +146,7 @@ skill Nocturne_Easy
     ACSReturn = 0
     SpawnFilter = Hard
     Name = "Piacevole" // Pleasant
-    DamageFactor = 0.9
+    DamageFactor = 0.85
     MonsterHealth = 0.75
     MustConfirm = "$CONFIRM_EASY"
     TextColor = white
