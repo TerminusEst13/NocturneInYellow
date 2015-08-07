@@ -20,6 +20,7 @@ actor KingInYellow 31105
     +LOOKALLAROUND
     +NOINFIGHTING
     +NOTARGET
+	+NEVERFAST // otherwise it gets fucky
     -SOLID
     +DORMANT
     Obituary " "
