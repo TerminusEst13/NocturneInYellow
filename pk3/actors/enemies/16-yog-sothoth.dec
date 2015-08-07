@@ -21,6 +21,7 @@ actor YogSothothMain 31106
     +NOBLOOD
     +DONTFALL
     +DORMANT
+    +GHOST
     Species "Monster"
     SeeSound "yog/soulsight"
     PainSound "yog/soulactivate"

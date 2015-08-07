@@ -398,6 +398,9 @@ actor BowArrow : FastProjectile
     +FORCEYBILLBOARD
     +NOEXTREMEDEATH
     +BLOODSPLATTER
+    +THRUSPECIES
+    +THRUGHOST
+    Species "Player"
     DamageType "Bow"
     Obituary "%o was pincushioned."
     ProjectileKickBack 25
@@ -448,6 +451,9 @@ actor HolyArrow : FastProjectile
     +FORCEYBILLBOARD
     +NOEXTREMEDEATH
     +BLOODSPLATTER
+    +THRUSPECIES
+    +THRUGHOST
+    Species "Player"
     DamageType "Bow"
     Obituary "%o was pincushioned."
     ProjectileKickBack 25
@@ -504,6 +510,9 @@ actor WindArrow : FastProjectile
     +FORCEYBILLBOARD
     +NOEXTREMEDEATH
     +BLOODSPLATTER
+    +THRUSPECIES
+    +THRUGHOST
+    Species "Player"
     DamageType "Bow"
     Obituary "%o was pincushioned."
     ProjectileKickBack 25
@@ -560,6 +569,9 @@ actor FireArrow : FastProjectile
     +FORCEYBILLBOARD
     +NOEXTREMEDEATH
     +BLOODSPLATTER
+    +THRUSPECIES
+    +THRUGHOST
+    Species "Player"
     DamageType "Bow"
     Obituary "%o was pincushioned."
     ProjectileKickBack 25
@@ -628,6 +640,9 @@ actor ArcaneArrow : FastProjectile
     +FORCEYBILLBOARD
     +NOEXTREMEDEATH
     +BLOODSPLATTER
+    +THRUSPECIES
+    +THRUGHOST
+    Species "Player"
     DamageType "ArcaneBow"
     Obituary "%o was pincushioned."
     ProjectileKickBack 25
@@ -684,6 +699,9 @@ actor ShadowArrow : FastProjectile
     +NOEXTREMEDEATH
     +BLOODSPLATTER
     +SEEKERMISSILE
+    +THRUSPECIES
+    +THRUGHOST
+    Species "Player"
     DamageType "Bow"
     Obituary "%o was pincushioned."
     ProjectileKickBack 25
@@ -750,6 +768,7 @@ actor DeathArrow : FastProjectile
     +NOEXTREMEDEATH
     +BLOODSPLATTER
     +THRUSPECIES
+    +THRUGHOST
     Species "Player"
     DamageType "Bow"
     Obituary "%o was pincushioned."

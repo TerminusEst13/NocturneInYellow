@@ -361,6 +361,7 @@ ACTOR NagantBulletPuff
     +NOBLOCKMAP
     +FLOORCLIP
     +NOTIMEFREEZE
+    +THRUGHOST
 	var int user_puffscalex;
 	var int user_puffscaley;
     States
@@ -510,4 +511,4 @@ ACTOR BulletSparkTrail : BulletSpark
 	}
 }
 
-ACTOR NagantBlankPuff { DamageType "Bullet" }
+ACTOR NagantBlankPuff { +THRUGHOST DamageType "Bullet" }

@@ -139,6 +139,7 @@ actor RogatinaStab : FastProjectile
     +SKYEXPLODE
     +EXPLODEONWATER
     +NOEXTREMEDEATH
+    +THRUGHOST
     States
     {
     Spawn:
@@ -177,6 +178,7 @@ actor RogatinaStab2 : FastProjectile
     +SKYEXPLODE
     +EXPLODEONWATER
     +NOEXTREMEDEATH
+    +THRUGHOST
     States
     {
     Spawn:
