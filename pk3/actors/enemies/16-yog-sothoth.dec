@@ -422,9 +422,9 @@ actor YogSothothCore 31108
         goto See
     NotDeath:
         TNT1 A 0 A_GiveToTarget("PowerTempProtection",1)
-        TNT1 A 0 ACS_ExecuteAlways(666,0,0,0,0) // WHOAH, EDGY
+        TNT1 A 0 A_GiveToTarget("FinishTheLevel",1)
         TNT1 A 0 A_Quake(25,1800,0,256,0)
-        TNT1 A 0 A_Scream
+        TNT1 A 0 A_PlaySoundEx("yog/coredeath","soundslot6",0,2)//A_Scream
         YOGY A 1 Bright A_SpawnItemEx("YogSothothAura",frandom(-16,16),frandom(-16,16),frandom(64,196),frandom(-16,16),frandom(-16,16),frandom(-16,16),0,160)
         goto See
     }
@@ -489,6 +489,26 @@ ACTOR TeleportToExterior : CustomInventory
         TNT1 A 0 ACS_ExecuteAlways(665,0,0,0,0)
         TNT1 A 0 A_SetAngle(angle+frandom(-180,180))
         TNT1 A 0 A_SetPitch(pitch+frandom(-25,25))
+        stop
+    }
+}
+
+ACTOR FinishTheLevel : CustomInventory
+{
+    Inventory.MaxAmount 0
+    Inventory.Amount 0
+    -INVBAR
+    +ALWAYSPICKUP
+    +AUTOACTIVATE
+    States
+    {
+    Spawn:
+        TNT1 A 1
+        stop
+    Pickup:
+    Use:
+        TNT1 A 0
+        TNT1 A 0 ACS_ExecuteAlways(666,0,0,0,0) // WHOAH, EDGY
         stop
     }
 }

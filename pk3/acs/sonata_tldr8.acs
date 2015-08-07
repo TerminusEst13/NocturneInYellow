@@ -437,7 +437,7 @@ Script 523 (Void)
     SetHUDSize(480, 280, TRUE);
     SetFont("SMALLFONT");
     HudMessage(l:"MORENA"; HUDMSG_PLAIN, 11, CR_RED, 7.5, 195.2, 0);
-    HudMessage(l:"Are you so quick to dismiss yourself because of it? You cannot deny your deeds. You could pass\nit on to a variety of different causes. Perhaps you saw the suffering and wanted to see it end?\nOr perhaps a force from beyond urged you to do this? Regardless of whatever you convince yourself guided\nyou on, you pushed on all the same."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
+    HudMessage(l:"Are you so quick to dismiss yourself because of it? You cannot deny your deeds. You could pass\nit on to a variety of different causes. Perhaps you saw the suffering and wanted to see it end?\nOr perhaps a force from beyond urged you to do this? Regardless of whatever you convince yourself guided you on, you pushed on all the same."; HUDMSG_PLAIN, 10, CR_WHITE, 10.1, 200.1, 0);
 
     Delay(10);
 
