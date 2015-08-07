@@ -16,9 +16,7 @@ SPRITES:
 - Ville Seppanen/Osmic, for "gems.zip" off OpenGameArt.org, released under Attribution 3.0 Unported (CC BY 3.0)
 - Freedoom project, for FIRE*0, TBLU*0, TGRN*0, KWAL*, KSMN*0, and LBAL*0
 - Eriance for DIRN*0, SPLD*0, NOCN*0, KBAL*0, MSOL*0, and VODB*0 sprites, released for people to use "as they see fit"
-- Bloax for DOOMCURS, HUDBAR, HLTHBEMP, HLTHBFUL, STAMBEMP, STAMBFUL, AMMOBEMP, and AMMOBFUL, made specifically for Nocturne in Yellow
-- Bloax for ABLL*0, used with permission
-- Bloax for CND**0 and TCH**0, made specifically for Nocturne in Yellow
+- NovaSilisko for DGGR*0, used with permission
 - Avi for GRNDEMPT and GRNDFULL
 
 MUSIC:
@@ -88,14 +86,6 @@ TEXTURES:
 - WALL47_1 - Taken from the Freedoom project
 - WALL47_2 - Taken from the Freedoom project
 - WALL47_5 - Taken from the Freedoom project
-- BRIX01-2 - Bloax
-- DIRT01-2 - Bloax
-- MARBCEI2-5 - Bloax
-- TILES01-05 - Bloax
-- GRAVEL2 - Bloax
-- STONE - Bloax (for raw stone constructs or something)
-- STONEMRB - Bloax
-- STONEMBP - Bloax
 - SKY_END - "Sunset royalty free stock photo" off Public-Domain-Images.com
 
 STORY TEXT:

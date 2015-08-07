@@ -32,8 +32,8 @@ actor Morena1 31100
     Missile:
         TNT1 A 0 A_JumpIfCloser(1536,"Missile0")
         TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_Recoil(-50)
         MREN A 1
+        TNT1 A 0 A_Recoil(-50)
         goto See
     Missile0:
         TNT1 A 0 A_Jump(16,"Teleport")
@@ -243,8 +243,8 @@ actor Morena2 31101
     Missile:
         TNT1 A 0 A_JumpIfCloser(1536,"Missile0")
         TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_Recoil(-50)
         MREN A 1
+        TNT1 A 0 A_Recoil(-50)
         goto See
     Missile0:
         TNT1 A 0 A_Jump(32,"Teleport")
