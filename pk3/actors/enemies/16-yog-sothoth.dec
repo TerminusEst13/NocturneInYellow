@@ -12,6 +12,7 @@ actor YogSothothMain 31106
     //DamageFactor "EldritchDamage", 10.00
     RenderStyle Add
     Alpha 0.99
+    BloodColor "Purple"
     Monster
     +FLOAT
     +FLOATBOB
@@ -255,6 +256,7 @@ actor YogSothothEye 31107
     +THRUSPECIES
     +DONTFALL
     +FORCERADIUSDMG
+    BloodColor "Purple"
     Species "Monster"
     PainSound "yog/eyepain"
     DeathSound "yog/eyedeath"
@@ -397,6 +399,7 @@ actor YogSothothCore 31108
     +THRUSPECIES
     +DONTFALL
     +DORMANT
+    BloodColor "Purple"
     Species "Monster"
     PainSound "yog/corepain"
     DeathSound "yog/coredeath"
