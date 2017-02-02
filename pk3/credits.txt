@@ -50,7 +50,7 @@ SOUNDS:
 - qubodup, "swosh-10.flac" (ID: 59997) off FreeSound.org, released under CC0 1.0 Universal (CC0 1.0)
 - DJ Chronos, "metal 8.wav" (ID: 123586) off FreeSound.org, released under Attribution 3.0 Unported (CC BY 3.0)
 - snardin42, "Shovel Thwack 1.wav" (ID: 73200) off FreeSound.org, released under CC0 1.0 Universal (CC0 1.0)
-- Simon Kostoski (undead003) for the Upyr's soundset
+- undead003, for the Upyr's soundset, recorded specifically for Nocturne in Yellow
 - adriancalzon, "Scream 01" (ID: 219858) off FreeSound.org, released under Attribution 3.0 Unported (CC BY 3.0)
 - tcrocker68, "Girl_Scream_FollowingScreams.wav" (ID: 235591) off FreeSound.org, released under CC0 1.0 Universal (CC0 1.0)
 - GabrielaUPF, "screaming_woman_horrorII.mp3" (ID: 235591) off FreeSound.org, released under Attribution 3.0 Unported (CC BY 3.0)
